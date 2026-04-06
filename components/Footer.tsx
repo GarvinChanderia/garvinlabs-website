@@ -1,40 +1,81 @@
-export default function Footer() {
+import Image from "next/image";
+import Link from "next/link";
+import { MapPin, Mail, Phone } from "lucide-react";
+
+export function Footer() {
   return (
-    <footer className="bg-bg border-t border-border py-10">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer className="py-16 border-t border-glass-border">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-3 gap-12">
+          <div>
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <Image src="/icon.svg" alt="GarvinLabs" width={32} height={32} />
+              <span className="text-xl font-bold text-brand-dark">
+                Garvin<span className="text-brand-green">Labs.</span>
+              </span>
+            </Link>
+            <p className="text-sm text-text-secondary leading-relaxed">
+              Website development, n8n automation, software development, and AI consulting
+              for businesses ready to grow.
+            </p>
+          </div>
 
-        <div className="text-sm font-bold text-zinc-400">
-          Garvin<span className="text-zinc-600">Labs</span>
-          <span className="text-zinc-700 ml-3">· Pune, India</span>
+          <div>
+            <h4 className="font-semibold text-text-primary mb-4">Services</h4>
+            <ul className="space-y-2">
+              {[
+                { label: "Website Development", href: "/services/website-development" },
+                { label: "n8n Automation", href: "/services/n8n-automation" },
+                { label: "Software Development", href: "/services/software-development" },
+                { label: "AI Consulting", href: "/services/ai-consulting" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-text-primary mb-4">Contact</h4>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-3 text-sm text-text-secondary">
+                <Mail size={16} className="text-brand-green shrink-0" />
+                <a
+                  href="mailto:chanderia.10.garvin@gmail.com"
+                  className="hover:text-text-primary transition-colors"
+                >
+                  chanderia.10.garvin@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-text-secondary">
+                <Phone size={16} className="text-brand-green shrink-0" />
+                <a
+                  href="https://wa.me/919356249535"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-text-primary transition-colors"
+                >
+                  +91 93562 49535
+                </a>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-text-secondary">
+                <MapPin size={16} className="text-brand-green shrink-0" />
+                Pune, India
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="flex items-center gap-6 text-sm text-zinc-600">
-          <a href="mailto:chanderia.10.garvin@gmail.com"
-            className="hover:text-zinc-300 transition-colors">
-            chanderia.10.garvin@gmail.com
-          </a>
-          <a href="https://wa.me/919356249535"
-            className="hover:text-zinc-300 transition-colors">
-            +91 93562 49535
-          </a>
+        <div className="mt-12 pt-8 border-t border-glass-border text-center text-sm text-text-secondary">
+          &copy; {new Date().getFullYear()} GarvinLabs. All rights reserved.
         </div>
-
-        <p className="text-xs text-zinc-700">© 2026 GarvinLabs</p>
-      </div>
-
-      {/* Mobile sticky CTA */}
-      <div className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-bg/95 backdrop-blur border-t border-border
-                      flex items-center justify-between gap-3 px-5 py-3">
-        <div>
-          <p className="text-xs font-semibold text-white">+91 93562 49535</p>
-          <p className="text-[10px] text-zinc-600">WhatsApp anytime</p>
-        </div>
-        <a href="https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20book%20a%20free%20strategy%20call."
-          target="_blank" rel="noopener"
-          className="bg-white text-zinc-950 text-sm font-semibold px-5 py-2.5 rounded-full whitespace-nowrap">
-          Book a Call →
-        </a>
       </div>
     </footer>
-  )
+  );
 }

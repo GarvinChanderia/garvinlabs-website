@@ -1,55 +1,53 @@
-import { ArrowRight, MessageCircle } from 'lucide-react'
+import { MessageCircle, Mail } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
-export default function CTA() {
+export function CTA() {
   return (
-    <section id="cta" className="py-32 relative overflow-hidden bg-surface">
+    <section id="contact" className="py-24 md:py-32 bg-surface">
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <ScrollReveal>
+          <span className="inline-flex items-center gap-2 text-sm font-medium text-brand-green bg-brand-green/8 px-4 py-1.5 rounded-full mb-8">
+            <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+            Limited slots available
+          </span>
+        </ScrollReveal>
 
-      {/* Glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-600/10 blur-[100px] rounded-full" />
-      </div>
+        <ScrollReveal>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-text-primary leading-tight">
+            Let&apos;s build something
+            <br />
+            <span className="text-gradient">together.</span>
+          </h2>
+        </ScrollReveal>
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <ScrollReveal>
+          <p className="mt-6 text-lg md:text-xl text-text-secondary max-w-2xl mx-auto">
+            Book a free 20-minute strategy call. We&apos;ll discuss your project,
+            identify quick wins, and map out a plan — no commitment required.
+          </p>
+        </ScrollReveal>
 
-        {/* Urgency pill */}
-        <div className="inline-flex items-center gap-2 text-xs font-semibold text-red-400
-                        bg-red-400/10 border border-red-400/20 px-4 py-1.5 rounded-full mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse-dot" />
-          Limited slots available this week
-        </div>
-
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
-          Let's build something that{' '}
-          <span className="text-gradient-indigo">actually grows</span>{' '}
-          your business.
-        </h2>
-
-        <p className="text-zinc-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-          Tell us where you're stuck. We'll show you exactly what needs to be built and how long it takes.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
-          <a href="https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20book%20a%20free%20strategy%20call."
-            target="_blank" rel="noopener"
-            className="inline-flex items-center gap-2 bg-white text-zinc-950 font-semibold
-                       text-base px-8 py-4 rounded-full hover:bg-zinc-100 transition-colors">
-            Book a Free Strategy Call <ArrowRight size={16} />
-          </a>
-          <a href="mailto:chanderia.10.garvin@gmail.com"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300
-                       border border-border px-8 py-4 rounded-full hover:border-zinc-500 hover:text-white transition-colors">
-            <MessageCircle size={15} /> Send a Message
-          </a>
-        </div>
-
-        <p className="text-sm text-zinc-600">
-          Or WhatsApp directly:{' '}
-          <a href="https://wa.me/919356249535"
-            className="text-zinc-400 font-semibold hover:text-white transition-colors">
-            +91 93562 49535
-          </a>
-        </p>
+        <ScrollReveal>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-green hover:bg-brand-green-hover text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors shadow-lg shadow-brand-green/20"
+            >
+              <MessageCircle size={20} />
+              WhatsApp Us
+            </a>
+            <a
+              href="mailto:chanderia.10.garvin@gmail.com"
+              className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary font-medium px-8 py-4 rounded-full border border-glass-border hover:border-black/10 transition-all"
+            >
+              <Mail size={20} />
+              chanderia.10.garvin@gmail.com
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
-  )
+  );
 }

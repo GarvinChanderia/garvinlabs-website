@@ -1,81 +1,94 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
-const links = [
-  { label: 'Services',   href: '#services' },
-  { label: 'How It Works', href: '#process' },
-  { label: 'Results',    href: '#trust' },
-]
-
-export default function Navbar() {
-  const [open, setOpen]       = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+export function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const links = [
+    { label: "Services", href: "#services" },
+    { label: "Process", href: "#process" },
+    { label: "Results", href: "#results" },
+    { label: "Contact", href: "#contact" },
+  ];
 
   return (
-    <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      scrolled
-        ? 'bg-bg/90 backdrop-blur-md border-b border-border'
-        : 'bg-transparent'
-    }`}>
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "glass-strong shadow-sm" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/icon.svg" alt="GarvinLabs" width={36} height={36} priority />
+          <span className="text-xl font-bold text-brand-dark">
+            Garvin<span className="text-brand-green">Labs.</span>
+          </span>
+        </Link>
 
-        {/* Logo */}
-        <a href="#" className="font-bold text-lg tracking-tight text-white">
-          Garvin<span className="text-zinc-500">Labs</span>
-        </a>
-
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {links.map(l => (
-            <li key={l.href}>
-              <a href={l.href}
-                className="text-sm text-zinc-400 hover:text-white transition-colors">
-                {l.label}
-              </a>
-            </li>
+        <div className="hidden md:flex items-center gap-8">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+            >
+              {link.label}
+            </a>
           ))}
-        </ul>
+          <a
+            href="https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-brand-green hover:bg-brand-green-hover text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+          >
+            Book a Free Call
+          </a>
+        </div>
 
-        {/* Desktop CTA */}
-        <a href="#cta"
-          className="hidden md:inline-flex items-center gap-2 text-sm font-semibold bg-white text-zinc-950 hover:bg-zinc-100 transition-colors px-4 py-2 rounded-full">
-          Book a Free Call
-        </a>
-
-        {/* Mobile toggle */}
         <button
-          className="md:hidden text-zinc-400 hover:text-white transition-colors"
-          onClick={() => setOpen(o => !o)}
-          aria-label="Toggle menu">
-          {open ? <X size={20} /> : <Menu size={20} />}
+          onClick={() => setOpen(!open)}
+          className="md:hidden p-2 text-text-primary"
+          aria-label="Toggle menu"
+        >
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-surface border-b border-border px-6 py-4 flex flex-col gap-4">
-          {links.map(l => (
-            <a key={l.href} href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-sm text-zinc-300 hover:text-white transition-colors">
-              {l.label}
+        <div className="md:hidden glass-strong border-t border-glass-border">
+          <div className="px-6 py-4 flex flex-col gap-4">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="text-base font-medium text-text-secondary hover:text-text-primary"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-brand-green hover:bg-brand-green-hover text-white text-sm font-semibold px-5 py-2.5 rounded-full text-center transition-colors"
+            >
+              Book a Free Call
             </a>
-          ))}
-          <a href="#cta"
-            onClick={() => setOpen(false)}
-            className="inline-flex justify-center text-sm font-semibold bg-white text-zinc-950 px-4 py-2.5 rounded-full">
-            Book a Free Call →
-          </a>
+          </div>
         </div>
       )}
     </nav>
-  )
+  );
 }
