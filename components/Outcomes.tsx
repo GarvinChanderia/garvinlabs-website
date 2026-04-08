@@ -1,83 +1,54 @@
-import { ScrollReveal } from "@/components/ScrollReveal";
-import { SectionHeader } from "@/components/SectionHeader";
-
-const stats = [
+const proofCards = [
   {
-    value: "25+",
-    label: "Projects Delivered",
-    detail: "Across web, mobile, automation, and consulting",
+    title: "Dental Revenue Engine",
+    description:
+      "Automated lead gen pipeline: 1,102 leads scraped, 551 site previews generated, full outreach sequence — zero manual work after setup.",
   },
   {
-    value: "300+",
-    label: "Organic Downloads",
-    detail: "ThrottleApp — zero ad spend, pure product-market fit",
+    title: "SparringPlayer",
+    description:
+      "7-workflow automation roadmap for a sports booking marketplace. Mapped the entire booking funnel from discovery to confirmation.",
   },
   {
-    value: "40%",
-    label: "Faster Delivery",
-    detail: "AI-enabled workflows at Cummins India",
+    title: "Morning Briefing System",
+    description:
+      "Personal operations layer: n8n workflows that scan active projects, pull daily notes, and fire a Telegram briefing every morning at 8 AM.",
   },
-  {
-    value: "5+",
-    label: "Industries Served",
-    detail: "Healthcare, logistics, sports, edtech, manufacturing",
-  },
-];
-
-const industries = [
-  "Healthcare",
-  "Logistics & Transport",
-  "Sports Tech",
-  "EdTech",
-  "Manufacturing",
-  "Media & Creative",
 ];
 
 export function Outcomes() {
   return (
-    <section id="results" className="py-24 md:py-32">
+    <section id="results" className="bg-[#0A0A0A] py-24 md:py-32 border-t border-[#222222]">
       <div className="max-w-7xl mx-auto px-6">
-        <ScrollReveal>
-          <SectionHeader
-            label="Results"
-            title="Built to deliver outcomes"
-            subtitle="We measure success by the impact we create — not the hours we bill."
-          />
-        </ScrollReveal>
-
-        <div className="grid md:grid-cols-4 gap-8 mb-20">
-          {stats.map((stat, i) => (
-            <ScrollReveal key={stat.label} delay={(i + 1) * 100}>
-              <div className="text-center md:text-left">
-                <div className="text-5xl md:text-6xl font-bold text-brand-green">
-                  {stat.value}
-                </div>
-                <div className="mt-2 text-lg font-semibold text-text-primary">
-                  {stat.label}
-                </div>
-                <div className="mt-1 text-sm text-text-secondary">{stat.detail}</div>
-              </div>
-            </ScrollReveal>
-          ))}
+        <div className="mb-16">
+          <span
+            className="text-xs font-semibold text-[#D4A853] uppercase tracking-widest"
+            style={{ fontFamily: "var(--font-syne)" }}
+          >
+            Results
+          </span>
+          <h2
+            className="mt-4 text-4xl md:text-5xl font-bold text-[#F5F5F5] leading-tight"
+            style={{ fontFamily: "var(--font-syne)" }}
+          >
+            Systems we&apos;ve built
+          </h2>
         </div>
 
-        <ScrollReveal>
-          <div className="text-center">
-            <p className="text-sm font-semibold tracking-wider uppercase text-text-secondary mb-6">
-              Industries we&apos;ve worked in
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {industries.map((industry) => (
-                <span
-                  key={industry}
-                  className="glass px-5 py-2 rounded-full text-sm font-medium text-text-secondary"
-                >
-                  {industry}
-                </span>
-              ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#222222]">
+          {proofCards.map((card) => (
+            <div key={card.title} className="bg-[#0A0A0A] p-10 hover:bg-[#111111] transition-colors">
+              <div className="w-8 h-px bg-[#D4A853] mb-8" />
+              <h3
+                className="text-xl font-bold text-[#F5F5F5] mb-4 leading-snug"
+                style={{ fontFamily: "var(--font-syne)" }}
+              >
+                {card.title}
+              </h3>
+              <p className="text-[#A0A0A0] text-sm leading-relaxed">{card.description}</p>
             </div>
-          </div>
-        </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   );

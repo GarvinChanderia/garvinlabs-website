@@ -3,34 +3,14 @@ export function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://garvinlabs.vercel.app/#organization",
-        name: "GarvinLabs",
-        url: "https://garvinlabs.vercel.app",
-        logo: "https://garvinlabs.vercel.app/icon.svg",
-        founder: {
-          "@type": "Person",
-          name: "Garvin Chanderia",
-          email: "chanderia.10.garvin@gmail.com",
-        },
-        contactPoint: {
-          "@type": "ContactPoint",
-          telephone: "+91-93562-49535",
-          contactType: "sales",
-          areaServed: "IN",
-          availableLanguage: ["English", "Hindi"],
-        },
-        sameAs: [],
-      },
-      {
-        "@type": "ProfessionalService",
+        "@type": "LocalBusiness",
         "@id": "https://garvinlabs.vercel.app/#business",
         name: "GarvinLabs",
         description:
-          "Website development, n8n automation, software development, and AI consulting for businesses ready to grow.",
+          "n8n automation and AI-powered lead generation for businesses in India",
         url: "https://garvinlabs.vercel.app",
-        telephone: "+91-93562-49535",
-        email: "chanderia.10.garvin@gmail.com",
+        telephone: "+919356249535",
+        email: "labs.garvin@gmail.com",
         address: {
           "@type": "PostalAddress",
           addressLocality: "Pune",
@@ -41,11 +21,15 @@ export function JsonLd() {
           latitude: 18.5204,
           longitude: 73.8567,
         },
-        priceRange: "$$",
-        areaServed: {
-          "@type": "Country",
-          name: "India",
+        founder: {
+          "@type": "Person",
+          name: "Garvin Chanderia",
         },
+        priceRange: "₹₹",
+        areaServed: [
+          { "@type": "Country", name: "India" },
+          { "@type": "City", name: "Pune" },
+        ],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Services",
@@ -54,36 +38,18 @@ export function JsonLd() {
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
-                name: "Website Development",
+                name: "n8n Automation Builds",
                 description:
-                  "Revenue-ready marketing websites, landing pages, and e-commerce stores built with Next.js and modern tech.",
+                  "Automation workflows using n8n — lead capture, WhatsApp bots, CRM integrations, booking systems, and custom webhook pipelines.",
               },
             },
             {
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
-                name: "n8n Automation",
+                name: "Lead Generation Engines",
                 description:
-                  "Workflow automation, lead generation pipelines, CRM integrations, and WhatsApp bots using n8n.",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Software Development",
-                description:
-                  "Full-stack web apps, SaaS platforms, and mobile apps built with a dedicated development team.",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "AI Consulting",
-                description:
-                  "AI strategy, Claude MCP agents, AI-powered workflows, and intelligent automation for businesses.",
+                  "AI-powered lead generation systems that scrape, enrich, qualify, and deliver prospects to your CRM or inbox on autopilot.",
               },
             },
           ],
@@ -95,8 +61,23 @@ export function JsonLd() {
         url: "https://garvinlabs.vercel.app",
         name: "GarvinLabs",
         publisher: {
-          "@id": "https://garvinlabs.vercel.app/#organization",
+          "@id": "https://garvinlabs.vercel.app/#business",
         },
+      },
+      {
+        "@type": "Person",
+        "@id": "https://garvinlabs.vercel.app/#founder",
+        name: "Garvin Chanderia",
+        jobTitle: "Founder, GarvinLabs",
+        worksFor: { "@id": "https://garvinlabs.vercel.app/#business" },
+        address: { "@type": "PostalAddress", addressLocality: "Pune", addressCountry: "IN" },
+        knowsAbout: [
+          "n8n automation",
+          "lead generation",
+          "workflow automation",
+          "AI-powered systems",
+          "business automation",
+        ],
       },
     ],
   };

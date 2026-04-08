@@ -1,74 +1,54 @@
-import { Check } from "lucide-react";
-import { ScrollReveal } from "@/components/ScrollReveal";
-import { GlassCard } from "@/components/GlassCard";
-import { SectionHeader } from "@/components/SectionHeader";
-
 const audiences = [
   {
-    title: "Creative Founders",
-    description: "Your work is premium — your website should match.",
-    traits: [
-      "Filmmakers, designers, photographers, agencies",
-      "Need a portfolio or marketing site that converts",
-      "Value taste, craft, and speed",
-      "Budget: Rs 60K – Rs 1.2L",
-    ],
+    title: "SME Owners (5–50 employees)",
+    description:
+      "You're generating revenue but your processes are held together with WhatsApp groups and spreadsheets. You need systems.",
+    budget: "Budget: ₹50K–₹2L",
   },
   {
     title: "Startup Founders",
-    description: "You have traction — you need a product.",
-    traits: [
-      "Building a SaaS, marketplace, or app",
-      "Have early customers or funding",
-      "Need an MVP that actually works",
-      "Budget: Rs 1.5L – Rs 5L",
-    ],
+    description:
+      "You have traction and need infrastructure that scales. Automated pipelines, not more hires.",
+    budget: "Budget: ₹1.5L–₹5L",
   },
   {
-    title: "SME Owners",
-    description: "Your team needs systems, not chaos.",
-    traits: [
-      "5-50 employees, generating revenue",
-      "Manual processes eating your time",
-      "Need automation or digital transformation",
-      "Budget: Rs 50K – Rs 2L",
-    ],
+    title: "Agencies & Service Businesses",
+    description:
+      "Your client delivery is manual. We automate your internal ops so you can take on more work without burning out.",
+    budget: "Budget: ₹20K–₹1L",
   },
 ];
 
 export function WhoFor() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="bg-[#111111] py-24 md:py-32 border-t border-[#222222]">
       <div className="max-w-7xl mx-auto px-6">
-        <ScrollReveal>
-          <SectionHeader
-            label="Who This Is For"
-            title="Built for founders who move fast"
-            subtitle="If you're running a business and need things done right — not just done — we're your team."
-          />
-        </ScrollReveal>
+        <div className="mb-16">
+          <h2
+            className="text-4xl md:text-5xl font-bold text-[#F5F5F5] leading-tight"
+            style={{ fontFamily: "var(--font-syne)" }}
+          >
+            Built for operators, not browsers
+          </h2>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {audiences.map((a, i) => (
-            <ScrollReveal key={a.title} delay={(i + 1) * 100}>
-              <GlassCard className="h-full">
-                <h3 className="text-xl font-bold text-text-primary mb-2">
-                  {a.title}
-                </h3>
-                <p className="text-text-secondary mb-6">{a.description}</p>
-                <ul className="space-y-3">
-                  {a.traits.map((trait) => (
-                    <li key={trait} className="flex items-start gap-3">
-                      <Check
-                        size={18}
-                        className="text-brand-green mt-0.5 shrink-0"
-                      />
-                      <span className="text-sm text-text-secondary">{trait}</span>
-                    </li>
-                  ))}
-                </ul>
-              </GlassCard>
-            </ScrollReveal>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#222222]">
+          {audiences.map((a) => (
+            <div key={a.title} className="bg-[#111111] p-10 hover:bg-[#141414] transition-colors">
+              <h3
+                className="text-xl font-bold text-[#F5F5F5] mb-4 leading-snug"
+                style={{ fontFamily: "var(--font-syne)" }}
+              >
+                {a.title}
+              </h3>
+              <p className="text-[#A0A0A0] text-sm leading-relaxed mb-6">{a.description}</p>
+              <span
+                className="text-xs text-[#D4A853] font-semibold uppercase tracking-widest"
+                style={{ fontFamily: "var(--font-syne)" }}
+              >
+                {a.budget}
+              </span>
+            </div>
           ))}
         </div>
       </div>

@@ -1,72 +1,68 @@
-import { ScrollReveal } from "@/components/ScrollReveal";
+import Link from "next/link";
 
-const stats = [
-  { value: "25+", label: "Projects Delivered" },
-  { value: "300+", label: "App Downloads" },
-  { value: "40%", label: "Faster Delivery" },
-  { value: "5+", label: "Industries" },
-];
+const WA_LINK =
+  "https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 bg-grid">
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-surface pointer-events-none" />
+    <section className="relative min-h-screen flex items-center justify-center pt-16 bg-[#0A0A0A] bg-grid-dark overflow-hidden">
+      {/* Subtle radial glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#D4A853]/5 blur-[120px]" />
+      </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32 text-center">
-        <ScrollReveal>
-          <span className="inline-flex items-center gap-2 text-sm font-medium text-brand-green bg-brand-green/8 px-4 py-1.5 rounded-full mb-8">
-            <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-            Available for new projects
-          </span>
-        </ScrollReveal>
+      <div className="relative max-w-7xl mx-auto px-6 py-28 md:py-36 text-center z-10">
+        {/* Availability badge */}
+        <div className="inline-flex items-center gap-2 text-xs font-medium text-[#D4A853] border border-[#D4A853]/30 px-4 py-1.5 mb-10 tracking-wider uppercase"
+          style={{ fontFamily: "var(--font-syne)" }}>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#D4A853] animate-pulse" />
+          Currently accepting projects
+        </div>
 
-        <ScrollReveal>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-text-primary leading-[1.05]">
-            Build.{" "}
-            <span className="text-gradient">Automate.</span>
-            <br />
-            Scale.
-          </h1>
-        </ScrollReveal>
+        <h1
+          className="text-5xl md:text-7xl lg:text-[84px] font-bold tracking-tight text-[#F5F5F5] leading-[1.05] mb-8"
+          style={{ fontFamily: "var(--font-syne)" }}
+        >
+          We Build Automated Systems
+          <br />
+          <span className="text-[#D4A853]">That Bring You Customers</span>
+        </h1>
 
-        <ScrollReveal>
-          <p className="mt-8 text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-            Website development, n8n automation, software development, and AI consulting
-            — everything built to bring you more customers and reduce manual work.
-          </p>
-        </ScrollReveal>
+        <p className="text-lg md:text-xl text-[#A0A0A0] max-w-2xl mx-auto leading-relaxed mb-12">
+          n8n automation workflows and AI-powered lead generation engines for businesses
+          that want to grow without adding headcount.
+        </p>
 
-        <ScrollReveal>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-brand-green hover:bg-brand-green-hover text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors shadow-lg shadow-brand-green/20"
-            >
-              Book a Free Call
-            </a>
-            <a
-              href="#services"
-              className="text-text-secondary hover:text-text-primary font-medium px-8 py-4 rounded-full border border-glass-border hover:border-black/10 transition-all"
-            >
-              Explore Services
-            </a>
-          </div>
-        </ScrollReveal>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+          <a
+            href={WA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#D4A853] hover:bg-[#E8C36A] text-[#0A0A0A] font-semibold px-8 py-4 text-base transition-colors"
+            style={{ fontFamily: "var(--font-syne)" }}
+          >
+            Book a Free Strategy Call
+          </a>
+          <Link
+            href="/work"
+            className="text-[#A0A0A0] hover:text-[#F5F5F5] font-medium px-8 py-4 border border-[#222222] hover:border-[#444444] transition-all text-base"
+          >
+            See Our Work
+          </Link>
+        </div>
 
-        <ScrollReveal>
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <div className="text-3xl md:text-4xl font-bold text-text-primary">
-                  {stat.value}
-                </div>
-                <div className="mt-1 text-sm text-text-secondary">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
+        {/* Social proof strip */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
+          {[
+            "25+ projects delivered",
+            "5+ industries",
+            "Pune, India",
+          ].map((item) => (
+            <span key={item} className="text-sm text-[#A0A0A0]">
+              {item}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

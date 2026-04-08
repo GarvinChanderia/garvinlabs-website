@@ -2,8 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+
+const WA_LINK =
+  "https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -16,75 +19,82 @@ export function Navbar() {
   }, []);
 
   const links = [
-    { label: "Services", href: "#services" },
-    { label: "Process", href: "#process" },
-    { label: "Results", href: "#results" },
-    { label: "Contact", href: "#contact" },
+    { label: "Automation", href: "/services/automation" },
+    { label: "Lead Engines", href: "/services/lead-engines" },
+    { label: "Work", href: "/work" },
+    { label: "About", href: "/about" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-strong shadow-sm" : "bg-transparent"
+        scrolled
+          ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#222222]"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/icon.svg" alt="GarvinLabs" width={36} height={36} priority />
-          <span className="text-xl font-bold text-brand-dark">
-            Garvin<span className="text-brand-green">Labs.</span>
+        <Link href="/" className="flex items-center gap-2.5">
+          <Image src="/icon.svg" alt="GarvinLabs" width={32} height={32} priority />
+          <span
+            className="text-lg font-bold text-[#F5F5F5]"
+            style={{ fontFamily: "var(--font-syne)" }}
+          >
+            Garvin<span className="text-[#D4A853]">Labs</span>
           </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+              className="text-sm font-medium text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
-            href="https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project"
+            href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-brand-green hover:bg-brand-green-hover text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+            className="bg-[#D4A853] hover:bg-[#E8C36A] text-[#0A0A0A] text-sm font-semibold px-5 py-2.5 transition-colors"
+            style={{ fontFamily: "var(--font-syne)" }}
           >
-            Book a Free Call
+            Book a Call
           </a>
         </div>
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 text-text-primary"
+          className="md:hidden p-2 text-[#F5F5F5]"
           aria-label="Toggle menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden glass-strong border-t border-glass-border">
-          <div className="px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-[#111111] border-t border-[#222222]">
+          <div className="px-6 py-5 flex flex-col gap-5">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-base font-medium text-text-secondary hover:text-text-primary"
+                className="text-base font-medium text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
-              href="https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project"
+              href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-brand-green hover:bg-brand-green-hover text-white text-sm font-semibold px-5 py-2.5 rounded-full text-center transition-colors"
+              className="bg-[#D4A853] hover:bg-[#E8C36A] text-[#0A0A0A] text-sm font-semibold px-5 py-3 text-center transition-colors"
+              style={{ fontFamily: "var(--font-syne)" }}
             >
-              Book a Free Call
+              Book a Call
             </a>
           </div>
         </div>

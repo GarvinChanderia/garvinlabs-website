@@ -4,7 +4,6 @@ import { Challenges } from "@/components/Challenges";
 import { Services } from "@/components/Services";
 import { Process } from "@/components/Process";
 import { Outcomes } from "@/components/Outcomes";
-import { Testimonials } from "@/components/Testimonials";
 import { WhoFor } from "@/components/WhoFor";
 import { FAQ } from "@/components/FAQ";
 import { CTA } from "@/components/CTA";
@@ -20,7 +19,6 @@ export default function Home() {
         <Services />
         <Process />
         <Outcomes />
-        <Testimonials />
         <WhoFor />
         <FAQ />
         <CTA />

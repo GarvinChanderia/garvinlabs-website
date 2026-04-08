@@ -1,41 +1,38 @@
-import { ScrollReveal } from "@/components/ScrollReveal";
-import { SectionHeader } from "@/components/SectionHeader";
-
 const faqs = [
+  {
+    question: "What is n8n automation and how can it help my business?",
+    answer:
+      "n8n is a workflow automation platform that connects your business tools and automates repetitive tasks. GarvinLabs uses n8n to build lead capture pipelines, WhatsApp bots, CRM integrations, and booking systems — so your team stops doing manual work and your systems run 24/7.",
+  },
+  {
+    question: "How much does an automation workflow cost?",
+    answer:
+      "n8n automation builds start at ₹20,000 for a single workflow and go up to ₹1,50,000 for a full automation layer with 4+ connected workflows. Lead generation engines start at ₹1,50,000 for a starter build. All pricing is transparent — no hidden costs.",
+  },
+  {
+    question: "How long does it take to build an automation system?",
+    answer:
+      "Single n8n workflows are typically delivered in 1 week. Multi-workflow automation systems take 2 weeks. Lead generation engines take 3–6 weeks depending on complexity. GarvinLabs uses AI-assisted delivery to move 2–3x faster than traditional freelancers.",
+  },
   {
     question: "What industries does GarvinLabs work with?",
     answer:
-      "We work across healthcare, logistics, sports tech, edtech, manufacturing, and media. Our clients range from creative founders building portfolio websites to SME owners needing full automation systems.",
+      "GarvinLabs works with SME owners (5–50 employees), startup founders, and agencies across healthcare, logistics, sports tech, manufacturing, and services. If you have a process that could be automated, we can build it.",
   },
   {
-    question: "How fast can you deliver a project?",
+    question: "Do you build lead generation systems for businesses in India?",
     answer:
-      "Most websites ship in 2-3 weeks. Automation workflows in 1-2 weeks. Software MVPs in 4-8 weeks. We use AI-enabled delivery to move 2-3x faster than traditional freelancers.",
+      "Yes. GarvinLabs is based in Pune, India and specializes in building AI-powered lead generation systems for Indian businesses. We've processed 1,100+ leads in a single pipeline for a dental practice outreach campaign. We build systems for local and national markets.",
   },
   {
-    question: "What does a free strategy call include?",
+    question: "What happens after the system is built?",
     answer:
-      "A 20-minute call where we understand your business, identify the real problem, and map out quick wins. No pitch, no commitment — just clarity on what you need and whether we're the right fit.",
-  },
-  {
-    question: "Do you work with clients outside India?",
-    answer:
-      "We're based in Pune, India and primarily serve Indian businesses. International clients are welcome — we work async with clear communication and weekly updates.",
-  },
-  {
-    question: "What's your payment structure?",
-    answer:
-      "50% upfront to start, 50% on delivery. For larger projects, we can break it into milestone-based payments. All proposals include transparent pricing with no hidden costs.",
-  },
-  {
-    question: "Can you handle large software projects?",
-    answer:
-      "Yes. We have a 4-person development team ready for larger builds. We've delivered SaaS platforms, mobile apps, and enterprise automation systems across multiple industries.",
+      "Every system is documented and handed over to your team. GarvinLabs stays available for iterations and questions. You own the system — it runs on your infrastructure or ours.",
   },
 ];
 
 export function FAQ() {
-  const faqJsonLd = {
+  const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqs.map((faq) => ({
@@ -49,31 +46,38 @@ export function FAQ() {
   };
 
   return (
-    <section className="py-24 md:py-32">
+    <section className="bg-[#0A0A0A] py-24 md:py-32 border-t border-[#222222]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="max-w-3xl mx-auto px-6">
-        <ScrollReveal>
-          <SectionHeader
-            label="FAQ"
-            title="Common questions"
-          />
-        </ScrollReveal>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-16">
+          <span
+            className="text-xs font-semibold text-[#D4A853] uppercase tracking-widest"
+            style={{ fontFamily: "var(--font-syne)" }}
+          >
+            FAQ
+          </span>
+          <h2
+            className="mt-4 text-4xl md:text-5xl font-bold text-[#F5F5F5] leading-tight"
+            style={{ fontFamily: "var(--font-syne)" }}
+          >
+            Common questions
+          </h2>
+        </div>
 
-        <div className="space-y-6">
-          {faqs.map((faq, i) => (
-            <ScrollReveal key={faq.question} delay={(i + 1) * 100}>
-              <div className="glass rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-text-primary mb-2">
-                  {faq.question}
-                </h3>
-                <p className="text-text-secondary leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-            </ScrollReveal>
+        <div className="max-w-3xl space-y-px bg-[#222222]">
+          {faqs.map((faq) => (
+            <div key={faq.question} className="bg-[#0A0A0A] p-8">
+              <h3
+                className="text-base font-bold text-[#F5F5F5] mb-3"
+                style={{ fontFamily: "var(--font-syne)" }}
+              >
+                {faq.question}
+              </h3>
+              <p className="text-[#A0A0A0] text-sm leading-relaxed">{faq.answer}</p>
+            </div>
           ))}
         </div>
       </div>
