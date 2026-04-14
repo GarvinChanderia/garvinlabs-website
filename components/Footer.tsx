@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const WA_LINK =
-  "https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project";
+  "https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%20want%20a%20free%20landing%20page%20audit";
 
 export function Footer() {
   return (
@@ -17,48 +17,48 @@ export function Footer() {
                 className="text-lg font-bold text-[#F5F5F5]"
                 style={{ fontFamily: "var(--font-syne)" }}
               >
-                Garvin<span className="text-[#D4A853]">Labs</span>
+                Garvin<span className="text-[#00AE43]">Labs</span>
               </span>
             </Link>
             <p className="text-[#A0A0A0] text-sm leading-relaxed max-w-xs">
-              n8n automation workflows and AI-powered lead generation engines for businesses
-              that want to grow without adding headcount.
+              Conversion optimization for businesses losing customers to bad funnels.
+              Specific problems. Specific fixes. 5-10 days.
             </p>
             <p className="mt-4 text-[#A0A0A0] text-sm">Pune, India</p>
           </div>
 
-          {/* Services */}
+          {/* Quick Links */}
           <div>
             <h3
               className="text-xs font-semibold text-[#F5F5F5] uppercase tracking-widest mb-5"
               style={{ fontFamily: "var(--font-syne)" }}
             >
-              Services
+              Quick Links
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link
-                  href="/services/automation"
+                <a
+                  href="#packages"
                   className="text-sm text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
                 >
-                  n8n Automation Builds
-                </Link>
+                  Packages
+                </a>
               </li>
               <li>
-                <Link
-                  href="/services/lead-engines"
+                <a
+                  href="#process"
                   className="text-sm text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
                 >
-                  Lead Generation Engines
-                </Link>
+                  How It Works
+                </a>
               </li>
               <li>
-                <Link
-                  href="/work"
+                <a
+                  href="#proof"
                   className="text-sm text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
                 >
-                  Work
-                </Link>
+                  Proof
+                </a>
               </li>
               <li>
                 <Link
@@ -85,7 +85,7 @@ export function Footer() {
                   href={WA_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-[#A0A0A0] hover:text-[#D4A853] transition-colors"
+                  className="text-sm text-[#A0A0A0] hover:text-[#00AE43] transition-colors"
                 >
                   WhatsApp
                 </a>
@@ -93,7 +93,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:labs.garvin@gmail.com"
-                  className="text-sm text-[#A0A0A0] hover:text-[#D4A853] transition-colors"
+                  className="text-sm text-[#A0A0A0] hover:text-[#00AE43] transition-colors"
                 >
                   labs.garvin@gmail.com
                 </a>
@@ -103,7 +103,7 @@ export function Footer() {
                   href="/contact"
                   className="text-sm text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
                 >
-                  Book a Call
+                  Get a Free Audit
                 </Link>
               </li>
             </ul>
@@ -112,9 +112,9 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-[#222222] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-[#A0A0A0]">
-            © {new Date().getFullYear()} GarvinLabs. All rights reserved.
+            &copy; {new Date().getFullYear()} GarvinLabs. All rights reserved.
           </p>
-          <p className="text-xs text-[#A0A0A0]">Built with Next.js · Deployed on Vercel</p>
+          <p className="text-xs text-[#A0A0A0]">Built with Next.js &middot; Deployed on Vercel</p>
         </div>
       </div>
     </footer>

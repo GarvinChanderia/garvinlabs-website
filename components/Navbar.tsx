@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const WA_LINK =
-  "https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project";
+  "https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%20want%20a%20free%20landing%20page%20audit";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,10 +19,11 @@ export function Navbar() {
   }, []);
 
   const links = [
-    { label: "Automation", href: "/services/automation" },
-    { label: "Lead Engines", href: "/services/lead-engines" },
-    { label: "Work", href: "/work" },
+    { label: "Packages", href: "#packages" },
+    { label: "Process", href: "#process" },
+    { label: "Proof", href: "#proof" },
     { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -40,28 +41,38 @@ export function Navbar() {
             className="text-lg font-bold text-[#F5F5F5]"
             style={{ fontFamily: "var(--font-syne)" }}
           >
-            Garvin<span className="text-[#D4A853]">Labs</span>
+            Garvin<span className="text-[#00AE43]">Labs</span>
           </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) =>
+            link.href.startsWith("#") ? (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           <a
             href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#D4A853] hover:bg-[#E8C36A] text-[#0A0A0A] text-sm font-semibold px-5 py-2.5 transition-colors"
+            className="bg-[#00AE43] hover:bg-[#00C94E] text-[#0A0A0A] text-sm font-semibold px-5 py-2.5 transition-colors"
             style={{ fontFamily: "var(--font-syne)" }}
           >
-            Book a Call
+            Free Audit
           </a>
         </div>
 
@@ -77,24 +88,35 @@ export function Navbar() {
       {open && (
         <div className="md:hidden bg-[#111111] border-t border-[#222222]">
           <div className="px-6 py-5 flex flex-col gap-5">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="text-base font-medium text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {links.map((link) =>
+              link.href.startsWith("#") ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="text-base font-medium text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="text-base font-medium text-[#A0A0A0] hover:text-[#F5F5F5] transition-colors"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
             <a
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#D4A853] hover:bg-[#E8C36A] text-[#0A0A0A] text-sm font-semibold px-5 py-3 text-center transition-colors"
+              className="bg-[#00AE43] hover:bg-[#00C94E] text-[#0A0A0A] text-sm font-semibold px-5 py-3 text-center transition-colors"
               style={{ fontFamily: "var(--font-syne)" }}
             >
-              Book a Call
+              Free Audit
             </a>
           </div>
         </div>

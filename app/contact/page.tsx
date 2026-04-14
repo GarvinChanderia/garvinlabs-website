@@ -5,18 +5,18 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a free 20-minute strategy call with GarvinLabs or send a message. Based in Pune, India. Response within 24 hours.",
+    "Get a free landing page audit from GarvinLabs. Send your URL via WhatsApp or email — response within 24 hours. Based in Pune, India.",
   alternates: { canonical: "https://garvinlabs.vercel.app/contact" },
   openGraph: {
     title: "Contact | GarvinLabs",
     description:
-      "Book a free strategy call or drop a message. WhatsApp or email — we respond within 24 hours.",
+      "Get a free conversion audit. Drop your URL — I'll send a PDF showing every issue and how to fix it.",
     url: "https://garvinlabs.vercel.app/contact",
   },
 };
 
 const WA_LINK =
-  "https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project";
+  "https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%20want%20a%20free%20landing%20page%20audit";
 
 export default function ContactPage() {
   return (
@@ -30,10 +30,10 @@ export default function ContactPage() {
               className="text-5xl md:text-7xl font-bold text-[#F5F5F5] leading-tight mb-4"
               style={{ fontFamily: "var(--font-syne)" }}
             >
-              Let&apos;s talk.
+              Get your free audit.
             </h1>
             <p className="text-xl text-[#A0A0A0]">
-              Book a free 20-minute call or drop us a message.
+              Send me your landing page URL. I&apos;ll tell you what&apos;s costing you conversions.
             </p>
           </div>
         </section>
@@ -42,167 +42,154 @@ export default function ContactPage() {
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-              {/* Left: Contact Info */}
+              {/* Left: How it works */}
               <div>
                 <h2
-                  className="text-sm font-semibold text-[#D4A853] uppercase tracking-widest mb-10"
+                  className="text-sm font-semibold text-[#00AE43] uppercase tracking-widest mb-10"
                   style={{ fontFamily: "var(--font-syne)" }}
                 >
-                  Contact Info
+                  How To Get Started
                 </h2>
-                <ul className="space-y-8">
+
+                <div className="space-y-10">
+                  <div className="pb-10 border-b border-[#222222]">
+                    <div
+                      className="text-3xl font-bold text-[#00AE43]/20 mb-3"
+                      style={{ fontFamily: "var(--font-syne)" }}
+                    >
+                      01
+                    </div>
+                    <h3
+                      className="text-lg font-bold text-[#F5F5F5] mb-2"
+                      style={{ fontFamily: "var(--font-syne)" }}
+                    >
+                      Send me your URL
+                    </h3>
+                    <p className="text-[#A0A0A0] text-sm leading-relaxed">
+                      WhatsApp is fastest. Just drop your landing page link with a quick note
+                      about what you sell and who your customers are.
+                    </p>
+                  </div>
+
+                  <div className="pb-10 border-b border-[#222222]">
+                    <div
+                      className="text-3xl font-bold text-[#00AE43]/20 mb-3"
+                      style={{ fontFamily: "var(--font-syne)" }}
+                    >
+                      02
+                    </div>
+                    <h3
+                      className="text-lg font-bold text-[#F5F5F5] mb-2"
+                      style={{ fontFamily: "var(--font-syne)" }}
+                    >
+                      I send you a PDF audit
+                    </h3>
+                    <p className="text-[#A0A0A0] text-sm leading-relaxed">
+                      Within 48 hours, you get a detailed PDF report walking through
+                      every conversion issue on your page — with annotated screenshots and the exact fix for each one.
+                    </p>
+                  </div>
+
+                  <div>
+                    <div
+                      className="text-3xl font-bold text-[#00AE43]/20 mb-3"
+                      style={{ fontFamily: "var(--font-syne)" }}
+                    >
+                      03
+                    </div>
+                    <h3
+                      className="text-lg font-bold text-[#F5F5F5] mb-2"
+                      style={{ fontFamily: "var(--font-syne)" }}
+                    >
+                      You decide what&apos;s next
+                    </h3>
+                    <p className="text-[#A0A0A0] text-sm leading-relaxed">
+                      Fix the issues yourself with my recommendations, or hire me
+                      to implement everything in a Conversion Sprint (5-7 days). No pressure either way.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Contact Info */}
+              <div>
+                <h2
+                  className="text-sm font-semibold text-[#00AE43] uppercase tracking-widest mb-10"
+                  style={{ fontFamily: "var(--font-syne)" }}
+                >
+                  Reach Out
+                </h2>
+                <ul className="space-y-8 mb-12">
                   <li className="pb-8 border-b border-[#222222]">
-                    <div className="text-xs text-[#A0A0A0] uppercase tracking-widest mb-2" style={{ fontFamily: "var(--font-syne)" }}>
-                      WhatsApp
+                    <div
+                      className="text-xs text-[#A0A0A0] uppercase tracking-widest mb-2"
+                      style={{ fontFamily: "var(--font-syne)" }}
+                    >
+                      WhatsApp (fastest)
                     </div>
                     <a
                       href={WA_LINK}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#F5F5F5] hover:text-[#D4A853] transition-colors font-medium"
+                      className="text-[#F5F5F5] hover:text-[#00AE43] transition-colors font-medium"
                     >
                       +91 93562 49535
                     </a>
                   </li>
                   <li className="pb-8 border-b border-[#222222]">
-                    <div className="text-xs text-[#A0A0A0] uppercase tracking-widest mb-2" style={{ fontFamily: "var(--font-syne)" }}>
+                    <div
+                      className="text-xs text-[#A0A0A0] uppercase tracking-widest mb-2"
+                      style={{ fontFamily: "var(--font-syne)" }}
+                    >
                       Email
                     </div>
                     <a
                       href="mailto:labs.garvin@gmail.com"
-                      className="text-[#F5F5F5] hover:text-[#D4A853] transition-colors font-medium"
+                      className="text-[#F5F5F5] hover:text-[#00AE43] transition-colors font-medium"
                     >
                       labs.garvin@gmail.com
                     </a>
                   </li>
                   <li className="pb-8 border-b border-[#222222]">
-                    <div className="text-xs text-[#A0A0A0] uppercase tracking-widest mb-2" style={{ fontFamily: "var(--font-syne)" }}>
+                    <div
+                      className="text-xs text-[#A0A0A0] uppercase tracking-widest mb-2"
+                      style={{ fontFamily: "var(--font-syne)" }}
+                    >
                       Location
                     </div>
                     <span className="text-[#F5F5F5] font-medium">Pune, India</span>
                   </li>
                   <li className="pb-8 border-b border-[#222222]">
-                    <div className="text-xs text-[#A0A0A0] uppercase tracking-widest mb-2" style={{ fontFamily: "var(--font-syne)" }}>
+                    <div
+                      className="text-xs text-[#A0A0A0] uppercase tracking-widest mb-2"
+                      style={{ fontFamily: "var(--font-syne)" }}
+                    >
                       Availability
                     </div>
-                    <span className="text-[#4ADE80] font-medium text-sm">Currently accepting projects</span>
+                    <span className="text-[#4ADE80] font-medium text-sm">
+                      5 free audit slots this week
+                    </span>
                   </li>
                   <li>
-                    <div className="text-xs text-[#A0A0A0] uppercase tracking-widest mb-2" style={{ fontFamily: "var(--font-syne)" }}>
+                    <div
+                      className="text-xs text-[#A0A0A0] uppercase tracking-widest mb-2"
+                      style={{ fontFamily: "var(--font-syne)" }}
+                    >
                       Response Time
                     </div>
                     <span className="text-[#F5F5F5] font-medium">Within 24 hours</span>
                   </li>
                 </ul>
-              </div>
 
-              {/* Right: Contact Form */}
-              <div>
-                <h2
-                  className="text-sm font-semibold text-[#D4A853] uppercase tracking-widest mb-10"
+                <a
+                  href={WA_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-[#00AE43] hover:bg-[#00C94E] text-[#0A0A0A] font-semibold py-4 text-center transition-colors"
                   style={{ fontFamily: "var(--font-syne)" }}
                 >
-                  Send a Message
-                </h2>
-                <form
-                  action="mailto:labs.garvin@gmail.com"
-                  method="POST"
-                  encType="text/plain"
-                  className="space-y-6"
-                >
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-xs text-[#A0A0A0] uppercase tracking-widest mb-2"
-                      style={{ fontFamily: "var(--font-syne)" }}
-                    >
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      className="w-full bg-[#111111] border border-[#222222] text-[#F5F5F5] px-4 py-3 text-sm focus:outline-none focus:border-[#D4A853] transition-colors placeholder-[#444444]"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-xs text-[#A0A0A0] uppercase tracking-widest mb-2"
-                      style={{ fontFamily: "var(--font-syne)" }}
-                    >
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      className="w-full bg-[#111111] border border-[#222222] text-[#F5F5F5] px-4 py-3 text-sm focus:outline-none focus:border-[#D4A853] transition-colors placeholder-[#444444]"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="service"
-                      className="block text-xs text-[#A0A0A0] uppercase tracking-widest mb-2"
-                      style={{ fontFamily: "var(--font-syne)" }}
-                    >
-                      What do you need help with?
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      className="w-full bg-[#111111] border border-[#222222] text-[#F5F5F5] px-4 py-3 text-sm focus:outline-none focus:border-[#D4A853] transition-colors"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="automation">Automation Build</option>
-                      <option value="lead-gen">Lead Gen Engine</option>
-                      <option value="not-sure">Not sure yet</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-xs text-[#A0A0A0] uppercase tracking-widest mb-2"
-                      style={{ fontFamily: "var(--font-syne)" }}
-                    >
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      required
-                      className="w-full bg-[#111111] border border-[#222222] text-[#F5F5F5] px-4 py-3 text-sm focus:outline-none focus:border-[#D4A853] transition-colors placeholder-[#444444] resize-none"
-                      placeholder="Tell us about your project..."
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-[#D4A853] hover:bg-[#E8C36A] text-[#0A0A0A] font-semibold py-4 transition-colors"
-                    style={{ fontFamily: "var(--font-syne)" }}
-                  >
-                    Send Message
-                  </button>
-                </form>
-
-                <div className="mt-10 pt-10 border-t border-[#222222] text-center">
-                  <p className="text-[#A0A0A0] text-sm mb-4">
-                    Prefer WhatsApp? Most of our clients do.
-                  </p>
-                  <a
-                    href={WA_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block border border-[#D4A853] text-[#D4A853] hover:bg-[#D4A853] hover:text-[#0A0A0A] font-semibold px-8 py-3 transition-all text-sm"
-                    style={{ fontFamily: "var(--font-syne)" }}
-                  >
-                    Message on WhatsApp
-                  </a>
-                </div>
+                  Get Your Free Audit on WhatsApp
+                </a>
               </div>
             </div>
           </div>

@@ -11,8 +11,8 @@
   --color-text-secondary: #A0A0A0;
 
   /* Accent */
-  --color-accent: #D4A853;
-  --color-accent-hover: #E8C36A;
+  --color-accent: #00AE43;
+  --color-accent-hover: #00C94E;
 
   /* UI */
   --color-border: #222222;
@@ -92,7 +92,7 @@ body {
 
 /* Accent text */
 .text-accent {
-  color: #D4A853;
+  color: #00AE43;
 }
 
 /* Border utilities */

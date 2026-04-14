@@ -1,33 +1,33 @@
 const faqs = [
   {
-    question: "What is n8n automation and how can it help my business?",
+    question: "What exactly is a conversion audit?",
     answer:
-      "n8n is a workflow automation platform that connects your business tools and automates repetitive tasks. GarvinLabs uses n8n to build lead capture pipelines, WhatsApp bots, CRM integrations, and booking systems — so your team stops doing manual work and your systems run 24/7.",
+      "I put together a detailed PDF audit report covering your landing page or funnel. I check 7 areas — headline clarity, CTA effectiveness, social proof placement, value proposition, messaging, UX flow, and conversion killers. For each issue I find, I give you the exact fix — not vague advice like \"improve your CTA,\" but specific rewrites and annotated screenshots.",
   },
   {
-    question: "How much does an automation workflow cost?",
+    question: "How is this different from hiring a designer or agency?",
     answer:
-      "n8n automation builds start at ₹20,000 for a single workflow and go up to ₹1,50,000 for a full automation layer with 4+ connected workflows. Lead generation engines start at ₹1,50,000 for a starter build. All pricing is transparent — no hidden costs.",
+      "Designers change how your page looks. I change how your page converts. Most conversion issues are copy, structure, and placement problems — not design problems. A headline rewrite or CTA change takes 20 minutes and can increase conversions by 20-40%. A full redesign costs ₹50K-₹2L and often doesn't fix the actual leaks.",
   },
   {
-    question: "How long does it take to build an automation system?",
+    question: "What kind of results can I expect?",
     answer:
-      "Single n8n workflows are typically delivered in 1 week. Multi-workflow automation systems take 2 weeks. Lead generation engines take 3–6 weeks depending on complexity. GarvinLabs uses AI-assisted delivery to move 2–3x faster than traditional freelancers.",
+      "It depends on how broken your current funnel is — but the worse it is, the bigger the improvement. Common wins: single headline rewrites increasing demo bookings by 30-40%, moving social proof above the fold doubling form submissions, fixing CTA copy increasing click-through by 2-3x. I've audited 938 pages in a single project.",
   },
   {
-    question: "What industries does GarvinLabs work with?",
+    question: "How long does it take?",
     answer:
-      "GarvinLabs works with SME owners (5–50 employees), startup founders, and agencies across healthcare, logistics, sports tech, manufacturing, and services. If you have a process that could be automated, we can build it.",
+      "Conversion Audit: 1-2 days. You get a PDF report with every issue and fix. Conversion Sprint: 5-7 days. I audit and implement all fixes. Conversion System Sprint: 7-10 days. Full funnel redesign and implementation.",
   },
   {
-    question: "Do you build lead generation systems for businesses in India?",
+    question: "What do you need from me to get started?",
     answer:
-      "Yes. GarvinLabs is based in Pune, India and specializes in building AI-powered lead generation systems for Indian businesses. We've processed 1,100+ leads in a single pipeline for a dental practice outreach campaign. We build systems for local and national markets.",
+      "Your landing page URL. That's it. If you have specific pages or funnels you're worried about, share those too. If you have analytics data (conversion rates, traffic sources), it helps me prioritize — but it's not required.",
   },
   {
-    question: "What happens after the system is built?",
+    question: "Do you work with businesses outside India?",
     answer:
-      "Every system is documented and handed over to your team. GarvinLabs stays available for iterations and questions. You own the system — it runs on your infrastructure or ours.",
+      "Yes. The audit and fixes are delivered digitally — PDF reports, documented recommendations, and implemented changes. Location doesn't matter. Most communication happens over WhatsApp or email.",
   },
 ];
 
@@ -54,7 +54,7 @@ export function FAQ() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <span
-            className="text-xs font-semibold text-[#D4A853] uppercase tracking-widest"
+            className="text-xs font-semibold text-[#00AE43] uppercase tracking-widest"
             style={{ fontFamily: "var(--font-syne)" }}
           >
             FAQ
@@ -69,14 +69,17 @@ export function FAQ() {
 
         <div className="max-w-3xl space-y-px bg-[#222222]">
           {faqs.map((faq) => (
-            <div key={faq.question} className="bg-[#0A0A0A] p-8">
+            <div key={faq.question} className="bg-[#0A0A0A] p-8" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
               <h3
                 className="text-base font-bold text-[#F5F5F5] mb-3"
                 style={{ fontFamily: "var(--font-syne)" }}
+                itemProp="name"
               >
                 {faq.question}
               </h3>
-              <p className="text-[#A0A0A0] text-sm leading-relaxed">{faq.answer}</p>
+              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                <p className="text-[#A0A0A0] text-sm leading-relaxed" itemProp="text" data-speakable="true">{faq.answer}</p>
+              </div>
             </div>
           ))}
         </div>

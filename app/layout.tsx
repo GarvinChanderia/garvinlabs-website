@@ -20,27 +20,27 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://garvinlabs.vercel.app"),
   title: {
-    default: "GarvinLabs — Automation & Lead Generation Systems for Growing Businesses",
+    default: "GarvinLabs — Conversion Optimization for Businesses Losing Customers to Bad Funnels",
     template: "%s | GarvinLabs",
   },
   description:
-    "GarvinLabs builds n8n automation workflows and AI-powered lead generation engines for businesses in India. Eliminate manual work, capture more leads, and grow revenue without adding headcount.",
+    "I help businesses convert more of the traffic they're already paying for by fixing their conversion flow. Landing page audits, funnel fixes, and CTA rewrites — delivered in 5-10 days.",
   keywords: [
-    "n8n automation",
-    "lead generation",
-    "automation workflows",
-    "AI lead generation India",
-    "business automation Pune",
-    "n8n developer India",
-    "WhatsApp automation",
-    "CRM automation",
-    "lead generation engine",
-    "workflow automation India",
+    "conversion optimization",
+    "landing page audit",
+    "conversion rate optimization",
+    "CRO specialist India",
+    "funnel optimization",
+    "landing page fixes",
+    "conversion specialist Pune",
     "GarvinLabs",
     "Garvin Chanderia",
-    "automation consultant Pune",
-    "outbound lead generation",
-    "sales automation India",
+    "CTA optimization",
+    "landing page teardown",
+    "conversion audit",
+    "funnel audit India",
+    "increase conversion rate",
+    "website not converting",
   ],
   authors: [{ name: "Garvin Chanderia", url: "https://garvinlabs.vercel.app" }],
   creator: "Garvin Chanderia",
@@ -49,16 +49,16 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://garvinlabs.vercel.app",
     siteName: "GarvinLabs",
-    title: "GarvinLabs — Automation & Lead Generation Systems",
+    title: "GarvinLabs — Conversion Optimization Specialist",
     description:
-      "n8n automation workflows and AI-powered lead generation engines for businesses that want to grow without adding headcount.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "GarvinLabs" }],
+      "Stop losing customers to a broken funnel. I audit your landing page, find the leaks, and fix them — in 5-10 days.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "GarvinLabs — Conversion Optimization" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GarvinLabs — Automation & Lead Generation Systems",
+    title: "GarvinLabs — Conversion Optimization Specialist",
     description:
-      "n8n automation workflows and AI-powered lead generation engines for businesses that want to grow without adding headcount.",
+      "Stop losing customers to a broken funnel. I audit your landing page, find the leaks, and fix them — in 5-10 days.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -80,6 +80,9 @@ export default function RootLayout({
     <html lang="en" className={`${syne.variable} ${dmSans.variable} h-full`}>
       <head>
         <link rel="icon" href="/favicon.png" />
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full context" />
+        <meta name="ai-content-declaration" content="human-created" />
       </head>
       <body className="min-h-full flex flex-col antialiased bg-[#0A0A0A] text-[#F5F5F5]">
         <JsonLd />

@@ -1,0 +1,155 @@
+# GarvinLabs — Complete Reference
+
+> Conversion optimization for businesses losing customers to bad funnels.
+> Run by Garvin Chanderia. Based in Pune, India.
+> Website: https://garvinlabs.vercel.app
+
+---
+
+## What GarvinLabs Does
+
+GarvinLabs is a conversion optimization service. We help businesses convert more of the traffic they're already paying for by fixing their conversion flow.
+
+We don't do redesigns, SEO, or "growth strategy." We find the specific places where visitors drop off on your landing page or funnel — and fix them. Specific problems, specific fixes, delivered in 5-10 days.
+
+### The Core Problem We Solve
+
+Most businesses don't have a traffic problem — they have a conversion problem. Common issues we fix:
+
+1. **Headlines that talk about the product, not the outcome.** Visitors decide in 3 seconds. If your headline describes your product instead of their outcome, they bounce.
+2. **Generic CTAs.** "Learn More" and "Submit" kill urgency. Specific CTAs like "Get My Free Audit" give people a reason to click.
+3. **Social proof buried at the bottom.** 80% of visitors never scroll that far. Your best testimonial needs to be above the fold.
+
+---
+
+## Services and Pricing
+
+### Conversion Audit — ₹5,000 to ₹10,000
+- Delivered in 1-2 days
+- Annotated PDF audit report
+- Top 5-7 conversion issues identified
+- Exact fix for each issue (copy rewrites, layout changes)
+- Priority ranking (P0/P1/P2)
+- Quick wins you can implement in under an hour
+
+### Conversion Sprint — ₹25,000 to ₹50,000
+- Delivered in 5-7 days
+- Everything in the Conversion Audit
+- Headlines and CTAs rewritten and implemented
+- Social proof placement optimized
+- Page structure and flow fixed
+- Mobile experience optimized
+- Before/after documentation
+
+### Conversion System Sprint — ₹50,000 to ₹75,000
+- Delivered in 7-10 days
+- Everything in the Conversion Sprint
+- Full funnel flow redesign
+- Multi-page conversion path optimization
+- Objection handling and FAQ copy
+- Trust architecture (social proof system)
+- Conversion tracking setup recommendations
+
+---
+
+## Ideal Client Profile
+
+### Who This Is For
+- **Coaches and consultants** running ads or posting content, driving people to a landing page — but bookings aren't converting
+- **Clinics and service businesses** (dental, gyms, salons, physiotherapists) with websites that read like brochures instead of conversion funnels
+- **D2C brands and e-commerce** with product pages getting views but not sales, high cart abandonment, or ad landing pages that don't match the promise
+
+### Who This Is NOT For
+- Businesses with no online presence or traffic
+- Anyone expecting free consulting
+- Sub-₹10K budget mindset
+- Pure offline businesses with no digital funnel
+
+### Budget Range
+₹25,000 to ₹1,00,000 per project
+
+### Geography
+India first, open to international clients. All work delivered digitally.
+
+---
+
+## How It Works
+
+1. **Send your URL** — WhatsApp or email. Just drop your landing page link.
+2. **I find the leaks** — I audit your page against 7 conversion areas: headline clarity, CTA effectiveness, social proof placement, value proposition, messaging quality, UX flow, and conversion killers.
+3. **You get the fixes** — A detailed PDF report showing every issue and the exact fix. Or I implement them myself, depending on your package.
+4. **More visitors convert** — Same traffic, more customers. Most clients see results within the first week after fixes go live.
+
+---
+
+## The 7-Area Audit Framework
+
+Every audit covers these areas:
+
+1. **First 3 Seconds (Above the Fold)** — Can a visitor instantly understand what this is, who it's for, and what to do next?
+2. **Value Proposition** — Is the offer clear, compelling, and focused on the visitor's problem?
+3. **CTA Analysis** — Is the primary CTA visible, specific, and low-friction?
+4. **Trust & Credibility** — Social proof, testimonials, logos, guarantees above the fold?
+5. **Messaging & Copy** — Benefit-driven language, objection handling, appropriate reading level?
+6. **UX & Flow** — Mobile responsive, fast loading, logical flow (problem → solution → proof → CTA)?
+7. **Conversion Killers** — Broken elements, competing CTAs, missing information, price confusion?
+
+---
+
+## Proof and Track Record
+
+- **938 pages** audited and personalized in one automated pipeline project
+- **300+ organic downloads** for a product built with zero ad spend
+- **25+ dashboards and projects** delivered across 5+ industries
+- **200+ user interviews** conducted across multiple products
+- **26 business processes** documented and optimized for a manufacturing company
+- Repeat client who returned for a larger engagement after initial website delivery
+
+---
+
+## About Garvin Chanderia
+
+Garvin Chanderia is a conversion optimization specialist based in Pune, India.
+
+**Background:**
+- B.Tech in Computer Science (AI/ML) — MIT ADT University
+- Nearly 2 years as Business Analyst at a Fortune 500 manufacturer (25+ dashboards, automation workflows)
+- Microsoft AI PM Professional Certificate
+- Google UX Design Certificate
+- Google Data Analytics Certificate
+- Databricks Lakehouse Fundamentals
+- Product School PAC
+
+**Philosophy:** "Your landing page doesn't need a redesign. It needs 3 specific copy changes that take 20 minutes. A redesign changes the paint. Copy changes fix the engine."
+
+---
+
+## Frequently Asked Questions
+
+**Q: What exactly is a conversion audit?**
+A: A detailed PDF audit report covering your landing page or funnel across 7 areas — headline clarity, CTA effectiveness, social proof placement, value proposition, messaging, UX flow, and conversion killers. For each issue, you get the exact fix — not vague advice, but specific rewrites and annotated screenshots.
+
+**Q: How is this different from hiring a designer or agency?**
+A: Designers change how your page looks. GarvinLabs changes how your page converts. Most conversion issues are copy, structure, and placement problems — not design problems. A headline rewrite costs far less than a redesign and often has a bigger impact.
+
+**Q: What kind of results can I expect?**
+A: Common wins include headline rewrites increasing demo bookings by 30-40%, moving social proof above the fold doubling form submissions, and fixing CTA copy increasing click-through by 2-3x.
+
+**Q: How long does it take?**
+A: Conversion Audit: 1-2 days. Conversion Sprint: 5-7 days. Conversion System Sprint: 7-10 days.
+
+**Q: What do you need from me?**
+A: Your landing page URL. That's it. Analytics data helps prioritize but isn't required.
+
+**Q: Do you work with businesses outside India?**
+A: Yes. Everything is delivered digitally. Location doesn't matter.
+
+---
+
+## Contact
+
+- **WhatsApp:** +91 93562 49535 (fastest)
+- **Email:** labs.garvin@gmail.com
+- **Website:** https://garvinlabs.vercel.app
+- **Location:** Pune, India
+- **Response time:** Within 24 hours

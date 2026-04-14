@@ -1,26 +1,27 @@
 const steps = [
   {
     number: "01",
-    title: "Discovery Call",
+    title: "Send me your URL",
     description:
-      "20-minute call to understand your business and identify the real bottleneck.",
+      "WhatsApp or email — just drop your landing page link. I'll take a look within 24 hours.",
   },
   {
     number: "02",
-    title: "Scope & Proposal",
-    description: "Clear deliverables, timeline, and pricing. No surprises.",
+    title: "I find the leaks",
+    description:
+      "I audit your page against 7 conversion areas: headline, CTA, social proof, messaging, UX, value prop, and conversion killers.",
   },
   {
     number: "03",
-    title: "Build",
+    title: "You get the fixes",
     description:
-      "AI-assisted delivery, 2–3x faster than traditional freelancers. Weekly updates.",
+      "A detailed PDF report showing every issue and the exact fix. Or I implement them myself — depends on your package.",
   },
   {
     number: "04",
-    title: "Launch & Handoff",
+    title: "More visitors convert",
     description:
-      "Deployed, documented, and handed over. We stay available for iterations.",
+      "Same traffic, more customers. Most clients see results within the first week after fixes go live.",
   },
 ];
 
@@ -30,16 +31,16 @@ export function Process() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <span
-            className="text-xs font-semibold text-[#D4A853] uppercase tracking-widest"
+            className="text-xs font-semibold text-[#00AE43] uppercase tracking-widest"
             style={{ fontFamily: "var(--font-syne)" }}
           >
-            Process
+            How It Works
           </span>
           <h2
             className="mt-4 text-4xl md:text-5xl font-bold text-[#F5F5F5] leading-tight"
             style={{ fontFamily: "var(--font-syne)" }}
           >
-            From call to live system in weeks
+            From URL to more conversions in days
           </h2>
         </div>
 
@@ -47,7 +48,7 @@ export function Process() {
           {steps.map((step, i) => (
             <div key={step.number} className="bg-[#111111] p-8">
               <div
-                className="text-5xl font-bold text-[#D4A853]/20 mb-6"
+                className="text-5xl font-bold text-[#00AE43]/20 mb-6"
                 style={{ fontFamily: "var(--font-syne)" }}
               >
                 {step.number}
@@ -60,7 +61,7 @@ export function Process() {
               </h3>
               <p className="text-[#A0A0A0] text-sm leading-relaxed">{step.description}</p>
               {i < steps.length - 1 && (
-                <div className="hidden md:block mt-8 h-px bg-[#D4A853]/20" />
+                <div className="hidden md:block mt-8 h-px bg-[#00AE43]/20" />
               )}
             </div>
           ))}

@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
+import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Garvin Chanderia — Founder of GarvinLabs. 23, based in Pune. B.Tech CS (AI/ML), ex-Business Analyst at Cummins India. Builds n8n automation systems and lead generation engines.",
+    "Garvin Chanderia — Conversion Optimization Specialist. Based in Pune. Built products with 300+ downloads, audited 938 pages in one project, delivered 25+ dashboards and systems across industries.",
   alternates: { canonical: "https://garvinlabs.vercel.app/about" },
   openGraph: {
     title: "About Garvin Chanderia | GarvinLabs",
     description:
-      "23-year-old automation builder based in Pune. B.Tech CS (AI/ML), ex-Cummins India BA, founder of GarvinLabs.",
+      "Conversion optimization specialist based in Pune. I fix the funnel so your traffic converts.",
     url: "https://garvinlabs.vercel.app/about",
   },
 };
@@ -22,8 +23,16 @@ const credentials = [
   "Google Data Analytics Certificate",
   "Databricks Lakehouse Fundamentals",
   "Product School PAC",
-  "Business Analyst, Cummins India (~2 years)",
+  "Business Analyst, Fortune 500 manufacturing (~2 years)",
   "Founded IDEATE UX Club",
+];
+
+const proofPoints = [
+  { number: "938", label: "Pages audited in one project" },
+  { number: "300+", label: "Organic app downloads, zero ad spend" },
+  { number: "25+", label: "Dashboards and projects delivered" },
+  { number: "200+", label: "User interviews conducted across products" },
+  { number: "26", label: "Business processes documented for manufacturing client" },
 ];
 
 export default function AboutPage() {
@@ -41,10 +50,10 @@ export default function AboutPage() {
               Garvin Chanderia
             </h1>
             <p
-              className="text-xl text-[#D4A853]"
+              className="text-xl text-[#00AE43]"
               style={{ fontFamily: "var(--font-syne)" }}
             >
-              Founder, GarvinLabs
+              Conversion Optimization Specialist
             </p>
           </div>
         </section>
@@ -56,35 +65,37 @@ export default function AboutPage() {
               <div>
                 <div className="prose prose-invert max-w-none">
                   <p className="text-[#A0A0A0] text-base leading-relaxed mb-6">
-                    I&apos;m 23, based in Pune, and I build automated systems for businesses.
+                    I&apos;m based in Pune, and I fix conversion funnels for businesses.
                   </p>
                   <p className="text-[#A0A0A0] text-base leading-relaxed mb-6">
-                    My background is in computer science (B.Tech, AI/ML specialization) with
-                    almost two years of experience as a Business Analyst at Cummins India —
-                    where I learned how enterprise operations actually work. I hold
-                    certifications from Microsoft, Google, Databricks, and Product School.
+                    I spent 2 years building products — an app with 300+ organic downloads,
+                    25+ dashboards for a Fortune 500, websites that closed freelance deals,
+                    automation pipelines that processed 1,000+ leads. The pattern I kept seeing:
+                    the businesses that grew fastest weren&apos;t getting more traffic.
+                    They were converting more of the traffic they already had.
                   </p>
                   <p className="text-[#A0A0A0] text-base leading-relaxed mb-6">
-                    I started GarvinLabs because I kept seeing the same problem: businesses
-                    running on WhatsApp groups and spreadsheets, with smart people doing dumb
-                    repetitive work. I build the systems that fix that.
+                    That&apos;s what I do now. I look at your landing page, your funnel,
+                    your CTA, your copy — and I find the specific places where visitors drop off.
+                    Then I fix them. Not a redesign. Not a rebrand. Specific problems, specific fixes,
+                    delivered in 5-10 days.
                   </p>
                   <p className="text-[#A0A0A0] text-base leading-relaxed mb-6">
-                    My core tool is n8n — I&apos;ve built production workflows for lead
-                    generation, operations, community discovery, and personal productivity.
-                    I work at the code-node level, not just drag-and-drop. When a project
-                    needs a team, I have four developers I work with on a project basis.
+                    My background is in computer science (B.Tech, AI/ML) with nearly two years
+                    as a Business Analyst at a Fortune 500 manufacturer — where I learned how
+                    real operations work, built 25+ dashboards, and shipped automation workflows.
+                    I hold certifications from Microsoft, Google, Databricks, and Product School.
                   </p>
                   <p className="text-[#A0A0A0] text-base leading-relaxed">
-                    Outside of work, I ride motorcycles, read about psychology and business,
-                    and obsess over clean design.
+                    I don&apos;t sell hours. I sell more conversions. If I can&apos;t identify
+                    a clear improvement for you, I&apos;ll tell you — and I won&apos;t take the project.
                   </p>
                 </div>
               </div>
 
               <div>
                 <h2
-                  className="text-sm font-semibold text-[#D4A853] uppercase tracking-widest mb-8"
+                  className="text-sm font-semibold text-[#00AE43] uppercase tracking-widest mb-8"
                   style={{ fontFamily: "var(--font-syne)" }}
                 >
                   Credentials
@@ -92,7 +103,7 @@ export default function AboutPage() {
                 <ul className="space-y-4">
                   {credentials.map((c) => (
                     <li key={c} className="flex items-start gap-4 pb-4 border-b border-[#222222] last:border-0">
-                      <span className="text-[#D4A853] text-sm mt-0.5 shrink-0">—</span>
+                      <span className="text-[#00AE43] text-sm mt-0.5 shrink-0">—</span>
                       <span className="text-[#A0A0A0] text-sm leading-relaxed">{c}</span>
                     </li>
                   ))}
@@ -102,12 +113,37 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Numbers */}
+        <section className="py-24 border-b border-[#222222]">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2
+              className="text-sm font-semibold text-[#00AE43] uppercase tracking-widest mb-12"
+              style={{ fontFamily: "var(--font-syne)" }}
+            >
+              By The Numbers
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-[#222222]">
+              {proofPoints.map((p) => (
+                <div key={p.label} className="bg-[#0A0A0A] p-8">
+                  <div
+                    className="text-3xl font-bold text-[#00AE43] mb-2"
+                    style={{ fontFamily: "var(--font-syne)" }}
+                  >
+                    {p.number}
+                  </div>
+                  <div className="text-sm text-[#A0A0A0] leading-relaxed">{p.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Philosophy */}
         <section className="py-24">
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-2xl">
               <h2
-                className="text-sm font-semibold text-[#D4A853] uppercase tracking-widest mb-8"
+                className="text-sm font-semibold text-[#00AE43] uppercase tracking-widest mb-8"
                 style={{ fontFamily: "var(--font-syne)" }}
               >
                 Philosophy
@@ -116,13 +152,15 @@ export default function AboutPage() {
                 className="text-2xl md:text-3xl font-bold text-[#F5F5F5] leading-snug"
                 style={{ fontFamily: "var(--font-syne)" }}
               >
-                &ldquo;I don&apos;t sell hours. I sell systems that make you money or save
-                you time. If I can&apos;t identify a clear ROI for you, I&apos;ll tell you —
-                and I won&apos;t take the project.&rdquo;
+                &ldquo;Your landing page doesn&apos;t need a redesign. It needs 3 specific
+                copy changes that take 20 minutes. A redesign changes the paint.
+                Copy changes fix the engine.&rdquo;
               </blockquote>
             </div>
           </div>
         </section>
+
+        <CTA />
       </main>
       <Footer />
     </>

@@ -1,0 +1,34 @@
+# GarvinLabs
+
+> Conversion optimization for businesses losing customers to bad funnels.
+
+GarvinLabs is a conversion optimization service run by Garvin Chanderia, based in Pune, India. We help businesses convert more of the traffic they're already paying for by fixing their conversion flow — landing page audits, funnel fixes, and CTA rewrites delivered in 5-10 days.
+
+## Services
+
+- [Conversion Audit](https://garvinlabs.vercel.app/#packages): PDF audit report of your landing page — top 5-7 conversion issues identified with exact fixes. ₹5K-₹10K, delivered in 1-2 days.
+- [Conversion Sprint](https://garvinlabs.vercel.app/#packages): Full audit plus implementation — headlines rewritten, CTAs rebuilt, social proof optimized. ₹25K-₹50K, delivered in 5-7 days.
+- [Conversion System Sprint](https://garvinlabs.vercel.app/#packages): Complete conversion flow redesign — multi-page funnel optimization, trust architecture, objection handling. ₹50K-₹75K, delivered in 7-10 days.
+
+## Ideal Clients
+
+- Coaches and consultants running ads but not converting
+- Clinics and service businesses with brochure-style websites
+- D2C brands and e-commerce stores with high cart abandonment
+
+## Process
+
+1. Send your landing page URL via WhatsApp or email
+2. I audit your page against 7 conversion areas (headline, CTA, social proof, messaging, UX, value prop, conversion killers)
+3. You receive a detailed PDF report with every issue and the exact fix
+4. Same traffic, more customers
+
+## Contact
+
+- WhatsApp: +91 93562 49535
+- Email: labs.garvin@gmail.com
+- Website: https://garvinlabs.vercel.app
+
+## About
+
+Garvin Chanderia is a conversion optimization specialist based in Pune, India. Background in computer science (B.Tech, AI/ML), nearly two years as a Business Analyst at a Fortune 500 manufacturer. Has audited 938 pages in a single project, built products with 300+ organic downloads, and conducted 200+ user interviews.

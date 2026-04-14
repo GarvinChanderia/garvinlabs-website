@@ -12,7 +12,15 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
       {
+        userAgent: "ChatGPT-User",
+        allow: "/",
+      },
+      {
         userAgent: "ClaudeBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Claude-Web",
         allow: "/",
       },
       {
@@ -21,6 +29,22 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: "Google-Extended",
+        allow: "/",
+      },
+      {
+        userAgent: "Amazonbot",
+        allow: "/",
+      },
+      {
+        userAgent: "YouBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Applebot-Extended",
+        allow: "/",
+      },
+      {
+        userAgent: "cohere-ai",
         allow: "/",
       },
     ],

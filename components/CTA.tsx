@@ -1,5 +1,5 @@
 const WA_LINK =
-  "https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%27d%20like%20to%20discuss%20a%20project";
+  "https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%20want%20a%20free%20landing%20page%20audit";
 
 export function CTA() {
   return (
@@ -9,11 +9,11 @@ export function CTA() {
           className="text-4xl md:text-6xl font-bold text-[#F5F5F5] leading-tight mb-6"
           style={{ fontFamily: "var(--font-syne)" }}
         >
-          Let&apos;s build your system.
+          Stop losing customers to a broken funnel.
         </h2>
         <p className="text-[#A0A0A0] text-lg mb-12 max-w-xl mx-auto">
-          Book a free 20-minute strategy call. We&apos;ll identify the biggest automation
-          opportunity in your business and map out a plan.
+          Send me your landing page URL. I&apos;ll send you a free audit PDF showing
+          the top issues and exactly how to fix them. No pitch. No strings.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -21,10 +21,10 @@ export function CTA() {
             href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#D4A853] hover:bg-[#E8C36A] text-[#0A0A0A] font-semibold px-10 py-4 text-base transition-colors"
+            className="bg-[#00AE43] hover:bg-[#00C94E] text-[#0A0A0A] font-semibold px-10 py-4 text-base transition-colors"
             style={{ fontFamily: "var(--font-syne)" }}
           >
-            Book a Free Call
+            Get Your Free Audit
           </a>
           <a
             href="mailto:labs.garvin@gmail.com"
