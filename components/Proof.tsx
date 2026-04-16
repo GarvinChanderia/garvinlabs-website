@@ -1,110 +1,80 @@
-const caseStudies = [
-  {
-    title: "938-Page Audit Pipeline",
-    metric: "938 pages",
-    metricLabel: "audited & personalized",
-    description:
-      "Built an automated pipeline that audited 938 business websites, generated personalized landing page mockups, and ran outreach — all at ₹91 total cost. Proved that conversion audits at scale work.",
-    tags: ["Conversion Audit", "Automation", "Landing Pages"],
-  },
-  {
-    title: "Freelance Website → SaaS Deal",
-    metric: "Repeat client",
-    metricLabel: "came back for SaaS deal",
-    description:
-      "Delivered a conversion-focused website for a logistics business that worked so well the client returned to build a full SaaS platform. The original site converted visitors to inquiries from day one.",
-    tags: ["Website", "Conversion", "Repeat Client"],
-  },
-  {
-    title: "Manufacturing Process Overhaul",
-    metric: "26 processes",
-    metricLabel: "documented & optimized",
-    description:
-      "Turned tribal knowledge into a systematic operation for a manufacturing business. 26 process documents that the entire team now follows. Owner called it \"the best investment we made this year.\"",
-    tags: ["Process Optimization", "Manufacturing"],
-  },
-];
-
-const highlights = [
-  { number: "300+", label: "Organic app downloads (zero ad spend)" },
-  { number: "25+", label: "Dashboards and projects delivered" },
-  { number: "200+", label: "User interviews conducted" },
-  { number: "5+", label: "Industries served" },
-];
-
 export function Proof() {
   return (
-    <section id="proof" className="bg-[#0A0A0A] py-24 md:py-32 border-t border-[#222222]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-16">
-          <span
-            className="text-xs font-semibold text-[#00AE43] uppercase tracking-widest"
-            style={{ fontFamily: "var(--font-syne)" }}
-          >
-            Proof
+    <section id="proof">
+      <div className="container">
+        <div className="proof-head reveal">
+          <span className="eyebrow">
+            <span className="eyebrow-dot"></span>Proof
           </span>
-          <h2
-            className="mt-4 text-4xl md:text-5xl font-bold text-[#F5F5F5] leading-tight"
-            style={{ fontFamily: "var(--font-syne)" }}
-          >
-            Results, not promises
+          <h2 className="h2" style={{ marginTop: 18 }}>
+            Shipped systems. Real businesses. Measurable results.
           </h2>
         </div>
-
-        {/* Metrics strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#222222] mb-px">
-          {highlights.map((h) => (
-            <div key={h.label} className="bg-[#0A0A0A] p-8 text-center">
-              <div
-                className="text-3xl md:text-4xl font-bold text-[#00AE43] mb-2"
-                style={{ fontFamily: "var(--font-syne)" }}
-              >
-                {h.number}
-              </div>
-              <div className="text-xs text-[#A0A0A0] uppercase tracking-wider">
-                {h.label}
-              </div>
+        <div className="stats-row reveal">
+          <div className="stat">
+            <div className="stat-num">
+              25<span className="plus">+</span>
             </div>
-          ))}
+            <div className="stat-label">Builds delivered across SaaS, D2C, and enterprise</div>
+          </div>
+          <div className="stat">
+            <div className="stat-num">938</div>
+            <div className="stat-label">Personalized pages generated for a single client</div>
+          </div>
+          <div className="stat">
+            <div className="stat-num">
+              40<span className="plus">%</span>
+            </div>
+            <div className="stat-label">Workflow turnaround reduction at Fortune 500 client</div>
+          </div>
+          <div className="stat">
+            <div className="stat-num">7</div>
+            <div className="stat-label">Industries served, from manufacturing to healthcare</div>
+          </div>
         </div>
-
-        {/* Case studies */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#222222]">
-          {caseStudies.map((cs) => (
-            <div key={cs.title} className="bg-[#0A0A0A] p-10 hover:bg-[#111111] transition-colors">
-              <div className="mb-6">
-                <div
-                  className="text-2xl font-bold text-[#00AE43] mb-1"
-                  style={{ fontFamily: "var(--font-syne)" }}
-                >
-                  {cs.metric}
-                </div>
-                <div className="text-xs text-[#A0A0A0] uppercase tracking-wider">
-                  {cs.metricLabel}
-                </div>
-              </div>
-
-              <h3
-                className="text-xl font-bold text-[#F5F5F5] mb-4 leading-snug"
-                style={{ fontFamily: "var(--font-syne)" }}
-              >
-                {cs.title}
-              </h3>
-              <p className="text-[#A0A0A0] text-sm leading-relaxed mb-6">{cs.description}</p>
-
-              <div className="flex flex-wrap gap-2">
-                {cs.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs text-[#A0A0A0] border border-[#222222] px-3 py-1"
-                    style={{ fontFamily: "var(--font-syne)" }}
-                  >
-                    {tag}
-                  </span>
-                ))}
+        <div className="testimonials">
+          <div className="testimonial reveal">
+            <div className="t-stars">★★★★★</div>
+            <p>
+              &ldquo;Built our entire process documentation system from scratch. 26 detailed
+              documents our team actually uses every day. Hours saved every week.&rdquo;
+            </p>
+            <div className="t-author">
+              <div className="t-avatar">R</div>
+              <div>
+                <div className="t-name">Director</div>
+                <div className="t-role">Manufacturing Business Owner</div>
               </div>
             </div>
-          ))}
+          </div>
+          <div className="testimonial reveal">
+            <div className="t-stars">★★★★★</div>
+            <p>
+              &ldquo;Website was done fast and looked exactly like what we wanted. Came back for
+              the app build because the first project went so smoothly.&rdquo;
+            </p>
+            <div className="t-author">
+              <div className="t-avatar">C</div>
+              <div>
+                <div className="t-name">Confidential Client</div>
+                <div className="t-role">Logistics Platform</div>
+              </div>
+            </div>
+          </div>
+          <div className="testimonial reveal">
+            <div className="t-stars">★★★★★</div>
+            <p>
+              &ldquo;938 personalized pages for our outreach, all automated. Quality was high, the
+              cost was almost nothing. Impressive work.&rdquo;
+            </p>
+            <div className="t-author">
+              <div className="t-avatar">W</div>
+              <div>
+                <div className="t-name">Web Dev Freelancer</div>
+                <div className="t-role">Client outreach automation</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

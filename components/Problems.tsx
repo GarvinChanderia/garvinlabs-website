@@ -1,58 +1,53 @@
-const problems = [
-  {
-    number: "01",
-    title: "Your headline talks about you, not them",
-    body: "Visitors decide in 3 seconds. If your headline describes your product instead of their outcome, they bounce — and your ad spend goes with them.",
-  },
-  {
-    number: "02",
-    title: "Your CTA says \"Learn More\"",
-    body: "Nobody wakes up wanting to \"learn more\" or \"submit.\" Generic CTAs kill urgency. Specific CTAs — \"Get My Free Audit\" — give people a reason to click.",
-  },
-  {
-    number: "03",
-    title: "Your best proof is buried at the bottom",
-    body: "80% of visitors never scroll past the first screen. If your strongest testimonial or metric is below the fold, most people will never see it.",
-  },
-];
-
 export function Problems() {
   return (
-    <section className="bg-[#111111] py-24 md:py-32 border-t border-[#222222]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-16">
-          <span
-            className="text-xs font-semibold text-[#00AE43] uppercase tracking-widest"
-            style={{ fontFamily: "var(--font-syne)" }}
-          >
-            The Problem
+    <section id="problem">
+      <div className="container">
+        <div className="problem-head reveal">
+          <span className="eyebrow">
+            <span className="eyebrow-dot"></span>The Real Cost
           </span>
-          <h2
-            className="mt-4 text-4xl md:text-5xl font-bold text-[#F5F5F5] leading-tight"
-            style={{ fontFamily: "var(--font-syne)" }}
-          >
-            You&apos;re paying for traffic that doesn&apos;t convert
+          <h2 className="h2" style={{ marginTop: 18 }}>
+            Every month you wait is money on the floor.
           </h2>
+          <p className="lead">
+            Most tech-enabled businesses have the tools. What they don&apos;t have is the connective
+            tissue between them. That gap costs you every single week, in wasted hours, missed
+            revenue, and decisions made half-blind.
+          </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#222222]">
-          {problems.map((p) => (
-            <div key={p.number} className="bg-[#111111] p-10 hover:bg-[#141414] transition-colors">
-              <span
-                className="text-[#00AE43] text-sm font-semibold mb-6 block"
-                style={{ fontFamily: "var(--font-syne)" }}
-              >
-                {p.number}
-              </span>
-              <h3
-                className="text-xl font-bold text-[#F5F5F5] mb-4 leading-snug"
-                style={{ fontFamily: "var(--font-syne)" }}
-              >
-                {p.title}
-              </h3>
-              <p className="text-[#A0A0A0] text-sm leading-relaxed">{p.body}</p>
+        <div className="problem-grid">
+          <div className="problem-card reveal">
+            <div className="problem-cost">
+              $18K<span className="unit">/month wasted</span>
             </div>
-          ))}
+            <p className="sub">
+              Estimated cost of manual ops for a 50-person SaaS team at $40/hour.
+            </p>
+            <h3 className="h3">Manual work is eating your team&apos;s best hours.</h3>
+            <ul className="problem-bullets">
+              <li>Onboarding is part-manual. 40+ hours/month lost to checklists your team hates.</li>
+              <li>Weekly reporting requires 3 people and half a day every Monday</li>
+              <li>Support triage lands on engineers. No AI routing, no auto-resolution.</li>
+              <li>Tools don&apos;t talk to each other without someone exporting CSVs</li>
+              <li>Trial expirations and usage triggers run on humans, not systems</li>
+            </ul>
+          </div>
+          <div className="problem-card reveal">
+            <div className="problem-cost">
+              $12–30K<span className="unit">/month leaking</span>
+            </div>
+            <p className="sub">
+              Typical recoverable revenue for a D2C brand doing $1M+ annual.
+            </p>
+            <h3 className="h3">Revenue walks out the door after every sale.</h3>
+            <ul className="problem-bullets">
+              <li>70% of carts abandoned. Most brands recover under 3% of them.</li>
+              <li>First-time buyers get no repeat trigger and simply don&apos;t come back</li>
+              <li>Post-purchase communication ends at the shipping email</li>
+              <li>Win-back campaigns are manual, infrequent, or just don&apos;t exist</li>
+              <li>Zero visibility into which customers are about to churn</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

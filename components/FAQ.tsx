@@ -1,87 +1,106 @@
+"use client";
+
+import { useState } from "react";
+
 const faqs = [
   {
-    question: "What exactly is a conversion audit?",
-    answer:
-      "I put together a detailed PDF audit report covering your landing page or funnel. I check 7 areas — headline clarity, CTA effectiveness, social proof placement, value proposition, messaging, UX flow, and conversion killers. For each issue I find, I give you the exact fix — not vague advice like \"improve your CTA,\" but specific rewrites and annotated screenshots.",
+    q: "What exactly do I get for $200?",
+    a: (
+      <p>
+        A written opportunity map of your ops or revenue stack, the top 3 automation opportunities
+        ranked by monthly $ impact, effort and cost estimates per opportunity, a specific scoped
+        recommendation for what to build first, and a 15–20 minute Loom walkthrough you can forward
+        to your team. Delivered in 72 hours after our discovery call.
+      </p>
+    ),
   },
   {
-    question: "How is this different from hiring a designer or agency?",
-    answer:
-      "Designers change how your page looks. I change how your page converts. Most conversion issues are copy, structure, and placement problems — not design problems. A headline rewrite or CTA change takes 20 minutes and can increase conversions by 20-40%. A full redesign costs ₹50K-₹2L and often doesn't fix the actual leaks.",
+    q: "What tools do you build with?",
+    a: (
+      <p>
+        n8n for workflow automation, WhatsApp Business API for messaging, Shopify webhooks for D2C,
+        Claude and GPT for the AI layers, and whatever CRM or data tool already lives in your
+        stack. We pick tools that fit. Not whatever&apos;s trending on Twitter.
+      </p>
+    ),
   },
   {
-    question: "What kind of results can I expect?",
-    answer:
-      "It depends on how broken your current funnel is — but the worse it is, the bigger the improvement. Common wins: single headline rewrites increasing demo bookings by 30-40%, moving social proof above the fold doubling form submissions, fixing CTA copy increasing click-through by 2-3x. I've audited 938 pages in a single project.",
+    q: "How fast can you actually deliver?",
+    a: (
+      <p>
+        Diagnostic: 72 hours. AI Implementation: 1–4 weeks depending on scope. Full System Build:
+        6–12 weeks. These are hard timelines. If we miss a date, you don&apos;t pay the balance
+        until it ships.
+      </p>
+    ),
   },
   {
-    question: "How long does it take?",
-    answer:
-      "Conversion Audit: 1-2 days. You get a PDF report with every issue and fix. Conversion Sprint: 5-7 days. I audit and implement all fixes. Conversion System Sprint: 7-10 days. Full funnel redesign and implementation.",
+    q: "What are the payment terms?",
+    a: (
+      <p>
+        50% upfront, 50% on delivery. No retainers. No hourly billing. No surprise invoices. You
+        pay once to start and once to finish. That&apos;s it.
+      </p>
+    ),
   },
   {
-    question: "What do you need from me to get started?",
-    answer:
-      "Your landing page URL. That's it. If you have specific pages or funnels you're worried about, share those too. If you have analytics data (conversion rates, traffic sources), it helps me prioritize — but it's not required.",
+    q: "Do I need a Diagnostic before a build?",
+    a: (
+      <p>
+        Yes, for any Build engagement. The Diagnostic is what lets us quote fixed price and ship on
+        a fixed date. Without it, we&apos;d be guessing. And guessing is how projects blow their
+        scope.
+      </p>
+    ),
   },
   {
-    question: "Do you work with businesses outside India?",
-    answer:
-      "Yes. The audit and fixes are delivered digitally — PDF reports, documented recommendations, and implemented changes. Location doesn't matter. Most communication happens over WhatsApp or email.",
+    q: "Who runs GarvinLabs?",
+    a: (
+      <p>
+        Garvin Chanderia. Former BI developer, product consultant, and founder. Based in Pune,
+        India. Working remotely with clients across the US, EU, and India. WhatsApp:{" "}
+        <a href="https://wa.me/919356249535">+91 93562 49535</a> · Email:{" "}
+        <a href="mailto:labs.garvin@gmail.com">labs.garvin@gmail.com</a>
+      </p>
+    ),
   },
 ];
 
 export function FAQ() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#0A0A0A] py-24 md:py-32 border-t border-[#222222]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-16">
-          <span
-            className="text-xs font-semibold text-[#00AE43] uppercase tracking-widest"
-            style={{ fontFamily: "var(--font-syne)" }}
-          >
-            FAQ
+    <section id="faq">
+      <div className="container">
+        <div className="faq-head reveal">
+          <span className="eyebrow">
+            <span className="eyebrow-dot"></span>Common Questions
           </span>
-          <h2
-            className="mt-4 text-4xl md:text-5xl font-bold text-[#F5F5F5] leading-tight"
-            style={{ fontFamily: "var(--font-syne)" }}
-          >
-            Common questions
+          <h2 className="h2" style={{ marginTop: 18 }}>
+            Straight answers.
           </h2>
         </div>
-
-        <div className="max-w-3xl space-y-px bg-[#222222]">
-          {faqs.map((faq) => (
-            <div key={faq.question} className="bg-[#0A0A0A] p-8" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-              <h3
-                className="text-base font-bold text-[#F5F5F5] mb-3"
-                style={{ fontFamily: "var(--font-syne)" }}
-                itemProp="name"
-              >
-                {faq.question}
-              </h3>
-              <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-                <p className="text-[#A0A0A0] text-sm leading-relaxed" itemProp="text" data-speakable="true">{faq.answer}</p>
+        <div className="faq-list reveal">
+          {faqs.map((faq, i) => {
+            const open = openIdx === i;
+            const answerId = `faq-a-${i + 1}`;
+            return (
+              <div key={faq.q} className={`faq-item${open ? " open" : ""}`}>
+                <button
+                  className="faq-q"
+                  aria-expanded={open}
+                  aria-controls={answerId}
+                  onClick={() => setOpenIdx(open ? null : i)}
+                >
+                  {faq.q}
+                  <span className="faq-q-icon">{open ? "–" : "+"}</span>
+                </button>
+                <div className="faq-a" id={answerId}>
+                  {faq.a}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,67 +1,102 @@
-const WA_LINK =
-  "https://wa.me/919356249535?text=Hi%20Garvin%2C%20I%20want%20a%20free%20landing%20page%20audit";
+import Image from "next/image";
+
+const Arrow = () => (
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2}>
+    <path d="M3 8h10M9 4l4 4-4 4" />
+  </svg>
+);
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 bg-[#0A0A0A] bg-grid-dark overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#00AE43]/5 blur-[120px]" />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-6 py-28 md:py-36 text-center z-10">
-        <div
-          className="inline-flex items-center gap-2 text-xs font-medium text-[#00AE43] border border-[#00AE43]/30 px-4 py-1.5 mb-10 tracking-wider uppercase"
-          style={{ fontFamily: "var(--font-syne)" }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00AE43] animate-pulse" />
-          5 free audit slots this week
-        </div>
-
-        <h1
-          className="text-5xl md:text-7xl lg:text-[84px] font-bold tracking-tight text-[#F5F5F5] leading-[1.05] mb-8"
-          style={{ fontFamily: "var(--font-syne)" }}
-        >
-          Your traffic isn&apos;t the problem.
-          <br />
-          <span className="text-[#00AE43]">Your funnel is.</span>
-        </h1>
-
-        <p
-          data-speakable="true"
-          className="text-lg md:text-xl text-[#A0A0A0] max-w-2xl mx-auto leading-relaxed mb-12"
-        >
-          I help businesses convert more of the traffic they&apos;re already paying for
-          by fixing their conversion flow. Specific problems. Specific fixes. 5-10 days.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-          <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#00AE43] hover:bg-[#00C94E] text-[#0A0A0A] font-semibold px-8 py-4 text-base transition-colors"
-            style={{ fontFamily: "var(--font-syne)" }}
-          >
-            Get Your Free Audit
-          </a>
-          <a
-            href="#packages"
-            className="text-[#A0A0A0] hover:text-[#F5F5F5] font-medium px-8 py-4 border border-[#222222] hover:border-[#444444] transition-all text-base"
-          >
-            See Packages
-          </a>
-        </div>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
-          {[
-            "938 pages audited in one project",
-            "25+ dashboards delivered",
-            "Pune, India",
-          ].map((item) => (
-            <span key={item} className="text-sm text-[#A0A0A0]">
-              {item}
+    <section id="hero">
+      <div className="hero-bg"></div>
+      <div className="hero-inner">
+        <div className="hero-copy reveal">
+          <div className="hero-eyebrow">
+            <span className="eyebrow">
+              <span className="eyebrow-dot"></span>
+              AI Consulting &amp; Implementation · Fixed Price · 2–4 Week Delivery
             </span>
-          ))}
+          </div>
+          <h1 className="display hero-headline">
+            Find where <span className="accent">AI actually fits</span> in your business. Then ship the systems.
+          </h1>
+          <p className="hero-sub">
+            Most teams have the tools. What they&apos;re missing is the map: where AI moves the
+            needle, and where it&apos;s a distraction. We diagnose the gap, then build the systems
+            that close it. Fixed price. No retainers. No strategy decks.
+          </p>
+          <div className="hero-actions">
+            <a href="/pdf?pdf=saas" className="btn btn-green btn-lg">
+              Get the free teardown <Arrow />
+            </a>
+            <a href="#offers" className="btn btn-glass btn-lg">
+              See the offers
+            </a>
+          </div>
+          <div className="hero-trust">
+            <div className="trust-item">
+              <strong>25+</strong>
+              <span>builds delivered</span>
+            </div>
+            <div className="trust-sep"></div>
+            <div className="trust-item">
+              <strong>938</strong>
+              <span>pages automated for one client</span>
+            </div>
+            <div className="trust-sep"></div>
+            <div className="trust-item">
+              <strong>50/50</strong>
+              <span>payment, no retainers</span>
+            </div>
+          </div>
+        </div>
+        <div className="hero-card reveal">
+          <div className="hero-card-label">Free · No call required</div>
+          <h2>Pick your teardown.</h2>
+          <p>
+            A written map of the biggest AI + automation opportunities in your stack, delivered
+            straight to your inbox. No strategy call to unlock it.
+          </p>
+          <div className="hero-pdf-picker">
+            <a href="/pdf?pdf=saas" className="hero-pdf-option">
+              <div className="hero-pdf-cover">
+                <Image
+                  src="/website-images/pdf-saas-cover.png"
+                  alt="SaaS teardown cover"
+                  width={160}
+                  height={208}
+                  loading="lazy"
+                />
+              </div>
+              <div className="hero-pdf-text">
+                <span className="hero-pdf-tag">For SaaS Teams</span>
+                <strong>Where hours die in SaaS ops, and the 5 systems that fix it</strong>
+              </div>
+              <svg className="hero-pdf-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+            <a href="/pdf?pdf=d2c" className="hero-pdf-option">
+              <div className="hero-pdf-cover">
+                <Image
+                  src="/website-images/pdf-d2c-cover.png"
+                  alt="D2C teardown cover"
+                  width={160}
+                  height={208}
+                  loading="lazy"
+                />
+              </div>
+              <div className="hero-pdf-text">
+                <span className="hero-pdf-tag">For D2C Brands</span>
+                <strong>The 4 revenue leaks, with recovery estimates per leak</strong>
+              </div>
+              <svg className="hero-pdf-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+          </div>
+          <p className="hero-card-note">Sent to your inbox in minutes. Unsubscribe any time.</p>
         </div>
       </div>
     </section>
