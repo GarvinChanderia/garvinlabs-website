@@ -112,7 +112,8 @@ export function PDFClient() {
   }
 
   return (
-    <div className="pdf-page-bg">
+    <>
+      <div className="pdf-page-bg" aria-hidden="true" />
       <a href="#pdfForm" className="skip-link">
         Skip to form
       </a>
@@ -239,6 +240,6 @@ export function PDFClient() {
           )}
         </div>
       </main>
-    </div>
+    </>
   );
 }
