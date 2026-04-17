@@ -15,7 +15,7 @@ const CONTENT = {
     headlineAccent: "the 5 systems that fix it",
     headlineTail: ".",
     lead:
-      "Drop your email and we'll send the PDF straight to your inbox. No strategy call. No drip sequence traps.",
+      "Drop your email and I'll send the PDF straight to your inbox. No strategy call. No drip sequence traps.",
     bullets: [
       "The 5 most common manual-ops drains in SaaS teams of 20–200 people",
       "The likely dollar cost of each at scale",
@@ -30,7 +30,7 @@ const CONTENT = {
     headlineAccent: "with recovery estimates",
     headlineTail: " per leak.",
     lead:
-      "Drop your email and we'll send the PDF straight to your inbox. No strategy call. No drip sequence traps.",
+      "Drop your email and I'll send the PDF straight to your inbox. No strategy call. No drip sequence traps.",
     bullets: [
       "The 4 biggest recoverable revenue leaks in D2C brands doing $1M+",
       "Dollar recovery estimates per leak",
@@ -106,7 +106,7 @@ export function PDFClient() {
       setSubmitting(false);
       setStatus({
         type: "err",
-        msg: "Something went wrong. Please email labs.garvin@gmail.com and we'll send it over.",
+        msg: "Something went wrong. Please email labs.garvin@gmail.com and I'll send it over.",
       });
     }
   }
@@ -236,6 +236,23 @@ export function PDFClient() {
                 </a>
                 .
               </p>
+              <div style={{ marginTop: 28, paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+                <p style={{ marginBottom: 12, fontSize: "0.9rem", opacity: 0.7 }}>
+                  Want to know exactly where <em>your</em> stack is leaking?
+                </p>
+                <a
+                  href="https://wa.me/919356249535?text=Hi+Garvin%2C+I+want+to+book+the+%24200+Diagnostic.+%5Bsource%3A+pdf-success%5D"
+                  target="_blank"
+                  rel="noopener"
+                  className="btn btn-green"
+                  style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+                >
+                  Book the $200 Diagnostic
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} width={16} height={16}>
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </a>
+              </div>
             </div>
           )}
         </div>

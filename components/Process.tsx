@@ -31,7 +31,7 @@ export function Process() {
             <div className="step-num">3</div>
             <h3 className="h3">Ship</h3>
             <p>
-              We build, test, and hand off the system with documentation and a live walkthrough.
+              I build, test, and hand off the system with documentation and a live walkthrough.
               50% upfront, 50% on delivery. That&apos;s it.
             </p>
           </div>

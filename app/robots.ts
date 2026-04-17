@@ -47,6 +47,22 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "cohere-ai",
         allow: "/",
       },
+      {
+        userAgent: "anthropic-ai",
+        allow: "/",
+      },
+      {
+        userAgent: "Bingbot",
+        allow: "/",
+      },
+      {
+        userAgent: "Meta-ExternalAgent",
+        allow: "/",
+      },
+      {
+        userAgent: "Bytespider",
+        allow: "/",
+      },
     ],
     sitemap: "https://garvinlabs.vercel.app/sitemap.xml",
   };

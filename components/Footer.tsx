@@ -9,6 +9,7 @@ export function Footer() {
           <div className="footer-links">
             <a href="mailto:labs.garvin@gmail.com">Email</a>
             <a href="https://wa.me/919356249535">WhatsApp</a>
+            <a href="https://linkedin.com/in/garvinchanderia" target="_blank" rel="noopener">LinkedIn</a>
             <a href="#offers">Offers</a>
             <a href="#faq">FAQ</a>
           </div>

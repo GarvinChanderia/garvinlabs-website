@@ -6,9 +6,6 @@ export function CTA() {
     <section id="cta">
       <div className="container">
         <div className="cta-inner reveal">
-          <span className="eyebrow">
-            <span className="eyebrow-dot"></span>2 Diagnostic slots open this month
-          </span>
           <h2 className="h2">See where AI fits. Then decide.</h2>
           <p className="lead">
             Book the $200 Diagnostic. In 72 hours, you&apos;ll have a written map of where AI and

@@ -17,15 +17,15 @@ export default function Home() {
     <>
       <Navbar />
       <main id="main">
-        <Hero />
-        <Problems />
-        <PDFs />
-        <Offers />
-        <Guarantee />
-        <Proof />
-        <Process />
+        <Hero />       {/* Clarity   — what you do, who it's for */}
+        <Problems />   {/* Pain      — cost of inaction */}
+        <Process />    {/* Solution  — how you approach it */}
+        <Proof />      {/* Proof     — stats + testimonials */}
+        <Offers />     {/* Offer     — pricing */}
+        <Guarantee />  {/* De-risk   — right after the ask */}
+        <PDFs />       {/* Nurture   — for those not ready to buy */}
+        <CTA />        {/* Action    — hard close */}
         <FAQ />
-        <CTA />
         <MobileBar />
       </main>
       <Footer />

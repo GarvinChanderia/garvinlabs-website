@@ -20,7 +20,7 @@ const faqs = [
       <p>
         n8n for workflow automation, WhatsApp Business API for messaging, Shopify webhooks for D2C,
         Claude and GPT for the AI layers, and whatever CRM or data tool already lives in your
-        stack. We pick tools that fit. Not whatever&apos;s trending on Twitter.
+        stack. I pick tools that fit. Not whatever&apos;s trending on Twitter.
       </p>
     ),
   },
@@ -29,7 +29,7 @@ const faqs = [
     a: (
       <p>
         Diagnostic: 72 hours. AI Implementation: 1–4 weeks depending on scope. Full System Build:
-        6–12 weeks. These are hard timelines. If we miss a date, you don&apos;t pay the balance
+        6–12 weeks. These are hard timelines. If I miss a date, you don&apos;t pay the balance
         until it ships.
       </p>
     ),
@@ -47,8 +47,8 @@ const faqs = [
     q: "Do I need a Diagnostic before a build?",
     a: (
       <p>
-        Yes, for any Build engagement. The Diagnostic is what lets us quote fixed price and ship on
-        a fixed date. Without it, we&apos;d be guessing. And guessing is how projects blow their
+        Yes, for any Build engagement. The Diagnostic is what lets me quote fixed price and ship on
+        a fixed date. Without it, I&apos;d be guessing. And guessing is how projects blow their
         scope.
       </p>
     ),
@@ -61,6 +61,18 @@ const faqs = [
         India. Working remotely with clients across the US, EU, and India. WhatsApp:{" "}
         <a href="https://wa.me/919356249535">+91 93562 49535</a> · Email:{" "}
         <a href="mailto:labs.garvin@gmail.com">labs.garvin@gmail.com</a>
+      </p>
+    ),
+  },
+  {
+    q: "What results should I expect?",
+    a: (
+      <p>
+        Depends on the scope, but here&apos;s what past builds have delivered: a 40% reduction in
+        workflow turnaround at a Fortune 500 client, 938 personalised outreach pages automated for
+        a single campaign, and 26 process documents built from scratch that a manufacturing team
+        uses daily. The Diagnostic will tell you specifically what&apos;s achievable in your stack
+        before any build commitment.
       </p>
     ),
   },

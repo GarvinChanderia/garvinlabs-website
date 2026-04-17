@@ -1,6 +1,6 @@
 # GarvinLabs — Complete Reference
 
-> Conversion optimization for businesses losing customers to bad funnels.
+> AI consulting and implementation for lean teams. Fixed price. 2–4 week delivery.
 > Run by Garvin Chanderia. Based in Pune, India.
 > Website: https://garvinlabs.vercel.app
 
@@ -8,148 +8,178 @@
 
 ## What GarvinLabs Does
 
-GarvinLabs is a conversion optimization service. We help businesses convert more of the traffic they're already paying for by fixing their conversion flow.
+GarvinLabs is an AI consulting and implementation practice. We help modern teams identify where AI actually moves the needle in their business — then build the systems that close the gap. Fixed price. No retainers. No strategy decks. Working systems, handed off with documentation.
 
-We don't do redesigns, SEO, or "growth strategy." We find the specific places where visitors drop off on your landing page or funnel — and fix them. Specific problems, specific fixes, delivered in 5-10 days.
+The two problems we solve:
 
-### The Core Problem We Solve
+1. **"We have the tools, but nothing is connected."** Most teams buy Zapier, an AI subscription, and a CRM — then watch them sit separately. GarvinLabs builds the bridges.
+2. **"We don't know where to start."** Most operators know AI should help them, but can't isolate which 3 processes are worth automating first. The Diagnostic answers that.
 
-Most businesses don't have a traffic problem — they have a conversion problem. Common issues we fix:
-
-1. **Headlines that talk about the product, not the outcome.** Visitors decide in 3 seconds. If your headline describes your product instead of their outcome, they bounce.
-2. **Generic CTAs.** "Learn More" and "Submit" kill urgency. Specific CTAs like "Get My Free Audit" give people a reason to click.
-3. **Social proof buried at the bottom.** 80% of visitors never scroll that far. Your best testimonial needs to be above the fold.
+We don't do consulting that ends in a slide deck. Every engagement ends with running systems.
 
 ---
 
 ## Services and Pricing
 
-### Conversion Audit — ₹5,000 to ₹10,000
-- Delivered in 1-2 days
-- Annotated PDF audit report
-- Top 5-7 conversion issues identified
-- Exact fix for each issue (copy rewrites, layout changes)
-- Priority ranking (P0/P1/P2)
-- Quick wins you can implement in under an hour
+### AI Diagnostic — $200 flat
 
-### Conversion Sprint — ₹25,000 to ₹50,000
-- Delivered in 5-7 days
-- Everything in the Conversion Audit
-- Headlines and CTAs rewritten and implemented
-- Social proof placement optimized
-- Page structure and flow fixed
-- Mobile experience optimized
-- Before/after documentation
+**Delivered in 72 hours.**
 
-### Conversion System Sprint — ₹50,000 to ₹75,000
-- Delivered in 7-10 days
-- Everything in the Conversion Sprint
-- Full funnel flow redesign
-- Multi-page conversion path optimization
-- Objection handling and FAQ copy
-- Trust architecture (social proof system)
-- Conversion tracking setup recommendations
+- Written opportunity map of your ops or revenue stack
+- Top 3 AI + automation opportunities, ranked by monthly dollar impact
+- Effort and cost estimates per opportunity
+- A scoped, priced recommendation for what to build first
+- 15–20 minute Loom walkthrough you can share with your team
+
+Required before any Build engagement. The Diagnostic is what enables fixed-price, fixed-date delivery.
+
+---
+
+### AI Implementation — $600–$2,400
+
+**Delivered in 1–4 weeks.**
+
+- Built around the Diagnostic's top-ranked opportunities
+- 1–3 connected workflows: onboarding automation, win-back sequences, support triage, reporting pipelines, or whatever fits your stack
+- Tools: n8n, WhatsApp Business API, Shopify webhooks, Claude/GPT, and your existing CRM or data layer
+- Full documentation + live walkthrough on delivery
+- Working systems — not spec documents
+
+---
+
+### Full System Build — $6,000–$12,000
+
+**Delivered in 6–12 weeks.**
+
+- Production-grade automation across your entire ops or revenue stack
+- Complete automation layer, engineered for load and edge cases
+- QA, monitoring, and runbooks for your team
+- Integration with internal tools, CRMs, and data warehouses
+- 30-day post-launch support window included
+- Requires a completed Diagnostic
+
+---
+
+## Payment Terms
+
+50% upfront, 50% on delivery. No retainers. No hourly billing. No surprise invoices. If a delivery date is missed, the balance payment is waived until the system ships.
 
 ---
 
 ## Ideal Client Profile
 
 ### Who This Is For
-- **Coaches and consultants** running ads or posting content, driving people to a landing page — but bookings aren't converting
-- **Clinics and service businesses** (dental, gyms, salons, physiotherapists) with websites that read like brochures instead of conversion funnels
-- **D2C brands and e-commerce** with product pages getting views but not sales, high cart abandonment, or ad landing pages that don't match the promise
+
+- **SaaS teams** spending hours on manual ops: onboarding checklists, support triage, weekly reporting, churn flags
+- **D2C brands** with high cart abandonment, no automated win-back, or ad landing pages not tied to post-purchase flows
+- **Founders and operators** who want AI in their stack but can't isolate where it actually helps vs. where it's a distraction
+- **Businesses with existing tools** (CRM, Shopify, a helpdesk) who want them connected and automated — not replaced
 
 ### Who This Is NOT For
-- Businesses with no online presence or traffic
+
+- Businesses with no digital operations or traffic
 - Anyone expecting free consulting
-- Sub-₹10K budget mindset
-- Pure offline businesses with no digital funnel
-
-### Budget Range
-₹25,000 to ₹1,00,000 per project
-
-### Geography
-India first, open to international clients. All work delivered digitally.
+- Teams looking for a retainer-based agency relationship
 
 ---
 
-## How It Works
+## Tools & Technology Stack
 
-1. **Send your URL** — WhatsApp or email. Just drop your landing page link.
-2. **I find the leaks** — I audit your page against 7 conversion areas: headline clarity, CTA effectiveness, social proof placement, value proposition, messaging quality, UX flow, and conversion killers.
-3. **You get the fixes** — A detailed PDF report showing every issue and the exact fix. Or I implement them myself, depending on your package.
-4. **More visitors convert** — Same traffic, more customers. Most clients see results within the first week after fixes go live.
+| Category | Tools |
+|---|---|
+| Workflow Automation | n8n (self-hosted or cloud) |
+| Messaging | WhatsApp Business API |
+| E-commerce | Shopify webhooks, Shopify Admin API |
+| AI Layers | Claude (Anthropic), GPT (OpenAI) |
+| Data | Supabase, Airtable, Google Sheets, CRMs |
+| Delivery | Full documentation + Loom walkthrough |
+
+Tools are chosen to fit the client's existing stack — not whatever is trending.
 
 ---
 
-## The 7-Area Audit Framework
+## Process
 
-Every audit covers these areas:
-
-1. **First 3 Seconds (Above the Fold)** — Can a visitor instantly understand what this is, who it's for, and what to do next?
-2. **Value Proposition** — Is the offer clear, compelling, and focused on the visitor's problem?
-3. **CTA Analysis** — Is the primary CTA visible, specific, and low-friction?
-4. **Trust & Credibility** — Social proof, testimonials, logos, guarantees above the fold?
-5. **Messaging & Copy** — Benefit-driven language, objection handling, appropriate reading level?
-6. **UX & Flow** — Mobile responsive, fast loading, logical flow (problem → solution → proof → CTA)?
-7. **Conversion Killers** — Broken elements, competing CTAs, missing information, price confusion?
+1. **Book the Diagnostic** — WhatsApp or email. Start with the $200 opportunity map.
+2. **Receive your map in 72 hours** — Top 3 automation opportunities, ranked by impact, scoped for build.
+3. **Choose what to build** — Fixed price, fixed scope, fixed date. No scope creep.
+4. **Systems shipped** — Live walkthrough + full documentation on delivery.
 
 ---
 
 ## Proof and Track Record
 
-- **938 pages** audited and personalized in one automated pipeline project
-- **300+ organic downloads** for a product built with zero ad spend
-- **25+ dashboards and projects** delivered across 5+ industries
-- **200+ user interviews** conducted across multiple products
-- **26 business processes** documented and optimized for a manufacturing company
-- Repeat client who returned for a larger engagement after initial website delivery
+- **25+ builds delivered** across SaaS, D2C, manufacturing, healthcare, and logistics
+- **938 personalized pages** generated and automated for a single client outreach project
+- **40% workflow turnaround reduction** at a Fortune 500 manufacturer using Power Automate
+- **300+ organic downloads** for a consumer product built with zero ad spend (ThrottleApp)
+- **26 business process documents** delivered for a manufacturing company, used daily
+- **7 industries served**: SaaS, D2C, manufacturing, logistics, healthcare, financial services, real estate
+- Repeat client who returned for a larger SaaS engagement after initial website delivery
+
+---
+
+## Client Testimonials
+
+> "Built our entire process documentation system from scratch. 26 detailed documents our team actually uses every day. Hours saved every week."
+> — Director, Manufacturing Business
+
+> "Website was done fast and looked exactly like what we wanted. Came back for the app build because the first project went so smoothly."
+> — Confidential Client, Logistics Platform
+
+> "938 personalized pages for our outreach, all automated. Quality was high, the cost was almost nothing. Impressive work."
+> — Web Dev Freelancer
+
+---
+
+## Frequently Asked Questions
+
+**Q: What exactly do I get for $200?**
+A: A written opportunity map of your ops or revenue stack, the top 3 automation opportunities ranked by monthly dollar impact, effort and cost estimates per opportunity, a specific scoped recommendation for what to build first, and a 15–20 minute Loom walkthrough you can forward to your team. Delivered within 72 hours after our discovery call.
+
+**Q: What tools does GarvinLabs build with?**
+A: n8n for workflow automation, WhatsApp Business API for messaging, Shopify webhooks for D2C, Claude and GPT for the AI layers, and whatever CRM or data tool already lives in your stack. Tools are chosen to fit — not whatever's trending.
+
+**Q: How fast can you deliver?**
+A: AI Diagnostic: 72 hours. AI Implementation: 1–4 weeks. Full System Build: 6–12 weeks. These are hard timelines. If a date is missed, you don't pay the balance until it ships.
+
+**Q: Do I need a Diagnostic before a build?**
+A: Yes, for any Build engagement. The Diagnostic is what enables fixed-price quoting and fixed-date delivery. Without it, scope estimates are guesswork — and guesswork is how projects blow their budget.
+
+**Q: What industries do you serve?**
+A: SaaS, D2C/e-commerce, manufacturing, logistics, healthcare, financial services, and real estate. The automation problems (manual ops, disconnected tools, no win-back flows) are the same across industries.
+
+**Q: Do you work internationally?**
+A: Yes. Everything is delivered digitally. Clients are based across the US, EU, and India.
 
 ---
 
 ## About Garvin Chanderia
 
-Garvin Chanderia is a conversion optimization specialist based in Pune, India.
+Garvin Chanderia is an AI consultant, builder, and founder based in Pune, India.
 
-**Background:**
-- B.Tech in Computer Science (AI/ML) — MIT ADT University
-- Nearly 2 years as Business Analyst at a Fortune 500 manufacturer (25+ dashboards, automation workflows)
+**Career background:**
+- Product Consultant – Enterprise Architecture at Invecto Technologies (Oct 2025–present): ABACUS, ArchiMate, stakeholder demos, capability mapping
+- BI Developer at Cummins India (Fortune 500, Jun 2024–Oct 2025): 25+ Power BI dashboards, SQL, Power Automate, led 6-member team, 40% faster workflow turnaround
+- Founder of ThrottleApp (2024–2025): 300+ organic downloads, 200+ user interviews, Flutter + Firebase
+- UX Designer at Eastern Royal Company (2021–2022): product vision, wireframes, user research
+
+**Education & credentials:**
+- B.Tech Computer Science (AI/ML specialization) — MIT ADT University
 - Microsoft AI PM Professional Certificate
 - Google UX Design Certificate
 - Google Data Analytics Certificate
 - Databricks Lakehouse Fundamentals
 - Product School PAC
 
-**Philosophy:** "Your landing page doesn't need a redesign. It needs 3 specific copy changes that take 20 minutes. A redesign changes the paint. Copy changes fix the engine."
-
----
-
-## Frequently Asked Questions
-
-**Q: What exactly is a conversion audit?**
-A: A detailed PDF audit report covering your landing page or funnel across 7 areas — headline clarity, CTA effectiveness, social proof placement, value proposition, messaging, UX flow, and conversion killers. For each issue, you get the exact fix — not vague advice, but specific rewrites and annotated screenshots.
-
-**Q: How is this different from hiring a designer or agency?**
-A: Designers change how your page looks. GarvinLabs changes how your page converts. Most conversion issues are copy, structure, and placement problems — not design problems. A headline rewrite costs far less than a redesign and often has a bigger impact.
-
-**Q: What kind of results can I expect?**
-A: Common wins include headline rewrites increasing demo bookings by 30-40%, moving social proof above the fold doubling form submissions, and fixing CTA copy increasing click-through by 2-3x.
-
-**Q: How long does it take?**
-A: Conversion Audit: 1-2 days. Conversion Sprint: 5-7 days. Conversion System Sprint: 7-10 days.
-
-**Q: What do you need from me?**
-A: Your landing page URL. That's it. Analytics data helps prioritize but isn't required.
-
-**Q: Do you work with businesses outside India?**
-A: Yes. Everything is delivered digitally. Location doesn't matter.
+**Philosophy:** "Most teams don't have an AI problem — they have a prioritization problem. The Diagnostic answers: which 3 processes, in which order, with which tools. Then we build them."
 
 ---
 
 ## Contact
 
-- **WhatsApp:** +91 93562 49535 (fastest)
+- **WhatsApp:** +91 93562 49535 (fastest response)
 - **Email:** labs.garvin@gmail.com
 - **Website:** https://garvinlabs.vercel.app
-- **Location:** Pune, India
+- **Location:** Pune, India (serving clients globally)
 - **Response time:** Within 24 hours

@@ -23,6 +23,15 @@ export function Guarantee() {
               building, I refund it in full. No forms. No friction. The goal is clarity, not to
               sell you a build you don&apos;t need.
             </p>
+            <a
+              href="https://wa.me/919356249535?text=Hi+Garvin%2C+I+want+to+book+the+%24200+Diagnostic.+%5Bsource%3A+guarantee%5D"
+              target="_blank"
+              rel="noopener"
+              className="btn btn-green"
+              style={{ marginTop: 24, display: "inline-flex", alignItems: "center", gap: 8 }}
+            >
+              Book the $200 Diagnostic — if it&apos;s not useful, you pay nothing
+            </a>
           </div>
         </div>
       </div>

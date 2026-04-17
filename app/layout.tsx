@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | GarvinLabs",
   },
   description:
-    "GarvinLabs is an AI consulting and implementation practice. We map where AI fits in your business, then build the systems. Fixed price. 2–4 week delivery. Start with a free teardown.",
+    "GarvinLabs maps where AI fits in your business, then builds the systems. Fixed price. 2–4 week delivery. 25+ builds delivered. Start with a free AI teardown.",
   keywords: [
     "AI consulting",
     "AI implementation",
@@ -41,6 +41,11 @@ export const metadata: Metadata = {
     "Garvin Chanderia",
     "AI opportunity audit",
     "AI teardown",
+    "AI consulting fixed price",
+    "n8n automation India",
+    "WhatsApp automation",
+    "Shopify AI automation",
+    "AI implementation freelancer",
   ],
   authors: [{ name: "Garvin Chanderia", url: "https://garvinlabs.vercel.app" }],
   creator: "Garvin Chanderia",
@@ -51,10 +56,10 @@ export const metadata: Metadata = {
     siteName: "GarvinLabs",
     title: "GarvinLabs | AI Consulting & Implementation",
     description:
-      "We help modern teams find where AI actually fits, then build the systems. Fixed price. No retainers. Start with a free teardown.",
+      "I help modern teams find where AI actually fits, then build the systems. Fixed price. No retainers. Start with a free teardown.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/website-images/og-image.png",
         width: 1200,
         height: 630,
         alt: "GarvinLabs | AI Consulting & Implementation",
@@ -65,8 +70,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "GarvinLabs | AI Consulting & Implementation",
     description:
-      "We help modern teams find where AI fits, then build the systems. Start with a free teardown.",
-    images: ["/og-image.png"],
+      "I help modern teams find where AI fits, then build the systems. Start with a free teardown.",
+    images: ["/website-images/og-image.png"],
   },
   robots: {
     index: true,
@@ -75,6 +80,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://garvinlabs.vercel.app",
+  },
+  verification: {
+    google: "c0xYu5MD9Yqhy96sjE-hCuOxN9ft2UKwOvCGdpsmioY",
   },
   icons: {
     icon: "/website-images/favicon.png",

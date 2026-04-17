@@ -14,7 +14,7 @@ export function Offers() {
             <span className="eyebrow-dot"></span>Three Clear Offers
           </span>
           <h2 className="h2" style={{ marginTop: 18 }}>
-            Pick the scope. Get the price. We build.
+            Pick the scope. Get the price. I build.
           </h2>
           <p className="lead">
             No hourly billing. No vague retainers. Each offer is fixed-price, fixed-scope, and
@@ -23,8 +23,8 @@ export function Offers() {
           </p>
         </div>
         <div className="offers-grid">
-          <div className="offer-card reveal">
-            <span className="offer-pill standard">Start Here</span>
+          <div className="offer-card featured reveal">
+            <span className="offer-pill popular">Start Here</span>
             <h3 className="offer-name">Diagnostic</h3>
             <div className="offer-price">
               <span className="amount">$200</span>
@@ -54,8 +54,8 @@ export function Offers() {
             </div>
           </div>
 
-          <div className="offer-card featured reveal">
-            <span className="offer-pill popular">Most Popular</span>
+          <div className="offer-card reveal">
+            <span className="offer-pill standard">Most Popular</span>
             <h3 className="offer-name">AI Implementation</h3>
             <div className="offer-price">
               <span className="amount">$600–$2,400</span>
