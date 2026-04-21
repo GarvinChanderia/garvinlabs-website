@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/JsonLd";
+import ChatBot from "@/components/ChatBot";
+
 
 const inter = Inter({
   variable: "--font-inter",
@@ -106,6 +108,7 @@ export default function RootLayout({
         <JsonLd />
         <a href="#main" className="skip-link">Skip to main content</a>
         {children}
+        <ChatBot />
       </body>
     </html>
   );
