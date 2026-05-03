@@ -138,12 +138,16 @@ a {
 /* Google Translate Styling in Navbar */
 #google_translate_element {
   display: inline-block;
+  min-width: 140px;
+  min-height: 38px;
+  vertical-align: middle;
 }
 
 .goog-te-gadget {
   font-family: var(--font-body) !important;
   color: var(--muted) !important;
   font-size: 0.8rem !important;
+  line-height: 1 !important;
 }
 
 .goog-te-gadget .goog-te-combo {
@@ -155,10 +159,16 @@ a {
   color: var(--ink);
   outline: none;
   cursor: pointer;
+  margin: 0 !important;
 }
 
 .goog-te-gadget span, .goog-logo-link, .goog-te-banner-frame {
   display: none !important;
+}
+
+.skiptranslate {
+  display: flex;
+  align-items: center;
 }
 
 body { top: 0 !important; }
