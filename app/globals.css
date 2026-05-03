@@ -59,6 +59,7 @@ a {
 }
 
 .text-center { text-align: center; }
+.mb-1 { margin-bottom: 1rem; }
 .mb-4 { margin-bottom: 4rem; }
 .narrow-container { max-width: 800px; }
 .max-900 { max-width: 900px; }
@@ -127,6 +128,40 @@ a {
   gap: 2rem;
   align-items: center;
 }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Google Translate Styling in Navbar */
+#google_translate_element {
+  display: inline-block;
+}
+
+.goog-te-gadget {
+  font-family: var(--font-body) !important;
+  color: var(--muted) !important;
+  font-size: 0.8rem !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: var(--border);
+  background: var(--surface);
+  font-family: var(--font-body);
+  color: var(--ink);
+  outline: none;
+  cursor: pointer;
+}
+
+.goog-te-gadget span, .goog-logo-link, .goog-te-banner-frame {
+  display: none !important;
+}
+
+body { top: 0 !important; }
 
 /* Hero Section */
 .hero-section {
@@ -361,60 +396,96 @@ a {
   display: inline-block;
 }
 
-/* Footer */
+/* Enhanced Footer */
 .footer {
-  padding: 4rem 0;
+  padding: 5rem 0 3rem;
   border-top: var(--border);
+  background: var(--white);
 }
 
-.footer-content {
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-tagline {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-links-list {
+  list-style: none;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links-list a {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.footer-links-list a:hover {
+  color: var(--primary);
+}
+
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 rgba(16, 185, 129, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.footer-bottom {
+  border-top: var(--border);
+  padding-top: 2rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
-.footer-links {
+.legal-links {
   display: flex;
   gap: 2rem;
-  align-items: center;
 }
 
-/* Google Translate Styling */
-#google_translate_element {
-  display: inline-block;
-}
-
-.goog-te-gadget {
-  font-family: var(--font-body) !important;
-  color: var(--muted) !important;
-  font-size: 0.8rem !important;
-}
-
-.goog-te-gadget .goog-te-combo {
-  padding: 4px 8px;
-  border-radius: 8px;
-  border: var(--border);
-  background: var(--surface);
-  font-family: var(--font-body);
-  color: var(--ink);
-  outline: none;
-}
-
-.goog-te-gadget span {
-  display: none !important;
-}
-
-.goog-logo-link {
-  display: none !important;
-}
-
-.goog-te-banner-frame {
-  display: none !important;
-}
-
-body {
-  top: 0 !important;
+.legal-links a:hover {
+  text-decoration: underline;
 }
 
 /* Background patterns */
@@ -447,6 +518,10 @@ body {
   .profile-ctas {
     justify-content: center;
   }
+  
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -460,8 +535,13 @@ body {
     gap: 1rem;
     width: 100%;
   }
+
+  .nav-actions {
+    flex-direction: column;
+    width: 100%;
+  }
   
-  .nav-links a {
+  .nav-links a, .nav-actions a {
     width: 100%;
     text-align: center;
   }
@@ -482,13 +562,18 @@ body {
     grid-template-columns: 1fr;
   }
   
-  .footer-content {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .footer-bottom {
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
   }
   
-  .footer-links {
+  .legal-links {
     justify-content: center;
   }
 }

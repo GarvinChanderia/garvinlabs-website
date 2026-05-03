@@ -13,7 +13,10 @@ export default function Home() {
           <a href="#triage">AI Support Triage</a>
           <a href="#lab">The Lab</a>
           <a href="#profile">Profile</a>
-          <a href="https://calendly.com/labs-garvin/30min" className="btn-primary">Book a Strategy Call</a>
+          <div className="nav-actions">
+            <div id="google_translate_element"></div>
+            <a href="https://calendly.com/labs-garvin/30min" className="btn-primary">Book a Strategy Call</a>
+          </div>
         </div>
       </nav>
 
@@ -125,7 +128,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Profile Section (Replacing "Value") */}
+      {/* The Profile Section */}
       <section id="profile" className="profile-section">
         <div className="container section profile-grid">
           <div className="profile-image-box">
@@ -153,12 +156,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Enhanced Footer */}
       <footer className="footer">
-        <div className="container footer-content">
-          <div>© 2026 GarvinLabs. Architected by Garvin.</div>
-          <div className="footer-links">
-            <div id="google_translate_element"></div>
+        <div className="container footer-grid">
+          <div className="footer-col">
+            <div className="logo-group mb-1">
+              <Image src="/logo-icon.svg" alt="GarvinLabs" width={24} height={24} />
+              <span style={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'var(--ink)' }}>GarvinLabs</span>
+            </div>
+            <p className="footer-tagline">
+              Eliminating the Manual Tax through high-rigour AI architecture.
+            </p>
+            <div className="system-status">
+              <span className="status-dot"></span> Systems Operational
+            </div>
+          </div>
+          
+          <div className="footer-col">
+            <h4 className="footer-heading">Systems</h4>
+            <ul className="footer-links-list">
+              <li><a href="#triage">AI Support Triage</a></li>
+              <li><a href="#profile">Autonomous Agents</a></li>
+              <li><a href="#lab">The Lab (Demos)</a></li>
+            </ul>
+          </div>
+          
+          <div className="footer-col">
+            <h4 className="footer-heading">Connect</h4>
+            <ul className="footer-links-list">
+              <li><a href="https://linkedin.com/in/garvinchanderia" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="mailto:labs.garvin@gmail.com">Email Support</a></li>
+              <li><a href="https://calendly.com/labs-garvin/30min">Book a Strategy Call</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="container footer-bottom">
+          <div className="copyright">© 2026 GarvinLabs. Architected by Garvin.</div>
+          <div className="legal-links">
             <a href="/terms">Terms</a>
             <a href="/privacy">Privacy</a>
           </div>
