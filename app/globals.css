@@ -135,43 +135,56 @@ a {
   gap: 1.5rem;
 }
 
-/* Google Translate Styling in Navbar */
-#google_translate_element {
-  display: inline-block;
-  min-width: 140px;
-  min-height: 38px;
-  vertical-align: middle;
-}
-
-.goog-te-gadget {
-  font-family: var(--font-body) !important;
-  color: var(--muted) !important;
-  font-size: 0.8rem !important;
-  line-height: 1 !important;
-}
-
-.goog-te-gadget .goog-te-combo {
-  padding: 6px 10px;
-  border-radius: 8px;
+/* Custom Language Selector */
+.custom-select {
+  appearance: none;
+  background-color: var(--surface);
   border: var(--border);
-  background: var(--surface);
+  border-radius: 8px;
+  padding: 6px 32px 6px 12px;
   font-family: var(--font-body);
+  font-size: 0.85rem;
   color: var(--ink);
-  outline: none;
   cursor: pointer;
-  margin: 0 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 14px;
+  transition: all 0.2s ease;
+  min-width: 110px;
 }
 
-.goog-te-gadget span, .goog-logo-link, .goog-te-banner-frame {
+.custom-select:hover {
+  border-color: var(--primary);
+  background-color: var(--white);
+}
+
+.custom-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
+  border-color: var(--primary);
+}
+
+/* Hide Google Translate Branding & Overlays */
+.goog-te-banner-frame, 
+.goog-te-balloon-frame, 
+.goog-te-gadget-icon, 
+.goog-logo-link, 
+#goog-gt-tt, 
+.goog-te-spinner-pos {
   display: none !important;
 }
 
-.skiptranslate {
-  display: flex;
-  align-items: center;
+.goog-te-gadget {
+  height: 0 !important;
+  font-size: 0 !important;
+  color: transparent !important;
 }
 
-body { top: 0 !important; }
+body { top: 0 !important; position: static !important; }
+.skiptranslate { display: none !important; }
+iframe.skiptranslate { display: none !important; }
+#google_translate_element { display: none !important; }
 
 /* Hero Section */
 .hero-section {

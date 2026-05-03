@@ -1,4 +1,4 @@
-import Image from "next/image";
+import LanguageSelector from "@/components/LanguageSelector";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
           <a href="#lab">The Lab</a>
           <a href="#profile">Profile</a>
           <div className="nav-actions">
-            <div id="google_translate_element"></div>
+            <LanguageSelector />
             <a href="https://calendly.com/labs-garvin/30min" className="btn-primary">Book a Strategy Call</a>
           </div>
         </div>
