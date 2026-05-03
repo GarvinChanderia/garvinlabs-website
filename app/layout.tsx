@@ -35,6 +35,21 @@ export default function RootLayout({
       <body className={`${figtree.variable} ${outfit.variable} ${jetbrainsMono.variable}`}>
         <SchemaOrg />
         {children}
+        <script
+          type="text/javascript"
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        ></script>
+        <script
+          id="google-translate-init"
+          dangerouslySetInnerHTML={{
+            __html: `
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+              }
+            `,
+          }}
+        ></script>
       </body>
     </html>
   );

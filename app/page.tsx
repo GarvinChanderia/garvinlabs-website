@@ -158,6 +158,7 @@ export default function Home() {
         <div className="container footer-content">
           <div>© 2026 GarvinLabs. Architected by Garvin.</div>
           <div className="footer-links">
+            <div id="google_translate_element"></div>
             <a href="/terms">Terms</a>
             <a href="/privacy">Privacy</a>
           </div>
