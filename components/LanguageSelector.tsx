@@ -17,19 +17,41 @@ const LANGUAGES = [
 
 export default function LanguageSelector() {
   const [selected, setSelected] = useState("en");
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    // Check if Google Translate is ready
+    const checkInterval = setInterval(() => {
+      const combo = document.querySelector(".goog-te-combo");
+      if (combo) {
+        setIsReady(true);
+        clearInterval(checkInterval);
+      }
+    }, 1000);
+
+    return () => clearInterval(checkInterval);
+  }, []);
 
   const handleTranslate = (langCode: string) => {
     setSelected(langCode);
     
-    // We try multiple ways to find the hidden Google dropdown
-    const googleCombo = document.querySelector(".goog-te-combo") as HTMLSelectElement;
-    if (googleCombo) {
-      googleCombo.value = langCode;
-      googleCombo.dispatchEvent(new Event("change"));
+    const triggerTranslation = () => {
+      const googleCombo = document.querySelector(".goog-te-combo") as HTMLSelectElement;
+      if (googleCombo) {
+        googleCombo.value = langCode;
+        googleCombo.dispatchEvent(new Event("change"));
+        
+        // Also set the cookie as a backup/persistent method
+        document.cookie = `googtrans=/en/${langCode}; path=/`;
+        document.cookie = `googtrans=/en/${langCode}; domain=.vercel.app; path=/`;
+      }
+    };
+
+    if (isReady) {
+      triggerTranslation();
     } else {
-      console.error("Google Translate combo not found. Is the widget initialized?");
-      // Attempt to trigger it by clicking the 'G' icon if we were using the old UI, 
-      // but here we just need the combo to exist.
+      // If not ready, wait a bit and try once
+      setTimeout(triggerTranslation, 1000);
     }
   };
 
@@ -39,28 +61,30 @@ export default function LanguageSelector() {
         value={selected} 
         onChange={(e) => handleTranslate(e.target.value)}
         className="custom-select"
+        disabled={!isReady && selected === "en"}
       >
         {LANGUAGES.map((lang) => (
           <option key={lang.code} value={lang.code}>
-            {lang.name}
+            {lang.name} {!isReady && lang.code !== 'en' ? '(Loading...)' : ''}
           </option>
         ))}
       </select>
       
       {/* 
-        CRITICAL: We keep the Google element in the DOM and "visible" to the script,
-        but hidden from the user. display:none often prevents initialization.
+        Keep it in the DOM but absolutely off-screen.
+        Ensure it has some size so the script doesn't think it's 'hidden'.
       */}
       <div 
         id="google_translate_element" 
         style={{ 
-          position: 'absolute', 
-          top: '-9999px', 
-          left: '-9999px',
-          opacity: 0,
+          position: 'fixed', 
+          top: '-100px', 
+          left: '-100px',
+          width: '1px',
+          height: '1px',
+          opacity: 0.01,
           pointerEvents: 'none',
-          height: 0,
-          overflow: 'hidden'
+          zIndex: -1
         }}
       ></div>
     </div>
