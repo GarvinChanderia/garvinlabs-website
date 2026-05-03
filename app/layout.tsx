@@ -36,16 +36,20 @@ export default function RootLayout({
       <body className={`${figtree.variable} ${outfit.variable} ${jetbrainsMono.variable}`}>
         <SchemaOrg />
         {children}
+        
+        {/* Load Google Translate Script */}
         <Script
           src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
           strategy="afterInteractive"
         />
+        
+        {/* Initialize Global Translation Function */}
         <Script id="google-translate-init" strategy="afterInteractive">
           {`
             window.googleTranslateElementInit = function() {
               new window.google.translate.TranslateElement({
                 pageLanguage: 'en',
-                layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+                autoDisplay: false
               }, 'google_translate_element');
             }
           `}
