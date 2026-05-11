@@ -45,56 +45,58 @@ export default function Home() {
       </section>
 
       {/* ── S2: PROBLEM ──────────────────────────────────────── */}
-      <section id="problem" className="section-mist-bg section-white" aria-label="The problem">
+      <section id="problem" className="problem-section" aria-label="The problem">
         <div className="container section">
-          <p className="section-intro text-center reveal">
+          <h2 className="section-title text-center mb-3">
             Here&apos;s what your support inbox actually looks like.
-          </p>
+          </h2>
 
-          <article className="pain-block reveal">
-            <h2>The math doesn&apos;t work.</h2>
-            <p>
-              A $5M D2C brand averages 150–300 support emails a day. 60% are &ldquo;where is my
-              order,&rdquo; return requests, and sizing questions your FAQ already answers. Your team
-              reads every single one before they know what to do with it.
-            </p>
-            <p className="pain-punch">That&apos;s not support. That&apos;s sorting.</p>
-            <p>
-              You&apos;re paying $40,000 a year for a human to sort emails that AI handles
-              automatically, within minutes, around the clock.
-            </p>
-          </article>
+          <div className="problem-grid reveal">
+            <article className="problem-card">
+              <div className="problem-number">01 — Volume</div>
+              <h3>The math doesn&apos;t work.</h3>
+              <p>
+                A $5M D2C brand averages 150–300 support emails a day. 60% are &ldquo;where is my
+                order,&rdquo; returns, and sizing questions your FAQ already answers. Your team reads
+                every single one before they know what to do with it.
+              </p>
+              <p className="problem-punch">
+                That&apos;s not support. That&apos;s sorting — and you&apos;re paying $40,000 a year for it.
+              </p>
+            </article>
 
-          <article className="pain-block reveal">
-            <h2>The ticket that cost you $800.</h2>
-            <p>
-              A billing dispute arrives Friday at 4pm. Your team leaves for the weekend. Monday
-              morning, the customer has already filed a chargeback. You lose the dispute. You lose
-              the $800 plus fees.
-            </p>
-            <p className="pain-punch">
-              Speed isn&apos;t a nice-to-have. It&apos;s how D2C brands protect margin.
-            </p>
-          </article>
+            <article className="problem-card">
+              <div className="problem-number">02 — Speed</div>
+              <h3>The ticket that cost you $800.</h3>
+              <p>
+                A billing dispute arrives Friday at 4pm. Your team leaves for the weekend. Monday
+                morning, the customer has already filed a chargeback. You lose the dispute, the $800,
+                plus fees.
+              </p>
+              <p className="problem-punch">
+                Speed isn&apos;t a nice-to-have. It&apos;s how D2C brands protect margin.
+              </p>
+            </article>
 
-          <article className="pain-block reveal">
-            <h2>The hidden cost of manual sorting.</h2>
-            <p>
-              A support coordinator costs $3,000–$5,000/month in the US. And 60–70% of their day is
-              reading and sorting, not responding thoughtfully. Just sorting.
-            </p>
-            <p>AI handles that layer automatically.</p>
-            <p className="pain-punch">
-              One month of a support coordinator costs more than this entire build.
-            </p>
-          </article>
+            <article className="problem-card">
+              <div className="problem-number">03 — Cost</div>
+              <h3>The hidden cost of manual sorting.</h3>
+              <p>
+                A support coordinator costs $3,000–$5,000/month in the US. And 60–70% of their day
+                is reading and sorting — not responding thoughtfully. Just sorting.
+              </p>
+              <p className="problem-punch">
+                One month of a coordinator costs more than this entire build.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
       {/* ── S3: BEFORE / AFTER ───────────────────────────────── */}
       <section id="results" className="section-mist-bg section-surface" aria-label="Before and after">
         <div className="container section">
-          <h2 className="section-title text-center mb-4">
+          <h2 className="section-title text-center mb-3">
             What changes when your inbox runs on AI.
           </h2>
           <div className="ba-wrapper reveal">
@@ -151,7 +153,7 @@ export default function Home() {
       {/* ── S4: HOW IT WORKS ─────────────────────────────────── */}
       <section id="process" className="section-sand" aria-label="How it works">
         <div className="container section">
-          <h2 className="section-title text-center mb-4">Three phases. One build. You own it.</h2>
+          <h2 className="section-title text-center mb-3">Three phases. One build. You own it.</h2>
           <div className="phase-grid reveal">
             <div className="phase-card">
               <div className="phase-number">01</div>
@@ -214,7 +216,7 @@ export default function Home() {
       {/* ── S6: WHAT YOU GET ─────────────────────────────────── */}
       <section id="offer" className="section-mist-bg section-surface" aria-label="What you get">
         <div className="container section">
-          <h2 className="section-title text-center mb-4">Everything included. No surprises.</h2>
+          <h2 className="section-title text-center mb-3">Everything included. No surprises.</h2>
           <div className="feature-grid-2col reveal">
             <div className="feature-block">
               <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
