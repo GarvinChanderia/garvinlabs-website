@@ -43,4 +43,6 @@ next-env.d.ts
 # local vault data
 Archive/
 index.md
+image-assets/
+audits/
 
