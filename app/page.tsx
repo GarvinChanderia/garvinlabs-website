@@ -414,7 +414,7 @@ export default function Home() {
             <a href="#demo" className="btn-secondary btn-large">
               Watch the Demo First →
             </a>
-            <a href="#" className="cta-tertiary">
+            <a href="/report" className="cta-tertiary">
               Download the Free Report →
             </a>
           </div>
@@ -432,7 +432,7 @@ export default function Home() {
             />
             <div className="pdf-info">
               <p className="pdf-title">The D2C Support Cost Report</p>
-              <a href="#" className="pdf-link">
+              <a href="/report" className="pdf-link">
                 Download free →
               </a>
             </div>
