@@ -747,7 +747,7 @@ iframe.skiptranslate { display: none !important; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.875rem 2rem;
+  padding: 0.35rem 2rem;
   gap: 2rem;
 }
 
@@ -1464,7 +1464,12 @@ iframe.skiptranslate { display: none !important; }
   color: var(--ink);
 }
 
-.faq-item { border-bottom: var(--border); }
+.faq-item {
+  border-bottom: var(--border);
+  /* Remove native details marker */
+}
+.faq-item summary { list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
 
 .faq-trigger {
   width: 100%;
@@ -1491,16 +1496,10 @@ iframe.skiptranslate { display: none !important; }
   line-height: 1;
 }
 
-.faq-icon.open { transform: rotate(45deg); }
+/* Open state driven by native details element — no JS required */
+details[open] .faq-icon { transform: rotate(45deg); }
 
 .faq-answer {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease, padding-bottom 0.3s ease;
-}
-
-.faq-answer.open {
-  max-height: 320px;
   padding-bottom: 1.25rem;
 }
 
@@ -1508,6 +1507,21 @@ iframe.skiptranslate { display: none !important; }
   font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.75;
+}
+
+/* Definition strip — AEO/GEO anchor paragraph, visually understated */
+.definition-strip {
+  background: var(--surface, #F9FAFB);
+  border-bottom: 1px solid var(--border-color, #E5E7EB);
+  padding: 1rem 0;
+}
+.definition-strip #what-we-do {
+  font-size: 0.9rem;
+  color: var(--muted, #6B7280);
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Reveal on scroll */
@@ -1951,4 +1965,496 @@ iframe.skiptranslate { display: none !important; }
   .report-nav { padding: 1rem 1.25rem; }
   .report-headline { font-size: 1.75rem; }
   .report-form { padding: 1.25rem; }
+}
+
+/* ============================================================
+   Portfolio / Thought Leadership Site
+   ============================================================ */
+
+/* Hero — portfolio variant */
+.portfolio-hero {
+  text-align: center;
+}
+
+.portfolio-hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.05;
+  margin-bottom: 0.875rem;
+  color: var(--ink);
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.hero-tagline {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Section eyebrow label */
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+/* Proof point block */
+.proof-block {
+  background: var(--white);
+  border: var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 2rem 2rem 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.proof-tag {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.75rem;
+}
+
+.proof-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.875rem;
+}
+
+.proof-desc {
+  font-size: 0.975rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.proof-stats {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Writing section */
+.writing-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.writing-placeholder {
+  display: inline-flex;
+  padding: 0.875rem 1.5rem;
+  border: var(--border);
+  border-style: dashed;
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  color: var(--muted);
+}
+
+/* Methodology note below proof stats */
+.proof-method {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* Responsive — portfolio */
+@media (max-width: 768px) {
+  .portfolio-hero h1 { font-size: 2.25rem; }
+  .hero-tagline       { font-size: 1.05rem; }
+  .stat-num           { font-size: 1.6rem; }
+  .proof-stats        { gap: 1.5rem; }
+}
+
+/* ============================================================
+   Premium Hero
+   ============================================================ */
+
+.hero-premium {
+  min-height: calc(100vh - 44px);
+  align-items: center;
+  padding: 0;
+}
+
+.hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 10, 18, 0.96) 0%,
+    rgba(8, 10, 18, 0.85) 55%,
+    rgba(16, 185, 129, 0.07) 100%
+  );
+}
+
+.hero-premium-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 4.5rem;
+  padding-bottom: 4rem;
+}
+
+.hero-eyebrow-dark {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+.hero-premium-title {
+  font-size: clamp(4.5rem, 9vw, 8rem);
+  font-weight: 900;
+  line-height: 1.0;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+}
+
+.hero-name-accent {
+  color: var(--primary);
+}
+
+.hero-premium-sub {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 3rem;
+}
+
+.hero-premium-cta {
+  border-radius: 12px;
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .hero-premium          { min-height: calc(100vh - 44px); }
+  .hero-premium-title    { font-size: clamp(3.5rem, 13vw, 5.5rem); }
+  .hero-premium-sub      { font-size: 1.05rem; }
+  .hero-premium-content  { padding-top: 3rem; padding-bottom: 3rem; }
+}
+
+/* ============================================================
+   Writing / Blog
+   ============================================================ */
+
+/* Post layout */
+.post-layout {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.post-back {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  transition: color 0.15s ease;
+}
+
+.post-back:hover { color: var(--primary); }
+
+.post-tag {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.875rem;
+}
+
+.post-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.post-lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: var(--border);
+}
+
+/* Post body */
+.post-body {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--ink);
+}
+
+.post-body p {
+  margin-bottom: 1.5rem;
+}
+
+.post-body h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.post-body ul {
+  margin: 0 0 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.post-body li {
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.post-body em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* Post footer */
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: var(--border);
+  font-size: 0.975rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.post-footer a {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.post-footer a:hover { text-decoration: underline; }
+
+/* Writing index — post list */
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-top: 2.5rem;
+  border: var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.post-list-card {
+  display: block;
+  padding: 1.75rem 2rem;
+  background: var(--white);
+  transition: background 0.15s ease;
+}
+
+.post-list-card:hover { background: var(--surface); }
+
+.post-list-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.post-list-desc {
+  font-size: 0.925rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 0.875rem;
+}
+
+.post-list-cta {
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Writing section homepage — post card */
+.writing-post-card {
+  display: block;
+  background: var(--white);
+  border: var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.writing-post-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.writing-post-card .post-tag {
+  margin-bottom: 0.5rem;
+}
+
+.writing-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.writing-card-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 0.875rem;
+}
+
+.writing-card-cta {
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .post-layout { padding: 2rem 1.25rem 4rem; }
+  .post-title   { font-size: 1.75rem; }
+  .post-lead    { font-size: 1.05rem; }
+  .post-body    { font-size: 1rem; }
+  .post-list-card { padding: 1.25rem 1.5rem; }
+}
+
+/* ============================================================
+   Project Grid
+   ============================================================ */
+
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.project-card {
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.project-card--featured {
+  border-left: 3px solid var(--primary);
+}
+
+.project-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.project-status-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.project-status-badge[data-status="shipped"] {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--primary);
+}
+
+.project-status-badge[data-status="in-progress"] {
+  background: rgba(107, 114, 128, 0.1);
+  color: var(--muted);
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.stack-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: var(--surface);
+  border: var(--border);
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .project-card { padding: 1.5rem 1.25rem; }
+  .project-card-header { flex-wrap: wrap; }
 }

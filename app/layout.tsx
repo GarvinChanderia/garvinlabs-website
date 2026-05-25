@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/next";
 const figtree = Figtree({
   subsets: ["latin"],
   variable: "--font-heading",
-  weight: ["600", "700"],
+  weight: ["600", "700", "800", "900"],
 });
 
 const outfit = Outfit({
@@ -23,23 +23,23 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GarvinLabs — AI Customer Support Automation for D2C Brands",
+  title: "Garvin Chanderia — Enterprise Architecture & AI Automation",
   description:
-    "Replace manual support sorting with AI. Every ticket read, prioritised, and 60% auto-replied within 2 minutes. Built for D2C brands processing 100+ support emails a day. Book a free 20-min call.",
+    "Enterprise Architecture Consultant and AI & automation practitioner. Building systems that replace manual ops. Writing about what it actually takes to implement AI that works.",
   metadataBase: new URL("https://garvinlabs.com"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "GarvinLabs — AI Customer Support Automation for D2C Brands",
+    title: "Garvin Chanderia — Enterprise Architecture & AI Automation",
     description:
-      "Replace manual support sorting with AI. Every ticket read, prioritised, and 60% auto-replied within 2 minutes. Built for D2C brands.",
+      "Enterprise Architecture Consultant and AI & automation practitioner. Building systems that replace manual ops.",
     url: "https://garvinlabs.com",
-    siteName: "GarvinLabs",
+    siteName: "Garvin Chanderia",
     images: [
       {
         url: "/website-images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "GarvinLabs — AI Customer Support Automation for D2C Brands",
+        alt: "Garvin Chanderia — Enterprise Architecture & AI Automation",
       },
     ],
     locale: "en_US",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GarvinLabs — AI Customer Support Automation for D2C Brands",
+    title: "Garvin Chanderia — Enterprise Architecture & AI Automation",
     description:
-      "Replace manual support sorting with AI. Every ticket read, prioritised, and 60% auto-replied within 2 minutes.",
+      "Enterprise Architecture Consultant and AI & automation practitioner. Building systems that replace manual ops.",
     images: ["/website-images/og-image.png"],
   },
   robots: {
@@ -70,8 +70,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${figtree.variable} ${outfit.variable} ${jetbrainsMono.variable}`}>
+      <head>
         <SchemaOrg />
+      </head>
+      <body className={`${figtree.variable} ${outfit.variable} ${jetbrainsMono.variable}`}>
         {children}
         <SpeedInsights />
         <Analytics />

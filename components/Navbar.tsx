@@ -4,10 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { label: "Demo",         href: "#demo"    },
-  { label: "How It Works", href: "#process" },
-  { label: "What You Get", href: "#offer"   },
-  { label: "Contact",      href: "#contact" },
+  { label: "Projects", href: "#projects" },
+  { label: "About",    href: "#about"    },
 ];
 
 export default function Navbar() {
@@ -40,8 +38,8 @@ export default function Navbar() {
       <div className="navbar-inner container">
         {/* Logo */}
         <a href="#" className="logo-group" aria-label="GarvinLabs home">
-          <Image src="/logo-icon.svg"     alt=""            width={28} height={28} aria-hidden="true" />
-          <Image src="/logo-wordmark.svg" alt="GarvinLabs"  width={120} height={28} />
+          <Image src="/logo-icon.svg"     alt=""            width={22} height={22} aria-hidden="true" />
+          <Image src="/logo-wordmark.svg" alt="GarvinLabs"  width={100} height={22} />
         </a>
 
         {/* Desktop links + CTA */}
@@ -58,13 +56,13 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://calendly.com/labs-garvin/30min"
-            className="btn-primary nav-cta"
+            href="https://linkedin.com/in/garvinchanderia"
+            className="btn-secondary nav-cta"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
           >
-            Book a Call
+            LinkedIn
           </a>
         </div>
 
