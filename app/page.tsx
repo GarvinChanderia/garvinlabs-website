@@ -43,6 +43,32 @@ const PROJECTS = [
     loom: null,
     status: "shipped",
   },
+  {
+    tag: "AI · Multi-Agent · LinkedIn",
+    name: "LinkedIn Intelligence Suite",
+    desc: "7-agent system that works entirely from LinkedIn's raw data export — no API, no rate limits. Agents run in parallel: one filters connections by ICP, one maps relationship warmth, one finds referral paths to target companies, one mines engagement history for content signals, one drafts personalized outreach.",
+    stack: ["Claude API", "Multi-agent", "Python"],
+    stats: [
+      { num: "7", label: "specialist agents" },
+      { num: "0", label: "API calls to LinkedIn" },
+    ],
+    note: "Built around the export file, not the API — sidesteps rate limits and ToS friction entirely. Each agent has a narrow brief and its own scoring rubric. Spawned in parallel from a single orchestrator call.",
+    loom: null,
+    status: "shipped",
+  },
+  {
+    tag: "AI · Multi-Agent · CRO",
+    name: "7-Specialist CRO Audit System",
+    desc: "Seven agents audit a website simultaneously, each owning one conversion lens: first impression, positioning, homepage flow, product pages, trust signals, UX friction, and revenue strategy. Findings are synthesized into a single ranked fix list.",
+    stack: ["Claude API", "Multi-agent"],
+    stats: [
+      { num: "7", label: "parallel agents" },
+      { num: "1", label: "pass to full audit" },
+    ],
+    note: "Each agent runs with its own scoring rubric and output format — no shared context, no bias bleed. The synthesis agent reads all 7 reports and resolves conflicts by impact. One orchestrator call, full audit in minutes.",
+    loom: null,
+    status: "shipped",
+  },
 ];
 
 export default function Home() {
