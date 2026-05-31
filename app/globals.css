@@ -2170,10 +2170,18 @@ details[open] .faq-icon { transform: rotate(45deg); }
 }
 
 @media (max-width: 768px) {
-  .hero-premium          { min-height: calc(100vh - 44px); }
-  .hero-premium-title    { font-size: clamp(2.5rem, 8vw, 3.5rem); }
-  .hero-premium-sub      { font-size: 1.05rem; }
-  .hero-premium-content  { padding-top: 3rem; padding-bottom: 3rem; }
+  .hero-premium          { min-height: auto; padding: 0; }
+  .hero-premium-title    { font-size: clamp(2rem, 8vw, 3rem); }
+  .hero-premium-sub      { font-size: 1rem; margin-bottom: 2rem; }
+  .hero-premium-content  { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .hero-image-wrapper    { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero-premium-title    { font-size: clamp(1.75rem, 9vw, 2.5rem); }
+  .hero-premium-sub      { font-size: 0.95rem; }
+  .hero-premium-content  { padding-top: 2rem; padding-bottom: 2rem; }
+  .hero-kpis             { gap: 1.25rem; }
 }
 
 /* ============================================================
