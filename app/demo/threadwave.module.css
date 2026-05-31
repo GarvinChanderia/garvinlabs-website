@@ -1,0 +1,256 @@
+/* ThreadWave Demo Store */
+.page {
+  min-height: 100vh;
+  background: #fafaf9;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+}
+
+/* ── Store Header ── */
+.storeHeader {
+  border-bottom: 1px solid #e8e0d8;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.storeHeaderInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brandMark {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: #111827;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 900; color: #fff;
+  flex-shrink: 0;
+}
+.brandName { font-size: 16px; font-weight: 700; color: #111827; letter-spacing: -0.4px; }
+.brandBadge {
+  font-size: 10px; font-weight: 600; color: #999;
+  background: #f0ede8; padding: 3px 9px; border-radius: 20px;
+}
+.storeNav { display: flex; align-items: center; gap: 24px; }
+.storeNavLink {
+  font-size: 13px; color: #666; text-decoration: none;
+  transition: color 0.15s;
+}
+.storeNavLink:hover { color: #111827; }
+.cartIcon { font-size: 20px; cursor: pointer; background: none; border: none; }
+
+/* ── Hero ── */
+.hero {
+  background: #111827;
+  color: #fff;
+  padding: 72px 24px;
+}
+.heroInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .heroInner { grid-template-columns: 1fr; }
+  .heroVisual { display: none; }
+  .brandBadge { display: none; }
+}
+.heroEyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #3fb950; margin-bottom: 12px; }
+.heroTitle {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: #fff;
+  margin-bottom: 16px;
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+}
+.heroSub { font-size: 16px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 28px; }
+.heroCta {
+  display: inline-block;
+  background: #3fb950;
+  color: #0a1a10;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 13px 26px;
+  border-radius: 50px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.heroCta:hover { background: #2ea043; }
+.heroVisual { display: flex; align-items: center; justify-content: center; font-size: 100px; opacity: 0.12; user-select: none; }
+
+/* ── Notice Banner ── */
+.notice {
+  background: #fffbf0;
+  border-bottom: 1px solid rgba(240,200,48,0.3);
+  padding: 10px 24px;
+}
+.noticeInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: #8a6a00;
+}
+
+/* ── Collection ── */
+.collection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+.collectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.collectionTitle {
+  font-size: 22px;
+  font-weight: 900;
+  color: #111827;
+  letter-spacing: -0.5px;
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+}
+.collectionCount { font-size: 12px; color: #aaa; }
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .productGrid { grid-template-columns: 1fr; }
+}
+.productCard {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #ede8e0;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.productCard:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+.productImage {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #f5f0ea, #ede8e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  user-select: none;
+}
+.productBody { padding: 20px; }
+.productMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.productBadge { font-size: 10px; font-weight: 700; color: #3fb950; text-transform: uppercase; letter-spacing: 0.08em; }
+.productColor { font-size: 10px; color: #bbb; }
+.productName { font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 4px; }
+.productPrice { font-size: 14px; font-weight: 600; color: #555; margin-bottom: 16px; }
+.productActions { display: flex; gap: 8px; }
+.addBtn {
+  flex: 1;
+  background: #111827;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 10px 0;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+.addBtn:hover { background: #1e293b; }
+.productHint { font-size: 10px; color: #bbb; margin-top: 8px; line-height: 1.4; }
+
+/* ── Pipeline Section ── */
+.pipeline {
+  background: #111827;
+  color: #fff;
+  padding: 56px 24px;
+}
+.pipelineInner { max-width: 1100px; margin: 0 auto; }
+.pipelineEyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #3fb950; margin-bottom: 8px; }
+.pipelineTitle {
+  font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+}
+.pipelineSub { font-size: 13px; color: rgba(255,255,255,0.35); margin-bottom: 28px; }
+.pipelineGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+@media (max-width: 768px) {
+  .pipelineGrid { grid-template-columns: repeat(2, 1fr); }
+}
+.pipelineCard {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 16px;
+}
+.pipelineCardHead { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.pipelineNum {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 900; color: #111827;
+  flex-shrink: 0;
+}
+.pipelineCardLabel { font-weight: 700; font-size: 13px; }
+.pipelineCardDesc { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+.pipelineNote {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.6;
+}
+.pipelineNoteStrong { color: rgba(255,255,255,0.6); font-weight: 600; }
+
+/* ── Footer ── */
+.storeFooter {
+  border-top: 1px solid #e8e0d8;
+  background: #fff;
+  padding: 28px 24px;
+}
+.storeFooterInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: #aaa;
+}
+.storeFooterLink { color: #111827; font-weight: 600; text-decoration: none; }
+.storeFooterLink:hover { text-decoration: underline; }
+.storeFooterBack { color: #aaa; text-decoration: none; }
+.storeFooterBack:hover { color: #111827; }
