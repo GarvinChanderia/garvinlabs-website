@@ -1,27 +1,23 @@
-"use client";
-
-import { useState } from "react";
-
 const FAQS = [
   {
     q: "What if the AI sends a wrong reply to a customer?",
     a: "It won't auto-send anything it isn't confident about. The system only sends automatically when it's highly certain the reply is correct. Everything else gets drafted and flagged for your review before anything goes out. Your brand reputation is never at risk from an unchecked reply.",
   },
   {
-    q: "We already have a helpdesk tool.",
-    a: "This works alongside whatever you're already using. Your helpdesk handles the interface. This handles the reading, sorting, and replying before your team opens a single ticket.",
+    q: "Does this work with our existing helpdesk tool?",
+    a: "Yes. This works alongside whatever helpdesk you're already using — Gorgias, Zendesk, Freshdesk, Intercom. Your helpdesk handles the interface. This handles the reading, sorting, and replying before your team opens a single ticket.",
   },
   {
-    q: "We're not technical enough to maintain this.",
-    a: "You don't need to be. The documentation is written for non-technical operators. The system runs itself. We build it so your team understands what it's doing and why.",
+    q: "Do we need technical knowledge to run this?",
+    a: "No. The documentation is written for non-technical operators. The system runs itself. We build it so your team understands what it's doing and why — no developer required after handoff.",
   },
   {
     q: "What if our tickets are too complex for AI?",
-    a: "The system sends complex tickets to humans, with context already prepared. The AI handles the sorting and drafting. A human makes the final call on anything that warrants it.",
+    a: "The system routes complex tickets to humans with context already prepared. The AI handles the sorting and drafting. A human makes the final call on anything that warrants it.",
   },
   {
     q: "How long does the build take?",
-    a: "It depends on your brand's complexity: number of ticket types, depth of your policies, and how quickly we can complete the Discover phase together. We'll give you a realistic timeline on the call, not before we understand your setup.",
+    a: "Most builds are live within 2 weeks of the discovery call: Days 1–3 for Discover (one 90-minute session), Days 4–10 for Build and Test, and Day 11 onward for Deploy and Hand Off with 14 days of post-launch support included.",
   },
   {
     q: "What if we have seasonal spikes (BFCM, etc.)?",
@@ -30,30 +26,19 @@ const FAQS = [
 ];
 
 export default function FAQAccordion() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   return (
     <div className="faq-wrapper">
       <h3 className="faq-heading">Common questions</h3>
       {FAQS.map((item, i) => (
-        <div key={i} className="faq-item">
-          <button
-            className="faq-trigger"
-            onClick={() => setOpenIndex(openIndex === i ? null : i)}
-            aria-expanded={openIndex === i}
-            aria-controls={`faq-answer-${i}`}
-          >
+        <details key={i} className="faq-item">
+          <summary className="faq-trigger">
             <span>{item.q}</span>
-            <span className={`faq-icon${openIndex === i ? " open" : ""}`} aria-hidden="true">+</span>
-          </button>
-          <div
-            id={`faq-answer-${i}`}
-            className={`faq-answer${openIndex === i ? " open" : ""}`}
-            role="region"
-          >
+            <span className="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div className="faq-answer">
             <p>{item.a}</p>
           </div>
-        </div>
+        </details>
       ))}
     </div>
   );

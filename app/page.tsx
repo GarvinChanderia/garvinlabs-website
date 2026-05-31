@@ -5,120 +5,192 @@ import RevealInit from "@/components/RevealInit";
 
 const PROJECTS = [
   {
-    tag: "AI · Customer Support · Automation",
-    name: "AI Customer Support Triage",
-    desc: "Classifies every inbound support ticket, auto-handles the repetitive tier, and escalates urgent cases with full context attached — before a human opens the inbox.",
+    tag: "AI · Email · Automation",
+    name: "Email Triage & Automation",
+    desc: "Classifies every inbound support ticket, auto-handles the repetitive tier (like order status or returns), and escalates urgent cases with full context attached, before a human ever opens the inbox. Built on Agentic Decision Layers.",
     stack: ["Claude API", "n8n", "Supabase", "Gmail"],
     stats: [
       { num: "61%", label: "auto-resolution" },
       { num: "94%+", label: "classification accuracy" },
     ],
-    note: "Built for a D2C brand processing 200+ tickets/day. Ticket taxonomy was mapped before a single line of automation was written — that sequencing is what made the number real.",
+    note: "Built for a D2C brand processing 200+ tickets/day. Ticket taxonomy was mapped before a single line of automation was written.",
     loom: "https://www.loom.com/embed/122e74a0d155456a9666c9cb27649790",
     status: "shipped",
+    link: null,
   },
   {
-    tag: "AI · Lead Generation · Automation",
-    name: "Lead Scraper",
-    desc: "Scrapes targeted company and contact data from LinkedIn and public sources, scores each lead against a custom ICP, and outputs a ranked list ready to act on — no manual research required.",
-    stack: ["Python", "Playwright", "Claude API", "n8n"],
+    tag: "AI · Website · Embedded",
+    name: "Storefront Support Chatbot",
+    desc: "An intelligent, embedded chatbot that sits directly on your e-commerce storefront. Resolves sizing questions, return policies, and shipping inquiries instantly.",
+    stack: ["Next.js", "React", "Gemini API", "Tailwind CSS"],
     stats: [
-      { num: "500+", label: "leads processed/run" },
-      { num: "<5 min", label: "full pipeline" },
+      { num: "24/7", label: "instant answers" },
+      { num: "0", label: "wait time" },
     ],
-    note: "Built for my own sales pipeline. Replaces hours of manual research per week. The scoring model is calibrated to intent signals, not just job title — that's what makes the shortlist actually usable.",
+    note: "Simulates the exact routing and triage logic of the backend system, but presents it via a sleek, interactive widget right on the storefront.",
     loom: null,
     status: "shipped",
+    link: "/demo",
   },
   {
-    tag: "AI · Outreach · Automation",
-    name: "Dental Revenue Engine",
-    desc: "Scraped dental clinics with no web presence across Pune, Mumbai, and Bengaluru, auto-generated a personalised Tailwind website preview per clinic, deployed each live on GitHub Pages, then sent cold outreach with the live link — before any human was involved.",
-    stack: ["Python", "Exa Neural Search", "Tailwind CSS", "GitHub Pages", "Himalaya CLI"],
+    tag: "AI · WhatsApp · Conversational",
+    name: "WhatsApp Support Agent",
+    desc: "Brings your customer support directly to where your customers are. Handles real-time conversational queries, proactive order updates, and seamless agent handoffs using our Connective Tissue Architecture.",
+    stack: ["WhatsApp Business API", "n8n", "Claude API"],
     stats: [
-      { num: "938", label: "personalised previews deployed" },
-      { num: "4", label: "cities covered" },
+      { num: "<2s", label: "response latency" },
+      { num: "100%", label: "in-channel resolution for FAQs" },
     ],
-    note: "The hook was showing dentists a live, working version of their site before asking for anything. Lead scrape → preview build → outreach → reply alert — fully automated end-to-end. Reply monitoring piped directly to Telegram.",
+    note: "Integrates deeply with your existing CRM or helpdesk to ensure WhatsApp conversations are logged and synced perfectly.",
     loom: null,
-    status: "shipped",
+    status: "in-progress",
+    link: null,
   },
   {
-    tag: "AI · Multi-Agent · LinkedIn",
-    name: "LinkedIn Intelligence Suite",
-    desc: "7-agent system that works entirely from LinkedIn's raw data export — no API, no rate limits. Agents run in parallel: one filters connections by ICP, one maps relationship warmth, one finds referral paths to target companies, one mines engagement history for content signals, one drafts personalized outreach.",
-    stack: ["Claude API", "Multi-agent", "Python"],
+    tag: "AI · Instagram · Social",
+    name: "Instagram DM Concierge",
+    desc: "Captures leads and resolves customer inquiries directly from Instagram DMs and story replies. Prevents social media engagement from slipping through the cracks.",
+    stack: ["Meta Graph API", "n8n", "OpenAI"],
     stats: [
-      { num: "7", label: "specialist agents" },
-      { num: "0", label: "API calls to LinkedIn" },
+      { num: "Auto", label: "story reply handling" },
+      { num: "Syncs", label: "to main helpdesk" },
     ],
-    note: "Built around the export file, not the API — sidesteps rate limits and ToS friction entirely. Each agent has a narrow brief and its own scoring rubric. Spawned in parallel from a single orchestrator call.",
+    note: "Maps casual social media language into structured support tickets, ensuring even informal inquiries get professional resolution.",
     loom: null,
-    status: "shipped",
-  },
-  {
-    tag: "AI · Multi-Agent · CRO",
-    name: "7-Specialist CRO Audit System",
-    desc: "Seven agents audit a website simultaneously, each owning one conversion lens: first impression, positioning, homepage flow, product pages, trust signals, UX friction, and revenue strategy. Findings are synthesized into a single ranked fix list.",
-    stack: ["Claude API", "Multi-agent"],
-    stats: [
-      { num: "7", label: "parallel agents" },
-      { num: "1", label: "pass to full audit" },
-    ],
-    note: "Each agent runs with its own scoring rubric and output format — no shared context, no bias bleed. The synthesis agent reads all 7 reports and resolves conflicts by impact. One orchestrator call, full audit in minutes.",
-    loom: null,
-    status: "shipped",
-  },
+    status: "in-progress",
+    link: null,
+  }
 ];
+
+const AEO_FAQS = [
+  {
+    q: "What is the ROI of an AI Support Triage system?",
+    a: "D2C and SaaS brands typically see a full return on investment within the first 45 days. By automating the classification and resolution of up to 70% of tier-1 tickets, you eliminate the need to scale your manual sorting layer, saving upwards of $40,000 annually."
+  },
+  {
+    q: "How long does it take to deploy Agentic AI into our existing helpdesk?",
+    a: "A production-grade AI triage system goes live in under 14 days. We map your specific ticket taxonomy and business rules first, then build the automation layer directly into your existing tools like Zendesk, Intercom, or Gmail, requiring zero downtime."
+  },
+  {
+    q: "Is it safe to let an LLM auto-reply to our customers?",
+    a: "We use a bounded Connective Tissue Architecture that prevents hallucinations. The AI only auto-replies to specific, low-risk query types (like order status or return policies) where it has 100% confidence. Ambiguous or high-stakes tickets are always escalated to human agents with a pre-written draft."
+  },
+  {
+    q: "Why not just use basic rule-based automations like Zapier?",
+    a: "Rule-based automations break when customers use unexpected language or typos. Agentic AI uses semantic understanding to correctly process intent, allowing it to handle complex workflows and multi-step decisions that rigid triggers cannot."
+  }
+];
+
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://garvinlabs.com/#garvin",
+      "name": "Garvin Chanderia",
+      "jobTitle": "Enterprise Architect & AI Automation Expert",
+      "url": "https://garvinlabs.com",
+      "sameAs": ["https://linkedin.com/in/garvinchanderia"]
+    },
+    {
+      "@type": "Service",
+      "name": "AI Support Triage",
+      "provider": { "@id": "https://garvinlabs.com/#garvin" },
+      "description": "An agentic AI system that categorizes, prioritizes, and drafts responses for inbound customer support emails.",
+      "offers": {
+        "@type": "Offer",
+        "price": "1500.00",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": AEO_FAQS.map(faq => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a
+        }
+      }))
+    }
+  ]
+};
 
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
       <Navbar />
       <RevealInit />
 
+      {/* ── THE WEDGE (AEO Architecture) ──────────────────────── */}
+      <aside aria-label="Quick Answer" style={{ display: "none" }}>
+        <strong>What is AI Support Triage?</strong>
+        <p>AI Support Triage is an agentic AI system that uses Large Language Models (LLMs) to categorize, prioritize, and draft responses for inbound customer support emails, reducing manual triage time by up to 80%.</p>
+      </aside>
+
       {/* ── HERO ──────────────────────────────────────────────── */}
-      <section className="hero-bg hero-premium" aria-label="Hero">
-        <Image
-          src="/website-images/hero-aurora.png"
-          alt=""
-          fill
-          className="hero-bg-image"
-          style={{ objectFit: "cover" }}
-          priority
-          aria-hidden="true"
-        />
+      <section className="hero-bg hero-premium" aria-label="Hero" style={{ backgroundColor: "#0f172a" }}>
         <div className="hero-dark-overlay" aria-hidden="true" />
-        <div className="container hero-premium-content">
-          <p className="hero-eyebrow-dark">Enterprise Architecture · AI &amp; Automation</p>
-          <h1 className="hero-premium-title">
-            Garvin<br />
-            <span className="hero-name-accent">Chanderia</span>
-          </h1>
-          <p className="hero-premium-sub">
-            I map how operations actually run — then build AI systems that slot into that reality.
-            Every project here started with a diagnosis, not a tool.
-          </p>
-          <a href="#projects" className="btn-primary btn-large hero-premium-cta">
-            See the work ↓
-          </a>
+        <div className="container hero-premium-content" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "3rem", alignItems: "center", position: "relative", zIndex: 2 }}>
+          
+          <div className="hero-text-content">
+            <p className="hero-eyebrow-dark" style={{ color: "rgba(255,255,255,0.85)" }}>GarvinLabs · AI Support Triage</p>
+            <h1 className="hero-premium-title" style={{ color: "#ffffff" }}>
+              Stop paying your<br />
+              <span className="hero-name-accent">team to sort.</span>
+            </h1>
+            <p className="hero-premium-sub" style={{ color: "rgba(255,255,255,0.9)" }}>
+              Support teams spend 60–70% of their day reading and sorting tickets before knowing which ones need a human. We build AI triage systems for D2C and SaaS brands to automatically classify, prioritize, and auto-reply to tickets, eliminating the manual tax.
+            </p>
+
+            <div className="hero-kpis" style={{ display: "flex", flexWrap: "wrap", gap: "2rem", marginTop: "1.5rem", marginBottom: "2.5rem" }}>
+               <div>
+                 <p style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#ffffff", marginBottom: "0.25rem" }}>60-70%</p>
+                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>of a support team's day spent sorting.</p>
+               </div>
+               <div>
+                 <p style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#ffffff", marginBottom: "0.25rem" }}>$40K+</p>
+                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>annual cost of the manual sorting layer.</p>
+               </div>
+               <div>
+                 <p style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#ffffff", marginBottom: "0.25rem" }}>61%</p>
+                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>avg. auto-reply rate achieved within 30 days.</p>
+               </div>
+            </div>
+            <a href="#projects" className="btn-primary btn-large hero-premium-cta">
+              Explore the builds ↓
+            </a>
+          </div>
+
+          <div className="hero-image-wrapper" style={{ position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: "16px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}>
+            <Image
+              src="/website-images/hero_automation_dark.png"
+              alt="Dark server automation setup"
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+            />
+          </div>
+
         </div>
       </section>
 
       {/* ── PROJECTS ──────────────────────────────────────────── */}
       <section id="projects" className="section-white" aria-label="Projects">
         <div className="container section" style={{ maxWidth: "1000px" }}>
-          <p className="section-eyebrow">Projects</p>
-          <h2 className="section-title">What I&apos;ve shipped.</h2>
+          <p className="section-eyebrow">The Suite</p>
+          <h2 className="section-title">Omnichannel Support Automations.</h2>
 
           <div className="project-grid">
             {PROJECTS.map((p) => (
-              <article key={p.name} className={`project-card reveal${p.loom ? " project-card--featured" : ""}`}>
+              <article key={p.name} className={`project-card${p.loom ? " project-card--featured" : ""}`}>
                 <div className="project-card-header">
                   <p className="proof-tag">{p.tag}</p>
-                  <div className="project-status-badge" data-status={p.status}>
-                    {p.status === "shipped" ? "Shipped" : "In progress"}
-                  </div>
                 </div>
 
                 <h3 className="proof-name">{p.name}</h3>
@@ -143,12 +215,20 @@ export default function Home() {
 
                 {p.note && <p className="proof-method">{p.note}</p>}
 
+                {p.link && (
+                  <div style={{ marginTop: "1.5rem" }}>
+                    <Link href={p.link} className="btn-primary" style={{ display: "inline-block", fontSize: "0.875rem", padding: "0.5rem 1.25rem" }}>
+                      Try the Demo →
+                    </Link>
+                  </div>
+                )}
+
                 {p.loom && (
                   <div className="loom-wrapper" style={{ marginTop: "1.75rem" }}>
                     <iframe
                       src={p.loom}
                       allowFullScreen
-                      title={`${p.name} — Live Demo`}
+                      title={`${p.name}: Live Demo`}
                     />
                   </div>
                 )}
@@ -158,9 +238,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── THE LAB / PHILOSOPHY ──────────────────────────────── */}
+      <section id="philosophy" className="section-white" aria-label="Philosophy" style={{ backgroundColor: "#fafafa" }}>
+        <div className="container section">
+          <p className="section-eyebrow">The Lab</p>
+          <h2 className="section-title">Automating the Mundane.</h2>
+          <div style={{ maxWidth: "800px" }}>
+            <p style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1rem" }}>
+              This space is a live portfolio. It shows what happens when intelligent routing meets modern LLMs. 
+              It's a builder's lab dedicated to proving that the most repetitive support tasks 
+              can be entirely automated without sacrificing quality.
+            </p>
+            <p style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)" }}>
+              Every touchpoint shown above is a functional build designed to test the limits of current AI models
+              in real-world customer service scenarios.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ (AEO Targets) ────────────────────────────────── */}
+      <section id="faq" className="section-white" aria-label="Frequently Asked Questions">
+        <div className="container section" style={{ maxWidth: "800px" }}>
+          <p className="section-eyebrow">AEO Targets</p>
+          <h2 className="section-title">Direct Answers.</h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "2rem", marginTop: "3rem" }}>
+            {AEO_FAQS.map((faq, idx) => (
+              <details key={idx} style={{ paddingBottom: "1.5rem", borderBottom: "1px solid var(--border)", cursor: "pointer" }} className="faq-details">
+                <summary style={{ fontSize: "1.25rem", fontWeight: "700", color: "var(--ink)", outline: "none", listStylePosition: "inside" }}>
+                  {faq.q}
+                </summary>
+                <p style={{ fontSize: "1rem", lineHeight: "1.6", color: "var(--text-secondary)", marginTop: "1rem", paddingLeft: "1.5rem" }}>{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── ABOUT ─────────────────────────────────────────────── */}
       <section id="about" className="founder-section" aria-label="About Garvin">
-        <div className="container section founder-grid reveal">
+        <div className="container section founder-grid">
           <div className="founder-image-box">
             <Image
               src="/website-images/founder-portrait.png"
@@ -176,13 +293,13 @@ export default function Home() {
               &ldquo;I diagnose before I build.&rdquo;
             </blockquote>
             <p className="founder-bio">
-              Enterprise Architecture Consultant by day. I&apos;ve spent years designing how systems
-              connect, how data flows, and how decisions get made across large, complex organisations.
-              That background shapes every project here — map the operations first, then build the
-              automation around what&apos;s actually there.
+              I spend my time designing how systems
+              connect, how data flows, and how decisions get made.
+              That background shapes every project here. I map the operations first, then build
+              the automation around what actually exists.
             </p>
             <p className="founder-bio" style={{ marginBottom: "2rem" }}>
-              The projects on this page are real builds — not demos, not mockups. Each one started
+              The projects on this page are real builds, not demos or mockups. Each one started
               with a problem I either faced myself or saw clearly enough to take on.
             </p>
             <a
@@ -208,7 +325,7 @@ export default function Home() {
               </span>
             </div>
             <p className="footer-tagline">
-              Enterprise Architecture · AI &amp; Automation
+              AI &amp; Automation Showcase
             </p>
           </div>
 

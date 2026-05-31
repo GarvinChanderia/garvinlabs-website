@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { label: "Projects", href: "#projects" },
-  { label: "About",    href: "#about"    },
+  { label: "Projects", href: "/#projects" },
+  { label: "About",    href: "/#about"    },
 ];
+
 
 export default function Navbar() {
   const [scrolled,  setScrolled]  = useState(false);

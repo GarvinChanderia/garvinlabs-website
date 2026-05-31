@@ -8,10 +8,10 @@ const ENDPOINT =
   "https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec";
 
 const BULLETS = [
-  "Why support costs are higher than they appear in your P&L — and what to do about it",
+  "Why support costs are higher than they appear in your P&L: and what to do about it",
   "How AI handles tickets at scale without degrading customer experience",
   "What implementation actually looks like: timeline, risk, what you hand over",
-  "Ready-to-present format — your team can take this into any budget meeting",
+  "Ready-to-present format: your team can take this into any budget meeting",
 ];
 
 export function ReportClient() {
@@ -83,7 +83,7 @@ export function ReportClient() {
 
       <main className="report-main">
         <div className="report-split">
-          {/* Left — copy */}
+          {/* Left: copy */}
           <div className="report-copy">
             <span className="report-eyebrow">
               <span className="report-eyebrow-dot" />
@@ -107,12 +107,12 @@ export function ReportClient() {
             </ul>
           </div>
 
-          {/* Right — gate */}
+          {/* Right: gate */}
           <div className="report-gate">
             <div className="report-cover-wrap">
               <Image
                 src="/website-images/pdf-report-cover.jpg"
-                alt="AI Support Business Case — PDF cover"
+                alt="AI Support Business Case: PDF cover"
                 width={320}
                 height={415}
                 priority

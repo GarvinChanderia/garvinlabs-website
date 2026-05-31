@@ -23,23 +23,24 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Garvin Chanderia — Enterprise Architecture & AI Automation",
+  title: "GarvinLabs: AI Support Triage & Automation",
   description:
-    "Enterprise Architecture Consultant and AI & automation practitioner. Building systems that replace manual ops. Writing about what it actually takes to implement AI that works.",
+    "GarvinLabs builds AI triage systems for D2C and SaaS brands. Automatically classify, prioritize, and auto-reply to customer support tickets.",
+  keywords: ["AI Support Triage", "Customer Support Automation", "Agentic AI", "D2C Support Automation", "SaaS Support Automation", "n8n", "GarvinLabs"],
   metadataBase: new URL("https://garvinlabs.com"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Garvin Chanderia — Enterprise Architecture & AI Automation",
+    title: "GarvinLabs: AI Support Triage & Automation",
     description:
-      "Enterprise Architecture Consultant and AI & automation practitioner. Building systems that replace manual ops.",
+      "GarvinLabs builds AI triage systems for D2C and SaaS brands. Automatically classify, prioritize, and auto-reply to customer support tickets.",
     url: "https://garvinlabs.com",
-    siteName: "Garvin Chanderia",
+    siteName: "GarvinLabs",
     images: [
       {
         url: "/website-images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Garvin Chanderia — Enterprise Architecture & AI Automation",
+        alt: "GarvinLabs: AI Support Triage & Automation",
       },
     ],
     locale: "en_US",
@@ -47,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Garvin Chanderia — Enterprise Architecture & AI Automation",
+    title: "GarvinLabs: AI Support Triage & Automation",
     description:
-      "Enterprise Architecture Consultant and AI & automation practitioner. Building systems that replace manual ops.",
+      "GarvinLabs builds AI triage systems for D2C and SaaS brands. Automatically classify, prioritize, and auto-reply to customer support tickets.",
     images: ["/website-images/og-image.png"],
   },
   robots: {
