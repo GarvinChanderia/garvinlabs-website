@@ -3126,3 +3126,131 @@ details[open] .faq-icon { transform: rotate(45deg); }
   height: 100%;
   text-align: center;
 }
+
+/* ============================================================
+   Demos Index — grid + cards (no existing CSS existed)
+   ============================================================ */
+.demos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.demo-card {
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.demo-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.demo-card-tag {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.demo-card-headline {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.demo-card-summary {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  flex: 1;
+}
+.demo-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.demo-outcome {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+.demo-link {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.demo-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+@media (max-width: 640px) {
+  .demos-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .demo-card  { padding: 1.5rem; }
+}
+
+/* ============================================================
+   Global Responsive Gaps — comprehensive fix pass
+   ============================================================ */
+
+/* Tighter container padding on very small phones */
+@media (max-width: 360px) {
+  .container { padding: 0 1rem; }
+  .section   { padding-top: 2rem; padding-bottom: 2rem; }
+}
+
+/* store-product-grid: 4-col → 2-col → 1-col */
+@media (max-width: 900px) {
+  .store-product-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+}
+/* 1-col already exists at 480px in the existing rule above */
+
+/* ba-table: horizontal scroll on mobile */
+@media (max-width: 768px) {
+  .ba-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* chat-widget-panel: snap to full-width at 640px (not just 480px) */
+@media (max-width: 640px) {
+  .chat-widget-panel {
+    width: calc(100vw - 2rem);
+    right: 1rem;
+    left: 1rem;
+    bottom: 5.5rem;
+  }
+}
+
+/* proof-stats: tighter gap on phones */
+@media (max-width: 480px) {
+  .proof-stats { gap: 1rem; flex-direction: column; }
+  .stat-num    { font-size: 1.5rem; }
+}
+
+/* project-card: reduce internal spacing on tiny screens */
+@media (max-width: 480px) {
+  .project-card { padding: 1.25rem 1rem; }
+  .loom-wrapper { border-radius: 8px; }
+}
+
+/* section heading sizes at small screens */
+@media (max-width: 480px) {
+  .h2, h2 { font-size: clamp(1.4rem, 6vw, 2rem); }
+  .lead   { font-size: 1rem; }
+}
+
+/* btn touch targets: ensure 44px minimum height */
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+}

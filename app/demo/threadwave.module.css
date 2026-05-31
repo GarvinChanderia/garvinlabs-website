@@ -219,6 +219,11 @@
 @media (max-width: 768px) {
   .pipelineGrid { grid-template-columns: repeat(2, 1fr); }
 }
+@media (max-width: 480px) {
+  .pipelineGrid { grid-template-columns: 1fr; }
+  .collection   { padding: 36px 16px; }
+  .pipeline     { padding: 36px 16px; }
+}
 .pipelineCard {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);

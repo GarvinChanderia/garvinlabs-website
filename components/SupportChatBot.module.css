@@ -220,6 +220,13 @@
 .logStatusResolved { background: #0a280c; color: #3fb950; }
 .logStatusEscalated { background: #280a0a; color: #ff7b72; }
 
+/* ── Responsive panel ── */
+@media (max-width: 640px) {
+  .panel {
+    width: calc(100vw - 24px) !important;
+  }
+}
+
 /* ── FAB ── */
 .fab {
   pointer-events: auto;
