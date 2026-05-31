@@ -45,11 +45,19 @@
 .storeNavLink:hover { color: #111827; }
 .cartIcon { font-size: 20px; cursor: pointer; background: none; border: none; }
 
+@media (max-width: 640px) {
+  .storeNav { display: none; }
+  .brandBadge { display: none; }
+}
+
 /* ── Hero ── */
 .hero {
   background: #111827;
   color: #fff;
-  padding: 72px 24px;
+  padding: 64px 20px;
+}
+@media (max-width: 640px) {
+  .hero { padding: 40px 20px; }
 }
 .heroInner {
   max-width: 1100px;
@@ -60,21 +68,26 @@
   align-items: center;
 }
 @media (max-width: 768px) {
-  .heroInner { grid-template-columns: 1fr; }
+  .heroInner { grid-template-columns: 1fr; gap: 0; }
   .heroVisual { display: none; }
-  .brandBadge { display: none; }
 }
 .heroEyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #3fb950; margin-bottom: 12px; }
 .heroTitle {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(28px, 6vw, 48px);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -1px;
   color: #fff;
   margin-bottom: 16px;
   font-family: var(--font-heading, 'Figtree', sans-serif);
 }
-.heroSub { font-size: 16px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 28px; }
+@media (max-width: 400px) {
+  .heroTitle { font-size: 26px; letter-spacing: -0.5px; }
+}
+.heroSub { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 24px; }
+@media (max-width: 640px) {
+  .heroSub { font-size: 14px; }
+}
 .heroCta {
   display: inline-block;
   background: #3fb950;
