@@ -55,7 +55,11 @@ export default function SupportChatBot() {
       const res = await fetch('/api/support-chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: msg, sessionId: sessionId.current }),
+        body: JSON.stringify({
+          message: msg,
+          sessionId: sessionId.current,
+          history: messages.map(m => ({ role: m.role, text: m.text })),
+        }),
       });
       if (!res.ok) throw new Error('upstream');
       const data = await res.json();
