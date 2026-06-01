@@ -2174,7 +2174,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
   .hero-premium-title    { font-size: clamp(2rem, 8vw, 3rem); }
   .hero-premium-sub      { font-size: 1rem; margin-bottom: 2rem; }
   .hero-premium-content  { padding-top: 2.5rem; padding-bottom: 2.5rem; }
-  .hero-image-wrapper    { display: none; }
+  .hero-image-wrapper    { aspect-ratio: 16/9; margin-top: 1.5rem; }
 }
 
 @media (max-width: 480px) {
