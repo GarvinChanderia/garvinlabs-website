@@ -143,7 +143,7 @@ export default function Home() {
               src="/website-images/hero-cs-support.png"
               alt="AI support agent with three robot assistants handling customer tickets"
               fill
-              style={{ objectFit: "cover", objectPosition: "center top" }}
+              style={{ objectFit: "cover", objectPosition: "center 35%" }}
               priority
             />
           </div>
