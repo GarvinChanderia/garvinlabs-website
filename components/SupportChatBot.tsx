@@ -2,11 +2,12 @@
 import { useState, useRef, useEffect, FormEvent } from 'react';
 import s from './SupportChatBot.module.css';
 
-type Message = { id: string; role: 'user' | 'bot'; text: string };
+type Message = { id: string; role: 'user' | 'bot'; text: string; escalated?: boolean };
 type TriageEntry = {
   id: string; ts: string; message: string;
   category: string; priority: string; confidence: number;
   needsEscalation: boolean; recommendedAction: string; status: string;
+  emailEscalated: boolean;
 };
 
 const PRESETS = [
@@ -14,6 +15,8 @@ const PRESETS = [
   { label: '↩️ Return jacket',  text: 'I want to return my jacket — bought it last week' },
   { label: '✨ Love my shirt',  text: "Just received my linen shirt and it's incredible!" },
 ];
+
+const EMAIL_RE = /[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/;
 
 function priorityClass(p: string, styles: Record<string, string>) {
   if (p === 'urgent') return styles.logPriorityUrgent;
@@ -51,6 +54,9 @@ export default function SupportChatBot() {
     setLoading(true);
     setMessages(prev => [...prev, { id: `u-${Date.now()}`, role: 'user', text: msg }]);
 
+    // Detect email in message so n8n can use it
+    const detectedEmail = EMAIL_RE.exec(msg)?.[0] ?? '';
+
     try {
       const res = await fetch('/api/support-chat', {
         method: 'POST',
@@ -59,14 +65,18 @@ export default function SupportChatBot() {
           message: msg,
           sessionId: sessionId.current,
           history: messages.map(m => ({ role: m.role, text: m.text })),
+          ...(detectedEmail ? { userEmail: detectedEmail } : {}),
         }),
       });
       if (!res.ok) throw new Error('upstream');
       const data = await res.json();
 
+      const emailEscalated = !!data.emailEscalated;
+
       setMessages(prev => [...prev, {
         id: `b-${Date.now()}`, role: 'bot',
         text: data.reply || "I'm having trouble responding right now. Please try again.",
+        escalated: emailEscalated,
       }]);
       setLogs(prev => [{
         id: `log-${Date.now()}`,
@@ -78,6 +88,7 @@ export default function SupportChatBot() {
         needsEscalation: !!data.needsEscalation,
         recommendedAction: data.recommendedAction || '—',
         status: data.status || '—',
+        emailEscalated,
       }, ...prev]);
     } catch {
       setMessages(prev => [...prev, { id: `err-${Date.now()}`, role: 'bot', text: 'Network error — please try again.' }]);
@@ -88,6 +99,13 @@ export default function SupportChatBot() {
   };
 
   const onSubmit = (e: FormEvent) => { e.preventDefault(); send(input); };
+
+  const handleClose = () => {
+    setOpen(false);
+    setMessages([]);
+    setLogs([]);
+    setInput('');
+  };
 
   return (
     <div className={s.wrap}>
@@ -111,7 +129,12 @@ export default function SupportChatBot() {
           <>
             <div className={s.messages}>
               {messages.map(m => (
-                <div key={m.id} className={m.role === 'bot' ? s.msgBot : s.msgUser}>{m.text}</div>
+                <div key={m.id}>
+                  <div className={m.role === 'bot' ? s.msgBot : s.msgUser}>{m.text}</div>
+                  {m.escalated && (
+                    <div className={s.escalatedBadge}>✉ Escalation raised · check your inbox</div>
+                  )}
+                </div>
               ))}
               {loading && <div className={s.msgBot}><span className={s.thinking}>Thinking…</span></div>}
               <div ref={bottomRef} />
@@ -154,6 +177,12 @@ export default function SupportChatBot() {
                       {log.needsEscalation ? '⚠ yes → Telegram alert' : '✓ auto-handled'}
                     </span>
                   </div>
+                  {log.emailEscalated && (
+                    <div className={s.logEscalRow}>
+                      <span className={s.logLabel}>email     </span>
+                      <span className={s.logEmailSent}>✉ escalation sent</span>
+                    </div>
+                  )}
                 </div>
                 <span className={`${s.logStatus} ${log.status === 'resolved' ? s.logStatusResolved : s.logStatusEscalated}`}>
                   {log.status}
@@ -164,7 +193,7 @@ export default function SupportChatBot() {
         )}
       </div>
 
-      <button className={s.fab} type="button" onClick={() => setOpen(!open)}>
+      <button className={s.fab} type="button" onClick={() => open ? handleClose() : setOpen(true)}>
         {open ? '✕' : '💬'}
       </button>
     </div>

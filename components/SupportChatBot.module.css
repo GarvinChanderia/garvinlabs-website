@@ -209,6 +209,7 @@
 .logEscalRow { grid-column: span 2; }
 .logEscalYes { color: #ff7b72; }
 .logEscalNo { color: #3fb950; }
+.logEmailSent { color: #79c0ff; }
 .logStatus {
   display: inline-block;
   padding: 2px 8px;
@@ -219,6 +220,18 @@
 }
 .logStatusResolved { background: #0a280c; color: #3fb950; }
 .logStatusEscalated { background: #280a0a; color: #ff7b72; }
+
+/* ── Escalation badge ── */
+.escalatedBadge {
+  font-size: 11px;
+  color: #79c0ff;
+  margin-top: 4px;
+  margin-left: 4px;
+  padding: 4px 10px;
+  background: rgba(56, 139, 253, 0.08);
+  border-radius: 8px;
+  display: inline-block;
+}
 
 /* ── Responsive panel ── */
 @media (max-width: 640px) {
