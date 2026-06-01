@@ -169,10 +169,10 @@ export default function Home() {
 
           <div className="hero-image-wrapper" style={{ position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: "16px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}>
             <Image
-              src="/website-images/hero_automation_dark.png"
-              alt="Dark server automation setup"
+              src="/website-images/hero-cs-support.png"
+              alt="AI support agent with three robot assistants handling customer tickets"
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover", objectPosition: "center top" }}
               priority
             />
           </div>
