@@ -136,7 +136,7 @@ export default function Home() {
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section className="hero-bg hero-premium" aria-label="Hero" style={{ backgroundColor: "#0f172a" }}>
         <div className="hero-dark-overlay" aria-hidden="true" />
-        <div className="container hero-premium-content" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "3rem", alignItems: "center", position: "relative", zIndex: 2 }}>
+        <div className="container hero-premium-content hero-grid">
           
           <div className="hero-text-content">
             <p className="hero-eyebrow-dark" style={{ color: "rgba(255,255,255,0.85)" }}>GarvinLabs · AI Support Triage</p>
