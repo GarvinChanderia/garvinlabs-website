@@ -15,6 +15,7 @@ const PROJECTS = [
     ],
     note: "Built for a D2C brand processing 200+ tickets/day. Ticket taxonomy was mapped before a single line of automation was written.",
     loom: "https://www.loom.com/embed/122e74a0d155456a9666c9cb27649790",
+    video: null,
     status: "shipped",
     link: null,
   },
@@ -29,6 +30,7 @@ const PROJECTS = [
     ],
     note: "Simulates the exact routing and triage logic of the backend system, but presents it via a sleek, interactive widget right on the storefront.",
     loom: null,
+    video: null,
     status: "shipped",
     link: "/demo",
   },
@@ -43,6 +45,7 @@ const PROJECTS = [
     ],
     note: "Integrates deeply with your existing CRM or helpdesk to ensure WhatsApp conversations are logged and synced perfectly.",
     loom: null,
+    video: null,
     status: "in-progress",
     link: null,
   },
@@ -57,7 +60,8 @@ const PROJECTS = [
     ],
     note: "Maps casual social media language into structured support tickets, ensuring even informal inquiries get professional resolution.",
     loom: null,
-    status: "in-progress",
+    video: "/instagram-dm-demo.mp4",
+    status: "shipped",
     link: null,
   }
 ];
@@ -228,6 +232,19 @@ export default function Home() {
                     <iframe
                       src={p.loom}
                       allowFullScreen
+                      title={`${p.name}: Live Demo`}
+                    />
+                  </div>
+                )}
+
+                {p.video && (
+                  <div style={{ marginTop: "1.75rem", borderRadius: "12px", overflow: "hidden", border: "1px solid var(--border)", maxWidth: "320px", margin: "1.75rem auto 0" }}>
+                    <video
+                      src={p.video}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      style={{ width: "100%", display: "block", borderRadius: "12px" }}
                       title={`${p.name}: Live Demo`}
                     />
                   </div>
