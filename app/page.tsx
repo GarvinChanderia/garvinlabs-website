@@ -138,6 +138,16 @@ export default function Home() {
         <div className="hero-dark-overlay" aria-hidden="true" />
         <div className="container hero-premium-content hero-grid">
           
+          <div className="hero-image-wrapper" style={{ position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: "16px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}>
+            <Image
+              src="/website-images/hero-cs-support.png"
+              alt="AI support agent with three robot assistants handling customer tickets"
+              fill
+              style={{ objectFit: "cover", objectPosition: "center top" }}
+              priority
+            />
+          </div>
+
           <div className="hero-text-content">
             <p className="hero-eyebrow-dark" style={{ color: "rgba(255,255,255,0.85)" }}>GarvinLabs · AI Support Triage</p>
             <h1 className="hero-premium-title" style={{ color: "#ffffff" }}>
@@ -165,16 +175,6 @@ export default function Home() {
             <a href="#projects" className="btn-primary btn-large hero-premium-cta">
               Explore the builds ↓
             </a>
-          </div>
-
-          <div className="hero-image-wrapper" style={{ position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: "16px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}>
-            <Image
-              src="/website-images/hero-cs-support.png"
-              alt="AI support agent with three robot assistants handling customer tickets"
-              fill
-              style={{ objectFit: "cover", objectPosition: "center top" }}
-              priority
-            />
           </div>
 
         </div>
