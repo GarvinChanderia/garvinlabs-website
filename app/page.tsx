@@ -18,6 +18,7 @@ const PROJECTS = [
     video: null,
     status: "shipped",
     link: null,
+    mailto: "garvinclaw@gmail.com",
   },
   {
     tag: "AI · Website · Embedded",
@@ -234,6 +235,21 @@ export default function Home() {
                       allowFullScreen
                       title={`${p.name}: Live Demo`}
                     />
+                  </div>
+                )}
+
+                {"mailto" in p && p.mailto && (
+                  <div style={{ marginTop: "1.25rem" }}>
+                    <a
+                      href={`mailto:${p.mailto}`}
+                      className="btn-primary"
+                      style={{ display: "inline-block", fontSize: "0.875rem", padding: "0.5rem 1.25rem" }}
+                    >
+                      Try it live: email the real inbox →
+                    </a>
+                    <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginTop: "0.5rem" }}>
+                      Sends to the actual triage pipeline. Watch it classify and respond.
+                    </p>
                   </div>
                 )}
 
