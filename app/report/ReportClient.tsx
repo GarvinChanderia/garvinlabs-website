@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { Footer } from "@/components/Footer";
 
 const ENDPOINT =
   process.env.NEXT_PUBLIC_REPORT_ENDPOINT ||
@@ -238,6 +239,8 @@ export function ReportClient() {
           </div>
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }

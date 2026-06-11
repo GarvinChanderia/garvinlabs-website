@@ -1,21 +1,80 @@
-import { LINKEDIN, MAILTO } from "@/lib/constants";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  LINKEDIN,
+  INSTAGRAM,
+  X_URL,
+  THREADS_URL,
+  MAILTO,
+  EMAIL,
+  PHONE_TEL,
+  PHONE_DISPLAY,
+} from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="container">
-        <div className="footer-inner">
-          <div className="footer-logo">
-            Garvin<em>Labs.</em>
+    <footer className="footer" aria-label="Footer">
+      <div className="container footer-grid">
+        <div className="footer-col">
+          <div className="logo-group mb-1">
+            <Image src="/logo-icon.svg" alt="GarvinLabs" width={24} height={24} />
+            <span style={{ fontWeight: "bold", fontSize: "1.1rem", color: "var(--ink)" }}>
+              GarvinLabs
+            </span>
           </div>
-          <div className="footer-links">
-            <a href={MAILTO} aria-label="Email GarvinLabs">Email</a>
-            <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="GarvinLabs on LinkedIn">LinkedIn</a>
-            <a href="#offers">Offers</a>
-            <a href="#faq">FAQ</a>
-          </div>
-          <div>© {new Date().getFullYear()} GarvinLabs · Pune, India</div>
+          <p className="footer-tagline">
+            n8n + AI automation for D2C operations.
+          </p>
         </div>
+
+        <div className="footer-col">
+          <h3 className="footer-heading">Explore</h3>
+          <ul className="footer-links-list">
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/demos">Builds</Link></li>
+            <li><Link href="/resources">Resources</Link></li>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+          </ul>
+        </div>
+
+        <div className="footer-col">
+          <h3 className="footer-heading">Connect</h3>
+          <ul className="footer-links-list">
+            <li>
+              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href={X_URL} target="_blank" rel="noopener noreferrer">
+                X
+              </a>
+            </li>
+            <li>
+              <a href={THREADS_URL} target="_blank" rel="noopener noreferrer">
+                Threads
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="footer-col">
+          <h3 className="footer-heading">Get in Touch</h3>
+          <ul className="footer-links-list">
+            <li><a href={MAILTO}>{EMAIL}</a></li>
+            <li><a href={PHONE_TEL}>{PHONE_DISPLAY}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="container footer-bottom">
+        <p>© {new Date().getFullYear()} Garvin Chanderia.</p>
       </div>
     </footer>
   );

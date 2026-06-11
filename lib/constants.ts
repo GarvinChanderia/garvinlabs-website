@@ -1,4 +1,9 @@
 export const CALENDLY = "https://calendly.com/labs-garvin/30min";
 export const LINKEDIN = "https://www.linkedin.com/in/garvinchanderia/";
-export const EMAIL = "labs.garvin@gmail.com";
-export const MAILTO = "mailto:labs.garvin@gmail.com";
+export const EMAIL = "garvin@garvinlabs.com";
+export const MAILTO = "mailto:garvin@garvinlabs.com";
+export const INSTAGRAM = "https://instagram.com/labs.garvin";
+export const X_URL = "https://x.com/labsgarvin";
+export const THREADS_URL = "https://www.threads.com/@labs.garvin";
+export const PHONE_DISPLAY = "+91 93562 49535";
+export const PHONE_TEL = "tel:+919356249535";

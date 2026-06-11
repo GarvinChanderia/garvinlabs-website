@@ -2,49 +2,68 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { RevealScript } from "@/components/RevealScript";
-import Link from "next/link";
+import { BuildsGrid } from "@/components/BuildsGrid";
 
 export const metadata: Metadata = {
-  title: "Demos",
-  description: "Real client problems, real systems built. A selection of GarvinLabs projects across automation, SaaS, and operations.",
+  title: "Builds",
+  description: "n8n + AI automations built for D2C operations: the problem each one solves, how it works, and what the manual version costs.",
 };
 
-const projects = [
+const BUILDS = [
   {
-    slug: "threadwave",
-    tag: "Live Demo · AI Support Triage",
-    headline: "A D2C brand's support inbox was drowning in repeat questions with no triage in place.",
-    summary:
-      "ThreadWave needed a support layer that could classify tickets, draft KB-grounded replies, and escalate edge cases — without hiring a support team. We built a two-pass Gemini pipeline on n8n that classifies, drafts, and responds in under 4 seconds. This is a live interactive demo.",
-    outcome: "Live: classify → draft → respond in ~3s",
-    industry: "D2C / Retail",
+    id: "threadwave",
+    tag: "AI · Support Triage · n8n",
+    title: "ThreadWave: AI Support Triage",
+    image: "/website-images/threadwave_hero.png",
+    alt: "ThreadWave demo storefront with the AI support chat widget open",
+    problem:
+      "A D2C support inbox getting 200+ tickets a day, all needing manual sorting before anyone can act on them.",
+    howSolved:
+      "A two-pass Gemini pipeline running on n8n: classify the ticket, pull the relevant policy from a Notion knowledge base, draft a reply, then either auto-send when confidence is high or escalate to Telegram with full context attached.",
+    cost:
+      "Support teams spend 60-70% of their day reading and sorting tickets before a single one gets resolved. Industry estimates put the cost of that manual sorting layer at $40K+/year for a mid-size D2C team.",
+    stats: [
+      { num: "61%", label: "auto-resolution" },
+      { num: "94%+", label: "classification accuracy" },
+    ],
+    stack: ["n8n", "Gemini API", "Notion", "Telegram"],
+    cta: { label: "Try the live demo →", href: "/demos/threadwave" },
   },
   {
-    slug: "dental-revenue-engine",
-    tag: "Automation · Healthcare",
-    headline: "100+ dental clinics had no web presence — and no way to fix it themselves.",
-    summary:
-      "Independent clinics were invisible to patients online. We built an end-to-end automated system that discovered leads, generated personalised live website previews per clinic, and ran the entire outreach pipeline — at nearly zero cost.",
-    outcome: "100+ personalised pages deployed",
-    industry: "Healthcare",
+    id: "storefront-chatbot",
+    tag: "AI · Storefront Chatbot · n8n",
+    title: "Storefront Support Chatbot",
+    image: "/website-images/hero_automation_dark.png",
+    alt: "Automation dashboard visual representing the storefront chatbot pipeline",
+    problem:
+      "Storefront visitors with sizing, returns, or shipping questions get no answer outside business hours, and most won't come back later to ask again.",
+    howSolved:
+      "An embedded chatbot wired into the same n8n + Gemini pipeline as the support inbox. It reads the same knowledge base and answers sizing, returns, and shipping questions instantly, any time of day.",
+    cost:
+      "Pre-purchase questions that go unanswered are one of the most common reasons a visitor abandons checkout. An always-on answer layer closes that gap without adding headcount.",
+    stats: [
+      { num: "24/7", label: "instant answers" },
+      { num: "0", label: "wait time" },
+    ],
+    stack: ["n8n", "Gemini API", "Next.js", "Tailwind CSS"],
+    cta: { label: "Try the live demo →", href: "/demo" },
   },
   {
-    slug: "transport-platform",
-    tag: "SaaS · Transport",
-    headline: "A subscription transport startup was running its entire operation on Google Forms.",
-    summary:
-      "Badi Bandi connects commuters to fixed-route vehicles on the Warangal–Hyderabad corridor. With no platform, they had no subscription management, no fleet visibility, and no commuter coordination. We designed and proposed a 3-sided SaaS to fix that.",
-    outcome: "Full SaaS architecture designed & proposed",
-    industry: "Transport",
-  },
-  {
-    slug: "manufacturing-business",
-    tag: "Consulting · Manufacturing",
-    headline: "A heavy engineering manufacturer was taking 55–70 days to complete jobs that should take 25.",
-    summary:
-      "The delay wasn't people or machines — it was invisible. No job tracking, no documentation discipline, and chronic raw material gaps were compounding into 30+ day overruns every cycle. We mapped 26 business processes and delivered a prioritised transformation roadmap.",
-    outcome: "Full ops audit + AI roadmap delivered",
-    industry: "Manufacturing",
+    id: "instagram-dm",
+    tag: "AI · Instagram DMs · n8n",
+    title: "Instagram DM Concierge",
+    problem:
+      "Instagram DMs and story replies pile up faster than anyone can answer them, and a slow reply often means a lost sale.",
+    howSolved:
+      "An n8n workflow listens to the Instagram webhook and runs each message through the same AI triage logic as the support inbox, mapping casual DM language into structured tickets, then auto-replying or handing off to the support queue.",
+    cost:
+      "Response time is one of the biggest drivers of whether a DM turns into a sale. Most D2C accounts take hours to reply, by which point the buyer has moved on.",
+    stats: [
+      { num: "Auto", label: "story-reply handling" },
+      { num: "Synced", label: "to main helpdesk" },
+    ],
+    stack: ["n8n", "Meta Graph API", "Gemini API"],
+    video: "/instagram-dm-demo.mp4",
   },
 ];
 
@@ -57,13 +76,15 @@ export default function DemosPage() {
           <div className="container">
             <div className="reveal" style={{ maxWidth: 680 }}>
               <span className="eyebrow">
-                <span className="eyebrow-dot"></span>Client Work
+                <span className="eyebrow-dot"></span>The Builds
               </span>
               <h1 className="h2" style={{ marginTop: 18 }}>
-                Real problems. Systems that actually shipped.
+                Real builds, not mockups.
               </h1>
               <p className="lead" style={{ marginTop: 20 }}>
-                A selection of projects across automation, SaaS, and operations consulting. Names and sensitive details are kept confidential.
+                Each one started as a manual process someone was doing by hand every day.
+                For each: the problem, how the n8n + AI system solves it, and what the
+                manual version typically costs.
               </p>
             </div>
           </div>
@@ -71,24 +92,7 @@ export default function DemosPage() {
 
         <section style={{ paddingTop: 0, paddingBottom: 120 }}>
           <div className="container">
-            <div className="demos-grid">
-              {projects.map((p) => (
-                <Link key={p.slug} href={`/demos/${p.slug}`} className="demo-card reveal">
-                  <div className="demo-card-tag">{p.tag}</div>
-                  <h2 className="demo-card-headline">{p.headline}</h2>
-                  <p className="demo-card-summary">{p.summary}</p>
-                  <div className="demo-card-footer">
-                    <span className="demo-outcome">{p.outcome}</span>
-                    <span className="demo-link">
-                      View case study
-                      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
-                        <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <BuildsGrid builds={BUILDS} />
           </div>
         </section>
       </main>

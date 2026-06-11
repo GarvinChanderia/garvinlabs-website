@@ -2,69 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import RevealInit from "@/components/RevealInit";
+import { Footer } from "@/components/Footer";
 
-const PROJECTS = [
+const BUILDS_INDEX = [
   {
-    tag: "AI · Email · Automation",
-    name: "Email Triage & Automation",
-    desc: "Classifies every inbound support ticket, auto-handles the repetitive tier (like order status or returns), and escalates urgent cases with full context attached, before a human ever opens the inbox. Built on Agentic Decision Layers.",
-    stack: ["Claude API", "n8n", "Supabase", "Gmail"],
-    stats: [
-      { num: "61%", label: "auto-resolution" },
-      { num: "94%+", label: "classification accuracy" },
-    ],
-    note: "Built for a D2C brand processing 200+ tickets/day. Ticket taxonomy was mapped before a single line of automation was written.",
-    loom: "https://www.loom.com/embed/122e74a0d155456a9666c9cb27649790",
-    video: null,
-    status: "shipped",
-    link: null,
-    mailto: "garvinclaw@gmail.com",
+    tag: "AI · Support · n8n",
+    name: "ThreadWave: AI Support Triage",
+    problem: "200+ tickets a day, all needing manual sorting before anyone can act on them.",
+    href: "/demos#threadwave",
   },
   {
-    tag: "AI · Website · Embedded",
+    tag: "AI · Storefront · n8n",
     name: "Storefront Support Chatbot",
-    desc: "An intelligent, embedded chatbot that sits directly on your e-commerce storefront. Resolves sizing questions, return policies, and shipping inquiries instantly.",
-    stack: ["Next.js", "React", "Gemini API", "Tailwind CSS"],
-    stats: [
-      { num: "24/7", label: "instant answers" },
-      { num: "0", label: "wait time" },
-    ],
-    note: "Simulates the exact routing and triage logic of the backend system, but presents it via a sleek, interactive widget right on the storefront.",
-    loom: null,
-    video: null,
-    status: "shipped",
-    link: "/demo",
+    problem: "Sizing, returns, and shipping questions go unanswered outside business hours.",
+    href: "/demos#storefront-chatbot",
   },
   {
-    tag: "AI · WhatsApp · Conversational",
-    name: "WhatsApp Support Agent",
-    desc: "Brings your customer support directly to where your customers are. Handles real-time conversational queries, proactive order updates, and seamless agent handoffs using our Connective Tissue Architecture.",
-    stack: ["WhatsApp Business API", "n8n", "Claude API"],
-    stats: [
-      { num: "<2s", label: "response latency" },
-      { num: "100%", label: "in-channel resolution for FAQs" },
-    ],
-    note: "Integrates deeply with your existing CRM or helpdesk to ensure WhatsApp conversations are logged and synced perfectly.",
-    loom: null,
-    video: null,
-    status: "in-progress",
-    link: null,
-  },
-  {
-    tag: "AI · Instagram · Social",
+    tag: "AI · Instagram · n8n",
     name: "Instagram DM Concierge",
-    desc: "Captures leads and resolves customer inquiries directly from Instagram DMs and story replies. Prevents social media engagement from slipping through the cracks.",
-    stack: ["Meta Graph API", "n8n", "OpenAI"],
-    stats: [
-      { num: "Auto", label: "story reply handling" },
-      { num: "Syncs", label: "to main helpdesk" },
-    ],
-    note: "Maps casual social media language into structured support tickets, ensuring even informal inquiries get professional resolution.",
-    loom: null,
-    video: "/instagram-dm-demo.mp4",
-    status: "shipped",
-    link: null,
-  }
+    problem: "DMs and story replies pile up faster than anyone can reply to them.",
+    href: "/demos#instagram-dm",
+  },
 ];
 
 const AEO_FAQS = [
@@ -101,12 +59,7 @@ const JSON_LD = {
       "@type": "Service",
       "name": "AI Support Triage",
       "provider": { "@id": "https://garvinlabs.com/#garvin" },
-      "description": "An agentic AI system that categorizes, prioritizes, and drafts responses for inbound customer support emails.",
-      "offers": {
-        "@type": "Offer",
-        "price": "1500.00",
-        "priceCurrency": "USD"
-      }
+      "description": "An agentic AI system that categorizes, prioritizes, and drafts responses for inbound customer support emails."
     },
     {
       "@type": "FAQPage",
@@ -154,32 +107,32 @@ export default function Home() {
           </div>
 
           <div className="hero-text-content">
-            <p className="hero-eyebrow-dark" style={{ color: "rgba(255,255,255,0.85)" }}>GarvinLabs · AI Support Triage</p>
+            <p className="hero-eyebrow-dark" style={{ color: "rgba(255,255,255,0.85)" }}>GarvinLabs · n8n + AI Automation</p>
             <h1 className="hero-premium-title" style={{ color: "#ffffff" }}>
-              Stop paying your<br />
-              <span className="hero-name-accent">team to sort.</span>
+              I find the manual work,<br />
+              <span className="hero-name-accent">then automate it.</span>
             </h1>
             <p className="hero-premium-sub" style={{ color: "rgba(255,255,255,0.9)" }}>
-              Support teams spend 60–70% of their day reading and sorting tickets before knowing which ones need a human. We build AI triage systems for D2C and SaaS brands to automatically classify, prioritize, and auto-reply to tickets, eliminating the manual tax.
+              D2C founders end up babysitting the same operational work every day, support tickets, storefront questions, DMs, order updates. I build n8n + AI systems that take that work off your plate. Support triage is one example below.
             </p>
 
             <div className="hero-kpis" style={{ display: "flex", flexWrap: "wrap", gap: "2rem", marginTop: "1.5rem", marginBottom: "2.5rem" }}>
                <div>
                  <p style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#ffffff", marginBottom: "0.25rem" }}>60-70%</p>
-                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>of a support team's day spent sorting.</p>
+                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>of a support team's day spent sorting tickets, one of many manual ops patterns.</p>
                </div>
                <div>
                  <p style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#ffffff", marginBottom: "0.25rem" }}>$40K+</p>
-                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>annual cost of the manual sorting layer.</p>
+                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>annual cost of a manual support-sorting layer alone.</p>
                </div>
                <div>
                  <p style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#ffffff", marginBottom: "0.25rem" }}>61%</p>
-                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>avg. auto-reply rate achieved within 30 days.</p>
+                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>auto-resolution rate the support build hit within 30 days.</p>
                </div>
             </div>
-            <a href="#projects" className="btn-primary btn-large hero-premium-cta">
-              Explore the builds ↓
-            </a>
+            <Link href="/demos" className="btn-primary btn-large hero-premium-cta">
+              See the builds →
+            </Link>
           </div>
 
         </div>
@@ -188,84 +141,28 @@ export default function Home() {
       {/* ── PROJECTS ──────────────────────────────────────────── */}
       <section id="projects" className="section-white" aria-label="Projects">
         <div className="container section" style={{ maxWidth: "1000px" }}>
-          <p className="section-eyebrow">The Suite</p>
-          <h2 className="section-title">Omnichannel Support Automations.</h2>
+          <p className="section-eyebrow">The Builds</p>
+          <h2 className="section-title">n8n + AI systems, shipped.</h2>
+          <p className="lead" style={{ marginTop: "1rem", maxWidth: "640px" }}>
+            A few of the operational automations live so far. Each one started as a
+            manual process someone was doing by hand every day.
+          </p>
 
-          <div className="project-grid">
-            {PROJECTS.map((p) => (
-              <article key={p.name} className={`project-card${p.loom ? " project-card--featured" : ""}`}>
-                <div className="project-card-header">
-                  <p className="proof-tag">{p.tag}</p>
+          <div className="demos-grid" style={{ marginTop: "2.5rem" }}>
+            {BUILDS_INDEX.map((b) => (
+              <Link key={b.name} href={b.href} className="demo-card">
+                <div className="demo-card-tag">{b.tag}</div>
+                <h3 className="demo-card-headline">{b.name}</h3>
+                <p className="demo-card-summary">{b.problem}</p>
+                <div className="demo-card-footer">
+                  <span className="demo-link">
+                    View build
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
                 </div>
-
-                <h3 className="proof-name">{p.name}</h3>
-                <p className="proof-desc">{p.desc}</p>
-
-                {p.link && (
-                  <div style={{ marginTop: "1.25rem" }}>
-                    <Link href={p.link} className="btn-primary" style={{ display: "inline-block", fontSize: "0.875rem", padding: "0.5rem 1.25rem" }}>
-                      Try the Demo →
-                    </Link>
-                  </div>
-                )}
-
-                {"mailto" in p && p.mailto && (
-                  <div style={{ marginTop: "1.25rem" }}>
-                    <a
-                      href={`mailto:${p.mailto}`}
-                      className="btn-primary"
-                      style={{ display: "inline-block", fontSize: "0.875rem", padding: "0.5rem 1.25rem" }}
-                    >
-                      Try it live: email the real inbox →
-                    </a>
-                    <p style={{ fontSize: "0.75rem", color: "var(--text-secondary)", marginTop: "0.5rem" }}>
-                      Sends to the actual triage pipeline. Watch it classify and respond.
-                    </p>
-                  </div>
-                )}
-
-                {p.stats.length > 0 && (
-                  <div className="proof-stats">
-                    {p.stats.map((s) => (
-                      <div key={s.label} className="stat-chip">
-                        <span className="stat-num">{s.num}</span>
-                        <span className="stat-label">{s.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                <div className="project-stack">
-                  {p.stack.map((t) => (
-                    <span key={t} className="stack-tag">{t}</span>
-                  ))}
-                </div>
-
-                {p.note && <p className="proof-method">{p.note}</p>}
-
-                {p.loom && (
-                  <div className="loom-wrapper" style={{ marginTop: "1.75rem" }}>
-                    <iframe
-                      src={p.loom}
-                      allowFullScreen
-                      title={`${p.name}: Live Demo`}
-                    />
-                  </div>
-                )}
-
-                {p.video && (
-                  <div style={{ marginTop: "1.75rem", borderRadius: "12px", overflow: "hidden", border: "1px solid var(--border)", maxWidth: "320px", margin: "1.75rem auto 0" }}>
-                    <video
-                      src={p.video}
-                      controls
-                      playsInline
-                      preload="metadata"
-                      style={{ width: "100%", display: "block", borderRadius: "12px" }}
-                      title={`${p.name}: Live Demo`}
-                    />
-                  </div>
-                )}
-              </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -275,25 +172,25 @@ export default function Home() {
       <section id="philosophy" className="section-white" aria-label="Philosophy" style={{ backgroundColor: "#fafafa" }}>
         <div className="container section">
           <p className="section-eyebrow">The Lab</p>
-          <h2 className="section-title">Automating the Mundane.</h2>
+          <h2 className="section-title">Automating the mundane.</h2>
           <div style={{ maxWidth: "800px" }}>
             <p style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1rem" }}>
-              This space is a live portfolio. It shows what happens when intelligent routing meets modern LLMs. 
-              It's a builder's lab dedicated to proving that the most repetitive support tasks 
-              can be entirely automated without sacrificing quality.
+              n8n is the connective tissue: it sits between your existing tools (inbox, storefront,
+              WhatsApp, Instagram, sheets) and an AI layer that reads, decides, and acts. The pattern
+              repeats across functions, what changes is which manual process gets automated first.
             </p>
             <p style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)" }}>
-              Every touchpoint shown above is a functional build designed to test the limits of current AI models
-              in real-world customer service scenarios.
+              Every build above is a working system, not a mockup, built on a real operational pain
+              and tested against real-world inputs.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── FAQ (AEO Targets) ────────────────────────────────── */}
+      {/* ── FAQ ───────────────────────────────────────────────── */}
       <section id="faq" className="section-white" aria-label="Frequently Asked Questions">
         <div className="container section" style={{ maxWidth: "800px" }}>
-          <p className="section-eyebrow">AEO Targets</p>
+          <p className="section-eyebrow">FAQ</p>
           <h2 className="section-title">Direct Answers.</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "2rem", marginTop: "3rem" }}>
             {AEO_FAQS.map((faq, idx) => (
@@ -308,92 +205,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── ABOUT ─────────────────────────────────────────────── */}
-      <section id="about" className="founder-section" aria-label="About Garvin">
-        <div className="container section founder-grid">
-          <div className="founder-image-box">
-            <Image
-              src="/website-images/founder-portrait.png"
-              alt="Garvin Chanderia"
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          <div>
-            <p className="founder-label">About</p>
-            <h2 className="founder-name">Garvin Chanderia</h2>
-            <blockquote className="founder-quote">
-              &ldquo;I diagnose before I build.&rdquo;
-            </blockquote>
-            <p className="founder-bio">
-              I spend my time designing how systems
-              connect, how data flows, and how decisions get made.
-              That background shapes every project here. I map the operations first, then build
-              the automation around what actually exists.
-            </p>
-            <p className="founder-bio" style={{ marginBottom: "2rem" }}>
-              The projects on this page are real builds, not demos or mockups. Each one started
-              with a problem I either faced myself or saw clearly enough to take on.
-            </p>
-            <a
-              href="https://linkedin.com/in/garvinchanderia"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              Connect on LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FOOTER ────────────────────────────────────────────── */}
-      <footer className="footer" aria-label="Footer">
-        <div className="container footer-grid">
-          <div className="footer-col">
-            <div className="logo-group mb-1">
-              <Image src="/logo-icon.svg" alt="GarvinLabs" width={24} height={24} />
-              <span style={{ fontWeight: "bold", fontSize: "1.1rem", color: "var(--ink)" }}>
-                GarvinLabs
-              </span>
-            </div>
-            <p className="footer-tagline">
-              AI &amp; Automation Showcase
-            </p>
-          </div>
-
-          <div className="footer-col">
-            <h3 className="footer-heading">Explore</h3>
-            <ul className="footer-links-list">
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#about">About</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h3 className="footer-heading">Connect</h3>
-            <ul className="footer-links-list">
-              <li>
-                <a
-                  href="https://linkedin.com/in/garvinchanderia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="container footer-bottom">
-          <p>© 2026 Garvin Chanderia.</p>
-          <nav className="legal-links" aria-label="Legal">
-            <a href="/terms">Terms</a>
-            <a href="/privacy">Privacy</a>
-          </nav>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

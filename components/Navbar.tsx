@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const NAV_LINKS = [
-  { label: "Projects", href: "/#projects" },
-  { label: "About",    href: "/#about"    },
+  { label: "Home",      href: "/"          },
+  { label: "Builds",    href: "/demos"     },
+  { label: "Resources", href: "/resources" },
+  { label: "About",     href: "/about"     },
+  { label: "Contact",   href: "/contact"   },
 ];
 
 

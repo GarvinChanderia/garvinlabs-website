@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Why most AI implementations don't stick: Garvin Chanderia",
@@ -193,6 +194,7 @@ export default function Post() {
           </p>
         </footer>
       </article>
+      <Footer />
     </main>
   );
 }
