@@ -18,8 +18,8 @@ const products = [
 const pipeline = [
   { n: '1', label: 'Inbound',   desc: 'Webhook receives POST from chat widget',          color: '#4a6b5c' },
   { n: '2', label: 'KB Lookup', desc: 'Real Flo shipping/returns/sizing policy fetched', color: '#79c0ff' },
-  { n: '3', label: 'Pass 1',    desc: 'Local LLM (Ollama) classifies category & urgency', color: '#d2a8ff' },
-  { n: '4', label: 'Pass 2',    desc: 'Local LLM drafts reply grounded in the KB',        color: '#ffa657' },
+  { n: '3', label: 'Pass 1',    desc: 'Gemini Flash Lite classifies category & urgency', color: '#d2a8ff' },
+  { n: '4', label: 'Pass 2',    desc: 'Gemini Flash Lite drafts reply grounded in the KB', color: '#ffa657' },
   { n: '5', label: 'Gate',      desc: 'Escalation rules check before auto-reply',         color: '#4a6b5c' },
   { n: '6', label: 'Log',       desc: 'Conversation + ticket written to Notion',          color: '#ff7b72' },
 ];
@@ -134,7 +134,7 @@ export default function FloMattressDemoPage() {
           <div className={s.pipelineNote}>
             <span className={s.pipelineNoteStrong}>Stack: </span>
             Next.js proxy → n8n webhook → Notion knowledge base (real Flo policy) + conversation history →
-            local Ollama LLM (2× calls) → respondToWebhook → Notion ticket log.
+            Gemini Flash Lite (2× calls) → respondToWebhook → Notion ticket log.
             Escalation-worthy or low-confidence cases flag for human follow-up rather than auto-resolving.
           </div>
         </div>

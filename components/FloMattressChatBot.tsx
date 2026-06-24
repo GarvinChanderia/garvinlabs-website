@@ -112,7 +112,7 @@ export default function FloMattressChatBot() {
         <div className={s.header}>
           <div>
             <div className={s.headerTitle}>Flo Mattress Support (Demo)</div>
-            <div className={s.headerSub}>Ollama · n8n · Notion</div>
+            <div className={s.headerSub}>Gemini · n8n · Notion</div>
           </div>
           <div className={s.tabs}>
             <button className={`${s.tab} ${tab === 'chat' ? s.tabActive : ''}`} onClick={() => setTab('chat')}>Chat</button>
@@ -160,7 +160,7 @@ export default function FloMattressChatBot() {
               </div>
             ) : logs.map(log => (
               <div key={log.id} className={s.logEntry}>
-                <div className={s.logTs}>{log.ts} · n8n → Ollama (local)</div>
+                <div className={s.logTs}>{log.ts} · n8n → Gemini</div>
                 <div className={s.logMsg}>"{log.message}"</div>
                 <div className={s.logGrid}>
                   <div><span className={s.logLabel}>category  </span><span className={s.logCategory}>{log.category}</span></div>
