@@ -1,0 +1,301 @@
+/* Flo Mattress Demo Store */
+.page {
+  min-height: 100vh;
+  background: #faf7f2;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  color: #1f2b24;
+}
+
+/* ── Demo Banner (always visible, top of page) ── */
+.demoBanner {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff3cd;
+  border-bottom: 2px solid #e0a800;
+  padding: 10px 20px;
+  text-align: center;
+}
+.demoBannerInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b4f00;
+  line-height: 1.5;
+}
+.demoBannerInner strong { color: #4a3700; }
+
+/* ── Store Header ── */
+.storeHeader {
+  border-bottom: 1px solid #e5ddd0;
+  background: rgba(250,247,242,0.95);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 41px;
+  z-index: 40;
+}
+.storeHeaderInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brandMark {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: #4a6b5c;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 900; color: #fff;
+  flex-shrink: 0;
+}
+.brandName { font-size: 16px; font-weight: 700; color: #1f2b24; letter-spacing: -0.4px; }
+.brandBadge {
+  font-size: 10px; font-weight: 600; color: #8a7a5c;
+  background: #f0ead9; padding: 3px 9px; border-radius: 20px;
+}
+.storeNav { display: flex; align-items: center; gap: 24px; }
+.storeNavLink {
+  font-size: 13px; color: #5c6b62; text-decoration: none;
+  transition: color 0.15s;
+}
+.storeNavLink:hover { color: #1f2b24; }
+.cartIcon { font-size: 20px; cursor: pointer; background: none; border: none; }
+
+@media (max-width: 640px) {
+  .storeNav { display: none; }
+  .brandBadge { display: none; }
+}
+
+/* ── Hero ── */
+.hero {
+  background: #1f2b24;
+  color: #fff;
+  padding: 64px 20px;
+}
+@media (max-width: 640px) {
+  .hero { padding: 40px 20px; }
+}
+.heroInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .heroInner { grid-template-columns: 1fr; gap: 0; }
+  .heroVisual { display: none; }
+}
+.heroEyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #9bc4a8; margin-bottom: 12px; }
+.heroTitle {
+  font-size: clamp(26px, 5.5vw, 44px);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -1px;
+  color: #fff;
+  margin-bottom: 16px;
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+}
+.heroSub { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 24px; }
+.heroCta {
+  display: inline-block;
+  background: #9bc4a8;
+  color: #0f1a13;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 13px 26px;
+  border-radius: 50px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.heroCta:hover { background: #82b390; }
+.heroVisual { display: flex; align-items: center; justify-content: center; font-size: 100px; opacity: 0.15; user-select: none; }
+
+.heroBadges { display: flex; gap: 18px; margin-top: 22px; flex-wrap: wrap; }
+.heroBadge { font-size: 12px; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 6px; }
+
+/* ── Notice Banner (pipeline note, separate from top demo banner) ── */
+.notice {
+  background: #f0ead9;
+  border-bottom: 1px solid rgba(74,107,92,0.2);
+  padding: 10px 24px;
+}
+.noticeInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: #4a3a1f;
+}
+
+/* ── Collection ── */
+.collection {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+.collectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.collectionTitle {
+  font-size: 22px;
+  font-weight: 900;
+  color: #1f2b24;
+  letter-spacing: -0.5px;
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+}
+.collectionCount { font-size: 12px; color: #a59a87; }
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .productGrid { grid-template-columns: 1fr; }
+}
+.productCard {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e5ddd0;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.productCard:hover {
+  box-shadow: 0 20px 40px rgba(31,43,36,0.1);
+  transform: translateY(-4px);
+}
+.productImage {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #eef3ec, #e3ecdf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+  user-select: none;
+}
+.productBody { padding: 20px; }
+.productMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.productBadge { font-size: 10px; font-weight: 700; color: #4a6b5c; text-transform: uppercase; letter-spacing: 0.08em; }
+.productColor { font-size: 10px; color: #b3a890; }
+.productName { font-size: 15px; font-weight: 700; color: #1f2b24; margin-bottom: 4px; }
+.productPrice { font-size: 14px; font-weight: 600; color: #5c6b62; margin-bottom: 16px; }
+.productActions { display: flex; gap: 8px; }
+.addBtn {
+  flex: 1;
+  background: #1f2b24;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 10px 0;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+.addBtn:hover { background: #344a3d; }
+.productHint { font-size: 10px; color: #b3a890; margin-top: 8px; line-height: 1.4; }
+
+/* ── Pipeline Section ── */
+.pipeline {
+  background: #1f2b24;
+  color: #fff;
+  padding: 56px 24px;
+}
+.pipelineInner { max-width: 1100px; margin: 0 auto; }
+.pipelineEyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #9bc4a8; margin-bottom: 8px; }
+.pipelineTitle {
+  font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  font-family: var(--font-heading, 'Figtree', sans-serif);
+}
+.pipelineSub { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 28px; }
+.pipelineGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+@media (max-width: 768px) {
+  .pipelineGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .pipelineGrid { grid-template-columns: 1fr; }
+  .collection   { padding: 36px 16px; }
+  .pipeline     { padding: 36px 16px; }
+}
+.pipelineCard {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 16px;
+}
+.pipelineCardHead { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.pipelineNum {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 900; color: #1f2b24;
+  flex-shrink: 0;
+}
+.pipelineCardLabel { font-weight: 700; font-size: 13px; }
+.pipelineCardDesc { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+.pipelineNote {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+.pipelineNoteStrong { color: rgba(255,255,255,0.7); font-weight: 600; }
+
+/* ── Footer ── */
+.storeFooter {
+  border-top: 1px solid #e5ddd0;
+  background: #fff;
+  padding: 28px 24px;
+}
+.storeFooterInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: #a59a87;
+}
+.storeFooterLink { color: #1f2b24; font-weight: 600; text-decoration: none; }
+.storeFooterLink:hover { text-decoration: underline; }
+.storeFooterBack { color: #a59a87; text-decoration: none; }
+.storeFooterBack:hover { color: #1f2b24; }
+.storeFooterDisclaimer {
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: #b3a890;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #f0ead9;
+}
