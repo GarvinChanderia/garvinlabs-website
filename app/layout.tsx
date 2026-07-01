@@ -23,24 +23,24 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GarvinLabs: AI Support Triage & Automation",
+  title: "GarvinLabs: Applying AI to Business Operations",
   description:
-    "GarvinLabs builds AI triage systems for D2C and SaaS brands. Automatically classify, prioritize, and auto-reply to customer support tickets.",
+    "exploring how repetitive business operations can be redesigned using Automations to reduce manual effort while building systems that people can rely on.",
   keywords: ["AI Support Triage", "Customer Support Automation", "Agentic AI", "D2C Support Automation", "SaaS Support Automation", "n8n", "GarvinLabs"],
   metadataBase: new URL("https://garvinlabs.com"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "GarvinLabs: AI Support Triage & Automation",
+    title: "GarvinLabs: Applying AI to Business Operations",
     description:
-      "GarvinLabs builds AI triage systems for D2C and SaaS brands. Automatically classify, prioritize, and auto-reply to customer support tickets.",
+      "exploring how repetitive business operations can be redesigned using Automations to reduce manual effort while building systems that people can rely on.",
     url: "https://garvinlabs.com",
     siteName: "GarvinLabs",
     images: [
       {
-        url: "/website-images/og-image.png",
+        url: "/hero-diagram.png",
         width: 1200,
         height: 630,
-        alt: "GarvinLabs: AI Support Triage & Automation",
+        alt: "GarvinLabs: Applying AI to Business Operations",
       },
     ],
     locale: "en_US",
@@ -48,10 +48,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GarvinLabs: AI Support Triage & Automation",
+    title: "GarvinLabs: Applying AI to Business Operations",
     description:
-      "GarvinLabs builds AI triage systems for D2C and SaaS brands. Automatically classify, prioritize, and auto-reply to customer support tickets.",
-    images: ["/website-images/og-image.png"],
+      "exploring how repetitive business operations can be redesigned using Automations to reduce manual effort while building systems that people can rely on.",
+    images: ["/hero-diagram.png"],
   },
   robots: {
     index: true,
