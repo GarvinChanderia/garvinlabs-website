@@ -1,5 +1,7 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import RevealInit from "@/components/RevealInit";
 import { Footer } from "@/components/Footer";
@@ -10,18 +12,27 @@ const BUILDS_INDEX = [
     name: "ThreadWave: AI Support Triage",
     problem: "200+ tickets a day, all needing manual sorting before anyone can act on them.",
     href: "/demos#threadwave",
+    highlight: true,
+    stat: "61%",
+    statLabel: "auto-resolved within 30 days",
   },
   {
     tag: "AI · Storefront · n8n",
     name: "Storefront Support Chatbot",
     problem: "Sizing, returns, and shipping questions go unanswered outside business hours.",
     href: "/demos#storefront-chatbot",
+    highlight: false,
+    stat: "24/7",
+    statLabel: "on-brand coverage",
   },
   {
     tag: "AI · Instagram · n8n",
     name: "Instagram DM Concierge",
     problem: "DMs and story replies pile up faster than anyone can reply to them.",
     href: "/demos#instagram-dm",
+    highlight: false,
+    stat: "∞",
+    statLabel: "scale without headcount",
   },
 ];
 
@@ -44,123 +55,415 @@ const AEO_FAQS = [
   }
 ];
 
-const JSON_LD = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://garvinlabs.com/#garvin",
-      "name": "Garvin Chanderia",
-      "jobTitle": "Enterprise Architect & AI Automation Expert",
-      "url": "https://garvinlabs.com",
-      "sameAs": ["https://linkedin.com/in/garvinchanderia"]
-    },
-    {
-      "@type": "Service",
-      "name": "AI Support Triage",
-      "provider": { "@id": "https://garvinlabs.com/#garvin" },
-      "description": "An agentic AI system that categorizes, prioritizes, and drafts responses for inbound customer support emails."
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": AEO_FAQS.map(faq => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.a
-        }
-      }))
-    }
-  ]
-};
+
 
 export default function Home() {
+  // Cursor-tracking glow on bento cards
+  useEffect(() => {
+    const cards = document.querySelectorAll<HTMLElement>(".bento-card");
+    const handlers: Array<{ el: HTMLElement; fn: (e: MouseEvent) => void }> = [];
+
+    cards.forEach((card) => {
+      const glow = card.querySelector<HTMLElement>(".glass-cursor-glow");
+      if (!glow) return;
+
+      const onMouseMove = (e: MouseEvent) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty("--cursor-x", `${x}%`);
+        card.style.setProperty("--cursor-y", `${y}%`);
+      };
+
+      card.addEventListener("mousemove", onMouseMove);
+      handlers.push({ el: card, fn: onMouseMove });
+    });
+
+    return () => {
+      handlers.forEach(({ el, fn }) => el.removeEventListener("mousemove", fn));
+    };
+  }, []);
+
   return (
-    <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
-      />
+    <main style={{ background: "#0d0d0d", color: "#f5f5f7", minHeight: "100vh" }}>
       <Navbar />
       <RevealInit />
 
-      {/* ── THE WEDGE (AEO Architecture) ──────────────────────── */}
+      {/* ── AEO WEDGE ─────────────────────────────────────── */}
       <aside aria-label="Quick Answer" style={{ display: "none" }}>
         <strong>What is AI Support Triage?</strong>
         <p>AI Support Triage is an agentic AI system that uses Large Language Models (LLMs) to categorize, prioritize, and draft responses for inbound customer support emails, reducing manual triage time by up to 80%.</p>
       </aside>
 
-      {/* ── HERO ──────────────────────────────────────────────── */}
-      <section className="hero-bg hero-premium" aria-label="Hero" style={{ backgroundColor: "#0f172a" }}>
-        <div className="hero-dark-overlay" aria-hidden="true" />
-        <div className="container hero-premium-content hero-grid">
-          
-          <div className="hero-image-wrapper" style={{ position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: "16px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.15)", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}>
-            <Image
-              src="/website-images/hero-cs-support.png"
-              alt="AI support agent with three robot assistants handling customer tickets"
-              fill
-              style={{ objectFit: "cover", objectPosition: "center 35%" }}
-              priority
-            />
-          </div>
+      {/* ═══════════════════════════════════════════════════
+          HERO — Full-viewport, text-only, orb background
+      ══════════════════════════════════════════════════ */}
+      <section
+        aria-label="Hero"
+        style={{
+          position: "relative",
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "#0d0d0d",
+          overflow: "hidden",
+          paddingTop: "80px",
+          textAlign: "center",
+        }}
+      >
 
-          <div className="hero-text-content">
-            <p className="hero-eyebrow-dark" style={{ color: "rgba(255,255,255,0.85)" }}>GarvinLabs · n8n + AI Automation</p>
-            <h1 className="hero-premium-title" style={{ color: "#ffffff" }}>
-              I find the manual work,<br />
-              <span className="hero-name-accent">then automate it.</span>
-            </h1>
-            <p className="hero-premium-sub" style={{ color: "rgba(255,255,255,0.9)" }}>
-              D2C founders end up babysitting the same operational work every day, support tickets, storefront questions, DMs, order updates. I build n8n + AI systems that take that work off your plate. Support triage is one example below.
-            </p>
+        {/* Radial vignette overlay */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "radial-gradient(ellipse 80% 60% at 50% 50%, transparent 30%, #0d0d0d 100%)",
+            zIndex: 2,
+            pointerEvents: "none",
+          }}
+        />
 
-            <div className="hero-kpis" style={{ display: "flex", flexWrap: "wrap", gap: "2rem", marginTop: "1.5rem", marginBottom: "2.5rem" }}>
-               <div>
-                 <p style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#ffffff", marginBottom: "0.25rem" }}>60-70%</p>
-                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>of a support team's day spent sorting tickets, one of many manual ops patterns.</p>
-               </div>
-               <div>
-                 <p style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#ffffff", marginBottom: "0.25rem" }}>$40K+</p>
-                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>annual cost of a manual support-sorting layer alone.</p>
-               </div>
-               <div>
-                 <p style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#ffffff", marginBottom: "0.25rem" }}>61%</p>
-                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)", maxWidth: "150px", lineHeight: "1.4" }}>auto-resolution rate the support build hit within 30 days.</p>
-               </div>
-            </div>
-            <Link href="/demos" className="btn-primary btn-large hero-premium-cta">
-              See the builds →
-            </Link>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ── PROJECTS ──────────────────────────────────────────── */}
-      <section id="projects" className="section-white" aria-label="Projects">
-        <div className="container section" style={{ maxWidth: "1000px" }}>
-          <p className="section-eyebrow">The Builds</p>
-          <h2 className="section-title">n8n + AI systems, shipped.</h2>
-          <p className="lead" style={{ marginTop: "1rem", maxWidth: "640px" }}>
-            A few of the operational automations live so far. Each one started as a
-            manual process someone was doing by hand every day.
+        {/* Hero content */}
+        <div
+          className="container"
+          style={{
+            position: "relative",
+            zIndex: 3,
+            maxWidth: "860px",
+            padding: "3rem 2rem 5rem",
+          }}
+        >
+          {/* Eyebrow */}
+          <p
+            className="reveal eyebrow-label"
+            style={{
+              fontSize: "0.75rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#10B981",
+              fontWeight: 700,
+              marginBottom: "1.5rem",
+            }}
+          >
+            GarvinLabs · n8n + AI Automation
           </p>
 
-          <div className="demos-grid" style={{ marginTop: "2.5rem" }}>
-            {BUILDS_INDEX.map((b) => (
-              <Link key={b.name} href={b.href} className="demo-card">
-                <div className="demo-card-tag">{b.tag}</div>
-                <h3 className="demo-card-headline">{b.name}</h3>
-                <p className="demo-card-summary">{b.problem}</p>
-                <div className="demo-card-footer">
-                  <span className="demo-link">
+          {/* Headline */}
+          <h1
+            className="reveal delay-1"
+            style={{
+              fontSize: "clamp(2.75rem, 6vw, 5rem)",
+              fontWeight: 700,
+              lineHeight: 1.08,
+              letterSpacing: "-0.03em",
+              color: "#f5f5f7",
+              marginBottom: "1.75rem",
+            }}
+          >
+            I find the manual work,
+            <br />
+            <span
+              style={{
+                background: "linear-gradient(135deg, #10B981 0%, #34d399 50%, #059669 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              then automate it.
+            </span>
+          </h1>
+
+          {/* Sub-copy */}
+          <p
+            className="reveal delay-2"
+            style={{
+              fontSize: "1.1875rem",
+              lineHeight: 1.7,
+              color: "#a1a1a6",
+              maxWidth: "620px",
+              margin: "0 auto 3rem",
+            }}
+          >
+            D2C founders babysit the same operational work every day — support tickets,
+            storefront questions, DMs, order updates. I build n8n + AI systems that take
+            that work off your plate, permanently.
+          </p>
+
+          {/* CTAs */}
+          <div
+            className="reveal delay-3"
+            style={{
+              display: "flex",
+              gap: "1rem",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              marginBottom: "4rem",
+            }}
+          >
+            <Link
+              href="/demos"
+              id="hero-cta-primary"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                background: "#10B981",
+                color: "#000000",
+                padding: "0.9375rem 2rem",
+                borderRadius: "980px",
+                fontWeight: 700,
+                fontSize: "0.9375rem",
+                letterSpacing: "0.01em",
+                minHeight: "48px",
+                textDecoration: "none",
+              }}
+            >
+              See the builds →
+            </Link>
+            <a
+              href="https://linkedin.com/in/garvinchanderia"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="hero-cta-secondary"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                padding: "0.9375rem 2rem",
+                borderRadius: "980px",
+                border: "1px solid rgba(255,255,255,0.15)",
+                color: "#f5f5f7",
+                fontWeight: 600,
+                fontSize: "0.9375rem",
+                minHeight: "48px",
+                textDecoration: "none",
+                background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+              }}
+            >
+              Connect on LinkedIn
+            </a>
+          </div>
+
+          {/* KPI row — glassmorphic pills */}
+          <div
+            className="reveal delay-3"
+            style={{
+              display: "flex",
+              gap: "1.25rem",
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            {[
+              { stat: "60–70%", label: "of support teams' time lost to manual sorting" },
+              { stat: "$40K+", label: "annual cost of a manual triage layer" },
+              { stat: "14 days", label: "to a live AI system in your stack" },
+            ].map((kpi) => (
+              <div
+                key={kpi.stat}
+                className="glass-thin"
+                style={{
+                  padding: "1.25rem 1.5rem",
+                  textAlign: "center",
+                  minWidth: "160px",
+                  position: "relative",
+                  overflow: "hidden",
+                }}
+              >
+                {/* Top shimmer line */}
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: "15%",
+                    right: "15%",
+                    height: "1px",
+                    background: "linear-gradient(90deg, transparent, rgba(16,185,129,0.5), transparent)",
+                  }}
+                />
+                <p style={{ fontSize: "1.75rem", fontWeight: 700, color: "#f5f5f7", letterSpacing: "-0.035em", lineHeight: 1, marginBottom: "0.5rem" }}>
+                  {kpi.stat}
+                </p>
+                <p style={{ fontSize: "0.75rem", color: "#6b7280", lineHeight: 1.5, maxWidth: "130px", margin: "0 auto" }}>
+                  {kpi.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom fade */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: "160px",
+            background: "linear-gradient(to bottom, transparent, #0d0d0d)",
+            zIndex: 3,
+          }}
+        />
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          BUILDS — Bento Grid
+      ══════════════════════════════════════════════════ */}
+      <section
+        id="projects"
+        aria-label="Projects"
+        style={{
+          background: "#0d0d0d",
+          padding: "7rem 0",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+
+
+        <div className="container" style={{ position: "relative", zIndex: 2 }}>
+          {/* Section header */}
+          <div className="reveal" style={{ marginBottom: "3.5rem" }}>
+            <p
+              className="eyebrow-label"
+              style={{
+                fontSize: "0.6875rem",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "#10B981",
+                fontWeight: 700,
+                marginBottom: "0.875rem",
+              }}
+            >
+              The Builds
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                fontWeight: 700,
+                color: "#f5f5f7",
+                letterSpacing: "-0.025em",
+                lineHeight: 1.15,
+                marginBottom: "1rem",
+              }}
+            >
+              n8n + AI systems, shipped.
+            </h2>
+            <p style={{ fontSize: "1.0625rem", color: "#6b7280", maxWidth: "540px", lineHeight: 1.65 }}>
+              Each one started as a manual process someone was doing by hand every day.
+            </p>
+          </div>
+
+          {/* Bento Grid */}
+          <div className="bento-grid">
+            {BUILDS_INDEX.map((build, idx) => (
+              <Link
+                key={build.name}
+                href={build.href}
+                id={`build-card-${idx}`}
+                className={`bento-card reveal delay-${idx + 1}${build.highlight ? " bento-card-highlight" : ""}`}
+                style={{
+                  display: "block",
+                  padding: build.highlight ? "2.5rem" : "2rem",
+                  borderRadius: "20px",
+                  background: "rgba(255,255,255,0.025)",
+                  backdropFilter: "saturate(1.8) blur(24px)",
+                  WebkitBackdropFilter: "saturate(1.8) blur(24px)",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  textDecoration: "none",
+                  position: "relative",
+                  overflow: "hidden",
+                  cursor: "pointer",
+                }}
+              >
+                {/* Cursor glow layer */}
+                <div className="glass-cursor-glow" aria-hidden="true" />
+
+                {/* Top accent line on highlight card */}
+                {build.highlight && (
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: "8%",
+                      right: "8%",
+                      height: "1px",
+                      background: "linear-gradient(90deg, transparent, #10B981, transparent)",
+                    }}
+                  />
+                )}
+
+                <div style={{ position: "relative", zIndex: 1 }}>
+                  {/* Tag + stat row */}
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", marginBottom: "1.25rem" }}>
+                    <span
+                      style={{
+                        display: "inline-block",
+                        fontSize: "0.625rem",
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        color: "#10B981",
+                        fontWeight: 700,
+                        background: "rgba(16,185,129,0.08)",
+                        padding: "0.3rem 0.75rem",
+                        borderRadius: "980px",
+                        border: "1px solid rgba(16,185,129,0.2)",
+                      }}
+                    >
+                      {build.tag}
+                    </span>
+
+                    <div style={{ textAlign: "right", flexShrink: 0 }}>
+                      <p style={{ fontSize: "2rem", fontWeight: 700, color: "#f5f5f7", letterSpacing: "-0.04em", lineHeight: 1 }}>
+                        {build.stat}
+                      </p>
+                      <p style={{ fontSize: "0.6875rem", color: "#6b7280", marginTop: "0.3rem", maxWidth: "90px", textAlign: "right", lineHeight: 1.45 }}>
+                        {build.statLabel}
+                      </p>
+                    </div>
+                  </div>
+
+                  <h3
+                    style={{
+                      fontSize: build.highlight ? "1.5rem" : "1.1875rem",
+                      fontWeight: 700,
+                      color: "#f5f5f7",
+                      letterSpacing: "-0.015em",
+                      marginBottom: "0.75rem",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {build.name}
+                  </h3>
+                  <p style={{ fontSize: "0.9375rem", color: "#6b7280", lineHeight: 1.65 }}>
+                    {build.problem}
+                  </p>
+
+                  {/* Footer arrow */}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.375rem",
+                      color: "#10B981",
+                      fontSize: "0.8125rem",
+                      fontWeight: 700,
+                      marginTop: "1.5rem",
+                      letterSpacing: "0.02em",
+                    }}
+                  >
                     View build
-                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
                       <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  </span>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -168,37 +471,204 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── THE LAB / PHILOSOPHY ──────────────────────────────── */}
-      <section id="philosophy" className="section-white" aria-label="Philosophy" style={{ backgroundColor: "#fafafa" }}>
-        <div className="container section">
-          <p className="section-eyebrow">The Lab</p>
-          <h2 className="section-title">Automating the mundane.</h2>
-          <div style={{ maxWidth: "800px" }}>
-            <p style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1rem" }}>
-              n8n is the connective tissue: it sits between your existing tools (inbox, storefront,
-              WhatsApp, Instagram, sheets) and an AI layer that reads, decides, and acts. The pattern
-              repeats across functions, what changes is which manual process gets automated first.
+      {/* ═══════════════════════════════════════════════════
+          THE LAB — Philosophy + spinning conic glow
+      ══════════════════════════════════════════════════ */}
+      <section
+        id="philosophy"
+        aria-label="Philosophy"
+        style={{
+          background: "#0d0d0d",
+          padding: "9rem 0",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+
+
+        <div
+          className="container"
+          style={{ position: "relative", zIndex: 2, maxWidth: "800px", textAlign: "center" }}
+        >
+          <p
+            className="reveal eyebrow-label"
+            style={{
+              fontSize: "0.6875rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#10B981",
+              fontWeight: 700,
+              marginBottom: "1rem",
+            }}
+          >
+            The Lab
+          </p>
+          <h2
+            className="reveal delay-1"
+            style={{
+              fontSize: "clamp(2rem, 4vw, 3.25rem)",
+              fontWeight: 700,
+              color: "#f5f5f7",
+              letterSpacing: "-0.025em",
+              lineHeight: 1.12,
+              marginBottom: "2.5rem",
+            }}
+          >
+            Automating the mundane.
+          </h2>
+
+          {/* Glassmorphic text card */}
+          <div
+            className="reveal delay-2 glass"
+            style={{
+              padding: "3rem",
+              textAlign: "left",
+              marginBottom: "3rem",
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            {/* Top shimmer */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: "10%",
+                right: "10%",
+                height: "1px",
+                background: "linear-gradient(90deg, transparent, rgba(16,185,129,0.4), transparent)",
+              }}
+            />
+            <p style={{ fontSize: "1.0625rem", lineHeight: 1.8, color: "#a1a1a6", marginBottom: "1.25rem" }}>
+              n8n is the connective tissue: it sits between your existing tools — inbox, storefront,
+              WhatsApp, Instagram, sheets — and an AI layer that reads, decides, and acts.
+              The pattern repeats across functions; what changes is which manual process gets automated first.
             </p>
-            <p style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)" }}>
-              Every build above is a working system, not a mockup, built on a real operational pain
+            <p style={{ fontSize: "1.0625rem", lineHeight: 1.8, color: "#a1a1a6" }}>
+              Every build above is a working system, not a mockup — built on a real operational pain
               and tested against real-world inputs.
             </p>
+          </div>
+
+          {/* Tech stack pills */}
+          <div
+            className="reveal delay-3"
+            style={{ display: "flex", gap: "0.625rem", flexWrap: "wrap", justifyContent: "center" }}
+          >
+            {["n8n", "OpenAI", "Anthropic Claude", "Zendesk", "Instagram API", "Gmail"].map((tech) => (
+              <span
+                key={tech}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "980px",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.09)",
+                  fontSize: "0.8125rem",
+                  color: "#86868b",
+                  fontWeight: 500,
+                  letterSpacing: "0.02em",
+                }}
+              >
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── FAQ ───────────────────────────────────────────────── */}
-      <section id="faq" className="section-white" aria-label="Frequently Asked Questions">
-        <div className="container section" style={{ maxWidth: "800px" }}>
-          <p className="section-eyebrow">FAQ</p>
-          <h2 className="section-title">Direct Answers.</h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "2rem", marginTop: "3rem" }}>
+      {/* ═══════════════════════════════════════════════════
+          FAQ — Dark accordion
+      ══════════════════════════════════════════════════ */}
+      <section
+        id="faq"
+        aria-label="Frequently Asked Questions"
+        style={{
+          background: "#050505",
+          padding: "7rem 0 9rem",
+          borderTop: "1px solid rgba(255,255,255,0.05)",
+        }}
+      >
+        <div className="container" style={{ maxWidth: "740px" }}>
+          <p
+            className="reveal eyebrow-label"
+            style={{
+              fontSize: "0.6875rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#10B981",
+              fontWeight: 700,
+              marginBottom: "0.875rem",
+            }}
+          >
+            FAQ
+          </p>
+          <h2
+            className="reveal delay-1"
+            style={{
+              fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
+              fontWeight: 700,
+              color: "#f5f5f7",
+              letterSpacing: "-0.02em",
+              marginBottom: "3rem",
+            }}
+          >
+            Direct answers.
+          </h2>
+
+          <div style={{ display: "flex", flexDirection: "column" }}>
             {AEO_FAQS.map((faq, idx) => (
-              <details key={idx} style={{ paddingBottom: "1.5rem", borderBottom: "1px solid var(--border)", cursor: "pointer" }} className="faq-details">
-                <summary style={{ fontSize: "1.25rem", fontWeight: "700", color: "var(--ink)", outline: "none", listStylePosition: "inside" }}>
-                  {faq.q}
+              <details
+                key={idx}
+                id={`faq-item-${idx}`}
+                className={`reveal delay-${(idx % 3) + 1}`}
+                style={{
+                  borderBottom: "1px solid rgba(255,255,255,0.07)",
+                  borderRadius: "8px",
+                  padding: "0 0.25rem",
+                }}
+              >
+                <summary
+                  style={{
+                    fontSize: "1rem",
+                    fontWeight: 600,
+                    color: "#f5f5f7",
+                    outline: "none",
+                    listStyle: "none",
+                    padding: "1.5rem 0",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "1rem",
+                    userSelect: "none",
+                  }}
+                >
+                  <span>{faq.q}</span>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    style={{ flexShrink: 0 }}
+                  >
+                    <path d="M5 8l5 5 5-5" />
+                  </svg>
                 </summary>
-                <p style={{ fontSize: "1rem", lineHeight: "1.6", color: "var(--text-secondary)", marginTop: "1rem", paddingLeft: "1.5rem" }}>{faq.a}</p>
+                <p
+                  style={{
+                    fontSize: "0.9375rem",
+                    lineHeight: 1.75,
+                    color: "#6b7280",
+                    paddingBottom: "1.5rem",
+                  }}
+                >
+                  {faq.a}
+                </p>
               </details>
             ))}
           </div>

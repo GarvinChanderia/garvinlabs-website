@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 const NAV_LINKS = [
   { label: "Home",      href: "/"          },
@@ -11,10 +13,10 @@ const NAV_LINKS = [
   { label: "Contact",   href: "/contact"   },
 ];
 
-
 export default function Navbar() {
   const [scrolled,  setScrolled]  = useState(false);
   const [menuOpen,  setMenuOpen]  = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -33,40 +35,42 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", close);
   }, [menuOpen]);
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
     <nav
       id="main-nav"
-      className={`navbar${scrolled ? " scrolled" : ""}`}
+      className={`navbar${scrolled ? " scrolled navbar-liquid" : ""}`}
       aria-label="Main navigation"
     >
       <div className="navbar-inner container">
         {/* Logo */}
-        <a href="#" className="logo-group" aria-label="GarvinLabs home">
-          <Image src="/logo-icon.svg"     alt=""            width={22} height={22} aria-hidden="true" />
-          <Image src="/logo-wordmark.svg" alt="GarvinLabs"  width={100} height={22} />
-        </a>
+        <Link href="/" className="logo-group" aria-label="GarvinLabs home">
+          <Image src="/logo-wordmark.svg" alt="GarvinLabs" width={130} height={18} />
+        </Link>
 
         {/* Desktop links + CTA */}
         <div className={`nav-links${menuOpen ? " open" : ""}`} role="menu">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
-              className="nav-link"
+              className={`nav-link${isActive(link.href) ? " active" : ""}`}
               role="menuitem"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href="https://linkedin.com/in/garvinchanderia"
-            className="btn-secondary nav-cta"
+            className="btn-primary nav-cta"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
           >
-            LinkedIn
+            LinkedIn ↗
           </a>
         </div>
 

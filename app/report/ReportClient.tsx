@@ -75,7 +75,8 @@ export function ReportClient() {
 
       <nav className="report-nav">
         <a href="/" className="report-logo" aria-label="GarvinLabs home">
-          Garvin<em>Labs<span>.</span></em>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-wordmark.svg" alt="GarvinLabs" height="20" style={{ display: "block" }} />
         </a>
         <a href="/" className="report-back">
           ← Back to site

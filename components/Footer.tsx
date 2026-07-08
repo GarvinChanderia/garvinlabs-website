@@ -15,16 +15,26 @@ export function Footer() {
   return (
     <footer className="footer" aria-label="Footer">
       <div className="container footer-grid">
+        {/* Brand column */}
         <div className="footer-col">
           <div className="logo-group mb-1">
-            <Image src="/logo-icon.svg" alt="GarvinLabs" width={24} height={24} />
-            <span style={{ fontWeight: "bold", fontSize: "1.1rem", color: "var(--ink)" }}>
-              GarvinLabs
-            </span>
+            <Image
+              src="/logo-wordmark.svg"
+              alt="GarvinLabs"
+              width={120}
+              height={17}
+            />
           </div>
           <p className="footer-tagline">
             n8n + AI automation for D2C operations.
           </p>
+          {/* Status indicator */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "1rem" }}>
+            <span className="status-dot" />
+            <span style={{ fontSize: "0.75rem", color: "#6b7280", fontWeight: 500 }}>
+              All systems operational
+            </span>
+          </div>
         </div>
 
         <div className="footer-col">
@@ -53,7 +63,7 @@ export function Footer() {
             </li>
             <li>
               <a href={X_URL} target="_blank" rel="noopener noreferrer">
-                X
+                X / Twitter
               </a>
             </li>
             <li>
@@ -74,7 +84,7 @@ export function Footer() {
       </div>
 
       <div className="container footer-bottom">
-        <p>© {new Date().getFullYear()} Garvin Chanderia.</p>
+        <p>© {new Date().getFullYear()} Garvin Chanderia. All rights reserved.</p>
       </div>
     </footer>
   );
