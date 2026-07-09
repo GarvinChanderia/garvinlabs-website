@@ -6,14 +6,14 @@ export default function SchemaOrg() {
     "name": "Garvin Chanderia",
     "url": "https://garvinlabs.com",
     "jobTitle": "Enterprise Architecture Consultant",
-    "description": "Enterprise Architecture Consultant and AI & automation practitioner. Builds systems that replace manual operations — AI pipelines, automation layers, and intelligent workflows.",
+    "description": "Enterprise Architecture Consultant and automation practitioner. Maps manual business operations, then builds systems to run them without a person babysitting the process.",
     "sameAs": ["https://linkedin.com/in/garvinchanderia"],
     "knowsAbout": [
       "Enterprise Architecture",
-      "AI Automation",
+      "Operations Automation",
       "System Integration",
       "n8n",
-      "AI Implementation",
+      "Support Triage Systems",
       "Workflow Automation"
     ]
   };

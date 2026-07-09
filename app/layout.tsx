@@ -23,16 +23,16 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GarvinLabs: Applying AI to Business Operations",
+  title: "GarvinLabs: Systemizing Manual Business Operations",
   description:
-    "exploring how repetitive business operations can be redesigned using Automations to reduce manual effort while building systems that people can rely on.",
-  keywords: ["AI Support Triage", "Customer Support Automation", "Agentic AI", "D2C Support Automation", "SaaS Support Automation", "n8n", "GarvinLabs"],
+    "Finding the repetitive manual work inside a business and replacing it with systems people can rely on: support triage, ops reporting, fulfilment, influencer tracking.",
+  keywords: ["Support Triage Automation", "Customer Support Automation", "D2C Operations", "Operations Automation", "SaaS Support Automation", "GarvinLabs"],
   metadataBase: new URL("https://garvinlabs.com"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "GarvinLabs: Applying AI to Business Operations",
+    title: "GarvinLabs: Systemizing Manual Business Operations",
     description:
-      "exploring how repetitive business operations can be redesigned using Automations to reduce manual effort while building systems that people can rely on.",
+      "Finding the repetitive manual work inside a business and replacing it with systems people can rely on: support triage, ops reporting, fulfilment, influencer tracking.",
     url: "https://garvinlabs.com",
     siteName: "GarvinLabs",
     images: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: "/hero-diagram.png",
         width: 1200,
         height: 630,
-        alt: "GarvinLabs: Applying AI to Business Operations",
+        alt: "GarvinLabs: Systemizing Manual Business Operations",
       },
     ],
     locale: "en_US",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GarvinLabs: Applying AI to Business Operations",
+    title: "GarvinLabs: Systemizing Manual Business Operations",
     description:
-      "exploring how repetitive business operations can be redesigned using Automations to reduce manual effort while building systems that people can rely on.",
+      "Finding the repetitive manual work inside a business and replacing it with systems people can rely on: support triage, ops reporting, fulfilment, influencer tracking.",
     images: ["/hero-diagram.png"],
   },
   robots: {

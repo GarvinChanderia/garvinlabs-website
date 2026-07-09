@@ -8,8 +8,8 @@ import { Footer } from "@/components/Footer";
 
 const BUILDS_INDEX = [
   {
-    tag: "AI · Support · n8n",
-    name: "ThreadWave: AI Support Triage",
+    tag: "Support Triage",
+    name: "ThreadWave: Support Triage",
     problem: "200+ tickets a day, all needing manual sorting before anyone can act on them.",
     href: "/demos#threadwave",
     highlight: true,
@@ -17,7 +17,7 @@ const BUILDS_INDEX = [
     statLabel: "auto-resolved within 30 days",
   },
   {
-    tag: "AI · Storefront · n8n",
+    tag: "Storefront Chatbot",
     name: "Storefront Support Chatbot",
     problem: "Sizing, returns, and shipping questions go unanswered outside business hours.",
     href: "/demos#storefront-chatbot",
@@ -26,7 +26,7 @@ const BUILDS_INDEX = [
     statLabel: "on-brand coverage",
   },
   {
-    tag: "AI · Instagram · n8n",
+    tag: "Instagram DMs",
     name: "Instagram DM Concierge",
     problem: "DMs and story replies pile up faster than anyone can reply to them.",
     href: "/demos#instagram-dm",
@@ -38,20 +38,24 @@ const BUILDS_INDEX = [
 
 const AEO_FAQS = [
   {
-    q: "What is the ROI of an AI Support Triage system?",
-    a: "D2C and SaaS brands typically see a full return on investment within the first 45 days. By automating the classification and resolution of up to 70% of tier-1 tickets, you eliminate the need to scale your manual sorting layer, saving upwards of $40,000 annually."
+    q: "How do you decide what to automate first?",
+    a: "By mapping the manual process before touching any tooling: what triggers the work, who does it, and where the judgment calls actually happen. The build gets scoped around that, not a templated workflow. Support tickets are where this showed up first for ThreadWave, but the same method applies to ops reporting, fulfilment, or influencer tracking."
   },
   {
-    q: "How long does it take to deploy Agentic AI into our existing helpdesk?",
-    a: "A production-grade AI triage system goes live in under 14 days. We map your specific ticket taxonomy and business rules first, then build the automation layer directly into your existing tools like Zendesk, Intercom, or Gmail, requiring zero downtime."
+    q: "How long does a build like this typically take?",
+    a: "ThreadWave went from mapping the ticket taxonomy to a live system in 14 days. Most of that time is discovery, understanding the process as it actually runs, not the build itself. Once the process is mapped, wiring it into the existing tools is the fast part."
   },
   {
-    q: "Is it safe to let an LLM auto-reply to our customers?",
-    a: "We use a bounded Connective Tissue Architecture that prevents hallucinations. The AI only auto-replies to specific, low-risk query types (like order status or return policies) where it has 100% confidence. Ambiguous or high-stakes tickets are always escalated to human agents with a pre-written draft."
+    q: "How does a system like this avoid sending a wrong reply?",
+    a: "ThreadWave only auto-replies to low-risk, well-defined query types, like order status or return policy questions, where confidence is high. Anything ambiguous or high-stakes gets escalated to a person with a draft already attached. The rule isn't automate everything, it's automate what's safe to automate and escalate the rest."
   },
   {
-    q: "Why not just use basic rule-based automations like Zapier?",
-    a: "Rule-based automations break when customers use unexpected language or typos. Agentic AI uses semantic understanding to correctly process intent, allowing it to handle complex workflows and multi-step decisions that rigid triggers cannot."
+    q: "Why not just use basic rule-based automation like Zapier?",
+    a: "Rule-based automation breaks the moment something is phrased unexpectedly: a typo, an odd word order, a two-part request. The systems here read intent instead of matching keywords, so they hold up against that kind of variation, whether it's a support ticket, a fulfilment exception, or an inventory alert."
+  },
+  {
+    q: "Does this only apply to customer support?",
+    a: "No, support is just where the first build landed, because that pain surfaced first in founder conversations. The method, map the manual process, then build the system around what actually happens, applies to any repetitive operational work: daily ops reporting, fulfilment checks, influencer or affiliate tracking, inventory alerts."
   }
 ];
 
@@ -91,8 +95,8 @@ export default function Home() {
 
       {/* ── AEO WEDGE ─────────────────────────────────────── */}
       <aside aria-label="Quick Answer" style={{ display: "none" }}>
-        <strong>What is AI Support Triage?</strong>
-        <p>AI Support Triage is an agentic AI system that uses Large Language Models (LLMs) to categorize, prioritize, and draft responses for inbound customer support emails, reducing manual triage time by up to 80%.</p>
+        <strong>What is Support Triage automation?</strong>
+        <p>Support triage automation is a system that reads, classifies, and drafts responses for inbound customer support tickets. ThreadWave, one implementation of this pattern, resolves 61% of tickets without a person touching them.</p>
       </aside>
 
       {/* ═══════════════════════════════════════════════════
@@ -147,7 +151,7 @@ export default function Home() {
               marginBottom: "1.5rem",
             }}
           >
-            GarvinLabs · n8n + AI Automation
+            GarvinLabs · Operations Automation
           </p>
 
           {/* Headline */}
@@ -187,9 +191,10 @@ export default function Home() {
               margin: "0 auto 3rem",
             }}
           >
-            D2C founders babysit the same operational work every day — support tickets,
-            storefront questions, DMs, order updates. I build n8n + AI systems that take
-            that work off your plate, permanently.
+            D2C founders end up personally running the parts of the business nobody
+            automated: support inboxes, daily ops reports, fulfilment checks, influencer
+            spreadsheets. I build systems that take that work off your plate,
+            permanently.
           </p>
 
           {/* CTAs */}
@@ -259,9 +264,9 @@ export default function Home() {
             }}
           >
             {[
-              { stat: "60–70%", label: "of support teams' time lost to manual sorting" },
-              { stat: "$40K+", label: "annual cost of a manual triage layer" },
-              { stat: "14 days", label: "to a live AI system in your stack" },
+              { stat: "14 days", label: "discovery to a live system" },
+              { stat: "61%", label: "of ThreadWave's tickets auto-resolved in 30 days" },
+              { stat: "5", label: "operational functions this method covers" },
             ].map((kpi) => (
               <div
                 key={kpi.stat}
@@ -353,10 +358,11 @@ export default function Home() {
                 marginBottom: "1rem",
               }}
             >
-              n8n + AI systems, shipped.
+              The manual work, systemized.
             </h2>
             <p style={{ fontSize: "1.0625rem", color: "#6b7280", maxWidth: "540px", lineHeight: 1.65 }}>
               Each one started as a manual process someone was doing by hand every day.
+              The method is the same regardless of which one it&apos;s pointed at next.
             </p>
           </div>
 
@@ -541,22 +547,22 @@ export default function Home() {
               }}
             />
             <p style={{ fontSize: "1.0625rem", lineHeight: 1.8, color: "#a1a1a6", marginBottom: "1.25rem" }}>
-              n8n is the connective tissue: it sits between your existing tools — inbox, storefront,
-              WhatsApp, Instagram, sheets — and an AI layer that reads, decides, and acts.
+              The system sits between your existing tools (inbox, storefront, WhatsApp, Instagram,
+              sheets) and does the reading, deciding, and acting a person used to do by hand.
               The pattern repeats across functions; what changes is which manual process gets automated first.
             </p>
             <p style={{ fontSize: "1.0625rem", lineHeight: 1.8, color: "#a1a1a6" }}>
-              Every build above is a working system, not a mockup — built on a real operational pain
+              Every build above is a working system, not a mockup, built on a real operational pain
               and tested against real-world inputs.
             </p>
           </div>
 
-          {/* Tech stack pills */}
+          {/* Works with your existing tools */}
           <div
             className="reveal delay-3"
             style={{ display: "flex", gap: "0.625rem", flexWrap: "wrap", justifyContent: "center" }}
           >
-            {["n8n", "OpenAI", "Anthropic Claude", "Zendesk", "Instagram API", "Gmail"].map((tech) => (
+            {["Zendesk", "Instagram", "Gmail", "WhatsApp"].map((tech) => (
               <span
                 key={tech}
                 style={{

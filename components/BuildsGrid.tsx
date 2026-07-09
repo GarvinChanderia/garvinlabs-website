@@ -120,7 +120,7 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
                     controls
                     playsInline
                     preload="metadata"
-                    title={`${active.title}: Live Demo`}
+                    title={`${active.title}: Walkthrough`}
                   />
                 ) : active.image ? (
                   <Image src={active.image} alt={active.alt ?? active.title} fill style={{ objectFit: "cover" }} />

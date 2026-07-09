@@ -8,7 +8,7 @@ import { LINKEDIN } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Garvin Chanderia: enterprise architecture background, n8n + AI automation builds for D2C operators.",
+    "Garvin Chanderia: enterprise architecture background, automation builds for D2C operators.",
 };
 
 const EXPERIENCE = [
@@ -314,10 +314,10 @@ export default function About() {
             What I build with.
           </h2>
           <p style={{ fontSize: "var(--type-body)", lineHeight: 1.75, color: "#a1a1a6", marginBottom: "1rem" }}>
-            n8n is the connective tissue between a brand&apos;s tools and an AI layer that reads,
-            decides, and acts.{" "}
-            <Link href="/demos" style={{ color: "#10B981" }}>See the live builds</Link>, including
-            ThreadWave, the AI support triage system that hit 61% auto-resolution in 30 days.
+            The system sits between a brand&apos;s existing tools, doing the reading, deciding,
+            and acting a person used to do by hand.{" "}
+            <Link href="/demos" style={{ color: "#10B981" }}>See how the builds work</Link>, including
+            ThreadWave, the support triage system that hit 61% auto-resolution in 30 days.
           </p>
           <p style={{ fontSize: "var(--type-body)", lineHeight: 1.75, color: "#a1a1a6" }}>
             On the personal side, I built an n8n MCP Server: a connector that lets the Claude API

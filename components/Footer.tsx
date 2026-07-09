@@ -26,15 +26,8 @@ export function Footer() {
             />
           </div>
           <p className="footer-tagline">
-            n8n + AI automation for D2C operations.
+            Operations automation for D2C brands.
           </p>
-          {/* Status indicator */}
-          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "1rem" }}>
-            <span className="status-dot" />
-            <span style={{ fontSize: "0.75rem", color: "#6b7280", fontWeight: 500 }}>
-              All systems operational
-            </span>
-          </div>
         </div>
 
         <div className="footer-col">
