@@ -60,16 +60,16 @@ export default function Resources() {
   return (
     <main>
       <Navbar />
-      <div className="container section" style={{ maxWidth: 800 }}>
+      <div className="container section" style={{ maxWidth: 1100 }}>
         <p className="section-eyebrow">Resources</p>
         <h1 className="section-title">Free tools and breakdowns for D2C operators.</h1>
         <p className="writing-intro">
           Practical resources pulled from the automations built and shipped here.
           Free to use, no strings attached.
         </p>
-        <div className="post-list">
+        <div className="resources-grid">
           {RESOURCES.map((r) => (
-            <a key={r.slug} href={r.href} download className="post-list-card">
+            <a key={r.slug} href={r.href} download className="resource-grid-card">
               <p className="post-tag">{r.tag}</p>
               <h2 className="post-list-title">{r.title}</h2>
               <p className="post-list-desc">{r.description}</p>

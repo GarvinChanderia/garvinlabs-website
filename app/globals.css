@@ -2450,6 +2450,30 @@ a.mono-tag:hover {
   font-weight: 500;
 }
 
+/* Resources — grid layout (distinct from .post-list, which /writing still uses) */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.resource-grid-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.75rem 1.5rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.resource-grid-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
 /* Writing section homepage — post card */
 .writing-post-card {
   display: block;
@@ -4148,6 +4172,18 @@ details[id^="faq-item-"][open] summary {
 
 .post-list-desc {
   color: #6b7280 !important;
+}
+
+/* Resources grid */
+.resource-grid-card {
+  background: rgba(255, 255, 255, 0.025) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+}
+
+.resource-grid-card:hover {
+  background: rgba(16, 185, 129, 0.04) !important;
+  border-color: rgba(16, 185, 129, 0.2) !important;
 }
 
 /* Writing posts */
