@@ -15,9 +15,11 @@
  *    keyed on the `source` field every gate page already sends.
  *
  * PDF DELIVERY:
- * Every PDF is hosted directly on the site under /public/pdfs/ and served at
- * https://garvinlabs.com/pdfs/<file>.pdf — no Google Drive step needed. Add a new industry
- * doc by dropping the PDF in that folder and adding one entry to RESOURCE_MAP below.
+ * The 5 industry docs link straight to Garvin's Google Drive shareable links (set below).
+ * The AI Support Business Case still falls back to the site-hosted copy at
+ * https://garvinlabs.com/pdfs/ai-support-business-case.pdf until a Drive link is provided for
+ * it too. To add a new industry doc: upload the PDF to Drive, get a shareable "Anyone with the
+ * link" URL, and add one entry to RESOURCE_MAP below.
  */
 
 const SHEET_ID = "REPLACE_WITH_YOUR_GOOGLE_SHEET_ID";
@@ -33,31 +35,31 @@ const RESOURCE_MAP = {
   },
   "resources-beauty-cosmetics": {
     docName: "Beauty & Cosmetics: 7 Automations Guide",
-    pdfUrl: `${SITE_URL}/pdfs/beauty-cosmetics.pdf`,
+    pdfUrl: "https://drive.google.com/file/d/1NNYqQo5UQmMpyMwXpzMAOYRQ1MQetTaT/view?usp=sharing",
     blurb:
       "seven automations ranked by ROI for beauty and skincare brands: cart recovery, back-in-stock alerts, review and UGC collection, and support",
   },
   "resources-fashion-apparel": {
     docName: "Fashion & Apparel: 7 Automations Guide",
-    pdfUrl: `${SITE_URL}/pdfs/fashion-apparel.pdf`,
+    pdfUrl: "https://drive.google.com/file/d/1bIRD66tywF0-U-KvNuRlC6RjtsPPsJnD/view?usp=sharing",
     blurb:
       "seven automations ranked by ROI for fashion and apparel brands: cart recovery, size exchanges, back-in-stock alerts, and review collection",
   },
   "resources-food-beverage": {
     docName: "Food & Beverage: 7 Automations Guide",
-    pdfUrl: `${SITE_URL}/pdfs/food-beverage.pdf`,
+    pdfUrl: "https://drive.google.com/file/d/1o8LDo6UvBseuQKOg0YHlgeg7vxYI9yGd/view?usp=sharing",
     blurb:
       "seven automations ranked by ROI for food and beverage brands: cart recovery, subscription renewals, shipping updates, and taste surveys",
   },
   "resources-health-nutrition-wellness": {
     docName: "Health, Nutrition & Wellness: 7 Automations Guide",
-    pdfUrl: `${SITE_URL}/pdfs/health-nutrition-wellness.pdf`,
+    pdfUrl: "https://drive.google.com/file/d/1NGAnOHcKDTkHITlMQVbMqh5KH2pgjcmN/view?usp=sharing",
     blurb:
       "seven automations ranked by ROI for health and wellness brands: cart recovery, subscription renewals, review collection, and support Q&A",
   },
   "resources-home-furniture-decor": {
     docName: "Home, Furniture & Decor: 7 Automations Guide",
-    pdfUrl: `${SITE_URL}/pdfs/home-furniture-decor.pdf`,
+    pdfUrl: "https://drive.google.com/file/d/1HNJqzomrie4dgXlNHMmFFLWQtFaGgWT9/view?usp=sharing",
     blurb:
       "seven automations ranked by ROI for home and furniture brands: cart recovery, delivery scheduling, post-purchase care, and returns",
   },
