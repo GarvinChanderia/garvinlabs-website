@@ -19,6 +19,51 @@ const RESOURCES = [
     href: "/report",
     cta: "Get it free →",
   },
+  {
+    slug: "beauty-cosmetics",
+    tag: "PDF · Beauty & Cosmetics",
+    title: "7 Automations for Beauty & Cosmetics Brands",
+    description:
+      "Cart recovery, back-in-stock alerts, review and UGC collection, and support automation, ranked by ROI for beauty and skincare D2C brands.",
+    href: "/resources/beauty-cosmetics",
+    cta: "Get it free →",
+  },
+  {
+    slug: "fashion-apparel",
+    tag: "PDF · Fashion & Apparel",
+    title: "7 Automations for Fashion & Apparel Brands",
+    description:
+      "Cart recovery, size exchanges, back-in-stock alerts, and review collection, ranked by ROI for fashion and apparel D2C brands.",
+    href: "/resources/fashion-apparel",
+    cta: "Get it free →",
+  },
+  {
+    slug: "food-beverage",
+    tag: "PDF · Food & Beverage",
+    title: "7 Automations for Food & Beverage Brands",
+    description:
+      "Cart recovery, subscription renewals, shipping updates, and taste survey automation, ranked by ROI for food and beverage D2C brands.",
+    href: "/resources/food-beverage",
+    cta: "Get it free →",
+  },
+  {
+    slug: "health-nutrition-wellness",
+    tag: "PDF · Health, Nutrition & Wellness",
+    title: "7 Automations for Health & Wellness Brands",
+    description:
+      "Cart recovery, subscription renewals, review collection, and support Q&A automation, ranked by ROI for health, nutrition, and wellness D2C brands.",
+    href: "/resources/health-nutrition-wellness",
+    cta: "Get it free →",
+  },
+  {
+    slug: "home-furniture-decor",
+    tag: "PDF · Home, Furniture & Decor",
+    title: "7 Automations for Home & Furniture Brands",
+    description:
+      "Cart recovery, delivery scheduling, post-purchase care, and returns handling, ranked by ROI for home, furniture, and decor D2C brands.",
+    href: "/resources/home-furniture-decor",
+    cta: "Get it free →",
+  },
 ];
 
 export default function Resources() {
