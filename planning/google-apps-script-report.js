@@ -2,6 +2,10 @@
  * GarvinLabs — Resource Email Gate (all /resources/<industry> docs)
  * Google Apps Script (Web App)
  *
+ * DEFERRED as of 2026-07-13: the site no longer gates these PDFs behind an email form —
+ * /resources now links straight to the Drive URLs below. This file is unused by the live
+ * site and kept only as a reference in case the email-gate flow gets reinstated later.
+ *
  * SETUP:
  * 1. Open https://script.google.com → open the existing GarvinLabs project (or New project)
  * 2. Paste this file over Code.gs
