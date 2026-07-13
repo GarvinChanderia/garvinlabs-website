@@ -2044,22 +2044,6 @@ details[open] .faq-icon { transform: rotate(45deg); }
   color: var(--muted);
 }
 
-.report-book-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--primary);
-  color: var(--white) !important;
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 0.65rem 1.25rem;
-  border-radius: 10px;
-  transition: opacity 0.15s ease;
-  align-self: flex-start;
-}
-
-.report-book-btn:hover { opacity: 0.9; }
-
 /* Responsive */
 @media (max-width: 900px) {
   .report-split {

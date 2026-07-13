@@ -65,7 +65,17 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
                 {b.image ? (
                   <Image src={b.image} alt={b.alt ?? b.title} fill style={{ objectFit: "cover" }} />
                 ) : b.video ? (
-                  <video src={b.video} muted loop autoPlay playsInline preload="metadata" />
+                  <video
+                    src={b.video}
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                    preload="metadata"
+                    ref={(el) => {
+                      if (el) el.playbackRate = 2;
+                    }}
+                  />
                 ) : null}
               </div>
               <div className="build-grid-card-info">
@@ -113,7 +123,10 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
             </button>
 
             {(active.image || active.video) && (
-              <div className="build-modal-media">
+              <div
+                className="build-modal-media"
+                style={active.video ? { aspectRatio: "auto" } : undefined}
+              >
                 {active.video ? (
                   <video
                     src={active.video}
@@ -121,6 +134,15 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
                     playsInline
                     preload="metadata"
                     title={`${active.title}: Walkthrough`}
+                    style={{
+                      objectFit: "contain",
+                      height: "auto",
+                      maxHeight: "70vh",
+                      background: "#000"
+                    }}
+                    ref={(el) => {
+                      if (el) el.playbackRate = 2;
+                    }}
                   />
                 ) : active.image ? (
                   <Image src={active.image} alt={active.alt ?? active.title} fill style={{ objectFit: "cover" }} />

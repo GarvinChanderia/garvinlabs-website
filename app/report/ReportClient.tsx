@@ -10,8 +10,8 @@ const ENDPOINT =
 
 const BULLETS = [
   "Why support costs are higher than they appear in your P&L: and what to do about it",
-  "How AI handles tickets at scale without degrading customer experience",
-  "What implementation actually looks like: timeline, risk, what you hand over",
+  "How automated triage handles tickets at scale without degrading customer experience",
+  "What implementation actually looks like: timeline, risk, what changes day-to-day",
   "Ready-to-present format: your team can take this into any budget meeting",
 ];
 
@@ -92,7 +92,7 @@ export function ReportClient() {
               Free Business Case
             </span>
             <h1 className="report-headline">
-              The AI support business case,{" "}
+              The support automation business case,{" "}
               <span className="report-accent">pre-built for leadership sign-off.</span>
             </h1>
             <p className="report-lead">
@@ -214,26 +214,10 @@ export function ReportClient() {
                   .
                 </p>
                 <div className="report-success-cta">
-                  <p>Ready to see it working on a live brand?</p>
-                  <a
-                    href="https://calendly.com/labs-garvin/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="report-book-btn"
-                  >
-                    Book a 30-min call
-                    <svg
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      width={14}
-                      height={14}
-                      aria-hidden="true"
-                    >
-                      <path d="M3 8h10M9 4l4 4-4 4" />
-                    </svg>
-                  </a>
+                  <p>
+                    Questions on how this maps to your setup? Reply to the email it
+                    arrives from, happy to talk through specifics.
+                  </p>
                 </div>
               </div>
             )}

@@ -1,4 +1,3 @@
-export const CALENDLY = "https://calendly.com/labs-garvin/30min";
 export const LINKEDIN = "https://www.linkedin.com/in/garvinchanderia/";
 export const EMAIL = "garvin@garvinlabs.com";
 export const MAILTO = "mailto:garvin@garvinlabs.com";
