@@ -11,15 +11,6 @@ export const metadata: Metadata = {
 
 const RESOURCES = [
   {
-    slug: "report",
-    tag: "PDF · Support Operations",
-    title: "AI Support Business Case",
-    description:
-      "A pre-built business case and ROI breakdown for AI support triage, written for D2C founders to share with leadership. No drip sequence, no pitch calls, just the document.",
-    href: "/report",
-    cta: "Get it free →",
-  },
-  {
     slug: "beauty-cosmetics",
     tag: "PDF · Beauty & Cosmetics",
     title: "7 Automations for Beauty & Cosmetics Brands",

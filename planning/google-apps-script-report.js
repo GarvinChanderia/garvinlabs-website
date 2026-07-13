@@ -1,5 +1,5 @@
 /**
- * GarvinLabs — Resource Email Gate (report + all /resources/<industry> docs)
+ * GarvinLabs — Resource Email Gate (all /resources/<industry> docs)
  * Google Apps Script (Web App)
  *
  * SETUP:
@@ -16,23 +16,14 @@
  *
  * PDF DELIVERY:
  * The 5 industry docs link straight to Garvin's Google Drive shareable links (set below).
- * The AI Support Business Case still falls back to the site-hosted copy at
- * https://garvinlabs.com/pdfs/ai-support-business-case.pdf until a Drive link is provided for
- * it too. To add a new industry doc: upload the PDF to Drive, get a shareable "Anyone with the
- * link" URL, and add one entry to RESOURCE_MAP below.
+ * To add a new industry doc: upload the PDF to Drive, get a shareable "Anyone with the link"
+ * URL, and add one entry to RESOURCE_MAP below.
  */
 
 const SHEET_ID = "REPLACE_WITH_YOUR_GOOGLE_SHEET_ID";
 const GARVIN_EMAIL = "chanderia.10.garvin@gmail.com";
-const SITE_URL = "https://garvinlabs.com";
 
 const RESOURCE_MAP = {
-  "report-page": {
-    docName: "AI Support Business Case",
-    pdfUrl: `${SITE_URL}/pdfs/ai-support-business-case.pdf`,
-    blurb:
-      "why support costs are higher than they appear, how automated triage handles it, and what implementation actually looks like, formatted so your team can present it in any leadership meeting",
-  },
   "resources-beauty-cosmetics": {
     docName: "Beauty & Cosmetics: 7 Automations Guide",
     pdfUrl: "https://drive.google.com/file/d/1NNYqQo5UQmMpyMwXpzMAOYRQ1MQetTaT/view?usp=sharing",
@@ -70,10 +61,13 @@ function doPost(e) {
     const data = JSON.parse(e.postData.contents);
     const name = data.name || "Unknown";
     const email = data.email || "";
-    const source = data.source || "report-page";
+    const source = data.source || "";
     const submittedAt = data.submittedAt || new Date().toISOString();
 
-    const resource = RESOURCE_MAP[source] || RESOURCE_MAP["report-page"];
+    const resource = RESOURCE_MAP[source];
+    if (!resource) {
+      throw new Error(`Unknown resource source: "${source}"`);
+    }
 
     // Log to sheet
     const ss = SpreadsheetApp.openById(SHEET_ID);
