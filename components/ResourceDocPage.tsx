@@ -58,12 +58,7 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
               height={337}
               style={{ display: "block", width: "100%", height: "auto", borderRadius: "var(--radius)" }}
             />
-            <div>
-              <p style={{ fontWeight: 700, fontSize: "1.05rem", color: "var(--ink)", marginBottom: "0.35rem" }}>
-                Get the PDF
-              </p>
-              <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>Free, no email required.</p>
-            </div>
+            <p style={{ fontWeight: 700, fontSize: "1.05rem", color: "var(--ink)" }}>Get the PDF</p>
             <a
               href={pdfHref}
               download
