@@ -23,16 +23,16 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GarvinLabs: Systemizing Manual Business Operations",
+  title: "GarvinLabs: I find where retail brands lose time, then automate it",
   description:
-    "Finding the repetitive manual work inside a business and replacing it with systems people can rely on: support triage, ops reporting, fulfilment, influencer tracking.",
+    "It could be support, ops reporting, fulfilment, or inventory. I map how the work actually happens, then build the automation around it. 14 days from discovery to a live system.",
   keywords: ["Support Triage Automation", "Customer Support Automation", "D2C Operations", "Operations Automation", "SaaS Support Automation", "GarvinLabs"],
   metadataBase: new URL("https://garvinlabs.com"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "GarvinLabs: Systemizing Manual Business Operations",
+    title: "GarvinLabs: I find where retail brands lose time, then automate it",
     description:
-      "Finding the repetitive manual work inside a business and replacing it with systems people can rely on: support triage, ops reporting, fulfilment, influencer tracking.",
+      "It could be support, ops reporting, fulfilment, or inventory. I map how the work actually happens, then build the automation around it. 14 days from discovery to a live system.",
     url: "https://garvinlabs.com",
     siteName: "GarvinLabs",
     images: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: "/hero-diagram.png",
         width: 1200,
         height: 630,
-        alt: "GarvinLabs: Systemizing Manual Business Operations",
+        alt: "GarvinLabs: I find where retail brands lose time, then automate it",
       },
     ],
     locale: "en_US",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GarvinLabs: Systemizing Manual Business Operations",
+    title: "GarvinLabs: I find where retail brands lose time, then automate it",
     description:
-      "Finding the repetitive manual work inside a business and replacing it with systems people can rely on: support triage, ops reporting, fulfilment, influencer tracking.",
+      "It could be support, ops reporting, fulfilment, or inventory. I map how the work actually happens, then build the automation around it. 14 days from discovery to a live system.",
     images: ["/hero-diagram.png"],
   },
   robots: {
