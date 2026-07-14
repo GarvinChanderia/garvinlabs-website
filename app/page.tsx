@@ -166,7 +166,7 @@ export default function Home() {
               marginBottom: "1.75rem",
             }}
           >
-            I find the manual work,
+            I map how the work actually happens,
             <br />
             <span
               style={{
@@ -176,7 +176,7 @@ export default function Home() {
                 backgroundClip: "text",
               }}
             >
-              then automate it.
+              then build the system around it.
             </span>
           </h1>
 
@@ -191,10 +191,9 @@ export default function Home() {
               margin: "0 auto 3rem",
             }}
           >
-            D2C founders end up personally running the parts of the business nobody
-            automated: support inboxes, daily ops reports, fulfilment checks, influencer
-            spreadsheets. I build systems that take that work off your plate,
-            permanently.
+            Most automation breaks on the parts of a process nobody wrote down.
+            I find those first, for D2C founders stuck running support inboxes,
+            ops reports, fulfilment checks, and influencer spreadsheets by hand.
           </p>
 
           {/* CTAs */}
@@ -266,7 +265,7 @@ export default function Home() {
             {[
               { stat: "14 days", label: "discovery to a live system" },
               { stat: "61%", label: "of ThreadWave's tickets auto-resolved in 30 days" },
-              { stat: "5", label: "operational functions this method covers" },
+              { stat: "94%+", label: "classification accuracy" },
             ].map((kpi) => (
               <div
                 key={kpi.stat}
