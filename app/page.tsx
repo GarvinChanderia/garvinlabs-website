@@ -166,7 +166,7 @@ export default function Home() {
               marginBottom: "1.75rem",
             }}
           >
-            I map how the work actually happens,
+            Retail brands all lose time to the same handful of problems.
             <br />
             <span
               style={{
@@ -176,7 +176,7 @@ export default function Home() {
                 backgroundClip: "text",
               }}
             >
-              then build the system around it.
+              I find which ones, then automate them.
             </span>
           </h1>
 
@@ -191,9 +191,10 @@ export default function Home() {
               margin: "0 auto 3rem",
             }}
           >
-            Most automation breaks on the parts of a process nobody wrote down.
-            I find those first, for D2C founders stuck running support inboxes,
-            ops reports, fulfilment checks, and influencer spreadsheets by hand.
+            It could be support, ops reporting, fulfilment, inventory, or
+            something else entirely, wherever the repetitive work is piling up.
+            I map how it actually happens first, then build the automation
+            around it.
           </p>
 
           {/* CTAs */}
