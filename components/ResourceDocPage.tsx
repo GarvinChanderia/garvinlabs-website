@@ -2,11 +2,17 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
+export type ResourceDocBullet = {
+  text: string;
+  sourceLabel: string;
+  sourceUrl: string;
+};
+
 export type ResourceDocConfig = {
   eyebrow: string;
   headline: React.ReactNode;
   lead: string;
-  bullets: string[];
+  bullets: ResourceDocBullet[];
   coverImage: string;
   coverAlt: string;
   pdfHref: string;
@@ -30,9 +36,15 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
 
             <ul className="report-bullets" style={{ marginTop: "2.25rem" }}>
               {bullets.map((b) => (
-                <li key={b}>
+                <li key={b.text}>
                   <span className="report-bullet-dot" aria-hidden="true" />
-                  {b}
+                  <span>
+                    {b.text} (
+                    <a href={b.sourceUrl} target="_blank" rel="noopener noreferrer">
+                      {b.sourceLabel}
+                    </a>
+                    )
+                  </span>
                 </li>
               ))}
             </ul>

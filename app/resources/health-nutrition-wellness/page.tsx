@@ -35,10 +35,26 @@ export default function HealthNutritionWellnessDoc() {
           ),
           lead: "A free breakdown of seven automations for health, nutrition, and wellness D2C brands, ranked by ROI and build difficulty. No email required, just the PDF.",
           bullets: [
-            "41% higher click-through and a 29% lift in open rate for relevant, on-topic email content versus generic broadcasts (Mailmend, 2026)",
-            "53% of routine support queries resolved without a human touching them, first response cut to seconds (Freshworks, 2025)",
-            "36% increase in conversion rate after adding a product-recommendation quiz that actually follows up (Outgrow)",
-            "Up to 55% of shoppers permanently switch to a competitor after repeated stockouts (Aislestock)",
+            {
+              text: "41% higher click-through and a 29% lift in open rate for relevant, on-topic email content versus generic broadcasts",
+              sourceLabel: "Mailmend, 2026",
+              sourceUrl: "https://mailmend.io/blogs/email-personalization-statistics",
+            },
+            {
+              text: "53% of routine support queries resolved without a human touching them, first response cut to seconds",
+              sourceLabel: "Freshworks, 2025",
+              sourceUrl: "https://www.freshworks.com/How-AI-is-unlocking-ROI-in-customer-service/",
+            },
+            {
+              text: "36% increase in conversion rate after adding a product-recommendation quiz that actually follows up",
+              sourceLabel: "Outgrow",
+              sourceUrl: "https://outgrow.co/blog/quizzes-drive-ecommerce-sales",
+            },
+            {
+              text: "Up to 55% of shoppers permanently switch to a competitor after repeated stockouts",
+              sourceLabel: "Aislestock",
+              sourceUrl: "https://aislestock.com/stockout-cost",
+            },
           ],
           coverImage: "/website-images/pdf-health-nutrition-wellness-cover.png",
           coverAlt: "Health, Nutrition & Wellness automations guide: PDF cover",

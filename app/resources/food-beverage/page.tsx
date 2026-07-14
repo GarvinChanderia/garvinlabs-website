@@ -35,10 +35,26 @@ export default function FoodBeverageDoc() {
           ),
           lead: "A free breakdown of seven automations for food and beverage D2C brands, ranked by ROI and build difficulty. No email required, just the PDF.",
           bullets: [
-            "9% of monthly recurring revenue lost industry-wide to failed payments, most of it recoverable with a proper retry sequence (Baremetrics, 2026)",
-            "Up to 65% fewer \"where is my order\" tickets once proactive tracking notifications are in place (ShippyPro, 2026)",
-            "30% higher take rate for matched cross-sell offers versus generic promotions (Opensend)",
-            "1 in 3 subscribers adjusted an order instead of canceling outright in 2023 (Swell, 2026)",
+            {
+              text: "9% of monthly recurring revenue lost industry-wide to failed payments, most of it recoverable with a proper retry sequence",
+              sourceLabel: "Baremetrics, 2026",
+              sourceUrl: "https://baremetrics.com/blog/dunning-management",
+            },
+            {
+              text: "Up to 65% fewer \"where is my order\" tickets once proactive tracking notifications are in place",
+              sourceLabel: "ShippyPro, 2026",
+              sourceUrl: "https://www.shippypro.com/blog/en/how-to-reduce-wismo-tickets-in-ecommerce-the-complete-guide",
+            },
+            {
+              text: "30% higher take rate for matched cross-sell offers versus generic promotions",
+              sourceLabel: "Opensend",
+              sourceUrl: "https://www.opensend.com/post/upsell-cross-sell-take-rate-statistics-ecommerce",
+            },
+            {
+              text: "1 in 3 subscribers adjusted an order instead of canceling outright in 2023",
+              sourceLabel: "Swell, 2026",
+              sourceUrl: "https://www.swell.is/content/subscription-box-statistics",
+            },
           ],
           coverImage: "/website-images/pdf-food-beverage-cover.png",
           coverAlt: "Food & Beverage automations guide: PDF cover",

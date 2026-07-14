@@ -1877,6 +1877,16 @@ details[open] .faq-icon { transform: rotate(45deg); }
   margin-top: 0.45rem;
 }
 
+.report-bullets li a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.report-bullets li a:hover {
+  color: var(--primary-dark);
+}
+
 /* Right — gate */
 .report-gate {
   display: flex;

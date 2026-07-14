@@ -35,10 +35,26 @@ export default function BeautyCosmeticsDoc() {
           ),
           lead: "A free breakdown of seven automations for beauty and skincare D2C brands, ranked by ROI and build difficulty. No email required, just the PDF.",
           bullets: [
-            "50% repeat purchase rate among loyalty-point redeemers, versus 10.7% for those who don't (Rivo, 2026)",
-            "52.2% conversion lift on a product page once it carries at least one review (PowerReviews)",
-            "22.45% average conversion rate on back-in-stock alert emails (MarketingSherpa)",
-            "53% of routine support queries resolved without a human touching them, first response cut to seconds (Freshworks, 2025)",
+            {
+              text: "50% repeat purchase rate among loyalty-point redeemers, versus 10.7% for those who don't",
+              sourceLabel: "Rivo, 2026",
+              sourceUrl: "https://www.rivo.io/blog/vip-customer-repeat-rate-statistics",
+            },
+            {
+              text: "52.2% conversion lift on a product page once it carries at least one review",
+              sourceLabel: "PowerReviews",
+              sourceUrl: "https://www.powerreviews.com/review-volume-conversion-impact/",
+            },
+            {
+              text: "22.45% average conversion rate on back-in-stock alert emails",
+              sourceLabel: "MarketingSherpa",
+              sourceUrl: "https://marketingsherpa.com/article/case-study/backinstock-alert-emails-achieve-2245",
+            },
+            {
+              text: "53% of routine support queries resolved without a human touching them, first response cut to seconds",
+              sourceLabel: "Freshworks, 2025",
+              sourceUrl: "https://www.freshworks.com/How-AI-is-unlocking-ROI-in-customer-service/",
+            },
           ],
           coverImage: "/website-images/pdf-beauty-cosmetics-cover.png",
           coverAlt: "Beauty & Cosmetics automations guide: PDF cover",
