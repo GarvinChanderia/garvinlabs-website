@@ -21,6 +21,8 @@ export type ResourceDocConfig = {
 
 export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
   const { eyebrow, headline, lead, bullets, coverImage, coverAlt, pdfHref } = config;
+  const slug = pdfHref.split('/').pop()?.replace(/\.pdf$/, '');
+  const trackedPdfHref = slug ? `/api/pdf-download/${slug}` : pdfHref;
 
   return (
     <main>
@@ -61,7 +63,7 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
             />
             <p style={{ fontWeight: 700, fontSize: "1.05rem", color: "var(--ink)" }}>Get the PDF</p>
             <a
-              href={pdfHref}
+              href={trackedPdfHref}
               download
               className="btn-primary btn-large"
               style={{ width: "100%", justifyContent: "center" }}
