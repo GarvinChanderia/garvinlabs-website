@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { EMAIL, MAILTO, LINKEDIN } from "@/lib/constants";
 
 export type ResourceDocBullet = {
   text: string;
@@ -66,6 +67,20 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
               style={{ width: "100%", justifyContent: "center" }}
             >
               Download PDF
+            </a>
+          </div>
+        </div>
+
+        <div style={{ marginTop: "3.5rem", paddingTop: "2.5rem", borderTop: "var(--border)" }}>
+          <p style={{ color: "var(--muted)", fontSize: "0.975rem", marginBottom: "1rem" }}>
+            If any of this sounds familiar, feel free to reach out.
+          </p>
+          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
+            <a href={MAILTO} className="mono-tag">
+              {EMAIL}
+            </a>
+            <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="mono-tag">
+              linkedin.com/in/garvinchanderia
             </a>
           </div>
         </div>
