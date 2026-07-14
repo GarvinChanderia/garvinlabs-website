@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export type ResourceDocConfig = {
@@ -15,27 +16,19 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
   const { eyebrow, headline, lead, bullets, coverImage, coverAlt, pdfHref } = config;
 
   return (
-    <>
-      <nav className="report-nav">
-        <a href="/" className="report-logo" aria-label="GarvinLabs home">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo-wordmark.svg" alt="GarvinLabs" height="20" style={{ display: "block" }} />
-        </a>
-        <a href="/resources" className="report-back">
-          ← Back to resources
-        </a>
-      </nav>
+    <main>
+      <Navbar />
 
-      <main className="report-main">
-        <div className="report-split">
-          <div className="report-copy">
-            <span className="report-eyebrow">
-              <span className="report-eyebrow-dot" />
-              {eyebrow}
-            </span>
-            <h1 className="report-headline">{headline}</h1>
-            <p className="report-lead">{lead}</p>
-            <ul className="report-bullets">
+      <div className="container section" style={{ maxWidth: 1020 }}>
+        <div className="resource-doc-layout">
+          <div>
+            <p className="section-eyebrow">{eyebrow}</p>
+            <h1 className="section-title">{headline}</h1>
+            <p className="lead" style={{ marginTop: "1rem", maxWidth: 600 }}>
+              {lead}
+            </p>
+
+            <ul className="report-bullets" style={{ marginTop: "2.25rem" }}>
               {bullets.map((b) => (
                 <li key={b}>
                   <span className="report-bullet-dot" aria-hidden="true" />
@@ -45,29 +38,33 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
             </ul>
           </div>
 
-          <div className="report-gate">
-            <div className="report-cover-wrap">
-              <Image
-                src={coverImage}
-                alt={coverAlt}
-                width={320}
-                height={415}
-                priority
-                className="report-cover-img"
-              />
+          <div className="card resource-doc-download">
+            <Image
+              src={coverImage}
+              alt={coverAlt}
+              width={260}
+              height={337}
+              style={{ display: "block", width: "100%", height: "auto", borderRadius: "var(--radius)" }}
+            />
+            <div>
+              <p style={{ fontWeight: 700, fontSize: "1.05rem", color: "var(--ink)", marginBottom: "0.35rem" }}>
+                Get the PDF
+              </p>
+              <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>Free, no email required.</p>
             </div>
-
-            <a href={pdfHref} download className="btn-primary btn-large" style={{ width: "fit-content" }}>
+            <a
+              href={pdfHref}
+              download
+              className="btn-primary btn-large"
+              style={{ width: "100%", justifyContent: "center" }}
+            >
               Download PDF
             </a>
-            <p className="report-fine" style={{ marginTop: 0 }}>
-              Free, no email required. Questions on how this maps to your setup? Reach out any time.
-            </p>
           </div>
         </div>
-      </main>
+      </div>
 
       <Footer />
-    </>
+    </main>
   );
 }

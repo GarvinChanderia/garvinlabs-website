@@ -2450,6 +2450,28 @@ a.mono-tag:hover {
   font-weight: 500;
 }
 
+/* Resource doc page — left copy / right download, stacks on mobile */
+.resource-doc-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.resource-doc-download {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  position: sticky;
+  top: 2rem;
+}
+
+@media (max-width: 820px) {
+  .resource-doc-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .resource-doc-download { position: static; }
+}
+
 /* Resources — grid layout (distinct from .post-list, which /writing still uses) */
 .resources-grid {
   display: grid;
