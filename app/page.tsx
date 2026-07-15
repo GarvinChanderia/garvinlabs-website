@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import RevealInit from "@/components/RevealInit";
@@ -101,7 +100,7 @@ export default function Home() {
       </aside>
 
       {/* ═══════════════════════════════════════════════════
-          HERO — Full-viewport, split text/image, orb background
+          HERO — Full-viewport, text-only, orb background
       ══════════════════════════════════════════════════ */}
       <section
         aria-label="Hero"
@@ -114,6 +113,7 @@ export default function Home() {
           background: "#0d0d0d",
           overflow: "hidden",
           paddingTop: "80px",
+          textAlign: "center",
         }}
       >
 
@@ -135,151 +135,121 @@ export default function Home() {
           style={{
             position: "relative",
             zIndex: 3,
-            maxWidth: "1180px",
+            maxWidth: "860px",
             padding: "3rem 2rem 5rem",
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            gap: "3.5rem",
           }}
         >
-          {/* Left column — text */}
-          <div style={{ flex: "1 1 460px", minWidth: "320px" }}>
-            {/* Eyebrow */}
-            <p
-              className="reveal eyebrow-label"
-              style={{
-                fontSize: "0.75rem",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: "#10B981",
-                fontWeight: 700,
-                marginBottom: "1.5rem",
-              }}
-            >
-              GarvinLabs · Operations Automation
-            </p>
-
-            {/* Headline */}
-            <h1
-              className="reveal delay-1"
-              style={{
-                fontSize: "clamp(2.75rem, 5vw, 4.25rem)",
-                fontWeight: 700,
-                lineHeight: 1.08,
-                letterSpacing: "-0.03em",
-                color: "#f5f5f7",
-                marginBottom: "1.75rem",
-              }}
-            >
-              Retail brands all lose time to the same handful of problems.
-              <br />
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #10B981 0%, #34d399 50%, #059669 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                I find which ones, then automate them.
-              </span>
-            </h1>
-
-            {/* Sub-copy */}
-            <p
-              className="reveal delay-2"
-              style={{
-                fontSize: "1.1875rem",
-                lineHeight: 1.7,
-                color: "#a1a1a6",
-                maxWidth: "560px",
-                marginBottom: "3rem",
-              }}
-            >
-              It could be support, ops reporting, fulfilment, inventory, or
-              something else entirely, wherever the repetitive work is piling up.
-              I map how it actually happens first, then build the automation
-              around it.
-            </p>
-
-            {/* CTAs */}
-            <div
-              className="reveal delay-3"
-              style={{
-                display: "flex",
-                gap: "1rem",
-                flexWrap: "wrap",
-              }}
-            >
-              <Link
-                href="/demos"
-                id="hero-cta-primary"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  background: "#10B981",
-                  color: "#000000",
-                  padding: "0.9375rem 2rem",
-                  borderRadius: "980px",
-                  fontWeight: 700,
-                  fontSize: "0.9375rem",
-                  letterSpacing: "0.01em",
-                  minHeight: "48px",
-                  textDecoration: "none",
-                }}
-              >
-                See the builds →
-              </Link>
-              <a
-                href="https://linkedin.com/in/garvinchanderia"
-                target="_blank"
-                rel="noopener noreferrer"
-                id="hero-cta-secondary"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  padding: "0.9375rem 2rem",
-                  borderRadius: "980px",
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  color: "#f5f5f7",
-                  fontWeight: 600,
-                  fontSize: "0.9375rem",
-                  minHeight: "48px",
-                  textDecoration: "none",
-                  background: "rgba(255,255,255,0.04)",
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
-                }}
-              >
-                Connect on LinkedIn
-              </a>
-            </div>
-          </div>
-
-          {/* Right column — retail image */}
-          <div
-            className="reveal delay-2"
+          {/* Eyebrow */}
+          <p
+            className="reveal eyebrow-label"
             style={{
-              flex: "1 1 380px",
-              minWidth: "280px",
-              maxWidth: "460px",
-              position: "relative",
-              aspectRatio: "1 / 1",
-              borderRadius: "20px",
-              overflow: "hidden",
-              border: "1px solid rgba(16, 185, 129, 0.25)",
-              background: "rgba(255,255,255,0.03)",
+              fontSize: "0.75rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#10B981",
+              fontWeight: 700,
+              marginBottom: "1.5rem",
             }}
           >
-            <Image
-              src="/website-images/hero-retail.png"
-              alt="Retail apparel rack, lit in emerald green"
-              fill
-              style={{ objectFit: "cover" }}
-              priority
-            />
+            GarvinLabs · Operations Automation
+          </p>
+
+          {/* Headline */}
+          <h1
+            className="reveal delay-1"
+            style={{
+              fontSize: "clamp(2.75rem, 6vw, 5rem)",
+              fontWeight: 700,
+              lineHeight: 1.08,
+              letterSpacing: "-0.03em",
+              color: "#f5f5f7",
+              marginBottom: "1.75rem",
+            }}
+          >
+            Retail brands all lose time to the same handful of problems.
+            <br />
+            <span
+              style={{
+                background: "linear-gradient(135deg, #10B981 0%, #34d399 50%, #059669 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              I find which ones, then automate them.
+            </span>
+          </h1>
+
+          {/* Sub-copy */}
+          <p
+            className="reveal delay-2"
+            style={{
+              fontSize: "1.1875rem",
+              lineHeight: 1.7,
+              color: "#a1a1a6",
+              maxWidth: "620px",
+              margin: "0 auto 3rem",
+            }}
+          >
+            It could be support, ops reporting, fulfilment, inventory, or
+            something else entirely, wherever the repetitive work is piling up.
+            I map how it actually happens first, then build the automation
+            around it.
+          </p>
+
+          {/* CTAs */}
+          <div
+            className="reveal delay-3"
+            style={{
+              display: "flex",
+              gap: "1rem",
+              justifyContent: "center",
+              flexWrap: "wrap",
+            }}
+          >
+            <Link
+              href="/demos"
+              id="hero-cta-primary"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                background: "#10B981",
+                color: "#000000",
+                padding: "0.9375rem 2rem",
+                borderRadius: "980px",
+                fontWeight: 700,
+                fontSize: "0.9375rem",
+                letterSpacing: "0.01em",
+                minHeight: "48px",
+                textDecoration: "none",
+              }}
+            >
+              See the builds →
+            </Link>
+            <a
+              href="https://linkedin.com/in/garvinchanderia"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="hero-cta-secondary"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                padding: "0.9375rem 2rem",
+                borderRadius: "980px",
+                border: "1px solid rgba(255,255,255,0.15)",
+                color: "#f5f5f7",
+                fontWeight: 600,
+                fontSize: "0.9375rem",
+                minHeight: "48px",
+                textDecoration: "none",
+                background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+              }}
+            >
+              Connect on LinkedIn
+            </a>
           </div>
         </div>
 
