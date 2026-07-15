@@ -141,7 +141,7 @@ export default function Home() {
         >
           {/* Eyebrow */}
           <p
-            className="reveal eyebrow-label"
+            className="eyebrow-label"
             style={{
               fontSize: "0.75rem",
               letterSpacing: "0.2em",
@@ -156,7 +156,6 @@ export default function Home() {
 
           {/* Headline */}
           <h1
-            className="reveal delay-1"
             style={{
               fontSize: "clamp(2.25rem, 4.5vw, 3.75rem)",
               fontWeight: 700,
@@ -182,7 +181,6 @@ export default function Home() {
 
           {/* Sub-copy */}
           <p
-            className="reveal delay-2"
             style={{
               fontSize: "1.125rem",
               lineHeight: 1.65,
@@ -199,7 +197,6 @@ export default function Home() {
 
           {/* CTAs */}
           <div
-            className="reveal delay-3"
             style={{
               display: "flex",
               gap: "1rem",
