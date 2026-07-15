@@ -106,13 +106,13 @@ export default function Home() {
         aria-label="Hero"
         style={{
           position: "relative",
-          minHeight: "100vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           background: "#0d0d0d",
           overflow: "hidden",
-          paddingTop: "80px",
+          paddingTop: "112px",
+          paddingBottom: "4rem",
           textAlign: "center",
         }}
       >
@@ -136,7 +136,7 @@ export default function Home() {
             position: "relative",
             zIndex: 3,
             maxWidth: "860px",
-            padding: "3rem 2rem 5rem",
+            padding: "3rem 2rem 1rem",
           }}
         >
           {/* Eyebrow */}
@@ -148,7 +148,7 @@ export default function Home() {
               textTransform: "uppercase",
               color: "#10B981",
               fontWeight: 700,
-              marginBottom: "1.5rem",
+              marginBottom: "1.25rem",
             }}
           >
             GarvinLabs · Operations Automation
@@ -158,12 +158,12 @@ export default function Home() {
           <h1
             className="reveal delay-1"
             style={{
-              fontSize: "clamp(2.75rem, 6vw, 5rem)",
+              fontSize: "clamp(2.25rem, 4.5vw, 3.75rem)",
               fontWeight: 700,
-              lineHeight: 1.08,
+              lineHeight: 1.1,
               letterSpacing: "-0.03em",
               color: "#f5f5f7",
-              marginBottom: "1.75rem",
+              marginBottom: "1.5rem",
             }}
           >
             Retail brands all lose time to the same handful of problems.
@@ -184,11 +184,11 @@ export default function Home() {
           <p
             className="reveal delay-2"
             style={{
-              fontSize: "1.1875rem",
-              lineHeight: 1.7,
+              fontSize: "1.125rem",
+              lineHeight: 1.65,
               color: "#a1a1a6",
-              maxWidth: "620px",
-              margin: "0 auto 3rem",
+              maxWidth: "600px",
+              margin: "0 auto 2.5rem",
             }}
           >
             It could be support, ops reporting, fulfilment, inventory, or
@@ -261,9 +261,9 @@ export default function Home() {
             bottom: 0,
             left: 0,
             right: 0,
-            height: "160px",
+            height: "70px",
             background: "linear-gradient(to bottom, transparent, #0d0d0d)",
-            zIndex: 3,
+            zIndex: 1,
           }}
         />
       </section>
