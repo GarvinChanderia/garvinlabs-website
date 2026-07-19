@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 722" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>VIP recognition: threshold, dedup, and trigger logic</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a39f92"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="920" height="722" fill="#fcfcfb"/>
+  <text x="460" y="34" text-anchor="middle" font-size="18" font-weight="600" fill="#0b0b0b">VIP recognition: threshold, dedup, and trigger logic</text>
+
+  <g stroke="#a39f92" stroke-width="1.6" fill="none">
+    <line x1="320" y1="134" x2="320" y2="174" marker-end="url(#arrow)"/>
+    <line x1="450" y1="239" x2="560" y2="239" marker-end="url(#arrow)"/>
+    <line x1="320" y1="304" x2="320" y2="344" marker-end="url(#arrow)"/>
+    <line x1="320" y1="408" x2="320" y2="448" marker-end="url(#arrow)"/>
+    <line x1="450" y1="513" x2="560" y2="513" marker-end="url(#arrow)"/>
+    <line x1="320" y1="578" x2="320" y2="618" marker-end="url(#arrow)"/>
+  </g>
+
+  <g font-size="11.5" fill="#52514e">
+    <g><rect x="484" y="228" width="30" height="18" fill="#fcfcfb"/><text x="499" y="241" text-anchor="middle">No</text></g>
+    <g><rect x="300" y="316" width="40" height="18" fill="#fcfcfb"/><text x="320" y="329" text-anchor="middle">Yes</text></g>
+    <g><rect x="484" y="502" width="30" height="18" fill="#fcfcfb"/><text x="499" y="515" text-anchor="middle">Yes</text></g>
+    <g><rect x="300" y="590" width="40" height="18" fill="#fcfcfb"/><text x="320" y="603" text-anchor="middle">No</text></g>
+  </g>
+
+  <g font-size="13" fill="#0b0b0b" text-anchor="middle">
+    <rect x="190" y="70" width="260" height="64" rx="8" fill="#f2f1ee" stroke="#898781" stroke-width="1.4"/>
+    <text x="320" y="98"><tspan x="320" dy="0">New order updates lifetime</tspan><tspan x="320" dy="15">spend + count (net of returns)</tspan></text>
+
+    <polygon points="320,174 450,239 320,304 190,239" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.6"/>
+    <text x="320" y="232"><tspan x="320" dy="0">Crosses a threshold</tspan><tspan x="320" dy="15">not yet recognized?</tspan></text>
+    <rect x="560" y="207" width="260" height="64" rx="8" fill="#f2f1ee" stroke="#898781" stroke-width="1.4"/>
+    <text x="690" y="235"><tspan x="690" dy="0">No change:</tspan><tspan x="690" dy="15">keep tracking</tspan></text>
+
+    <rect x="190" y="344" width="260" height="64" rx="8" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="1.4"/>
+    <text x="320" y="372"><tspan x="320" dy="0">Check dedup memory: already</tspan><tspan x="320" dy="15">recognized for this tier?</tspan></text>
+
+    <polygon points="320,448 450,513 320,578 190,513" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.6"/>
+    <text x="320" y="506"><tspan x="320" dy="0">Higher tier needing</tspan><tspan x="320" dy="15">human judgment?</tspan></text>
+    <rect x="560" y="481" width="260" height="64" rx="8" fill="#f2f1ee" stroke="#898781" stroke-width="1.4"/>
+    <text x="690" y="509"><tspan x="690" dy="0">Task created for a person</tspan><tspan x="690" dy="15">to write a real note</tspan></text>
+
+    <rect x="190" y="618" width="260" height="64" rx="8" fill="#f2f1ee" stroke="#0ca30c" stroke-width="1.4"/>
+    <text x="320" y="646"><tspan x="320" dy="0">Auto-generate discount</tspan><tspan x="320" dy="15">code + queued email</tspan></text>
+  </g>
+</svg>

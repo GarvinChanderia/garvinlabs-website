@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 220" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>Conversion lift from a quiz with automated follow-up, Outgrow case study</title>
+  <rect x="0" y="0" width="380" height="220" fill="#fcfcfb"/>
+  <rect x="20" y="20" width="340" height="180" rx="10" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.4"/>
+  <text x="190" y="98" text-anchor="middle" font-size="44" font-weight="700" fill="#2a78d6">+36%</text>
+  <text x="190" y="126" text-anchor="middle" font-size="13" fill="#0b0b0b">conversion after adding a quiz</text>
+  <text x="190" y="144" text-anchor="middle" font-size="13" fill="#0b0b0b">with automated follow-up</text>
+  <text x="190" y="174" text-anchor="middle" font-size="10.5" fill="#898781">One bicycle brand, one case study, per Outgrow's research</text>
+</svg>

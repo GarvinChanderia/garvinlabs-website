@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>Relevant vs. generic email content: click-through and open rate, Mailmend 2026</title>
+  <rect x="0" y="0" width="700" height="320" fill="#fcfcfb"/>
+  <line x1="350" y1="20" x2="350" y2="290" stroke="#e1e0d9" stroke-width="1"/>
+
+  <text x="175" y="26" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">Click-through rate</text>
+  <line x1="70" y1="260" x2="280" y2="260" stroke="#c3c2b7" stroke-width="1.2"/>
+  <path d="M110,161 L110,157 Q110,153 114,153 L146,153 Q150,153 150,157 L150,260 L110,260 Z" fill="#c3c2b7"/>
+  <text x="130" y="143" text-anchor="middle" font-size="12" font-weight="600" fill="#0b0b0b">baseline</text>
+  <text x="130" y="283" text-anchor="middle" font-size="11" fill="#52514e">Generic broadcast</text>
+  <path d="M200,60 L200,56 Q200,52 204,52 L236,52 Q240,52 240,56 L240,260 L200,260 Z" fill="#2a78d6"/>
+  <text x="220" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">+41%</text>
+  <text x="220" y="283" text-anchor="middle" font-size="11" fill="#52514e">Relevant, on-topic</text>
+
+  <text x="525" y="26" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">Open rate</text>
+  <line x1="420" y1="260" x2="630" y2="260" stroke="#c3c2b7" stroke-width="1.2"/>
+  <path d="M460,177 L460,173 Q460,169 464,169 L496,169 Q500,169 500,173 L500,260 L460,260 Z" fill="#c3c2b7"/>
+  <text x="480" y="159" text-anchor="middle" font-size="12" font-weight="600" fill="#0b0b0b">baseline</text>
+  <text x="480" y="283" text-anchor="middle" font-size="11" fill="#52514e">Generic broadcast</text>
+  <path d="M550,60 L550,56 Q550,52 554,52 L586,52 Q590,52 590,56 L590,260 L550,260 Z" fill="#2a78d6"/>
+  <text x="570" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">+29%</text>
+  <text x="570" y="283" text-anchor="middle" font-size="11" fill="#52514e">Relevant, on-topic</text>
+
+  <text x="350" y="313" text-anchor="middle" font-size="10" fill="#898781">Mailmend, 2026 email personalization roundup, compiled figure</text>
+</svg>

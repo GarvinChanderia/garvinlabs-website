@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 340" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>Repeat purchase rate: loyalty point redeemers vs. non-redeemers, Rivo 2026</title>
+  <rect x="0" y="0" width="380" height="340" fill="#fcfcfb"/>
+  <text x="190" y="26" text-anchor="middle" font-size="14" font-weight="600" fill="#0b0b0b">Repeat purchase rate by point redemption</text>
+
+  <line x1="90" y1="260" x2="270" y2="260" stroke="#c3c2b7" stroke-width="1.2"/>
+
+  <path d="M110,217 Q110,213 114,213 L130,213 Q134,213 134,217 L134,260 L110,260 Z" fill="#c3c2b7"/>
+  <text x="122" y="203" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">10.7%</text>
+  <text x="122" y="283" text-anchor="middle" font-size="11.5" fill="#52514e">Don't redeem</text>
+  <text x="122" y="297" text-anchor="middle" font-size="11.5" fill="#52514e">loyalty points</text>
+
+  <path d="M230,60 Q230,56 234,56 L250,56 Q254,56 254,60 L254,260 L230,260 Z" fill="#2a78d6"/>
+  <text x="242" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">50%</text>
+  <text x="242" y="283" text-anchor="middle" font-size="11.5" fill="#52514e">Redeem</text>
+  <text x="242" y="297" text-anchor="middle" font-size="11.5" fill="#52514e">loyalty points</text>
+  <text x="242" y="312" text-anchor="middle" font-size="10.5" fill="#898781">Rivo, 2026 VIP repeat-rate research</text>
+</svg>

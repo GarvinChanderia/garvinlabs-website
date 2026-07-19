@@ -48,6 +48,90 @@ const POSTS = [
       "Bulky items need someone home to receive them, which makes delivery scheduling a phone-tag problem most brands still solve with people. What a self-service scheduling flow looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
   },
+  {
+    slug: "instant-customer-support",
+    title: "Instant answers for the questions you've already answered a thousand times",
+    description:
+      "One founder's ticket audit found 61% of his support inbox was questions already answered in the FAQ. What a grounded, confidence-scored auto-reply system looks like, and its safety carve-outs.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "low-inventory-and-expiry-alerts",
+    title: "The stockout a customer notices before you do",
+    description:
+      "Periodic inventory checks catch a stockout after it's already cost you a customer. What continuous, per-SKU threshold monitoring with a parallel expiry clock looks like.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "post-purchase-cross-sell-recommendations",
+    title: "The pairing your customer never found out you sold",
+    description:
+      "A curated pairing table matched to the order that just shipped beats generic 'you might also like' email, because it's tied to what the customer actually bought.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "post-purchase-review-and-ugc-collection",
+    title: "The product page loses the sale before the customer reads a word of copy",
+    description:
+      "A product page converts 52.2% better once it has even one real review. What a delivery-triggered, category-aware review and UGC request sequence looks like.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "quiz-based-product-recommendations",
+    title: "The quiz that promised a personal plan and then went silent",
+    description:
+      "A quiz results page promises a personal plan, then the follow-up email is the same generic send everyone gets. What a completion-triggered, answer-matched system looks like.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "returns-and-exchange-automation",
+    title: "A slow return is how you lose a customer you already won",
+    description:
+      "\"Our returns process was all manual,\" says a footwear brand's ops director, describing phone-and-spreadsheet chaos. What a policy-check-plus-label automation looks like.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "shipping-and-tracking-updates",
+    title: "The tracking link you could have sent automatically",
+    description:
+      "WISMO tickets come from silence, not slow shipping: a webhook-triggered system that captures the tracking number at label creation and flags stalls before the customer notices.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "social-content-scheduling",
+    title: "Going quiet for three weeks costs more than a bad post",
+    description:
+      "Content gets made in bursts because it's rarely anyone's actual job, and the queue empties the moment something else demands attention. What a drafting-plus-review pipeline looks like.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "subscription-box-preview-announcements",
+    title: "A surprise box is only fun until it isn't your taste",
+    description:
+      "Subscription-box churn from a mismatched month never generates a ticket, so it never generates a signal either. What a charge-date-anchored teaser-and-skip cadence looks like.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "subscription-renewal-and-payment-recovery",
+    title: "The subscription that silently ends because a card expired",
+    description:
+      "75% of customers who lose a subscription to a failed payment never sign back up, per Butter Payments founder Vijay Menon. What a pre-emptive recovery automation looks like.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "vip-customer-recognition",
+    title: "Your best customers can tell when you haven't noticed them",
+    description:
+      "Most brands have no system for knowing who their best customers are, just a hunch and a stale spreadsheet. What a threshold-triggered recognition automation looks like.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "wellness-tips-newsletter",
+    title: "The newsletter that promised weekly and delivered quarterly",
+    description:
+      "An inconsistent newsletter trains subscribers to stop opening it entirely. What a content-source-library-plus-review pipeline for wellness brands looks like.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
 ];
 
 const JSON_LD = {

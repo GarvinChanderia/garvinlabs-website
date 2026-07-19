@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 340" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>Engagement per post: inconsistent vs. consistent posting cadence, Buffer 2026</title>
+  <rect x="0" y="0" width="380" height="340" fill="#fcfcfb"/>
+  <text x="190" y="26" text-anchor="middle" font-size="14" font-weight="600" fill="#0b0b0b">Engagement per post: cadence effect</text>
+
+  <line x1="90" y1="260" x2="270" y2="260" stroke="#c3c2b7" stroke-width="1.2"/>
+
+  <path d="M110,224 Q110,220 114,220 L130,220 Q134,220 134,224 L134,260 L110,260 Z" fill="#c3c2b7"/>
+  <text x="122" y="210" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">baseline</text>
+  <text x="122" y="283" text-anchor="middle" font-size="11.5" fill="#52514e">Inconsistent,</text>
+  <text x="122" y="297" text-anchor="middle" font-size="11.5" fill="#52514e">on-and-off posting</text>
+
+  <path d="M230,64 Q230,60 234,60 L250,60 Q254,60 254,64 L254,260 L230,260 Z" fill="#2a78d6"/>
+  <text x="242" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">~5x</text>
+  <text x="242" y="283" text-anchor="middle" font-size="11.5" fill="#52514e">Consistent posting</text>
+  <text x="242" y="297" text-anchor="middle" font-size="11.5" fill="#52514e">cadence</text>
+  <text x="242" y="312" text-anchor="middle" font-size="10.5" fill="#898781">Buffer, 2026, 100,000+ accounts</text>
+</svg>

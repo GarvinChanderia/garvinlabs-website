@@ -2414,6 +2414,21 @@ a.mono-tag:hover {
   color: var(--ink);
 }
 
+.post-body blockquote {
+  margin: 0 0 1.5rem;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  border-left: 3px solid var(--primary);
+  color: var(--muted);
+}
+
+.post-body blockquote p {
+  margin-bottom: 0.75rem;
+}
+
+.post-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
 /* Post footer */
 .post-footer {
   margin-top: 3rem;

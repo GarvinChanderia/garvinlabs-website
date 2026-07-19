@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>Subscribers who adjusted an order instead of canceling outright, Swell 2026</title>
+  <rect x="0" y="0" width="640" height="200" fill="#fcfcfb"/>
+  <text x="320" y="24" text-anchor="middle" font-size="14" font-weight="600" fill="#0b0b0b">1 in 3 subscribers adjusted instead of canceling</text>
+
+  <rect x="120" y="60" width="400" height="40" rx="6" fill="#e1e0d9"/>
+  <path d="M120,60 L253,60 Q257,60 257,64 L257,96 Q257,100 253,100 L120,100 Z" fill="#2a78d6"/>
+  <text x="188" y="85" text-anchor="middle" font-size="13" font-weight="600" fill="#fcfcfb">33%</text>
+  <text x="188" y="126" text-anchor="middle" font-size="11.5" fill="#52514e">Adjusted (skipped, swapped,</text>
+  <text x="188" y="140" text-anchor="middle" font-size="11.5" fill="#52514e">or changed frequency)</text>
+
+  <text x="390" y="126" text-anchor="middle" font-size="11.5" fill="#52514e">Remaining subscribers:</text>
+  <text x="390" y="140" text-anchor="middle" font-size="11.5" fill="#52514e">no adjustment, per this stat</text>
+
+  <text x="320" y="172" text-anchor="middle" font-size="10.5" fill="#898781">Swell, 2026 subscription box research, 2023 data</text>
+  <text x="320" y="187" text-anchor="middle" font-size="10.5" fill="#898781">adjustment-tool usage broadly, not preview-email impact specifically</text>
+</svg>

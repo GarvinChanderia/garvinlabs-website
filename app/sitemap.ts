@@ -106,5 +106,77 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/blog/instant-customer-support`,
+      lastModified: new Date("2026-07-19"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/low-inventory-and-expiry-alerts`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/post-purchase-cross-sell-recommendations`,
+      lastModified: new Date("2026-07-19"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/post-purchase-review-and-ugc-collection`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/quiz-based-product-recommendations`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/returns-and-exchange-automation`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/shipping-and-tracking-updates`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/social-content-scheduling`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/subscription-box-preview-announcements`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/subscription-renewal-and-payment-recovery`,
+      lastModified: new Date("2026-07-19"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/vip-customer-recognition`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/wellness-tips-newsletter`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }

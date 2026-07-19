@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>Timing and match-quality effects on cross-sell performance</title>
+  <rect x="0" y="0" width="700" height="320" fill="#fcfcfb"/>
+  <line x1="350" y1="20" x2="350" y2="290" stroke="#e1e0d9" stroke-width="1"/>
+
+  <text x="175" y="26" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">Timing effect</text>
+  <line x1="70" y1="260" x2="280" y2="260" stroke="#c3c2b7" stroke-width="1.2"/>
+  <path d="M110,165 L110,161 Q110,157 114,157 L146,157 Q150,157 150,161 L150,260 L110,260 Z" fill="#c3c2b7"/>
+  <text x="130" y="147" text-anchor="middle" font-size="12" font-weight="600" fill="#0b0b0b">baseline</text>
+  <text x="130" y="283" text-anchor="middle" font-size="11" fill="#52514e">Generic weekly</text>
+  <text x="130" y="297" text-anchor="middle" font-size="11" fill="#52514e">email</text>
+  <path d="M200,60 L200,56 Q200,52 204,52 L236,52 Q240,52 240,56 L240,260 L200,260 Z" fill="#2a78d6"/>
+  <text x="220" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">+111%</text>
+  <text x="220" y="283" text-anchor="middle" font-size="11" fill="#52514e">Post-purchase</text>
+  <text x="220" y="297" text-anchor="middle" font-size="11" fill="#52514e">confirmation email</text>
+
+  <text x="525" y="26" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">Match-quality effect</text>
+  <line x1="420" y1="260" x2="630" y2="260" stroke="#c3c2b7" stroke-width="1.2"/>
+  <path d="M460,106 L460,102 Q460,98 464,98 L496,98 Q500,98 500,102 L500,260 L460,260 Z" fill="#c3c2b7"/>
+  <text x="480" y="88" text-anchor="middle" font-size="12" font-weight="600" fill="#0b0b0b">baseline</text>
+  <text x="480" y="283" text-anchor="middle" font-size="11" fill="#52514e">Generic</text>
+  <text x="480" y="297" text-anchor="middle" font-size="11" fill="#52514e">promotion</text>
+  <path d="M550,60 L550,56 Q550,52 554,52 L586,52 Q590,52 590,56 L590,260 L550,260 Z" fill="#2a78d6"/>
+  <text x="570" y="42" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">up to +30%</text>
+  <text x="570" y="283" text-anchor="middle" font-size="11" fill="#52514e">AI-matched</text>
+  <text x="570" y="297" text-anchor="middle" font-size="11" fill="#52514e">cross-sell offer</text>
+
+  <text x="175" y="313" text-anchor="middle" font-size="10" fill="#898781">MarketingSherpa: timing/channel, not content, was tested</text>
+  <text x="525" y="313" text-anchor="middle" font-size="10" fill="#898781">Opensend research: ceiling figure, not a typical result</text>
+</svg>

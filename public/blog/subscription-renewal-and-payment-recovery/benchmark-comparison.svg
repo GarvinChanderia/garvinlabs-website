@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>Involuntary churn: the cost of failed payments</title>
+  <rect x="0" y="0" width="700" height="340" fill="#fcfcfb"/>
+  <line x1="350" y1="20" x2="350" y2="300" stroke="#e1e0d9" stroke-width="1"/>
+
+  <rect x="20" y="20" width="310" height="260" rx="10" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.4"/>
+  <text x="175" y="110" text-anchor="middle" font-size="40" font-weight="700" fill="#2a78d6">75%</text>
+  <text x="175" y="140" text-anchor="middle" font-size="12.5" fill="#0b0b0b">of customers who lose a subscription</text>
+  <text x="175" y="158" text-anchor="middle" font-size="12.5" fill="#0b0b0b">to a failed payment never sign back up</text>
+  <text x="175" y="188" text-anchor="middle" font-size="10.5" fill="#898781">Vijay Menon, Butter Payments,</text>
+  <text x="175" y="202" text-anchor="middle" font-size="10.5" fill="#898781">Subscription Stories podcast</text>
+
+  <text x="525" y="26" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">Involuntary churn share of cancellations</text>
+  <line x1="400" y1="260" x2="650" y2="260" stroke="#c3c2b7" stroke-width="1.2"/>
+  <path d="M430,136 Q430,132 434,132 L466,132 Q470,132 470,136 L470,260 L430,260 Z" fill="#c3c2b7"/>
+  <text x="450" y="122" text-anchor="middle" font-size="13" font-weight="600" fill="#0b0b0b">26%</text>
+  <text x="450" y="283" text-anchor="middle" font-size="11" fill="#52514e">B2C benchmark</text>
+  <text x="450" y="297" text-anchor="middle" font-size="11" fill="#52514e">(Recurly)</text>
+  <path d="M550,60 Q550,56 554,56 L586,56 Q590,56 590,60 L590,260 L550,260 Z" fill="#2a78d6"/>
+  <text x="570" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#0b0b0b">42%</text>
+  <text x="570" y="283" text-anchor="middle" font-size="11" fill="#52514e">D2C merchant panel</text>
+  <text x="570" y="297" text-anchor="middle" font-size="11" fill="#52514e">(Recharge, via Eightx)</text>
+
+  <text x="175" y="313" text-anchor="middle" font-size="10" fill="#898781">One founder's account, B2B/B2C software subscriptions</text>
+  <text x="525" y="325" text-anchor="middle" font-size="10" fill="#898781">Both figures are merchant-panel estimates, not one controlled study</text>
+</svg>
