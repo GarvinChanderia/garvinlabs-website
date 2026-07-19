@@ -26,6 +26,27 @@ const POSTS = [
       "70.22% of online carts get abandoned (Baymard). Most brands already have a default recovery flow running, untouched, tuned for nobody in particular. Here's the gap between that and a well-built one.",
     tag: "D2C · Ecommerce · Automation Playbook",
   },
+  {
+    slug: "back-in-stock-alerts",
+    title: "A waitlist that never hears back isn't a waitlist",
+    description:
+      "A batch restock email misses the customers who mattered most: the ones who wanted one specific variant. What a delivery-triggered, variant-level alert looks like, and the one sourced number behind it.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "bulk-order-and-b2b-lead-alert",
+    title: "The wholesale buyer who waited two days for nobody to notice",
+    description:
+      "A fifty-chair order lands through the normal consumer checkout and sits in the queue, indistinguishable from every single-item purchase. What real-time order-size detection and routing looks like.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
+  {
+    slug: "delivery-scheduling-and-notification",
+    title: "A missed delivery is a scheduling problem wearing a logistics costume",
+    description:
+      "Bulky items need someone home to receive them, which makes delivery scheduling a phone-tag problem most brands still solve with people. What a self-service scheduling flow looks like.",
+    tag: "D2C · Ecommerce · Automation Playbook",
+  },
 ];
 
 const JSON_LD = {

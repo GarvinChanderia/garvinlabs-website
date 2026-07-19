@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 592" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>Delivery scheduling: self-service window logic</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a39f92"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="920" height="592" fill="#fcfcfb"/>
+  <text x="460" y="34" text-anchor="middle" font-size="18" font-weight="600" fill="#0b0b0b">Delivery scheduling: self-service window logic</text>
+
+  <g stroke="#a39f92" stroke-width="1.6" fill="none">
+    <line x1="320" y1="134" x2="320" y2="174" marker-end="url(#arrow)"/>
+    <line x1="320" y1="238" x2="320" y2="278" marker-end="url(#arrow)"/>
+    <line x1="450" y1="343" x2="560" y2="343" marker-end="url(#arrow)"/>
+    <line x1="320" y1="408" x2="320" y2="448" marker-end="url(#arrow)"/>
+    <line x1="690" y1="375" x2="690" y2="415" marker-end="url(#arrow)"/>
+  </g>
+
+  <g font-size="11.5" fill="#52514e">
+    <g><rect x="300" y="316" width="40" height="18" fill="#fcfcfb"/><text x="320" y="329" text-anchor="middle">Yes</text></g>
+    <g><rect x="484" y="333" width="30" height="18" fill="#fcfcfb"/><text x="499" y="346" text-anchor="middle">No</text></g>
+  </g>
+
+  <g font-size="13" fill="#0b0b0b" text-anchor="middle">
+    <rect x="190" y="70" width="260" height="64" rx="8" fill="#f2f1ee" stroke="#898781" stroke-width="1.4"/>
+    <text x="320" y="98"><tspan x="320" dy="0">Order marked ready to ship</tspan><tspan x="320" dy="15">(fulfillment status change)</tspan></text>
+
+    <rect x="190" y="174" width="260" height="64" rx="8" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="1.4"/>
+    <text x="320" y="202"><tspan x="320" dy="0">Generate scheduling link,</tspan><tspan x="320" dy="15">send by email + SMS</tspan></text>
+
+    <polygon points="320,278 450,343 320,408 190,343" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.6"/>
+    <text x="320" y="336"><tspan x="320" dy="0">Window picked</tspan><tspan x="320" dy="15">within ~24h?</tspan></text>
+
+    <rect x="190" y="448" width="260" height="64" rx="8" fill="#f2f1ee" stroke="#0ca30c" stroke-width="1.4"/>
+    <text x="320" y="476"><tspan x="320" dy="0">Confirm to customer +</tspan><tspan x="320" dy="15">lock slot into fulfillment</tspan></text>
+
+    <rect x="560" y="311" width="260" height="64" rx="8" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="1.4"/>
+    <text x="690" y="339"><tspan x="690" dy="0">Reminder fires via higher-</tspan><tspan x="690" dy="15">response channel (usually SMS)</tspan></text>
+
+    <rect x="560" y="415" width="260" height="64" rx="8" fill="#f2f1ee" stroke="#898781" stroke-width="1.4"/>
+    <text x="690" y="443"><tspan x="690" dy="0">No response by day 2:</tspan><tspan x="690" dy="15">escalate one overdue case</tspan></text>
+  </g>
+</svg>

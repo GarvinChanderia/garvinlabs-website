@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 230" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>Speed to lead: qualification odds, 5-minute vs. 30-minute contact</title>
+  <rect x="0" y="0" width="380" height="230" fill="#fcfcfb"/>
+  <rect x="20" y="20" width="340" height="190" rx="10" fill="#eef4fc" stroke="#2a78d6" stroke-width="1.4"/>
+  <text x="190" y="98" text-anchor="middle" font-size="44" font-weight="700" fill="#2a78d6">21x</text>
+  <text x="190" y="126" text-anchor="middle" font-size="13" fill="#0b0b0b">more likely to qualify</text>
+  <text x="190" y="146" text-anchor="middle" font-size="11.5" fill="#52514e">contacted within 5 minutes vs. after 30 minutes</text>
+  <text x="190" y="176" text-anchor="middle" font-size="10.5" fill="#898781">2007 MIT / InsideSales.com study of inbound B2B web leads</text>
+  <text x="190" y="192" text-anchor="middle" font-size="10.5" fill="#898781">illustrative proxy, not measured on placed bulk orders directly</text>
+</svg>

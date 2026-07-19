@@ -88,5 +88,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/blog/back-in-stock-alerts`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/bulk-order-and-b2b-lead-alert`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/delivery-scheduling-and-notification`,
+      lastModified: new Date("2026-07-20"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }
