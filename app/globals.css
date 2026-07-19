@@ -2322,11 +2322,23 @@ a.mono-tag:hover {
    Writing / Blog
    ============================================================ */
 
-/* Post layout */
+/* Post layout — thin on mobile, wider on tablet/desktop so side space isn't wasted */
 .post-layout {
   max-width: 680px;
   margin: 0 auto;
   padding: 3rem 2rem 5rem;
+}
+
+@media (min-width: 768px) {
+  .post-layout { max-width: 780px; }
+}
+
+@media (min-width: 1024px) {
+  .post-layout { max-width: 880px; }
+}
+
+@media (min-width: 1440px) {
+  .post-layout { max-width: 960px; }
 }
 
 .post-back {
@@ -2553,6 +2565,69 @@ a.mono-tag:hover {
   .post-lead    { font-size: 1.05rem; }
   .post-body    { font-size: 1rem; }
   .post-list-card { padding: 1.25rem 1.5rem; }
+}
+
+/* Blog index — 3-column grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.blog-grid-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.75rem 1.5rem;
+  background: var(--white);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.blog-grid-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.blog-grid-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.blog-grid-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 0.875rem;
+  flex-grow: 1;
+}
+
+@media (max-width: 900px) {
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .blog-grid { grid-template-columns: 1fr; }
+}
+
+/* Post body — figures (charts, diagrams) */
+.post-figure {
+  margin: 2rem 0 2.5rem;
+  border: var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.post-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ============================================================
@@ -4234,6 +4309,31 @@ details[id^="faq-item-"][open] summary {
 
 .writing-intro {
   color: #a1a1a6 !important;
+}
+
+/* Blog grid cards */
+.blog-grid-card {
+  background: rgba(255, 255, 255, 0.025) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+}
+
+.blog-grid-card:hover {
+  background: rgba(16, 185, 129, 0.04) !important;
+  border-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+.blog-grid-title {
+  color: #f5f5f7 !important;
+}
+
+.blog-grid-desc {
+  color: #6b7280 !important;
+}
+
+/* Post figures — SVGs ship with a light background by design (chart panels) */
+.post-figure {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 /* Stack tags */

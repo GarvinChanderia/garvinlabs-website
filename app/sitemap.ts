@@ -77,14 +77,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/writing`,
+      url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/writing/why-ai-implementations-dont-stick`,
-      lastModified: new Date(),
+      url: `${baseUrl}/blog/abandoned-cart-recovery`,
+      lastModified: new Date("2026-07-19"),
       changeFrequency: "monthly",
       priority: 0.6,
     },

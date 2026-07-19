@@ -61,6 +61,19 @@ const AEO_FAQS = [
 
 
 
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: AEO_FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 export default function Home() {
   // Cursor-tracking glow on bento cards
   useEffect(() => {
@@ -90,6 +103,10 @@ export default function Home() {
 
   return (
     <main style={{ background: "#0d0d0d", color: "#f5f5f7", minHeight: "100vh" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }}
+      />
       <Navbar />
       <RevealInit />
 

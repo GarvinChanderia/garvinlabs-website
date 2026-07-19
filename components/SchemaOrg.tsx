@@ -1,5 +1,5 @@
 export default function SchemaOrg() {
-  const schema = {
+  const person = {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": "https://garvinlabs.com/#garvin",
@@ -18,10 +18,27 @@ export default function SchemaOrg() {
     ]
   };
 
+  const organization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    "name": "GarvinLabs",
+    "url": "https://garvinlabs.com",
+    "founder": { "@id": "https://garvinlabs.com/#garvin" },
+    "sameAs": ["https://linkedin.com/in/garvinchanderia"],
+    "description": "GarvinLabs is Garvin Chanderia's public learning practice in operations automation: support triage, ops reporting, fulfilment, and inventory systems for retail brands, built and documented in the open."
+  };
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(person) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
+      />
+    </>
   );
 }

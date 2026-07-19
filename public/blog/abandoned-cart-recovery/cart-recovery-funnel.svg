@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>Share of carts at each stage: created, abandoned, recovered</title>
+  <rect x="0" y="0" width="640" height="250" fill="#fcfcfb"/>
+  <text x="320" y="24" text-anchor="middle" font-size="14" font-weight="600" fill="#0b0b0b">Share of carts at each stage</text>
+
+  <!-- reference gridlines at 25/50/75% -->
+  <g stroke="#e1e0d9" stroke-width="1">
+    <line x1="280" y1="44" x2="280" y2="228"/>
+    <line x1="380" y1="44" x2="380" y2="228"/>
+    <line x1="480" y1="44" x2="480" y2="228"/>
+  </g>
+  <line x1="180" y1="44" x2="180" y2="228" stroke="#c3c2b7" stroke-width="1.2"/>
+
+  <!-- row 1: carts created -->
+  <text x="160" y="66" text-anchor="end" font-size="12" fill="#52514e">Carts created</text>
+  <path d="M180,50 L576,50 Q580,50 580,54 L580,70 Q580,74 576,74 L180,74 Z" fill="#2a78d6"/>
+  <text x="590" y="66" font-size="13" font-weight="600" fill="#0b0b0b">100%</text>
+
+  <!-- row 2: abandoned -->
+  <text x="160" y="140" text-anchor="end" font-size="12" fill="#52514e">Abandoned</text>
+  <path d="M180,124 L457,124 Q461,124 461,128 L461,144 Q461,148 457,148 L180,148 Z" fill="#2a78d6"/>
+  <text x="590" y="140" font-size="13" font-weight="600" fill="#0b0b0b">70.22%</text>
+
+  <!-- row 3: recovered (range) -->
+  <text x="160" y="206" text-anchor="end" font-size="12" fill="#52514e">Recovered by</text>
+  <text x="160" y="220" text-anchor="end" font-size="12" fill="#52514e">automated flow</text>
+  <path d="M180,198 L232,198 Q236,198 236,202 L236,218 Q236,222 232,222 L180,222 Z" fill="#86b6ef" opacity="0.55"/>
+  <path d="M180,198 L204,198 Q208,198 208,202 L208,218 Q208,222 204,222 L180,222 Z" fill="#2a78d6"/>
+  <text x="590" y="214" font-size="13" font-weight="600" fill="#0b0b0b">~7-14%</text>
+</svg>
