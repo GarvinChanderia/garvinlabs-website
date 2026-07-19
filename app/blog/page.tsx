@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -86,10 +87,20 @@ export default function Blog() {
               href={`/blog/${post.slug}`}
               className="blog-grid-card"
             >
-              <p className="post-tag">{post.tag}</p>
-              <h2 className="blog-grid-title">{post.title}</h2>
-              <p className="blog-grid-desc">{post.description}</p>
-              <span className="post-list-cta">Read →</span>
+              <div className="blog-grid-thumb">
+                <Image
+                  src={`/blog/${post.slug}/cover.png`}
+                  alt={post.title}
+                  width={4800}
+                  height={2520}
+                />
+              </div>
+              <div className="blog-grid-content">
+                <p className="post-tag">{post.tag}</p>
+                <h2 className="blog-grid-title">{post.title}</h2>
+                <p className="blog-grid-desc">{post.description}</p>
+                <span className="post-list-cta">Read →</span>
+              </div>
             </Link>
           ))}
         </div>

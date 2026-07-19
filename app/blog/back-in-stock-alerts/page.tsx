@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "/blog/back-in-stock-alerts/flowchart.svg",
-        width: 920,
-        height: 866,
-        alt: "Back-in-stock alert variant-level match and notify logic",
+        url: "/blog/back-in-stock-alerts/cover.png",
+        width: 4800,
+        height: 2520,
+        alt: "A waitlist that never hears back isn't a waitlist",
       },
     ],
   },
@@ -52,7 +52,7 @@ const JSON_LD = {
     "@type": "WebPage",
     "@id": "https://garvinlabs.com/blog/back-in-stock-alerts",
   },
-  image: "https://garvinlabs.com/blog/back-in-stock-alerts/flowchart.svg",
+  image: "https://garvinlabs.com/blog/back-in-stock-alerts/cover.png",
 };
 
 export default function Post() {
@@ -72,6 +72,17 @@ export default function Post() {
         back-in-stock alert emails, from a 2011 MarketingSherpa case study of a single
         retailer, BirkenstockCentral.com.
       </aside>
+
+      <figure className="post-hero">
+        <Image
+          src="/blog/back-in-stock-alerts/cover.png"
+          alt="A waitlist that never hears back isn't a waitlist"
+          width={4800}
+          height={2520}
+          style={{ width: "100%", height: "auto" }}
+          priority
+        />
+      </figure>
 
       <article className="post-layout">
         <header className="post-header">

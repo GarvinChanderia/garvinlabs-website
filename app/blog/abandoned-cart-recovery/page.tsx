@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "/blog/abandoned-cart-recovery/flowchart.svg",
-        width: 920,
-        height: 1910,
-        alt: "Abandoned cart recovery automation decision logic",
+        url: "/blog/abandoned-cart-recovery/cover.png",
+        width: 4800,
+        height: 2520,
+        alt: "Abandoned cart recovery: the automation almost everyone already half has",
       },
     ],
   },
@@ -52,7 +52,7 @@ const JSON_LD = {
     "@type": "WebPage",
     "@id": "https://garvinlabs.com/blog/abandoned-cart-recovery",
   },
-  image: "https://garvinlabs.com/blog/abandoned-cart-recovery/flowchart.svg",
+  image: "https://garvinlabs.com/blog/abandoned-cart-recovery/cover.png",
 };
 
 export default function Post() {
@@ -75,6 +75,17 @@ export default function Post() {
         brands: a gap driven mostly by timing, segmentation, and stopping-condition
         logic rather than whether the automation exists at all.
       </aside>
+
+      <figure className="post-hero">
+        <Image
+          src="/blog/abandoned-cart-recovery/cover.png"
+          alt="Abandoned cart recovery: the automation almost everyone already half has"
+          width={4800}
+          height={2520}
+          style={{ width: "100%", height: "auto" }}
+          priority
+        />
+      </figure>
 
       <article className="post-layout">
         <header className="post-header">

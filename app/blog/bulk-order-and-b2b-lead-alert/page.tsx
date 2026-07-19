@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "/blog/bulk-order-and-b2b-lead-alert/flowchart.svg",
-        width: 920,
-        height: 656,
-        alt: "Bulk-order detection threshold and routing logic",
+        url: "/blog/bulk-order-and-b2b-lead-alert/cover.png",
+        width: 4800,
+        height: 2520,
+        alt: "The wholesale buyer who waited two days for nobody to notice",
       },
     ],
   },
@@ -52,7 +52,7 @@ const JSON_LD = {
     "@type": "WebPage",
     "@id": "https://garvinlabs.com/blog/bulk-order-and-b2b-lead-alert",
   },
-  image: "https://garvinlabs.com/blog/bulk-order-and-b2b-lead-alert/flowchart.svg",
+  image: "https://garvinlabs.com/blog/bulk-order-and-b2b-lead-alert/cover.png",
 };
 
 export default function Post() {
@@ -74,6 +74,17 @@ export default function Post() {
         MIT and InsideSales.com study, though that study measured inbound web leads, not
         placed bulk orders specifically.
       </aside>
+
+      <figure className="post-hero">
+        <Image
+          src="/blog/bulk-order-and-b2b-lead-alert/cover.png"
+          alt="The wholesale buyer who waited two days for nobody to notice"
+          width={4800}
+          height={2520}
+          style={{ width: "100%", height: "auto" }}
+          priority
+        />
+      </figure>
 
       <article className="post-layout">
         <header className="post-header">

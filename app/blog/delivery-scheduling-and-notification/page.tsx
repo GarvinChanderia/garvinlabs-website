@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "/blog/delivery-scheduling-and-notification/flowchart.svg",
-        width: 920,
-        height: 592,
-        alt: "Delivery scheduling self-service window logic",
+        url: "/blog/delivery-scheduling-and-notification/cover.png",
+        width: 4800,
+        height: 2520,
+        alt: "A missed delivery is a scheduling problem wearing a logistics costume",
       },
     ],
   },
@@ -52,7 +52,7 @@ const JSON_LD = {
     "@type": "WebPage",
     "@id": "https://garvinlabs.com/blog/delivery-scheduling-and-notification",
   },
-  image: "https://garvinlabs.com/blog/delivery-scheduling-and-notification/flowchart.svg",
+  image: "https://garvinlabs.com/blog/delivery-scheduling-and-notification/cover.png",
 };
 
 export default function Post() {
@@ -73,6 +73,17 @@ export default function Post() {
         attempt, per Harvard Business Review&#39;s 2023 research in Latin America and
         Singapore.
       </aside>
+
+      <figure className="post-hero">
+        <Image
+          src="/blog/delivery-scheduling-and-notification/cover.png"
+          alt="A missed delivery is a scheduling problem wearing a logistics costume"
+          width={4800}
+          height={2520}
+          style={{ width: "100%", height: "auto" }}
+          priority
+        />
+      </figure>
 
       <article className="post-layout">
         <header className="post-header">
