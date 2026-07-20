@@ -2582,6 +2582,38 @@ a.mono-tag:hover {
   .post-list-card { padding: 1.25rem 1.5rem; }
 }
 
+/* Blog index — category filter pills */
+.blog-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+
+.blog-filter-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  background: var(--surface);
+  border: var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 0.95rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.blog-filter-pill:hover {
+  color: var(--ink);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.blog-filter-pill.active {
+  color: var(--surface);
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
 /* Blog index — 3-column grid */
 .blog-grid {
   display: grid;

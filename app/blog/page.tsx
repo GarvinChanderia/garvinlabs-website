@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { BlogGrid } from "@/components/BlogGrid";
 
 export const metadata: Metadata = {
   title: "Blog: Garvin Chanderia",
@@ -26,6 +25,7 @@ const POSTS = [
     description:
       "70.22% of online carts get abandoned (Baymard). Most brands already have a default recovery flow running, untouched, tuned for nobody in particular. Here's the gap between that and a well-built one.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Retention & recovery",
   },
   {
     slug: "back-in-stock-alerts",
@@ -33,6 +33,7 @@ const POSTS = [
     description:
       "A batch restock email misses the customers who mattered most: the ones who wanted one specific variant. What a delivery-triggered, variant-level alert looks like, and the one sourced number behind it.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Retention & recovery",
   },
   {
     slug: "bulk-order-and-b2b-lead-alert",
@@ -40,6 +41,7 @@ const POSTS = [
     description:
       "A fifty-chair order lands through the normal consumer checkout and sits in the queue, indistinguishable from every single-item purchase. What real-time order-size detection and routing looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Ops & inventory",
   },
   {
     slug: "delivery-scheduling-and-notification",
@@ -47,6 +49,7 @@ const POSTS = [
     description:
       "Bulky items need someone home to receive them, which makes delivery scheduling a phone-tag problem most brands still solve with people. What a self-service scheduling flow looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Support & service",
   },
   {
     slug: "instant-customer-support",
@@ -54,6 +57,7 @@ const POSTS = [
     description:
       "One founder's ticket audit found 61% of his support inbox was questions already answered in the FAQ. What a grounded, confidence-scored auto-reply system looks like, and its safety carve-outs.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Support & service",
   },
   {
     slug: "low-inventory-and-expiry-alerts",
@@ -61,6 +65,7 @@ const POSTS = [
     description:
       "Periodic inventory checks catch a stockout after it's already cost you a customer. What continuous, per-SKU threshold monitoring with a parallel expiry clock looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Ops & inventory",
   },
   {
     slug: "post-purchase-cross-sell-recommendations",
@@ -68,6 +73,7 @@ const POSTS = [
     description:
       "A curated pairing table matched to the order that just shipped beats generic 'you might also like' email, because it's tied to what the customer actually bought.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Growth & engagement",
   },
   {
     slug: "post-purchase-review-and-ugc-collection",
@@ -75,6 +81,7 @@ const POSTS = [
     description:
       "A product page converts 52.2% better once it has even one real review. What a delivery-triggered, category-aware review and UGC request sequence looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Growth & engagement",
   },
   {
     slug: "quiz-based-product-recommendations",
@@ -82,6 +89,7 @@ const POSTS = [
     description:
       "A quiz results page promises a personal plan, then the follow-up email is the same generic send everyone gets. What a completion-triggered, answer-matched system looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Growth & engagement",
   },
   {
     slug: "returns-and-exchange-automation",
@@ -89,6 +97,7 @@ const POSTS = [
     description:
       "\"Our returns process was all manual,\" says a footwear brand's ops director, describing phone-and-spreadsheet chaos. What a policy-check-plus-label automation looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Support & service",
   },
   {
     slug: "shipping-and-tracking-updates",
@@ -96,6 +105,7 @@ const POSTS = [
     description:
       "WISMO tickets come from silence, not slow shipping: a webhook-triggered system that captures the tracking number at label creation and flags stalls before the customer notices.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Support & service",
   },
   {
     slug: "social-content-scheduling",
@@ -103,6 +113,7 @@ const POSTS = [
     description:
       "Content gets made in bursts because it's rarely anyone's actual job, and the queue empties the moment something else demands attention. What a drafting-plus-review pipeline looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Growth & engagement",
   },
   {
     slug: "subscription-box-preview-announcements",
@@ -110,6 +121,7 @@ const POSTS = [
     description:
       "Subscription-box churn from a mismatched month never generates a ticket, so it never generates a signal either. What a charge-date-anchored teaser-and-skip cadence looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Growth & engagement",
   },
   {
     slug: "subscription-renewal-and-payment-recovery",
@@ -117,6 +129,7 @@ const POSTS = [
     description:
       "75% of customers who lose a subscription to a failed payment never sign back up, per Butter Payments founder Vijay Menon. What a pre-emptive recovery automation looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Retention & recovery",
   },
   {
     slug: "vip-customer-recognition",
@@ -124,6 +137,7 @@ const POSTS = [
     description:
       "Most brands have no system for knowing who their best customers are, just a hunch and a stale spreadsheet. What a threshold-triggered recognition automation looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Growth & engagement",
   },
   {
     slug: "wellness-tips-newsletter",
@@ -131,6 +145,7 @@ const POSTS = [
     description:
       "An inconsistent newsletter trains subscribers to stop opening it entirely. What a content-source-library-plus-review pipeline for wellness brands looks like.",
     tag: "D2C · Ecommerce · Automation Playbook",
+    category: "Growth & engagement",
   },
 ];
 
@@ -164,30 +179,7 @@ export default function Blog() {
           like end to end, and the sourced numbers behind the case for automating it.
           Category by category, starting with the one almost every brand already half has.
         </p>
-        <div className="blog-grid">
-          {POSTS.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="blog-grid-card"
-            >
-              <div className="blog-grid-thumb">
-                <Image
-                  src={`/blog/${post.slug}/cover.png`}
-                  alt={post.title}
-                  width={4800}
-                  height={2520}
-                />
-              </div>
-              <div className="blog-grid-content">
-                <p className="post-tag">{post.tag}</p>
-                <h2 className="blog-grid-title">{post.title}</h2>
-                <p className="blog-grid-desc">{post.description}</p>
-                <span className="post-list-cta">Read →</span>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <BlogGrid posts={POSTS} />
       </div>
       <Footer />
     </main>
