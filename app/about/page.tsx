@@ -6,9 +6,25 @@ import { Footer } from "@/components/Footer";
 import { LINKEDIN } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Garvin Chanderia | GarvinLabs",
   description:
     "Garvin Chanderia: enterprise architecture background, automation builds for D2C operators.",
+  alternates: { canonical: "https://garvinlabs.com/about" },
+  openGraph: {
+    title: "About Garvin Chanderia | GarvinLabs",
+    description:
+      "Garvin Chanderia: enterprise architecture background, automation builds for D2C operators.",
+    url: "https://garvinlabs.com/about",
+    images: [{ url: "/website-images/founder-portrait.png", width: 1200, height: 630, alt: "Garvin Chanderia" }],
+    type: "profile",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Garvin Chanderia | GarvinLabs",
+    description:
+      "Garvin Chanderia: enterprise architecture background, automation builds for D2C operators.",
+    images: ["/website-images/founder-portrait.png"],
+  },
 };
 
 const EXPERIENCE = [

@@ -5,8 +5,22 @@ import { RevealScript } from "@/components/RevealScript";
 import { BuildsGrid } from "@/components/BuildsGrid";
 
 export const metadata: Metadata = {
-  title: "Builds",
+  title: "Builds: Real D2C Automation Systems | GarvinLabs",
   description: "Systems built for D2C operations: the problem each one solves, how it works, and what the manual version costs.",
+  alternates: { canonical: "https://garvinlabs.com/demos" },
+  openGraph: {
+    title: "Builds: Real D2C Automation Systems | GarvinLabs",
+    description: "Systems built for D2C operations: the problem each one solves, how it works, and what the manual version costs.",
+    url: "https://garvinlabs.com/demos",
+    images: [{ url: "/website-images/threadwave_hero.png", width: 1200, height: 630, alt: "GarvinLabs builds" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Builds: Real D2C Automation Systems | GarvinLabs",
+    description: "Systems built for D2C operations: the problem each one solves, how it works, and what the manual version costs.",
+    images: ["/website-images/threadwave_hero.png"],
+  },
 };
 
 const BUILDS = [

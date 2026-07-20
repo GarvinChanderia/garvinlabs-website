@@ -46,8 +46,8 @@ const JSON_LD = {
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
-  datePublished: "2026-07-16",
-  dateModified: "2026-07-19",
+  datePublished: "2026-07-19",
+  dateModified: "2026-07-20",
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://garvinlabs.com/blog/abandoned-cart-recovery",
@@ -92,6 +92,9 @@ export default function Post() {
           <Link href="/blog" className="post-back">← Blog</Link>
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
+          <p className="post-byline">
+            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+          </p>
           <p className="post-lead">
             Someone adds three items to a cart, gets a phone call, and closes the tab.
             Nobody follows up, and a few weeks later they don&#39;t even remember what

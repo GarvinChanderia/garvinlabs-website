@@ -46,7 +46,7 @@ const JSON_LD = {
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
-  datePublished: "2026-07-16",
+  datePublished: "2026-07-20",
   dateModified: "2026-07-20",
   mainEntityOfPage: {
     "@type": "WebPage",
@@ -93,6 +93,9 @@ export default function Post() {
           <Link href="/blog" className="post-back">← Blog</Link>
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
+          <p className="post-byline">
+            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+          </p>
           <p className="post-lead">
             A quiz promises a personal plan: your skin type, your room style, your match.
             Weeks pass, and what actually arrives in the inbox is the same generic newsletter

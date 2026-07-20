@@ -13,8 +13,20 @@ import {
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Garvin Chanderia | GarvinLabs",
   description: "Get in touch with Garvin Chanderia by email or phone.",
+  alternates: { canonical: "https://garvinlabs.com/contact" },
+  openGraph: {
+    title: "Contact Garvin Chanderia | GarvinLabs",
+    description: "Get in touch with Garvin Chanderia by email or phone.",
+    url: "https://garvinlabs.com/contact",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact Garvin Chanderia | GarvinLabs",
+    description: "Get in touch with Garvin Chanderia by email or phone.",
+  },
 };
 
 export default function Contact() {

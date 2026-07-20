@@ -1050,7 +1050,7 @@ iframe.skiptranslate { display: none !important; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('/website-images/section-mist.png');
+  background-image: url('/website-images/section-mist.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0.15;
@@ -2366,6 +2366,17 @@ a.mono-tag:hover {
   color: var(--ink);
   line-height: 1.15;
   margin-bottom: 1rem;
+}
+
+.post-byline {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.post-byline a {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .post-lead {

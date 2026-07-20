@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   title: 'ThreadWave — AI Customer Support Demo | GarvinLabs',
   description:
     'Live demo: AI-powered customer support triage on a D2C apparel storefront. Two-pass Gemini classify + draft, Notion KB, real-time Telegram escalation.',
+  alternates: { canonical: 'https://garvinlabs.com/demos/threadwave' },
+  openGraph: {
+    title: 'ThreadWave — AI Customer Support Demo | GarvinLabs',
+    description:
+      'Live demo: AI-powered customer support triage on a D2C apparel storefront. Two-pass Gemini classify + draft, Notion KB, real-time Telegram escalation.',
+    url: 'https://garvinlabs.com/demos/threadwave',
+    images: [{ url: '/website-images/threadwave_hero.png', width: 1200, height: 630, alt: 'ThreadWave demo storefront with the AI support chat widget open' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ThreadWave — AI Customer Support Demo | GarvinLabs',
+    description:
+      'Live demo: AI-powered customer support triage on a D2C apparel storefront. Two-pass Gemini classify + draft, Notion KB, real-time Telegram escalation.',
+    images: ['/website-images/threadwave_hero.png'],
+  },
 };
 
 const products = [

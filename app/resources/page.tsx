@@ -4,9 +4,23 @@ import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Resources",
+  title: "Free D2C Automation Guides by Vertical | GarvinLabs Resources",
   description:
     "Free tools and breakdowns for D2C operators: practical resources from the automations built at GarvinLabs.",
+  alternates: { canonical: "https://garvinlabs.com/resources" },
+  openGraph: {
+    title: "Free D2C Automation Guides by Vertical | GarvinLabs Resources",
+    description:
+      "Free tools and breakdowns for D2C operators: practical resources from the automations built at GarvinLabs.",
+    url: "https://garvinlabs.com/resources",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Free D2C Automation Guides by Vertical | GarvinLabs Resources",
+    description:
+      "Free tools and breakdowns for D2C operators: practical resources from the automations built at GarvinLabs.",
+  },
 };
 
 const RESOURCES = [
