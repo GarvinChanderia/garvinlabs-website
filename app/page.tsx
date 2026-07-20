@@ -1,10 +1,38 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import RevealInit from "@/components/RevealInit";
 import { Footer } from "@/components/Footer";
+
+const BLOG_TEASER = [
+  {
+    slug: "abandoned-cart-recovery",
+    category: "Retention & recovery",
+    title: "Abandoned cart recovery: the automation almost everyone already half has",
+    description: "70.22% of online carts get abandoned. Most brands already have a recovery flow running, untouched, tuned for nobody in particular.",
+  },
+  {
+    slug: "instant-customer-support",
+    category: "Support & service",
+    title: "Instant answers for the questions you've already answered a thousand times",
+    description: "One founder's ticket audit found 61% of his support inbox was questions already answered in the FAQ.",
+  },
+  {
+    slug: "low-inventory-and-expiry-alerts",
+    category: "Ops & inventory",
+    title: "The stockout a customer notices before you do",
+    description: "Periodic inventory checks catch a stockout after it's already cost you a customer.",
+  },
+];
+
+const RESOURCES_TEASER = [
+  { slug: "beauty-cosmetics", kind: "Automation guide", tag: "Beauty & Cosmetics", cta: "View guide →", href: "/resources/beauty-cosmetics", image: "/website-images/pdf-beauty-cosmetics-cover.png" },
+  { slug: "fashion-apparel", kind: "Automation guide", tag: "Fashion & Apparel", cta: "View guide →", href: "/resources/fashion-apparel", image: "/website-images/pdf-fashion-apparel-cover.png" },
+  { slug: "food-beverage", kind: "Automation guide", tag: "Food & Beverage", cta: "View guide →", href: "/resources/food-beverage", image: "/website-images/pdf-food-beverage-cover.png" },
+];
 
 const BUILDS_INDEX = [
   {
@@ -182,7 +210,7 @@ export default function Home() {
               marginBottom: "1.5rem",
             }}
           >
-            Retail brands all lose time to the same handful of problems.
+            Most automation fails because nobody mapped the process first.
             <br />
             <span
               style={{
@@ -192,7 +220,7 @@ export default function Home() {
                 backgroundClip: "text",
               }}
             >
-              I find which ones, then automate them.
+              I map it, then build the system around what&apos;s actually there.
             </span>
           </h1>
 
@@ -206,10 +234,10 @@ export default function Home() {
               margin: "0 auto 2.5rem",
             }}
           >
-            It could be support, ops reporting, fulfilment, inventory, or
-            something else entirely, wherever the repetitive work is piling up.
-            I map how it actually happens first, then build the automation
-            around it.
+            Support, ops reporting, fulfilment, inventory: wherever the
+            repetitive work is piling up. I map how it actually runs before
+            touching any tooling, then scope the build around that instead
+            of a templated workflow.
           </p>
 
           {/* CTAs */}
@@ -241,10 +269,8 @@ export default function Home() {
             >
               See the builds →
             </Link>
-            <a
-              href="https://linkedin.com/in/garvinchanderia"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/resources"
               id="hero-cta-secondary"
               style={{
                 display: "inline-flex",
@@ -262,8 +288,8 @@ export default function Home() {
                 WebkitBackdropFilter: "blur(12px)",
               }}
             >
-              Connect on LinkedIn
-            </a>
+              Free automation guide
+            </Link>
           </div>
         </div>
 
@@ -280,6 +306,245 @@ export default function Home() {
             zIndex: 1,
           }}
         />
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          BLOG — Featured posts
+      ══════════════════════════════════════════════════ */}
+      <section
+        id="blog-teaser"
+        aria-label="From the blog"
+        style={{
+          background: "#0d0d0d",
+          padding: "7rem 0",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div className="container" style={{ position: "relative", zIndex: 2 }}>
+          <div className="reveal" style={{ marginBottom: "3.5rem" }}>
+            <p
+              className="eyebrow-label"
+              style={{
+                fontSize: "0.6875rem",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "#10B981",
+                fontWeight: 700,
+                marginBottom: "0.875rem",
+              }}
+            >
+              The Blog
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                fontWeight: 700,
+                color: "#f5f5f7",
+                letterSpacing: "-0.025em",
+                lineHeight: 1.15,
+                marginBottom: "1rem",
+              }}
+            >
+              The same complaints, mapped one at a time.
+            </h2>
+            <p style={{ fontSize: "1.0625rem", color: "#6b7280", maxWidth: "540px", lineHeight: 1.65 }}>
+              Each post starts from one documented pain point, then breaks down
+              what a real fix looks like.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "1.5rem",
+            }}
+          >
+            {BLOG_TEASER.map((post, idx) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className={`reveal delay-${idx + 1}`}
+                style={{
+                  display: "block",
+                  borderRadius: "20px",
+                  background: "rgba(255,255,255,0.025)",
+                  backdropFilter: "saturate(1.8) blur(24px)",
+                  WebkitBackdropFilter: "saturate(1.8) blur(24px)",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  textDecoration: "none",
+                  overflow: "hidden",
+                }}
+              >
+                <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9" }}>
+                  <Image
+                    src={`/blog/${post.slug}/cover.png`}
+                    alt={post.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div style={{ padding: "1.5rem" }}>
+                  <span
+                    style={{
+                      display: "inline-block",
+                      fontSize: "0.625rem",
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "#10B981",
+                      fontWeight: 700,
+                      marginBottom: "0.875rem",
+                    }}
+                  >
+                    {post.category}
+                  </span>
+                  <h3
+                    style={{
+                      fontSize: "1.0625rem",
+                      fontWeight: 700,
+                      color: "#f5f5f7",
+                      letterSpacing: "-0.01em",
+                      marginBottom: "0.625rem",
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {post.title}
+                  </h3>
+                  <p style={{ fontSize: "0.875rem", color: "#6b7280", lineHeight: 1.6, marginBottom: "1rem" }}>
+                    {post.description}
+                  </p>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.375rem", color: "#10B981", fontSize: "0.8125rem", fontWeight: 700 }}>
+                    Read post
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="reveal" style={{ textAlign: "center", marginTop: "3rem" }}>
+            <Link href="/blog" style={{ color: "#10B981", fontWeight: 600, fontSize: "0.9375rem" }}>
+              See all posts →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          RESOURCES — Free guides by industry
+      ══════════════════════════════════════════════════ */}
+      <section
+        id="resources-teaser"
+        aria-label="Free resources"
+        style={{
+          background: "#050505",
+          padding: "7rem 0",
+          borderTop: "1px solid rgba(255,255,255,0.05)",
+          borderBottom: "1px solid rgba(255,255,255,0.05)",
+        }}
+      >
+        <div className="container">
+          <div className="reveal" style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 3.5rem" }}>
+            <p
+              className="eyebrow-label"
+              style={{
+                fontSize: "0.6875rem",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "#10B981",
+                fontWeight: 700,
+                marginBottom: "0.875rem",
+              }}
+            >
+              Free Resources
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                fontWeight: 700,
+                color: "#f5f5f7",
+                letterSpacing: "-0.025em",
+                lineHeight: 1.15,
+                marginBottom: "1rem",
+              }}
+            >
+              Free tools and breakdowns for D2C operators.
+            </h2>
+            <p style={{ fontSize: "1.0625rem", color: "#6b7280", lineHeight: 1.65 }}>
+              Practical resources pulled from the same builds below. Free to
+              use, no strings attached.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "1.5rem",
+            }}
+          >
+            {RESOURCES_TEASER.map((r, idx) => (
+              <Link
+                key={r.slug}
+                href={r.href}
+                className={`reveal delay-${(idx % 3) + 1}`}
+                style={{
+                  display: "flex",
+                  gap: "1.25rem",
+                  alignItems: "flex-start",
+                  padding: "1.75rem",
+                  borderRadius: "16px",
+                  background: "rgba(255,255,255,0.025)",
+                  backdropFilter: "saturate(1.8) blur(24px)",
+                  WebkitBackdropFilter: "saturate(1.8) blur(24px)",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  textDecoration: "none",
+                }}
+              >
+                <div
+                  style={{
+                    position: "relative",
+                    width: "72px",
+                    aspectRatio: "3 / 4",
+                    flexShrink: 0,
+                    borderRadius: "6px",
+                    overflow: "hidden",
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
+                  }}
+                >
+                  <Image
+                    src={r.image}
+                    alt={`${r.tag} guide cover`}
+                    fill
+                    sizes="72px"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div>
+                  <span style={{ display: "block", fontSize: "0.75rem", color: "#6b7280", marginBottom: "0.625rem" }}>
+                    {r.kind}
+                  </span>
+                  <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, color: "#f5f5f7", marginBottom: "1rem", lineHeight: 1.3 }}>
+                    {r.tag}
+                  </h3>
+                  <span style={{ color: "#10B981", fontWeight: 700, fontSize: "0.8125rem" }}>
+                    {r.cta}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="reveal" style={{ textAlign: "center", marginTop: "3rem" }}>
+            <Link href="/resources" style={{ color: "#10B981", fontWeight: 600, fontSize: "0.9375rem" }}>
+              See all guides →
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════
@@ -323,11 +588,12 @@ export default function Home() {
                 marginBottom: "1rem",
               }}
             >
-              The manual work, systemized.
+              What the guides look like once they&apos;re built.
             </h2>
             <p style={{ fontSize: "1.0625rem", color: "#6b7280", maxWidth: "540px", lineHeight: 1.65 }}>
-              Each one started as a manual process someone was doing by hand every day.
-              The method is the same regardless of which one it&apos;s pointed at next.
+              Each one started as a documented problem before any tooling got
+              touched. The method is the same regardless of which one it&apos;s
+              pointed at next.
             </p>
           </div>
 
