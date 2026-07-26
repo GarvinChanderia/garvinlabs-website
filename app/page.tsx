@@ -62,6 +62,16 @@ const BUILDS_INDEX = [
     stat: "∞",
     statLabel: "scale without headcount",
   },
+  {
+    tag: "On YouTube",
+    name: "How to Build an AI That Writes Like You",
+    problem: "Derived a voice guide from a real person's posts and transcripts, then wrote new content for a completely different brand in that exact voice.",
+    href: "https://www.youtube.com/watch?v=HUp2ZIK-uZg",
+    external: true,
+    highlight: false,
+    stat: "150K+",
+    statLabel: "words analyzed",
+  },
 ];
 
 const AEO_FAQS = [
@@ -196,7 +206,7 @@ export default function Home() {
               marginBottom: "1.25rem",
             }}
           >
-            GarvinLabs · Operations Automation
+            GarvinLabs · AI Modernization
           </p>
 
           {/* Headline */}
@@ -599,10 +609,15 @@ export default function Home() {
 
           {/* Bento Grid */}
           <div className="bento-grid">
-            {BUILDS_INDEX.map((build, idx) => (
-              <Link
+            {BUILDS_INDEX.map((build, idx) => {
+              const CardTag = build.external ? "a" : Link;
+              const linkProps = build.external
+                ? { href: build.href, target: "_blank", rel: "noopener noreferrer" }
+                : { href: build.href };
+              return (
+              <CardTag
                 key={build.name}
-                href={build.href}
+                {...linkProps}
                 id={`build-card-${idx}`}
                 className={`bento-card reveal delay-${idx + 1}${build.highlight ? " bento-card-highlight" : ""}`}
                 style={{
@@ -696,14 +711,15 @@ export default function Home() {
                       letterSpacing: "0.02em",
                     }}
                   >
-                    View build
+                    {build.external ? "Watch on YouTube" : "View build"}
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
                       <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                 </div>
-              </Link>
-            ))}
+              </CardTag>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -738,7 +754,7 @@ export default function Home() {
               marginBottom: "1rem",
             }}
           >
-            The Lab
+            AI Modernization
           </p>
           <h2
             className="reveal delay-1"
@@ -751,7 +767,7 @@ export default function Home() {
               marginBottom: "2.5rem",
             }}
           >
-            Automating the mundane.
+            Modernizing the mundane.
           </h2>
 
           {/* Glassmorphic text card */}

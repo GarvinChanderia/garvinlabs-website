@@ -5,6 +5,7 @@ import {
   INSTAGRAM,
   X_URL,
   THREADS_URL,
+  YOUTUBE,
   MAILTO,
   EMAIL,
   PHONE_TEL,
@@ -26,7 +27,7 @@ export function Footer() {
             />
           </div>
           <p className="footer-tagline">
-            Operations automation for D2C brands.
+            AI modernization for D2C brands.
           </p>
         </div>
 
@@ -62,6 +63,11 @@ export function Footer() {
             <li>
               <a href={THREADS_URL} target="_blank" rel="noopener noreferrer">
                 Threads
+              </a>
+            </li>
+            <li>
+              <a href={YOUTUBE} target="_blank" rel="noopener noreferrer">
+                YouTube
               </a>
             </li>
           </ul>

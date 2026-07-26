@@ -11,6 +11,7 @@ export type Build = {
   image?: string;
   alt?: string;
   video?: string;
+  youtubeId?: string;
   problem: string;
   howSolved: string;
   cost: string;
@@ -64,6 +65,13 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
               <div className="build-grid-card-media">
                 {b.image ? (
                   <Image src={b.image} alt={b.alt ?? b.title} fill style={{ objectFit: "cover" }} />
+                ) : b.youtubeId ? (
+                  <Image
+                    src={`https://i.ytimg.com/vi/${b.youtubeId}/hqdefault.jpg`}
+                    alt={b.alt ?? b.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
                 ) : b.video ? (
                   <video
                     src={b.video}
@@ -122,10 +130,10 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
               ×
             </button>
 
-            {(active.image || active.video) && (
+            {(active.image || active.video || active.youtubeId) && (
               <div
                 className="build-modal-media"
-                style={active.video ? { aspectRatio: "auto" } : undefined}
+                style={active.video || active.youtubeId ? { aspectRatio: "auto" } : undefined}
               >
                 {active.video ? (
                   <video
@@ -143,6 +151,15 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
                     ref={(el) => {
                       if (el) el.playbackRate = 2;
                     }}
+                  />
+                ) : active.youtubeId ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${active.youtubeId}`}
+                    title={`${active.title}: Walkthrough`}
+                    style={{ width: "100%", aspectRatio: "16 / 9", height: "auto", maxHeight: "70vh", border: 0 }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
                   />
                 ) : active.image ? (
                   <Image src={active.image} alt={active.alt ?? active.title} fill style={{ objectFit: "cover" }} />

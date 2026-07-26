@@ -99,7 +99,7 @@ export default function About() {
         <strong>Who is Garvin Chanderia?</strong>
         <p>
           Garvin Chanderia is an Enterprise Architecture Consultant at Invecto Technologies and the
-          builder behind GarvinLabs, an operations automation practice. His background is in
+          builder behind GarvinLabs, an AI modernization practice. His background is in
           enterprise architecture and analytics: designing how systems connect, how data flows, and
           how decisions get made inside large organisations. He maps a business&apos;s manual
           operations before building automation around what actually happens, not what the

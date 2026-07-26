@@ -10,7 +10,7 @@ export default function SchemaOrg() {
     "sameAs": ["https://linkedin.com/in/garvinchanderia"],
     "knowsAbout": [
       "Enterprise Architecture",
-      "Operations Automation",
+      "AI Modernization",
       "System Integration",
       "n8n",
       "Support Triage Systems",
@@ -26,7 +26,7 @@ export default function SchemaOrg() {
     "url": "https://garvinlabs.com",
     "founder": { "@id": "https://garvinlabs.com/#garvin" },
     "sameAs": ["https://linkedin.com/in/garvinchanderia"],
-    "description": "GarvinLabs is Garvin Chanderia's public learning practice in operations automation: support triage, ops reporting, fulfilment, and inventory systems for retail brands, built and documented in the open."
+    "description": "GarvinLabs is Garvin Chanderia's public learning practice in AI modernization: support triage, ops reporting, fulfilment, and inventory systems for retail brands, built and documented in the open."
   };
 
   return (

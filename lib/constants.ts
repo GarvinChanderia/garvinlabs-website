@@ -4,5 +4,6 @@ export const MAILTO = "mailto:garvin@garvinlabs.com";
 export const INSTAGRAM = "https://instagram.com/labs.garvin";
 export const X_URL = "https://x.com/labsgarvin";
 export const THREADS_URL = "https://www.threads.com/@labs.garvin";
+export const YOUTUBE = "https://www.youtube.com/@GarvinLabs";
 export const PHONE_DISPLAY = "+91 93562 49535";
 export const PHONE_TEL = "tel:+919356249535";

@@ -5,20 +5,20 @@ import { RevealScript } from "@/components/RevealScript";
 import { BuildsGrid } from "@/components/BuildsGrid";
 
 export const metadata: Metadata = {
-  title: "Builds: Real D2C Automation Systems | GarvinLabs",
-  description: "Systems built for D2C operations: the problem each one solves, how it works, and what the manual version costs.",
+  title: "Builds: Real AI Modernization Systems | GarvinLabs",
+  description: "AI modernization systems built for D2C operations: the problem each one solves, how it works, and what the manual version costs.",
   alternates: { canonical: "https://garvinlabs.com/demos" },
   openGraph: {
-    title: "Builds: Real D2C Automation Systems | GarvinLabs",
-    description: "Systems built for D2C operations: the problem each one solves, how it works, and what the manual version costs.",
+    title: "Builds: Real AI Modernization Systems | GarvinLabs",
+    description: "AI modernization systems built for D2C operations: the problem each one solves, how it works, and what the manual version costs.",
     url: "https://garvinlabs.com/demos",
     images: [{ url: "/website-images/threadwave_hero.png", width: 1200, height: 630, alt: "GarvinLabs builds" }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Builds: Real D2C Automation Systems | GarvinLabs",
-    description: "Systems built for D2C operations: the problem each one solves, how it works, and what the manual version costs.",
+    title: "Builds: Real AI Modernization Systems | GarvinLabs",
+    description: "AI modernization systems built for D2C operations: the problem each one solves, how it works, and what the manual version costs.",
     images: ["/website-images/threadwave_hero.png"],
   },
 };
@@ -76,6 +76,24 @@ const BUILDS = [
     ],
     stack: ["Meta Graph API", "Gemini API"],
     video: "/instagram-dm-demo.mp4",
+  },
+  {
+    id: "brand-voice-ai",
+    tag: "On YouTube",
+    title: "How to Build an AI That Writes Like You",
+    youtubeId: "HUp2ZIK-uZg",
+    problem:
+      "Writing convincingly in a specific voice, someone else's or your own, and holding it across new topics and new brands, breaks down fast once it's not the original person typing.",
+    howSolved:
+      "Analyzed 100+ social posts and ~150,000 words of long-form transcript from one real person to derive a structured voice guide: tone, sentence patterns, vocabulary, rhetorical templates, worldview. Then used that guide to write new content, social posts, an announcement, a podcast transcript, for a completely unrelated business, in that exact voice.",
+    cost:
+      "Ghostwriting a distinct voice by hand only scales as far as the one person who has it in their head. Walked through step by step in the video.",
+    stats: [
+      { num: "150K+", label: "words of source material analyzed" },
+      { num: "5:01", label: "video walkthrough" },
+    ],
+    stack: ["Claude"],
+    cta: { label: "Watch on YouTube", href: "https://www.youtube.com/watch?v=HUp2ZIK-uZg" },
   },
 ];
 

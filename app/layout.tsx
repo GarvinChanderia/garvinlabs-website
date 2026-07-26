@@ -23,14 +23,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GarvinLabs: I find where retail brands lose time, then automate it",
+  title: "GarvinLabs: AI modernization for retail brands that move too slow",
   description:
     "It could be support, ops reporting, fulfilment, or inventory. I map how the work actually happens, then build the automation around it. 14 days from discovery to a live system.",
-  keywords: ["Support Triage Automation", "Customer Support Automation", "D2C Operations", "Operations Automation", "SaaS Support Automation", "GarvinLabs"],
+  keywords: ["Support Triage Automation", "Customer Support Automation", "AI Modernization for D2C", "AI Modernization", "SaaS Support Automation", "GarvinLabs"],
   metadataBase: new URL("https://garvinlabs.com"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "GarvinLabs: I find where retail brands lose time, then automate it",
+    title: "GarvinLabs: AI modernization for retail brands that move too slow",
     description:
       "It could be support, ops reporting, fulfilment, or inventory. I map how the work actually happens, then build the automation around it. 14 days from discovery to a live system.",
     url: "https://garvinlabs.com",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: "/hero-diagram.png",
         width: 1200,
         height: 630,
-        alt: "GarvinLabs: I find where retail brands lose time, then automate it",
+        alt: "GarvinLabs: AI modernization for retail brands that move too slow",
       },
     ],
     locale: "en_US",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GarvinLabs: I find where retail brands lose time, then automate it",
+    title: "GarvinLabs: AI modernization for retail brands that move too slow",
     description:
       "It could be support, ops reporting, fulfilment, or inventory. I map how the work actually happens, then build the automation around it. 14 days from discovery to a live system.",
     images: ["/hero-diagram.png"],
