@@ -6,12 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const NAV_LINKS = [
-  { label: "Home",      href: "/"          },
-  { label: "Builds",    href: "/demos"     },
-  { label: "Resources", href: "/resources" },
-  { label: "Blog",      href: "/blog"      },
-  { label: "About",     href: "/about"     },
-  { label: "Contact",   href: "/contact"   },
+  { label: "Home",          href: "/"              },
+  { label: "Builds",        href: "/demos"         },
+  { label: "Resources",     href: "/resources"     },
+  { label: "Blog",          href: "/blog"          },
+  { label: "When AI Fails", href: "/when-ai-fails" },
+  { label: "About",         href: "/about"         },
+  { label: "Contact",       href: "/contact"       },
 ];
 
 export default function Navbar() {
