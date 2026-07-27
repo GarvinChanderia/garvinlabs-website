@@ -319,71 +319,6 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          WHEN AI FAILS — Standalone featured spotlight
-      ══════════════════════════════════════════════════ */}
-      <section
-        id="when-ai-fails-spotlight"
-        aria-label="Featured: When AI fails"
-        style={{ background: "#0d0d0d", padding: "5rem 0" }}
-      >
-        <div className="container">
-          <div className="reveal spotlight-grid">
-            <Link href="/when-ai-fails" className="spotlight-media">
-              <Image
-                src="/when-ai-fails/cover.png"
-                alt="A boardroom lit in green with an elephant standing at the head of the table, while four people in a meeting look anywhere but at it."
-                fill
-                sizes="(max-width: 860px) 100vw, 460px"
-                style={{ objectFit: "cover" }}
-              />
-            </Link>
-            <div>
-              <p
-                className="eyebrow-label"
-                style={{
-                  fontSize: "0.6875rem",
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  color: "#10B981",
-                  fontWeight: 700,
-                  marginBottom: "0.875rem",
-                }}
-              >
-                Featured · AI guardrails
-              </p>
-              <h2
-                style={{
-                  fontSize: "clamp(1.75rem, 3.2vw, 2.5rem)",
-                  fontWeight: 700,
-                  color: "#f5f5f7",
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1.15,
-                  marginBottom: "1rem",
-                }}
-              >
-                When AI fails, it&apos;s rarely the model&apos;s fault.
-              </h2>
-              <p style={{ fontSize: "1.0625rem", color: "#6b7280", lineHeight: 1.65, marginBottom: "1.75rem" }}>
-                Chevrolet, Air Canada, and DPD all had AI go publicly wrong, for three
-                different reasons, none of them a bad model. A three-question framework,
-                reversibility, stakes, verifiability, for deciding where AI should run
-                unsupervised in a business, and where it shouldn&apos;t.
-              </p>
-              <Link
-                href="/when-ai-fails"
-                style={{ display: "inline-flex", alignItems: "center", gap: "0.375rem", color: "#10B981", fontWeight: 700, fontSize: "0.9375rem", textDecoration: "none" }}
-              >
-                Read the full breakdown
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
           BLOG — Featured posts
       ══════════════════════════════════════════════════ */}
       <section
@@ -505,6 +440,71 @@ export default function Home() {
             <Link href="/blog" style={{ color: "#10B981", fontWeight: 600, fontSize: "0.9375rem" }}>
               See all posts →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          WHEN AI FAILS — Standalone featured spotlight
+      ══════════════════════════════════════════════════ */}
+      <section
+        id="when-ai-fails-spotlight"
+        aria-label="Featured: When AI fails"
+        style={{ background: "#0d0d0d", padding: "5rem 0" }}
+      >
+        <div className="container">
+          <div className="reveal spotlight-grid">
+            <Link href="/when-ai-fails" className="spotlight-media">
+              <Image
+                src="/when-ai-fails/cover.png"
+                alt="A boardroom lit in green with an elephant standing at the head of the table, while four people in a meeting look anywhere but at it."
+                fill
+                sizes="(max-width: 860px) 100vw, 460px"
+                style={{ objectFit: "cover" }}
+              />
+            </Link>
+            <div>
+              <p
+                className="eyebrow-label"
+                style={{
+                  fontSize: "0.6875rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "#10B981",
+                  fontWeight: 700,
+                  marginBottom: "0.875rem",
+                }}
+              >
+                Featured · AI guardrails
+              </p>
+              <h2
+                style={{
+                  fontSize: "clamp(1.75rem, 3.2vw, 2.5rem)",
+                  fontWeight: 700,
+                  color: "#f5f5f7",
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.15,
+                  marginBottom: "1rem",
+                }}
+              >
+                When AI fails, it&apos;s rarely the model&apos;s fault.
+              </h2>
+              <p style={{ fontSize: "1.0625rem", color: "#6b7280", lineHeight: 1.65, marginBottom: "1.75rem" }}>
+                Chevrolet, Air Canada, and DPD all had AI go publicly wrong, for three
+                different reasons, none of them a bad model. A three-question framework,
+                reversibility, stakes, verifiability, for deciding where AI should run
+                unsupervised in a business, and where it shouldn&apos;t.
+              </p>
+              <Link
+                href="/when-ai-fails"
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.375rem", color: "#10B981", fontWeight: 700, fontSize: "0.9375rem", textDecoration: "none" }}
+              >
+                Read the full breakdown
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
