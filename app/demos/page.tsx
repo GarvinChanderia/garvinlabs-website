@@ -76,6 +76,7 @@ const BUILDS = [
     ],
     stack: ["Meta Graph API", "Gemini API"],
     video: "/instagram-dm-demo.mp4",
+    videoPoster: "/instagram-dm-demo-poster.jpg",
   },
   {
     id: "brand-voice-ai",

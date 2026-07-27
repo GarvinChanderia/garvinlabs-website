@@ -11,6 +11,7 @@ export type Build = {
   image?: string;
   alt?: string;
   video?: string;
+  videoPoster?: string;
   youtubeId?: string;
   problem: string;
   howSolved: string;
@@ -19,6 +20,58 @@ export type Build = {
   stack: string[];
   cta?: { label: string; href: string };
 };
+
+// Mobile browsers on cellular routinely refuse to kick off the implicit
+// `autoplay` attribute once network conditions are slow (it silently stays
+// paused with no poster, which reads as "broken"). Calling .play() ourselves
+// once metadata is available is far more reliable, and we skip video
+// entirely on a flagged slow/metered connection in favor of a static poster.
+function GridVideoThumb({ src, poster, alt }: { src: string; poster?: string; alt: string }) {
+  const [skipVideo, setSkipVideo] = useState(false);
+
+  useEffect(() => {
+    type NetworkInformation = {
+      saveData?: boolean;
+      effectiveType?: string;
+    };
+    const nav = navigator as Navigator & { connection?: NetworkInformation };
+    const conn = nav.connection;
+    if (conn && (conn.saveData || ["slow-2g", "2g", "3g"].includes(conn.effectiveType ?? ""))) {
+      setSkipVideo(true);
+    }
+  }, []);
+
+  if (skipVideo) {
+    return poster ? (
+      <Image
+        src={poster}
+        alt={alt}
+        fill
+        style={{ objectFit: "cover" }}
+        sizes="(max-width: 640px) 100vw, (max-width: 860px) 50vw, 33vw"
+      />
+    ) : null;
+  }
+
+  return (
+    <video
+      src={src}
+      poster={poster}
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      ref={(el) => {
+        if (!el) return;
+        el.playbackRate = 2;
+        // Don't rely on the native `autoplay` attribute: see comment above.
+        el.play().catch(() => {
+          /* autoplay refused; poster stays visible, no console noise */
+        });
+      }}
+    />
+  );
+}
 
 export function BuildsGrid({ builds }: { builds: Build[] }) {
   const [openId, setOpenId] = useState<string | null>(null);
@@ -64,26 +117,23 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
             >
               <div className="build-grid-card-media">
                 {b.image ? (
-                  <Image src={b.image} alt={b.alt ?? b.title} fill style={{ objectFit: "cover" }} />
+                  <Image
+                    src={b.image}
+                    alt={b.alt ?? b.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 640px) 100vw, (max-width: 860px) 50vw, 33vw"
+                  />
                 ) : b.youtubeId ? (
                   <Image
                     src={`https://i.ytimg.com/vi/${b.youtubeId}/hqdefault.jpg`}
                     alt={b.alt ?? b.title}
                     fill
                     style={{ objectFit: "cover" }}
+                    sizes="(max-width: 640px) 100vw, (max-width: 860px) 50vw, 33vw"
                   />
                 ) : b.video ? (
-                  <video
-                    src={b.video}
-                    muted
-                    loop
-                    autoPlay
-                    playsInline
-                    preload="metadata"
-                    ref={(el) => {
-                      if (el) el.playbackRate = 2;
-                    }}
-                  />
+                  <GridVideoThumb src={b.video} poster={b.videoPoster} alt={b.alt ?? b.title} />
                 ) : null}
               </div>
               <div className="build-grid-card-info">
@@ -138,6 +188,7 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
                 {active.video ? (
                   <video
                     src={active.video}
+                    poster={active.videoPoster}
                     controls
                     playsInline
                     preload="metadata"
@@ -162,7 +213,13 @@ export function BuildsGrid({ builds }: { builds: Build[] }) {
                     allowFullScreen
                   />
                 ) : active.image ? (
-                  <Image src={active.image} alt={active.alt ?? active.title} fill style={{ objectFit: "cover" }} />
+                  <Image
+                    src={active.image}
+                    alt={active.alt ?? active.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 640px) 90vw, 640px"
+                  />
                 ) : null}
               </div>
             )}
