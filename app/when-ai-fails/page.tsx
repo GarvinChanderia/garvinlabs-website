@@ -193,7 +193,7 @@ export default function WhenAIFails() {
               src="/when-ai-fails/incident-comparison.svg"
               alt="Three incidents, three different failure types: Chevrolet (authority), Air Canada (verification), and DPD (scope), each with its date and outcome."
               width={900}
-              height={320}
+              height={330}
               style={{ width: "100%", height: "auto" }}
             />
           </figure>
@@ -221,7 +221,7 @@ export default function WhenAIFails() {
               src="/when-ai-fails/decision-framework.svg"
               alt="Flowchart: the three questions, reversibility, stakes, verifiability, feed into a single check that sorts a task into the green zone (AI runs alone), yellow zone (AI drafts, a human approves), or red zone (not AI's call)."
               width={900}
-              height={560}
+              height={570}
               style={{ width: "100%", height: "auto" }}
             />
           </figure>
