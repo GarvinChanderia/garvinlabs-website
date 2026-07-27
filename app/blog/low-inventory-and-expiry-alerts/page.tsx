@@ -84,6 +84,7 @@ export default function Post() {
           alt="The stockout a customer notices before you do"
           width={4800}
           height={2520}
+          sizes="100vw"
           style={{ width: "100%", height: "auto" }}
           priority
         />

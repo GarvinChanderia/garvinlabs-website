@@ -84,6 +84,7 @@ export default function Post() {
           alt="The tracking link you could have sent automatically"
           width={4800}
           height={2520}
+          sizes="100vw"
           style={{ width: "100%", height: "auto" }}
           priority
         />

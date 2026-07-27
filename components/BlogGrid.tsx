@@ -41,6 +41,7 @@ export function BlogGrid({ posts }: { posts: BlogPost[] }) {
                 alt={post.title}
                 width={4800}
                 height={2520}
+                sizes="(max-width: 620px) 100vw, (max-width: 900px) 50vw, 33vw"
               />
             </div>
             <div className="blog-grid-content">

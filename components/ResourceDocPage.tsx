@@ -59,6 +59,7 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
               alt={coverAlt}
               width={260}
               height={337}
+              sizes="(max-width: 820px) 90vw, 300px"
               style={{ display: "block", width: "100%", height: "auto", borderRadius: "var(--radius)" }}
             />
             <p style={{ fontWeight: 700, fontSize: "1.05rem", color: "var(--ink)" }}>Get the PDF</p>

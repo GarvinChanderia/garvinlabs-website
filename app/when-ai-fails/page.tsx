@@ -91,6 +91,7 @@ export default function WhenAIFails() {
             alt="A boardroom lit in green with an elephant standing at the head of the table, while four people in a meeting look anywhere but at it."
             width={1536}
             height={1024}
+            sizes="(max-width: 960px) 100vw, 960px"
             style={{ width: "100%", height: "auto" }}
             priority
           />

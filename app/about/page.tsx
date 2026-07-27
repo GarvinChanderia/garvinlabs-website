@@ -120,31 +120,16 @@ export default function About() {
       >
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
           {/* Two-column hero */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 300px) 1fr",
-              gap: "4rem",
-              alignItems: "center",
-            }}
-          >
+          <div className="about-hero-grid">
             {/* Portrait */}
-            <div
-              style={{
-                position: "relative",
-                height: "320px",
-                borderRadius: "var(--radius-card)",
-                overflow: "hidden",
-                border: "1px solid rgba(16, 185, 129, 0.25)",
-                background: "rgba(255,255,255,0.03)",
-                flexShrink: 0,
-              }}
-            >
+            <div className="about-hero-portrait">
               <Image
                 src="/website-images/founder-portrait.png"
                 alt="Garvin Chanderia"
                 fill
                 style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 90vw, 300px"
+                priority
               />
             </div>
 

@@ -84,6 +84,7 @@ export default function Post() {
           alt="The pairing your customer never found out you sold"
           width={4800}
           height={2520}
+          sizes="100vw"
           style={{ width: "100%", height: "auto" }}
           priority
         />

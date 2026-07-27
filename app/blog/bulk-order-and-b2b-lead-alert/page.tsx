@@ -81,6 +81,7 @@ export default function Post() {
           alt="The wholesale buyer who waited two days for nobody to notice"
           width={4800}
           height={2520}
+          sizes="100vw"
           style={{ width: "100%", height: "auto" }}
           priority
         />
