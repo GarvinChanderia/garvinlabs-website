@@ -2725,6 +2725,21 @@ a.mono-tag:hover {
   height: auto;
 }
 
+/* Embedded tweet (react-tweet) inside a post body — center it and let the
+   package's own card styling stand, rather than nesting it in .post-figure's
+   border/shadow treatment meant for our hand-drawn SVG figures. */
+.tweet-embed {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 2.5rem;
+}
+
+.tweet-embed .react-tweet-theme {
+  margin: 0;
+  max-width: 550px;
+  width: 100%;
+}
+
 /* ============================================================
    Project Grid
    ============================================================ */

@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { Tweet } from "react-tweet";
+import "react-tweet/theme.css";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
@@ -16,11 +19,20 @@ export const metadata: Metadata = {
     url: "https://garvinlabs.com/when-ai-fails",
     siteName: "GarvinLabs",
     type: "article",
+    images: [
+      {
+        url: "/when-ai-fails/cover.png",
+        width: 1536,
+        height: 1024,
+        alt: "A boardroom lit in green with an elephant standing at the head of the table, while four people in a meeting look anywhere but at it.",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
+    images: ["/when-ai-fails/cover.png"],
   },
 };
 
@@ -42,6 +54,7 @@ const JSON_LD = {
     "@type": "WebPage",
     "@id": "https://garvinlabs.com/when-ai-fails",
   },
+  image: "https://garvinlabs.com/when-ai-fails/cover.png",
 };
 
 export default function WhenAIFails() {
@@ -72,6 +85,17 @@ export default function WhenAIFails() {
       </aside>
 
       <article className="post-layout">
+        <figure className="post-figure">
+          <Image
+            src="/when-ai-fails/cover.png"
+            alt="A boardroom lit in green with an elephant standing at the head of the table, while four people in a meeting look anywhere but at it."
+            width={1536}
+            height={1024}
+            style={{ width: "100%", height: "auto" }}
+            priority
+          />
+        </figure>
+
         <header className="post-header">
           <p className="post-tag">AI guardrails · D2C automation</p>
           <h1 className="post-title">When AI fails</h1>
@@ -106,10 +130,13 @@ export default function WhenAIFails() {
             claiming the offer was binding. The dealership never honored it. The screenshot still
             hit 20 million views before anyone noticed. (
             <a href="https://incidentdatabase.ai/cite/622/" target="_blank" rel="noopener noreferrer">
-              source
+              AI Incident Database, #622
             </a>
             )
           </p>
+          <div className="tweet-embed dark">
+            <Tweet id="1736533308849443121" />
+          </div>
           <p>
             What broke: the bot had no boundary on what it was authorized to promise. Nobody had
             defined what it could commit to on the business&#39;s behalf, so it committed to
@@ -122,11 +149,11 @@ export default function WhenAIFails() {
             the chatbot was responsible for its own words. The tribunal disagreed and ordered the
             airline to pay. (
             <a
-              href="https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/"
+              href="https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html"
               target="_blank"
               rel="noopener noreferrer"
             >
-              source
+              Moffatt v. Air Canada, 2024 BCCRT 149, CanLII
             </a>
             )
           </p>
@@ -144,10 +171,13 @@ export default function WhenAIFails() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              source
+              SCMP coverage
             </a>
             )
           </p>
+          <div className="tweet-embed dark">
+            <Tweet id="1748034519104450874" />
+          </div>
           <p>
             What broke: no boundary on tone or topic. The bot would follow any instruction a user
             gave it, including instructions to attack the company running it.
@@ -157,6 +187,16 @@ export default function WhenAIFails() {
             wasn&#39;t a bad model. It was that nobody had decided where the AI&#39;s judgment
             should stop and a person&#39;s should start.
           </p>
+
+          <figure className="post-figure">
+            <Image
+              src="/when-ai-fails/incident-comparison.svg"
+              alt="Three incidents, three different failure types: Chevrolet (authority), Air Canada (verification), and DPD (scope), each with its date and outcome."
+              width={900}
+              height={320}
+              style={{ width: "100%", height: "auto" }}
+            />
+          </figure>
 
           <h2>The three questions</h2>
           <p>
@@ -175,6 +215,16 @@ export default function WhenAIFails() {
             or is it acting in real time with nobody in the loop?
           </p>
           <p>Run any task through those three and it sorts itself into one of three zones.</p>
+
+          <figure className="post-figure">
+            <Image
+              src="/when-ai-fails/decision-framework.svg"
+              alt="Flowchart: the three questions, reversibility, stakes, verifiability, feed into a single check that sorts a task into the green zone (AI runs alone), yellow zone (AI drafts, a human approves), or red zone (not AI's call)."
+              width={900}
+              height={560}
+              style={{ width: "100%", height: "auto" }}
+            />
+          </figure>
 
           <h2>The three zones</h2>
           <p>
