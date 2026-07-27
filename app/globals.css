@@ -4876,3 +4876,24 @@ a.glass-tag:hover {
   .about-hero-grid     { grid-template-columns: 1fr; gap: 2rem; }
   .about-hero-portrait { height: 260px; margin-bottom: 0.5rem; }
 }
+
+/* ── Homepage "When AI fails" spotlight (image + summary) ── */
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 460px) 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.spotlight-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 2;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 860px) {
+  .spotlight-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+}
