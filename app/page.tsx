@@ -9,6 +9,14 @@ import { Footer } from "@/components/Footer";
 
 const BLOG_TEASER = [
   {
+    slug: "when-ai-fails",
+    category: "AI guardrails",
+    title: "When AI fails: three real incidents and the guardrail framework that would have caught them",
+    description: "Chevrolet, Air Canada, and DPD all had AI go publicly wrong, for three different reasons. A three-question framework for deciding where AI should run unsupervised, and where it shouldn't.",
+    href: "/when-ai-fails",
+    image: "/when-ai-fails/cover.png",
+  },
+  {
     slug: "abandoned-cart-recovery",
     category: "Retention & recovery",
     title: "Abandoned cart recovery: the automation almost everyone already half has",
@@ -374,7 +382,7 @@ export default function Home() {
             {BLOG_TEASER.map((post, idx) => (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={post.href ?? `/blog/${post.slug}`}
                 className={`reveal delay-${idx + 1}`}
                 style={{
                   display: "block",
@@ -389,7 +397,7 @@ export default function Home() {
               >
                 <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9" }}>
                   <Image
-                    src={`/blog/${post.slug}/cover.png`}
+                    src={post.image ?? `/blog/${post.slug}/cover.png`}
                     alt={post.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -614,12 +622,19 @@ export default function Home() {
               const linkProps = build.external
                 ? { href: build.href, target: "_blank", rel: "noopener noreferrer" }
                 : { href: build.href };
+              // Only the first two cards get the scroll-driven .reveal fade: their
+              // animation-timeline range reliably resolves to opacity 1. Cards from
+              // idx 2 onward (delay-3+) sit far enough down the page that Chrome's
+              // view() timeline gets stuck mid-fade (confirmed via computed-opacity
+              // checks on mobile AND desktop, ~0.68-0.93) -- same root cause as the
+              // hero fade bug, fixed there by omitting reveal/delay-N entirely.
+              const revealClass = idx < 2 ? ` reveal delay-${idx + 1}` : "";
               return (
               <CardTag
                 key={build.name}
                 {...linkProps}
                 id={`build-card-${idx}`}
-                className={`bento-card reveal delay-${idx + 1}${build.highlight ? " bento-card-highlight" : ""}`}
+                className={`bento-card${revealClass}${build.highlight ? " bento-card-highlight" : ""}`}
                 style={{
                   display: "block",
                   padding: build.highlight ? "2.5rem" : "2rem",
