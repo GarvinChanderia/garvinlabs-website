@@ -263,51 +263,9 @@ a {
   gap: 1.5rem;
 }
 
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  z-index: 50;
-}
-
-.hamburger {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background-color: var(--ink);
-  position: relative;
-  transition: background-color 0.2s ease;
-}
-
-.hamburger::before,
-.hamburger::after {
-  content: "";
-  position: absolute;
-  width: 24px;
-  height: 2px;
-  background-color: var(--ink);
-  left: 0;
-  transition: transform 0.2s ease, top 0.2s ease;
-}
-
-.hamburger::before { top: -6px; }
-.hamburger::after { top: 6px; }
-
-.hamburger.open {
-  background-color: transparent;
-}
-
-.hamburger.open::before {
-  top: 0;
-  transform: rotate(45deg);
-}
-
-.hamburger.open::after {
-  top: 0;
-  transform: rotate(-45deg);
-}
+/* NOTE: .mobile-menu-btn was unused dead CSS (component uses .hamburger-btn) and
+   .hamburger was defined twice in this file; removed the superseded copy here.
+   Live definitions are at .hamburger-btn / .hamburger below (~line 830). */
 
 /* Custom Language Selector */
 .custom-select {
@@ -785,7 +743,6 @@ iframe.skiptranslate { display: none !important; }
   height: 64px;                              /* target height */
   background: var(--glass-ultra-thin-bg);
   backdrop-filter: var(--glass-ultra-thin-blur);
-  -webkit-backdrop-filter: var(--glass-ultra-thin-blur);
   border-bottom: var(--glass-ultra-thin-border);
   /* Bottom shimmer line */
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05),
@@ -797,7 +754,6 @@ iframe.skiptranslate { display: none !important; }
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.82);
   backdrop-filter: saturate(180%) blur(32px);
-  -webkit-backdrop-filter: saturate(180%) blur(32px);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06),
               0 4px 24px rgba(0, 0, 0, 0.4);
 }
@@ -1662,9 +1618,8 @@ details[open] .faq-icon { transform: rotate(45deg); }
     top: calc(100% + 8px);
     left: 12px;
     right: 12px;
-    background: rgba(0, 0, 0, 0.88);
+    background: rgba(6, 6, 8, 0.985);
     backdrop-filter: saturate(180%) blur(32px);
-    -webkit-backdrop-filter: saturate(180%) blur(32px);
     border: 1px solid rgba(255, 255, 255, 0.09);
     border-radius: var(--radius-panel);
     flex-direction: column;
@@ -4145,7 +4100,6 @@ a.mono-tag:hover {
 .navbar {
   background: rgba(0, 0, 0, 0.72) !important;
   backdrop-filter: saturate(1.8) blur(24px) !important;
-  -webkit-backdrop-filter: saturate(1.8) blur(24px) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -4636,7 +4590,6 @@ div[style*="borderBottom"][style*="var(--border)"] {
 .navbar-liquid {
   /* Clean Spotlight frosted blur (no SVG refraction) */
   backdrop-filter: saturate(180%) blur(28px);
-  -webkit-backdrop-filter: saturate(180%) blur(28px);
   background: rgba(255, 255, 255, 0.03);
   border-bottom: 1px solid rgba(255, 255, 255, 0.09);
   box-shadow:
