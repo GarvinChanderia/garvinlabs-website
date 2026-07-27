@@ -4849,3 +4849,30 @@ a.glass-tag:hover {
   resize: vertical;
   min-height: 120px;
 }
+
+/* ── About page hero (portrait + bio) ──────────────────────
+   Was previously an inline style={{ display: "grid", gridTemplateColumns:
+   "minmax(0, 300px) 1fr" }} — a fixed two-column grid with no way for an
+   inline style to respond to viewport width. Moved to a class so the
+   768px breakpoint below can actually collapse it on mobile. */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-hero-portrait {
+  position: relative;
+  height: 320px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: rgba(255, 255, 255, 0.03);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .about-hero-grid     { grid-template-columns: 1fr; gap: 2rem; }
+  .about-hero-portrait { height: 260px; margin-bottom: 0.5rem; }
+}
