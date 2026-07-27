@@ -3695,6 +3695,7 @@ a.mono-tag:hover {
   line-height: 1;
   color: var(--ink);
   cursor: pointer;
+  z-index: 2;
 }
 
 .build-modal-media {
@@ -3704,6 +3705,7 @@ a.mono-tag:hover {
   border-radius: var(--radius);
   overflow: hidden;
   margin-bottom: 1.5rem;
+  z-index: 1;
 }
 
 .build-modal-media video {
@@ -3725,6 +3727,13 @@ a.mono-tag:hover {
 
 @media (max-width: 480px) {
   .build-modal { padding: 1.25rem; max-height: 95vh; }
+  .build-modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+  }
 }
 
 .build-card-tag {
