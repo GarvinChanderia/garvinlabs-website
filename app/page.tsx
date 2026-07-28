@@ -371,11 +371,19 @@ export default function Home() {
               gap: "1.5rem",
             }}
           >
-            {BLOG_TEASER.map((post, idx) => (
+            {BLOG_TEASER.map((post, idx) => {
+              // Only the first two cards get the scroll-driven .reveal fade: their
+              // animation-timeline range reliably resolves to opacity 1. The third
+              // card (delay-3) gets stuck mid-fade (confirmed via computed-opacity
+              // checks, ~0.64 on mobile even with this section near the top of the
+              // page) -- same root cause as the hero and Builds bento-grid fades,
+              // fixed there by omitting reveal/delay-N entirely.
+              const revealClass = idx < 2 ? `reveal delay-${idx + 1}` : "";
+              return (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className={`reveal delay-${idx + 1}`}
+                className={revealClass}
                 style={{
                   display: "block",
                   borderRadius: "20px",
@@ -433,7 +441,8 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
 
           <div className="reveal" style={{ textAlign: "center", marginTop: "3rem" }}>
