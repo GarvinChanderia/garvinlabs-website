@@ -78,12 +78,12 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
           <p style={{ color: "var(--muted)", fontSize: "0.975rem", marginBottom: "1rem" }}>
             Sound familiar? Here's where to find me.
           </p>
-          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
-            <a href={MAILTO} className="mono-tag">
+          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+            <a href={MAILTO} className="social-chip">
               {EMAIL}
             </a>
-            <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="mono-tag">
-              linkedin.com/in/garvinchanderia
+            <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="social-chip">
+              LinkedIn
             </a>
           </div>
         </div>

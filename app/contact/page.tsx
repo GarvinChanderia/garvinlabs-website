@@ -67,17 +67,17 @@ export default function Contact() {
         {/* ── SOCIALS (secondary) ─────────────────────────────── */}
         <div style={{ marginTop: "3rem" }}>
           <h3 className="footer-heading" style={{ marginBottom: "1rem" }}>Elsewhere</h3>
-          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
-            <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="mono-tag">
+          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+            <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="social-chip">
               LinkedIn
             </a>
-            <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="mono-tag">
+            <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="social-chip">
               Instagram
             </a>
-            <a href={X_URL} target="_blank" rel="noopener noreferrer" className="mono-tag">
+            <a href={X_URL} target="_blank" rel="noopener noreferrer" className="social-chip">
               X / Twitter
             </a>
-            <a href={THREADS_URL} target="_blank" rel="noopener noreferrer" className="mono-tag">
+            <a href={THREADS_URL} target="_blank" rel="noopener noreferrer" className="social-chip">
               Threads
             </a>
           </div>

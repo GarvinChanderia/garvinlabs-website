@@ -207,6 +207,43 @@ a {
   transform: translateY(-1px);
 }
 
+/* Social/contact link chip — small pill button, same family as .btn-secondary.
+   Replaces .mono-tag for these two spots: a bare monospace word in a
+   zero-padding/zero-radius box read as an inline code snippet, not a
+   clickable UI element. */
+.social-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5625rem 1.125rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass-thin-bg);
+  backdrop-filter: var(--glass-thin-blur);
+  -webkit-backdrop-filter: var(--glass-thin-blur);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.25s var(--spring),
+              background 0.25s var(--spring),
+              color 0.25s var(--spring),
+              transform 0.2s var(--spring);
+}
+
+.social-chip:hover {
+  color: var(--primary);
+  border-color: rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.08);
+  transform: translateY(-1px);
+}
+
+.social-chip svg {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
 .btn-secondary:active {
   transform: scale(0.97);
 }
