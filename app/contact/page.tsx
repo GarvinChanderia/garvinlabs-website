@@ -75,7 +75,7 @@ export default function Contact() {
               Instagram
             </a>
             <a href={X_URL} target="_blank" rel="noopener noreferrer" className="mono-tag">
-              X
+              X / Twitter
             </a>
             <a href={THREADS_URL} target="_blank" rel="noopener noreferrer" className="mono-tag">
               Threads

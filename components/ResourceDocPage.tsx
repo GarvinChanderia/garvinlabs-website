@@ -76,7 +76,7 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
 
         <div style={{ marginTop: "3.5rem", paddingTop: "2.5rem", borderTop: "var(--border)" }}>
           <p style={{ color: "var(--muted)", fontSize: "0.975rem", marginBottom: "1rem" }}>
-            If any of this sounds familiar, feel free to reach out.
+            Sound familiar? Here's where to find me.
           </p>
           <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
             <a href={MAILTO} className="mono-tag">
