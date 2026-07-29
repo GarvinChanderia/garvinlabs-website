@@ -28,8 +28,8 @@ const BUILDS = [
     id: "threadwave",
     tag: "Support Triage",
     title: "ThreadWave: Support Triage",
-    image: "/website-images/threadwave_hero.png",
-    alt: "ThreadWave demo storefront with the AI support chat widget open",
+    youtubeId: "owzL30vbPco",
+    alt: "ThreadWave AI support triage, full walkthrough video",
     problem:
       "A D2C support inbox getting 200+ tickets a day, all needing manual sorting before anyone can act on them.",
     howSolved:
@@ -41,6 +41,7 @@ const BUILDS = [
       { num: "94%+", label: "classification accuracy" },
     ],
     stack: ["Gemini API", "Notion", "Telegram"],
+    cta: { label: "Watch on YouTube", href: "https://youtu.be/owzL30vbPco" },
   },
   {
     id: "storefront-chatbot",
