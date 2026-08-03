@@ -25,6 +25,25 @@ export const metadata: Metadata = {
 
 const BUILDS = [
   {
+    id: "reputation-monitor",
+    tag: "Reputation Monitoring",
+    title: "Reputation Monitor",
+    youtubeId: "gYs7189XEJw",
+    alt: "Reputation Monitor dashboard walkthrough: catching a legal-threat review in under 2 minutes",
+    problem:
+      "Reviews, DMs, and support emails pile up across every platform the business runs on, and a legal or safety complaint buried in any one of them can sit unnoticed for hours before anyone reads it.",
+    howSolved:
+      "An independent n8n workflow per platform, each wired to whatever trigger that platform actually supports (a schedule poll for reviews, an IMAP trigger for the support inbox, a live webhook for Instagram). Every workflow checks against the same shared legal/safety-language pattern, so adding another platform means one more workflow on that pattern, not a rebuild. A match fires a Telegram alert immediately; a read-only dashboard shows the same shared cache n8n writes directly, no separate API layer in between.",
+    cost:
+      "A legal threat or safety complaint sitting unread for a day isn't just a bad review, it's a liability window. Checking every platform by hand for red-flag language doesn't scale, and it only takes one missed channel.",
+    stats: [
+      { num: "<2 min", label: "from review to alert" },
+      { num: "Any API", label: "same pattern, new platform" },
+    ],
+    stack: ["n8n", "Judge.me API", "Telegram"],
+    cta: { label: "Watch on YouTube", href: "https://youtu.be/gYs7189XEJw" },
+  },
+  {
     id: "threadwave",
     tag: "Support Triage",
     title: "ThreadWave: Support Triage",
@@ -42,6 +61,24 @@ const BUILDS = [
     ],
     stack: ["Gemini API", "Notion", "Telegram"],
     cta: { label: "Watch on YouTube", href: "https://youtu.be/owzL30vbPco" },
+  },
+  {
+    id: "brand-voice-ai",
+    tag: "On YouTube",
+    title: "How to Build an AI That Writes Like You",
+    youtubeId: "HUp2ZIK-uZg",
+    problem:
+      "Writing convincingly in a specific voice, someone else's or your own, and holding it across new topics and new brands, breaks down fast once it's not the original person typing.",
+    howSolved:
+      "Analyzed 100+ social posts and ~150,000 words of long-form transcript from one real person to derive a structured voice guide: tone, sentence patterns, vocabulary, rhetorical templates, worldview. Then used that guide to write new content, social posts, an announcement, a podcast transcript, for a completely unrelated business, in that exact voice.",
+    cost:
+      "Ghostwriting a distinct voice by hand only scales as far as the one person who has it in their head. Walked through step by step in the video.",
+    stats: [
+      { num: "150K+", label: "words of source material analyzed" },
+      { num: "5:01", label: "video walkthrough" },
+    ],
+    stack: ["Claude"],
+    cta: { label: "Watch on YouTube", href: "https://www.youtube.com/watch?v=HUp2ZIK-uZg" },
   },
   {
     id: "storefront-chatbot",
@@ -78,24 +115,6 @@ const BUILDS = [
     stack: ["Meta Graph API", "Gemini API"],
     video: "/instagram-dm-demo.mp4",
     videoPoster: "/instagram-dm-demo-poster.jpg",
-  },
-  {
-    id: "brand-voice-ai",
-    tag: "On YouTube",
-    title: "How to Build an AI That Writes Like You",
-    youtubeId: "HUp2ZIK-uZg",
-    problem:
-      "Writing convincingly in a specific voice, someone else's or your own, and holding it across new topics and new brands, breaks down fast once it's not the original person typing.",
-    howSolved:
-      "Analyzed 100+ social posts and ~150,000 words of long-form transcript from one real person to derive a structured voice guide: tone, sentence patterns, vocabulary, rhetorical templates, worldview. Then used that guide to write new content, social posts, an announcement, a podcast transcript, for a completely unrelated business, in that exact voice.",
-    cost:
-      "Ghostwriting a distinct voice by hand only scales as far as the one person who has it in their head. Walked through step by step in the video.",
-    stats: [
-      { num: "150K+", label: "words of source material analyzed" },
-      { num: "5:01", label: "video walkthrough" },
-    ],
-    stack: ["Claude"],
-    cta: { label: "Watch on YouTube", href: "https://www.youtube.com/watch?v=HUp2ZIK-uZg" },
   },
 ];
 
