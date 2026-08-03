@@ -5,20 +5,24 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-const NAV_LINKS = [
+const TOP_LINKS = [
   { label: "Home",          href: "/"              },
   { label: "Builds",        href: "/demos"         },
   { label: "Case Studies",  href: "/case-studies"  },
-  { label: "Resources",     href: "/resources"     },
-  { label: "Blog",          href: "/blog"          },
   { label: "When AI Fails", href: "/when-ai-fails" },
-  { label: "About",         href: "/about"         },
-  { label: "Contact",       href: "/contact"       },
+];
+
+const MORE_LINKS = [
+  { label: "Resources", href: "/resources" },
+  { label: "Blog",       href: "/blog"      },
+  { label: "About",      href: "/about"     },
+  { label: "Contact",    href: "/contact"   },
 ];
 
 export default function Navbar() {
   const [scrolled,  setScrolled]  = useState(false);
   const [menuOpen,  setMenuOpen]  = useState(false);
+  const [moreOpen,  setMoreOpen]  = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -38,8 +42,20 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", close);
   }, [menuOpen]);
 
+  // close "More" dropdown on outside click
+  useEffect(() => {
+    if (!moreOpen) return;
+    const close = (e: MouseEvent) => {
+      const dropdown = document.getElementById("nav-more-dropdown");
+      if (dropdown && !dropdown.contains(e.target as Node)) setMoreOpen(false);
+    };
+    document.addEventListener("mousedown", close);
+    return () => document.removeEventListener("mousedown", close);
+  }, [moreOpen]);
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const moreActive = MORE_LINKS.some((link) => isActive(link.href));
 
   return (
     <nav
@@ -55,7 +71,7 @@ export default function Navbar() {
 
         {/* Desktop links + CTA */}
         <div className={`nav-links${menuOpen ? " open" : ""}`} role="menu">
-          {NAV_LINKS.map((link) => (
+          {TOP_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -66,6 +82,41 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+
+          <div
+            id="nav-more-dropdown"
+            className={`nav-dropdown${moreOpen ? " open" : ""}`}
+          >
+            <button
+              type="button"
+              className={`nav-link nav-dropdown-trigger${moreActive ? " active" : ""}`}
+              onClick={() => setMoreOpen((o) => !o)}
+              aria-haspopup="menu"
+              aria-expanded={moreOpen}
+            >
+              More
+              <svg className="nav-dropdown-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <div className="nav-dropdown-panel" role="menu">
+              {MORE_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`nav-link${isActive(link.href) ? " active" : ""}`}
+                  role="menuitem"
+                  onClick={() => {
+                    setMoreOpen(false);
+                    setMenuOpen(false);
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <a
             href="https://linkedin.com/in/garvinchanderia"
             className="btn-primary nav-cta"
