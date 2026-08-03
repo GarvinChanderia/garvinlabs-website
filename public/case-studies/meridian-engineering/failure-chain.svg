@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <title>How three invisible failures compound into a business risk</title>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a39f92"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="920" height="420" fill="#fcfcfb"/>
+  <text x="32" y="34" font-size="14" font-weight="600" fill="#0b0b0b">How three invisible failures compound</text>
+
+  <!-- connectors: column verticals -->
+  <g stroke="#a39f92" stroke-width="1.6" fill="none">
+    <line x1="140" y1="130" x2="140" y2="164" marker-end="url(#arr)"/>
+    <line x1="460" y1="130" x2="460" y2="164" marker-end="url(#arr)"/>
+    <line x1="780" y1="130" x2="780" y2="164" marker-end="url(#arr)"/>
+    <!-- converge to bottom box -->
+    <line x1="140" y1="228" x2="330" y2="300" marker-end="url(#arr)"/>
+    <line x1="460" y1="228" x2="460" y2="300" marker-end="url(#arr)"/>
+    <line x1="780" y1="228" x2="590" y2="300" marker-end="url(#arr)"/>
+  </g>
+
+  <g font-size="12.5" fill="#0b0b0b" text-anchor="middle">
+    <!-- col 1 -->
+    <rect x="20" y="66" width="240" height="64" rx="8" fill="#f2f1ee" stroke="#898781" stroke-width="1.4"/>
+    <text x="140" y="94"><tspan x="140" dy="0">No real-time</tspan><tspan x="140" dy="15">job tracking</tspan></text>
+    <rect x="20" y="164" width="240" height="64" rx="8" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="1.4"/>
+    <text x="140" y="192"><tspan x="140" dy="0">Delays invisible</tspan><tspan x="140" dy="15">until they're critical</tspan></text>
+
+    <!-- col 2 -->
+    <rect x="340" y="66" width="240" height="64" rx="8" fill="#f2f1ee" stroke="#898781" stroke-width="1.4"/>
+    <text x="460" y="94"><tspan x="460" dy="0">No documentation</tspan><tspan x="460" dy="15">at point of work</tspan></text>
+    <rect x="340" y="164" width="240" height="64" rx="8" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="1.4"/>
+    <text x="460" y="192"><tspan x="460" dy="0">Dispatch held</tspan><tspan x="460" dy="15">2&#8211;15 days</tspan></text>
+
+    <!-- col 3 -->
+    <rect x="660" y="66" width="240" height="64" rx="8" fill="#f2f1ee" stroke="#898781" stroke-width="1.4"/>
+    <text x="780" y="94"><tspan x="780" dy="0">No min-max</tspan><tspan x="780" dy="15">stock enforcement</tspan></text>
+    <rect x="660" y="164" width="240" height="64" rx="8" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="1.4"/>
+    <text x="780" y="192"><tspan x="780" dy="0">9&#8211;10 day delay</tspan><tspan x="780" dy="15">before production starts</tspan></text>
+
+    <!-- convergence -->
+    <rect x="230" y="300" width="460" height="90" rx="10" fill="#e9fbf2" stroke="#10B981" stroke-width="1.8"/>
+    <text x="460" y="330" font-weight="700"><tspan x="460" dy="0">Rushed, unrecorded work under pressure</tspan></text>
+    <text x="460" y="352"><tspan x="460" dy="0">Some customers send their own QC inspectors,</tspan><tspan x="460" dy="16">some orders get held or diverted to competitors</tspan></text>
+  </g>
+</svg>

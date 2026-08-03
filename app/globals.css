@@ -2449,6 +2449,21 @@ a.mono-tag:hover {
 
 .post-footer a:hover { text-decoration: underline; }
 
+/* A .btn-primary/.btn-secondary placed inside .post-footer (e.g. a CTA button,
+   not an inline text link) must keep its own text color rather than the
+   plain-link green above, which otherwise matches the button's own green
+   background and makes the label invisible. */
+.post-footer a.btn-primary {
+  color: #000000;
+}
+.post-footer a.btn-secondary {
+  color: var(--ink);
+}
+.post-footer a.btn-primary:hover,
+.post-footer a.btn-secondary:hover {
+  text-decoration: none;
+}
+
 /* Writing index — post list */
 .post-list {
   display: flex;
@@ -2715,6 +2730,71 @@ a.mono-tag:hover {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* Case study — stat row and data table (numbers pulled from an engagement,
+   not a generic industry citation, so styled distinctly from .post-figure) */
+.case-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0 2.5rem;
+}
+
+.case-stat {
+  flex: 1;
+  min-width: 150px;
+  background: var(--surface-1);
+  border: var(--border);
+  border-radius: var(--radius-panel);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+
+.case-stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.case-stat-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* Case study — anonymization disclosure note, alert-badge callout */
+.case-alert-note {
+  position: relative;
+  background: var(--surface-1);
+  border: var(--border);
+  border-radius: var(--radius-panel);
+  padding: 1.25rem 1.5rem 1.25rem 1.5rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.case-alert-note p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.case-alert-icon {
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--amber, #FBBF24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FBBF24;
 }
 
 /* Embedded tweet (react-tweet) inside a post body — center it and let the

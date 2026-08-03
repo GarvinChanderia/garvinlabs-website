@@ -36,6 +36,7 @@ export function Footer() {
           <ul className="footer-links-list">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/demos">Builds</Link></li>
+            <li><Link href="/case-studies">Case Studies</Link></li>
             <li><Link href="/resources">Resources</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/contact">Contact</Link></li>

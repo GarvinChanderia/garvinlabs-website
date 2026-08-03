@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manufacturing AI Fit Analysis | GarvinLabs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    :root {
+      --black:   #0D0D0D;
+      --surface: #141414;
+      --card:    #1A1A1A;
+      --border:  #2A2A2A;
+      --accent:  #4ADE80;
+      --accent2: #818CF8;
+      --amber:   #FBBF24;
+      --red:     #F87171;
+      --text:    #E2E2E2;
+      --muted:   #888;
+      --white:   #FFFFFF;
+    }
+
+    html, body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-break-before { page-break-before: always; }
+    .no-break          { page-break-inside: avoid; }
+    .card-block        { page-break-inside: avoid; }
+    .section           { page-break-inside: auto; }
+    tr                 { page-break-inside: avoid; }
+    table              { page-break-inside: avoid; }
+    .timeline-item     { page-break-inside: avoid; }
+    .metrics-row       { page-break-inside: avoid; }
+    .cta               { page-break-inside: avoid; }
+    .diagnostic        { page-break-inside: avoid; }
+    .impact-table-wrap { page-break-inside: avoid; }
+    .chart-figure      { page-break-inside: avoid; }
+
+    .page { max-width: 800px; margin: 0 auto; }
+
+    .hero {
+      background: #0D1F2D;
+      padding: 52px 56px 48px;
+      border-bottom: 2px solid #1E3A4A;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 44px;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, #4ADE80, #818CF8);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #000;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-sep {
+      width: 1px;
+      height: 18px;
+      background: #2A4050;
+      margin: 0 4px;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: #6A8A9A;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #0D2B1E;
+      border: 1px solid #1A5A36;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: #4ADE80;
+      padding: 4px 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .hero-sub {
+      font-size: 13.5px;
+      color: #7A9AAA;
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+      border-top: 1px solid #1E3A4A;
+      padding-top: 24px;
+    }
+
+    .hero-meta-item { display: flex; flex-direction: column; gap: 3px; }
+
+    .hero-meta-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #3A6A7A;
+    }
+
+    .hero-meta-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .body { padding: 40px 56px 56px; }
+
+    .section { margin-bottom: 44px; }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #818CF8;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 5px;
+    }
+
+    .section-desc {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 24px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #222;
+      margin: 40px 0;
+    }
+
+    .diagnostic {
+      background: #181208;
+      border: 1px solid #3A2A08;
+      border-left: 4px solid #FBBF24;
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+
+    .diagnostic-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #FBBF24;
+      margin-bottom: 10px;
+    }
+
+    .diagnostic p {
+      font-size: 13.5px;
+      color: #CCC;
+      line-height: 1.75;
+    }
+
+    .diagnostic p + p { margin-top: 8px; }
+
+    .hl-green { color: #4ADE80; font-weight: 600; }
+    .hl-white { color: #FFFFFF; font-weight: 600; }
+
+    .alert-note {
+      position: relative;
+      background: #161616;
+      border: 1px solid #262626;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+    }
+    .alert-note p {
+      font-size: 12.5px;
+      color: #999;
+      line-height: 1.65;
+    }
+    .alert-icon {
+      position: absolute;
+      top: -13px;
+      left: 18px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #141414;
+      border: 1px solid #FBBF24;
+      color: #FBBF24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .metrics-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .metric-card {
+      flex: 1;
+      background: #161616;
+      border: 1px solid #252525;
+      border-radius: 10px;
+      padding: 22px 18px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 6px;
+      color: #4ADE80;
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .method-list { list-style: none; }
+    .method-list li {
+      position: relative;
+      padding: 0 0 16px 28px;
+      font-size: 13.5px;
+      color: #CCC;
+      line-height: 1.6;
+    }
+    .method-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ADE80;
+    }
+
+    .card-block {
+      background: #161616;
+      border: 1px solid #262626;
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin-bottom: 14px;
+    }
+    .card-block-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .card-block-desc {
+      font-size: 12.5px;
+      color: #999;
+      line-height: 1.65;
+    }
+
+    .chart-figure {
+      background: #fcfcfb;
+      border: 1px solid #262626;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .chart-figure img { display: block; width: 100%; height: auto; }
+
+    .impact-table-wrap {
+      border: 1px solid #222;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .impact-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+
+    .impact-table th {
+      background: #1A1A1A;
+      text-align: left;
+      padding: 11px 16px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #555;
+      border-bottom: 1px solid #222;
+    }
+
+    .impact-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #1A1A1A;
+      color: #CCC;
+      vertical-align: middle;
+    }
+
+    .impact-table tr:last-child td { border-bottom: none; }
+    .impact-table tr:nth-child(even) td { background: #111; }
+
+    .tag-green {
+      display: inline-block;
+      background: #0D1F12;
+      color: #4ADE80;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid #1A4A26;
+    }
+
+    .automations-list { list-style: none; margin-top: 16px; }
+    .automations-list li {
+      font-size: 13px;
+      color: #CCC;
+      padding: 8px 0 8px 20px;
+      position: relative;
+      border-bottom: 1px solid #1A1A1A;
+    }
+    .automations-list li:last-child { border-bottom: none; }
+    .automations-list li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: #4ADE80;
+      font-size: 14px;
+    }
+
+    .insight-box {
+      background: #0D1F12;
+      border: 1px solid #1A4A26;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 14px;
+      font-size: 12.5px;
+      color: #AAA;
+      line-height: 1.7;
+    }
+
+    .caveat-box {
+      background: #181818;
+      border: 1px solid #2A2A2A;
+      border-radius: 8px;
+      padding: 18px 22px;
+      font-size: 12.5px;
+      color: #999;
+      line-height: 1.7;
+    }
+
+    .cta {
+      background: #0F1820;
+      border: 1px solid #1E3A4A;
+      border-radius: 10px;
+      padding: 24px 32px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .cta p {
+      font-size: 12.5px;
+      color: #6A8A9A;
+      max-width: 460px;
+      margin: 0 auto 18px;
+      line-height: 1.6;
+    }
+
+    .cta-contact {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .cta-item { display: flex; flex-direction: column; gap: 3px; }
+
+    .cta-item-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: #3A6A7A;
+    }
+
+    .cta-item-value {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #4ADE80;
+    }
+
+    .cta-linkedin-btn {
+      display: inline-block;
+      margin-top: 14px;
+      background: #4ADE80;
+      color: #0A0A0A;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 24px;
+      border-radius: 980px;
+      text-decoration: none;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 14px 56px;
+      font-size: 11px;
+      color: #333;
+      border-top: 1px solid #1A1A1A;
+      background: #0A0A0A;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="brand-row">
+      <div class="brand-logo">GL</div>
+      <span class="brand-name">GarvinLabs</span>
+      <div class="brand-sep"></div>
+      <span class="brand-sub">AI Modernization &amp; Process Intelligence</span>
+    </div>
+
+    <div class="hero-tag">Case Study &middot; Process Diagnostic</div>
+
+    <h1>Manufacturing AI Fit Analysis</h1>
+
+    <p class="hero-sub">
+      A structural steel manufacturer's order cycle ran 55 to 70 days against an ideal
+      of 25 to 28. Before recommending a single tool, I mapped the business end to end
+      to find out where the time was actually going.
+    </p>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Engagement</span>
+        <span class="hero-meta-value">Process Diagnostic</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Scope</span>
+        <span class="hero-meta-value">26 processes, 2 plants</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Prepared by</span>
+        <span class="hero-meta-value">Garvin Chanderia, GarvinLabs</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Date</span>
+        <span class="hero-meta-value">August 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <p style="font-size: 13.5px; color: #CCC; line-height: 1.75; margin-bottom: 14px;">
+      Most modernization conversations start with the tool: which AI copilot, which
+      automation platform, which ERP module. That skips the step that determines
+      whether any of it works: knowing, in verifiable detail, how the work happens
+      right now. Skip it, and you're not modernizing a process. You're automating a
+      guess, faster.
+    </p>
+    <p style="font-size: 13.5px; color: #CCC; line-height: 1.75; margin-bottom: 28px;">
+      The industry in this case study is manufacturing. The method isn't
+      industry-specific: map the real process, name an owner for every step, measure
+      ideal against actual, sequence the fixes by impact before touching a tool. That's
+      what I run on every engagement, D2C or otherwise, and this is what it looked like
+      on one of them.
+    </p>
+
+    <div class="alert-note no-break">
+      <span class="alert-icon">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+          <path d="M12 9v4" />
+          <path d="M12 17h.01" />
+        </svg>
+      </span>
+      <p>Client and location names below are anonymized ("Meridian Engineering", "Plant A", "Plant B"). Every process, number, and finding is real.</p>
+    </div>
+
+    <div class="diagnostic no-break">
+      <div class="diagnostic-title">What I found</div>
+      <p>
+        The gap between ideal and actual cycle time traced back to three failures, none
+        of them about the workers or the equipment: <span class="hl-white">no
+        real-time job tracking, no documentation at point of work, and no minimum-stock
+        enforcement.</span>
+      </p>
+      <p>
+        Those three compound. <span class="hl-green">Fixing just the top two recovers
+        an estimated 12 to 25 days from the cycle.</span>
+      </p>
+    </div>
+
+    <div class="metrics-row no-break">
+      <div class="metric-card">
+        <div class="metric-value">55&ndash;70 days</div>
+        <div class="metric-label">Actual order cycle, vs. an<br/>ideal of 25&ndash;28</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">+9&ndash;10</div>
+        <div class="metric-label">Days lost before production<br/>starts (material shortage)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">+2&ndash;15</div>
+        <div class="metric-label">Days lost at dispatch<br/>(documentation delays)</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <div class="section-label">Method</div>
+      <div class="section-title">How I approached it</div>
+      <ul class="method-list">
+        <li>Walked and documented all 26 steps of the order-to-cash cycle, from first RFP to final payment, based on what actually happens on the floor</li>
+        <li>Built the org chart and a responsibility matrix so every step had a named owner</li>
+        <li>Spent 48 hours in direct interviews with the Director and management to get every operational complaint on record, not guessed at</li>
+        <li>Measured ideal vs. actual duration per process, from real job records</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-label">The data</div>
+      <div class="section-title">Where the time actually went</div>
+      <div class="chart-figure no-break">
+        <img src="cycle-time.svg" alt="Order cycle: actual 55-70 days vs ideal 25-28 days" />
+      </div>
+      <div class="chart-figure no-break">
+        <img src="days-lost.svg" alt="Days lost by process step: material availability +9-10, dispatch and documentation +2-15, finishing +2-3" />
+      </div>
+      <div class="chart-figure no-break">
+        <img src="failure-chain.svg" alt="How three invisible failures compound into rushed, unrecorded work and business risk" />
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">The plan</div>
+      <div class="section-title">What I recommended</div>
+      <div class="card-block no-break">
+        <div class="card-block-title">1. Tracking first</div>
+        <div class="card-block-desc">A daily job tracking matrix and an outsource follow-up log: visibility, with no new tools required.</div>
+      </div>
+      <div class="card-block no-break">
+        <div class="card-block-title">2. Documentation gates</div>
+        <div class="card-block-desc">Plus standard email templates for customer communication.</div>
+      </div>
+      <div class="card-block no-break">
+        <div class="card-block-title">3. Fix the root cause</div>
+        <div class="card-block-desc">Minimum-stock enforcement and a finishing-capacity review.</div>
+      </div>
+      <div class="card-block no-break">
+        <div class="card-block-title">4. Fix the org last</div>
+        <div class="card-block-desc">A span-of-control restructure, since one plant head was carrying roughly 45 direct reports and no tracking system survives that.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <div class="section-label">Where AI fits</div>
+      <div class="section-title">AI solutions</div>
+
+      <p style="font-size: 13px; color: #999;">Build the manual process first. The data comes from discipline, not from technology. Once that discipline is in place to feed them real data, four automations are scoped and ready to build, each 2 to 6 hours of build time on tools the business already had:</p>
+      <ul class="automations-list">
+        <li>Live job-status dashboard</li>
+        <li>Payment-clock tracker with automatic escalation</li>
+        <li>Material reorder alert</li>
+        <li>Templated email automation for customer communication</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section">
+      <div class="section-label">The numbers behind it</div>
+      <div class="section-title">Ideal vs. actual, by process step</div>
+      <div class="impact-table-wrap no-break">
+        <table class="impact-table">
+          <thead>
+            <tr>
+              <th>Process step</th>
+              <th>Ideal</th>
+              <th>Actual</th>
+              <th>Root cause</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Raw material availability</td>
+              <td>2&ndash;3 days</td>
+              <td>12 days</td>
+              <td>Min-max stock policy existed but wasn't enforced</td>
+            </tr>
+            <tr>
+              <td>Dispatch + documentation</td>
+              <td>Same day</td>
+              <td>2&ndash;15 days</td>
+              <td>Records filled in retroactively, not at point of work</td>
+            </tr>
+            <tr>
+              <td>Finishing</td>
+              <td>1 day</td>
+              <td>3&ndash;4 days</td>
+              <td>Understaffed relative to job volume; rework from upstream defects</td>
+            </tr>
+            <tr>
+              <td>Payment collection</td>
+              <td>&le;45 days from GRN</td>
+              <td>&gt;45 days, consistently</td>
+              <td>Every upstream delay pushes the payment clock later</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="caveat-box no-break">
+      <strong style="color:#EEE;">What this doesn't claim:</strong> this covers the
+      diagnostic and the roadmap it produced, not what happened after. A process map
+      and a prioritized plan are a real deliverable on their own.
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="cta no-break">
+      <h2>Get in touch</h2>
+      <div class="cta-contact">
+        <div class="cta-item">
+          <span class="cta-item-label">Contact</span>
+          <span class="cta-item-value">Garvin Chanderia</span>
+        </div>
+        <div class="cta-item">
+          <span class="cta-item-label">Email</span>
+          <span class="cta-item-value">garvin@garvinlabs.com</span>
+        </div>
+        <div class="cta-item">
+          <span class="cta-item-label">Web</span>
+          <span class="cta-item-value">garvinlabs.com</span>
+        </div>
+      </div>
+      <p style="margin-top: 16px; margin-bottom: 0; font-size: 12.5px; color: #6A8A9A;">To know more, contact:</p>
+      <a class="cta-linkedin-btn" href="https://www.linkedin.com/in/garvinchanderia/">LinkedIn</a>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    GarvinLabs &nbsp;&middot;&nbsp; AI Modernization &amp; Process Intelligence &nbsp;&middot;&nbsp; Case study, anonymized &nbsp;&middot;&nbsp; August 2026
+  </div>
+
+</div>
+</body>
+</html>
