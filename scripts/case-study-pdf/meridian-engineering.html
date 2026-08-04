@@ -30,8 +30,10 @@
       --white:   #FFFFFF;
     }
 
+    @page { size: A4; margin: 0; }
+
     html, body {
-      background: var(--black);
+      background: #888;
       color: var(--text);
       font-family: 'Inter', sans-serif;
       font-size: 14px;
@@ -39,25 +41,45 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .page-break-before { page-break-before: always; }
-    .no-break          { page-break-inside: avoid; }
-    .card-block        { page-break-inside: avoid; }
-    .section           { page-break-inside: auto; }
-    tr                 { page-break-inside: avoid; }
-    table              { page-break-inside: avoid; }
-    .timeline-item     { page-break-inside: avoid; }
-    .metrics-row       { page-break-inside: avoid; }
-    .cta               { page-break-inside: avoid; }
-    .diagnostic        { page-break-inside: avoid; }
-    .impact-table-wrap { page-break-inside: avoid; }
-    .chart-figure      { page-break-inside: avoid; }
+    body { padding: 32px 16px; }
 
-    .page { max-width: 800px; margin: 0 auto; }
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: var(--black);
+      margin: 0 auto 24px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.35);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    @media print {
+      html, body { background: #000; padding: 0; margin: 0; }
+      .page {
+        box-shadow: none;
+        margin: 0;
+        break-after: page;
+      }
+      .page:last-child { break-after: avoid; }
+    }
+
+    .page-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 40px 56px 40px;
+    }
+
+    .page.cover .page-inner { padding: 0; }
 
     .hero {
       background: #0D1F2D;
       padding: 52px 56px 48px;
       border-bottom: 2px solid #1E3A4A;
+      flex-shrink: 0;
     }
 
     .brand-row {
@@ -157,9 +179,27 @@
       color: #FFFFFF;
     }
 
-    .body { padding: 40px 56px 56px; }
+    .intro-block {
+      flex-shrink: 0;
+      padding: 32px 56px 0;
+    }
 
-    .section { margin-bottom: 44px; }
+    .intro-block p {
+      font-size: 13.5px;
+      color: #CCC;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .cover-footer {
+      flex-shrink: 0;
+      margin-top: auto;
+      text-align: center;
+      padding: 22px 56px;
+      font-size: 11px;
+      color: #333;
+      border-top: 1px solid #1A1A1A;
+    }
 
     .section-label {
       font-size: 10px;
@@ -168,6 +208,7 @@
       text-transform: uppercase;
       color: #818CF8;
       margin-bottom: 6px;
+      flex-shrink: 0;
     }
 
     .section-title {
@@ -176,18 +217,21 @@
       font-weight: 700;
       color: #FFFFFF;
       margin-bottom: 5px;
+      flex-shrink: 0;
     }
 
     .section-desc {
       font-size: 13px;
       color: #777;
       margin-bottom: 24px;
+      flex-shrink: 0;
     }
 
     .divider {
       height: 1px;
       background: #222;
-      margin: 40px 0;
+      margin: 18px 0;
+      flex-shrink: 0;
     }
 
     .diagnostic {
@@ -195,8 +239,9 @@
       border: 1px solid #3A2A08;
       border-left: 4px solid #FBBF24;
       border-radius: 8px;
-      padding: 24px 28px;
-      margin-bottom: 36px;
+      padding: 22px 26px;
+      margin-bottom: 24px;
+      flex-shrink: 0;
     }
 
     .diagnostic-title {
@@ -209,7 +254,7 @@
     .diagnostic p {
       font-size: 13.5px;
       color: #CCC;
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
     .diagnostic p + p { margin-top: 8px; }
@@ -223,7 +268,8 @@
       border: 1px solid #262626;
       border-radius: 8px;
       padding: 16px 20px;
-      margin-bottom: 32px;
+      margin-top: 18px;
+      flex-shrink: 0;
     }
     .alert-note p {
       font-size: 12.5px;
@@ -248,7 +294,8 @@
     .metrics-row {
       display: flex;
       gap: 16px;
-      margin-bottom: 36px;
+      margin-bottom: 22px;
+      flex-shrink: 0;
     }
 
     .metric-card {
@@ -256,7 +303,7 @@
       background: #161616;
       border: 1px solid #252525;
       border-radius: 10px;
-      padding: 22px 18px;
+      padding: 20px 18px;
       text-align: center;
     }
 
@@ -275,13 +322,13 @@
       line-height: 1.5;
     }
 
-    .method-list { list-style: none; }
+    .method-list { list-style: none; flex-shrink: 0; }
     .method-list li {
       position: relative;
-      padding: 0 0 16px 28px;
+      padding: 0 0 14px 28px;
       font-size: 13.5px;
       color: #CCC;
-      line-height: 1.6;
+      line-height: 1.55;
     }
     .method-list li::before {
       content: '';
@@ -298,8 +345,9 @@
       background: #161616;
       border: 1px solid #262626;
       border-radius: 10px;
-      padding: 22px 24px;
+      padding: 20px 22px;
       margin-bottom: 14px;
+      flex-shrink: 0;
     }
     .card-block-title {
       font-family: 'Space Grotesk', sans-serif;
@@ -319,7 +367,8 @@
       border: 1px solid #262626;
       border-radius: 10px;
       overflow: hidden;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      flex-shrink: 0;
     }
     .chart-figure img { display: block; width: 100%; height: auto; }
 
@@ -327,6 +376,7 @@
       border: 1px solid #222;
       border-radius: 10px;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     .impact-table {
@@ -368,7 +418,7 @@
       border: 1px solid #1A4A26;
     }
 
-    .automations-list { list-style: none; margin-top: 16px; }
+    .automations-list { list-style: none; margin-top: 14px; flex-shrink: 0; }
     .automations-list li {
       font-size: 13px;
       color: #CCC;
@@ -385,15 +435,10 @@
       font-size: 14px;
     }
 
-    .insight-box {
-      background: #0D1F12;
-      border: 1px solid #1A4A26;
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin-top: 14px;
-      font-size: 12.5px;
-      color: #AAA;
-      line-height: 1.7;
+    .automations-intro {
+      font-size: 13px;
+      color: #999;
+      flex-shrink: 0;
     }
 
     .caveat-box {
@@ -404,6 +449,7 @@
       font-size: 12.5px;
       color: #999;
       line-height: 1.7;
+      flex-shrink: 0;
     }
 
     .cta {
@@ -412,6 +458,7 @@
       border-radius: 10px;
       padding: 24px 32px;
       text-align: center;
+      flex-shrink: 0;
     }
 
     .cta h2 {
@@ -420,14 +467,6 @@
       font-weight: 700;
       color: #FFFFFF;
       margin-bottom: 8px;
-    }
-
-    .cta p {
-      font-size: 12.5px;
-      color: #6A8A9A;
-      max-width: 460px;
-      margin: 0 auto 18px;
-      line-height: 1.6;
     }
 
     .cta-contact {
@@ -466,116 +505,127 @@
     }
 
     .footer {
+      margin-top: auto;
       text-align: center;
-      padding: 14px 56px;
+      padding-top: 20px;
       font-size: 11px;
       color: #333;
-      border-top: 1px solid #1A1A1A;
-      background: #0A0A0A;
+      flex-shrink: 0;
     }
   </style>
 </head>
 <body>
-<div class="page">
 
-  <div class="hero">
-    <div class="brand-row">
-      <div class="brand-logo">GL</div>
-      <span class="brand-name">GarvinLabs</span>
-      <div class="brand-sep"></div>
-      <span class="brand-sub">AI Modernization &amp; Process Intelligence</span>
-    </div>
+  <!-- ═══════════════ PAGE 1 — COVER ═══════════════ -->
+  <div class="page cover">
+    <div class="page-inner">
+      <div class="hero">
+        <div class="brand-row">
+          <div class="brand-logo">GL</div>
+          <span class="brand-name">GarvinLabs</span>
+          <div class="brand-sep"></div>
+          <span class="brand-sub">AI Modernization &amp; Process Intelligence</span>
+        </div>
 
-    <div class="hero-tag">Case Study &middot; Process Diagnostic</div>
+        <div class="hero-tag">Case Study &middot; Process Diagnostic</div>
 
-    <h1>Manufacturing AI Fit Analysis</h1>
+        <h1>Manufacturing AI Fit Analysis</h1>
 
-    <p class="hero-sub">
-      A structural steel manufacturer's order cycle ran 55 to 70 days against an ideal
-      of 25 to 28. Before recommending a single tool, I mapped the business end to end
-      to find out where the time was actually going.
-    </p>
+        <p class="hero-sub">
+          A structural steel manufacturer's order cycle ran 55 to 70 days against an ideal
+          of 25 to 28. Before recommending a single tool, I mapped the business end to end
+          to find out where the time was actually going.
+        </p>
 
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Engagement</span>
-        <span class="hero-meta-value">Process Diagnostic</span>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Engagement</span>
+            <span class="hero-meta-value">Process Diagnostic</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Scope</span>
+            <span class="hero-meta-value">26 processes, 2 plants</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Prepared by</span>
+            <span class="hero-meta-value">Garvin Chanderia, GarvinLabs</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Date</span>
+            <span class="hero-meta-value">August 2026</span>
+          </div>
+        </div>
       </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Scope</span>
-        <span class="hero-meta-value">26 processes, 2 plants</span>
+
+      <div class="intro-block">
+        <p>
+          Most modernization conversations start with the tool: which AI copilot, which
+          automation platform, which ERP module. That skips the step that determines
+          whether any of it works: knowing, in verifiable detail, how the work happens
+          right now. Skip it, and you're not modernizing a process. You're automating a
+          guess, faster.
+        </p>
+        <p>
+          The industry in this case study is manufacturing. The method isn't
+          industry-specific: map the real process, name an owner for every step, measure
+          ideal against actual, sequence the fixes by impact before touching a tool. That's
+          what I run on every engagement, D2C or otherwise, and this is what it looked like
+          on one of them.
+        </p>
+
+        <div class="alert-note">
+          <span class="alert-icon">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
+          </span>
+          <p>Client and location names below are anonymized ("Meridian Engineering", "Plant A", "Plant B"). Every process, number, and finding is real.</p>
+        </div>
       </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Prepared by</span>
-        <span class="hero-meta-value">Garvin Chanderia, GarvinLabs</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Date</span>
-        <span class="hero-meta-value">August 2026</span>
+
+      <div class="cover-footer">
+        GarvinLabs &nbsp;&middot;&nbsp; AI Modernization &amp; Process Intelligence &nbsp;&middot;&nbsp; Case study, anonymized &nbsp;&middot;&nbsp; August 2026
       </div>
     </div>
   </div>
 
-  <div class="body">
+  <!-- ═══════════════ PAGE 2 — DIAGNOSTIC + METRICS + METHOD + DATA HEADER ═══════════════ -->
+  <div class="page">
+    <div class="page-inner">
 
-    <p style="font-size: 13.5px; color: #CCC; line-height: 1.75; margin-bottom: 14px;">
-      Most modernization conversations start with the tool: which AI copilot, which
-      automation platform, which ERP module. That skips the step that determines
-      whether any of it works: knowing, in verifiable detail, how the work happens
-      right now. Skip it, and you're not modernizing a process. You're automating a
-      guess, faster.
-    </p>
-    <p style="font-size: 13.5px; color: #CCC; line-height: 1.75; margin-bottom: 28px;">
-      The industry in this case study is manufacturing. The method isn't
-      industry-specific: map the real process, name an owner for every step, measure
-      ideal against actual, sequence the fixes by impact before touching a tool. That's
-      what I run on every engagement, D2C or otherwise, and this is what it looked like
-      on one of them.
-    </p>
-
-    <div class="alert-note no-break">
-      <span class="alert-icon">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
-          <path d="M12 9v4" />
-          <path d="M12 17h.01" />
-        </svg>
-      </span>
-      <p>Client and location names below are anonymized ("Meridian Engineering", "Plant A", "Plant B"). Every process, number, and finding is real.</p>
-    </div>
-
-    <div class="diagnostic no-break">
-      <div class="diagnostic-title">What I found</div>
-      <p>
-        The gap between ideal and actual cycle time traced back to three failures, none
-        of them about the workers or the equipment: <span class="hl-white">no
-        real-time job tracking, no documentation at point of work, and no minimum-stock
-        enforcement.</span>
-      </p>
-      <p>
-        Those three compound. <span class="hl-green">Fixing just the top two recovers
-        an estimated 12 to 25 days from the cycle.</span>
-      </p>
-    </div>
-
-    <div class="metrics-row no-break">
-      <div class="metric-card">
-        <div class="metric-value">55&ndash;70 days</div>
-        <div class="metric-label">Actual order cycle, vs. an<br/>ideal of 25&ndash;28</div>
+      <div class="diagnostic">
+        <div class="diagnostic-title">What I found</div>
+        <p>
+          The gap between ideal and actual cycle time traced back to three failures, none
+          of them about the workers or the equipment: <span class="hl-white">no
+          real-time job tracking, no documentation at point of work, and no minimum-stock
+          enforcement.</span>
+        </p>
+        <p>
+          Those three compound. <span class="hl-green">Fixing just the top two recovers
+          an estimated 12 to 25 days from the cycle.</span>
+        </p>
       </div>
-      <div class="metric-card">
-        <div class="metric-value">+9&ndash;10</div>
-        <div class="metric-label">Days lost before production<br/>starts (material shortage)</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">+2&ndash;15</div>
-        <div class="metric-label">Days lost at dispatch<br/>(documentation delays)</div>
-      </div>
-    </div>
 
-    <div class="divider"></div>
+      <div class="metrics-row">
+        <div class="metric-card">
+          <div class="metric-value">55&ndash;70 days</div>
+          <div class="metric-label">Actual order cycle, vs. an<br/>ideal of 25&ndash;28</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">+9&ndash;10</div>
+          <div class="metric-label">Days lost before production<br/>starts (material shortage)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">+2&ndash;15</div>
+          <div class="metric-label">Days lost at dispatch<br/>(documentation delays)</div>
+        </div>
+      </div>
 
-    <div class="section">
+      <div class="divider"></div>
+
       <div class="section-label">Method</div>
       <div class="section-title">How I approached it</div>
       <ul class="method-list">
@@ -584,64 +634,77 @@
         <li>Spent 48 hours in direct interviews with the Director and management to get every operational complaint on record, not guessed at</li>
         <li>Measured ideal vs. actual duration per process, from real job records</li>
       </ul>
-    </div>
 
-    <div class="section">
+      <div class="divider"></div>
+
       <div class="section-label">The data</div>
       <div class="section-title">Where the time actually went</div>
-      <div class="chart-figure no-break">
+
+    </div>
+  </div>
+
+  <!-- ═══════════════ PAGE 3 — CHARTS ═══════════════ -->
+  <div class="page">
+    <div class="page-inner">
+
+      <div class="chart-figure">
         <img src="cycle-time.svg" alt="Order cycle: actual 55-70 days vs ideal 25-28 days" />
       </div>
-      <div class="chart-figure no-break">
+      <div class="chart-figure">
         <img src="days-lost.svg" alt="Days lost by process step: material availability +9-10, dispatch and documentation +2-15, finishing +2-3" />
       </div>
-      <div class="chart-figure no-break">
+      <div class="chart-figure">
         <img src="failure-chain.svg" alt="How three invisible failures compound into rushed, unrecorded work and business risk" />
       </div>
-    </div>
 
-    <div class="section">
-      <div class="section-label">The plan</div>
-      <div class="section-title">What I recommended</div>
-      <div class="card-block no-break">
+    </div>
+  </div>
+
+  <!-- ═══════════════ PAGE 4 — THE PLAN + AI FITS ═══════════════ -->
+  <div class="page">
+    <div class="page-inner">
+
+      <div class="section-title" style="margin-bottom: 14px;">What I recommended</div>
+      <div class="card-block">
         <div class="card-block-title">1. Tracking first</div>
         <div class="card-block-desc">A daily job tracking matrix and an outsource follow-up log: visibility, with no new tools required.</div>
       </div>
-      <div class="card-block no-break">
+      <div class="card-block">
         <div class="card-block-title">2. Documentation gates</div>
         <div class="card-block-desc">Plus standard email templates for customer communication.</div>
       </div>
-      <div class="card-block no-break">
+      <div class="card-block">
         <div class="card-block-title">3. Fix the root cause</div>
         <div class="card-block-desc">Minimum-stock enforcement and a finishing-capacity review.</div>
       </div>
-      <div class="card-block no-break">
+      <div class="card-block">
         <div class="card-block-title">4. Fix the org last</div>
         <div class="card-block-desc">A span-of-control restructure, since one plant head was carrying roughly 45 direct reports and no tracking system survives that.</div>
       </div>
-    </div>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <div class="section">
       <div class="section-label">Where AI fits</div>
       <div class="section-title">AI solutions</div>
 
-      <p style="font-size: 13px; color: #999;">Build the manual process first. The data comes from discipline, not from technology. Once that discipline is in place to feed them real data, four automations are scoped and ready to build, each 2 to 6 hours of build time on tools the business already had:</p>
+      <p class="automations-intro">Build the manual process first. The data comes from discipline, not from technology. Once that discipline is in place to feed them real data, four automations are scoped and ready to build, each 2 to 6 hours of build time on tools the business already had:</p>
       <ul class="automations-list">
         <li>Live job-status dashboard</li>
         <li>Payment-clock tracker with automatic escalation</li>
         <li>Material reorder alert</li>
         <li>Templated email automation for customer communication</li>
       </ul>
+
     </div>
+  </div>
 
-    <div class="divider"></div>
+  <!-- ═══════════════ PAGE 5 — NUMBERS + CAVEAT + CTA + FOOTER ═══════════════ -->
+  <div class="page">
+    <div class="page-inner">
 
-    <div class="section">
       <div class="section-label">The numbers behind it</div>
       <div class="section-title">Ideal vs. actual, by process step</div>
-      <div class="impact-table-wrap no-break">
+      <div class="impact-table-wrap" style="margin-bottom: 22px;">
         <table class="impact-table">
           <thead>
             <tr>
@@ -679,42 +742,41 @@
           </tbody>
         </table>
       </div>
-    </div>
 
-    <div class="caveat-box no-break">
-      <strong style="color:#EEE;">What this doesn't claim:</strong> this covers the
-      diagnostic and the roadmap it produced, not what happened after. A process map
-      and a prioritized plan are a real deliverable on their own.
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="cta no-break">
-      <h2>Get in touch</h2>
-      <div class="cta-contact">
-        <div class="cta-item">
-          <span class="cta-item-label">Contact</span>
-          <span class="cta-item-value">Garvin Chanderia</span>
-        </div>
-        <div class="cta-item">
-          <span class="cta-item-label">Email</span>
-          <span class="cta-item-value">garvin@garvinlabs.com</span>
-        </div>
-        <div class="cta-item">
-          <span class="cta-item-label">Web</span>
-          <span class="cta-item-value">garvinlabs.com</span>
-        </div>
+      <div class="caveat-box">
+        <strong style="color:#EEE;">What this doesn't claim:</strong> this covers the
+        diagnostic and the roadmap it produced, not what happened after. A process map
+        and a prioritized plan are a real deliverable on their own.
       </div>
-      <p style="margin-top: 16px; margin-bottom: 0; font-size: 12.5px; color: #6A8A9A;">To know more, contact:</p>
-      <a class="cta-linkedin-btn" href="https://www.linkedin.com/in/garvinchanderia/">LinkedIn</a>
+
+      <div class="divider"></div>
+
+      <div class="cta">
+        <h2>Get in touch</h2>
+        <div class="cta-contact">
+          <div class="cta-item">
+            <span class="cta-item-label">Contact</span>
+            <span class="cta-item-value">Garvin Chanderia</span>
+          </div>
+          <div class="cta-item">
+            <span class="cta-item-label">Email</span>
+            <span class="cta-item-value">garvin@garvinlabs.com</span>
+          </div>
+          <div class="cta-item">
+            <span class="cta-item-label">Web</span>
+            <span class="cta-item-value">garvinlabs.com</span>
+          </div>
+        </div>
+        <p style="margin-top: 16px; margin-bottom: 0; font-size: 12.5px; color: #6A8A9A;">To know more, contact:</p>
+        <a class="cta-linkedin-btn" href="https://www.linkedin.com/in/garvinchanderia/">LinkedIn</a>
+      </div>
+
+      <div class="footer">
+        GarvinLabs &nbsp;&middot;&nbsp; AI Modernization &amp; Process Intelligence &nbsp;&middot;&nbsp; Case study, anonymized &nbsp;&middot;&nbsp; August 2026
+      </div>
+
     </div>
-
   </div>
 
-  <div class="footer">
-    GarvinLabs &nbsp;&middot;&nbsp; AI Modernization &amp; Process Intelligence &nbsp;&middot;&nbsp; Case study, anonymized &nbsp;&middot;&nbsp; August 2026
-  </div>
-
-</div>
 </body>
 </html>
