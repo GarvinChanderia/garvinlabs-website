@@ -66,7 +66,7 @@ export default function Contact() {
 
         {/* ── SOCIALS (secondary) ─────────────────────────────── */}
         <div style={{ marginTop: "3rem" }}>
-          <h3 className="footer-heading" style={{ marginBottom: "1rem" }}>Elsewhere</h3>
+          <h2 className="footer-heading" style={{ marginBottom: "1rem" }}>Elsewhere</h2>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="social-chip">
               LinkedIn

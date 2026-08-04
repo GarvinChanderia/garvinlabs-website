@@ -16,7 +16,14 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: "https://garvinlabs.com/case-studies",
     siteName: "GarvinLabs",
+    images: [{ url: "/hero-diagram.png", width: 1200, height: 630, alt: "GarvinLabs case studies" }],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/hero-diagram.png"],
   },
 };
 
