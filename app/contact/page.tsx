@@ -34,7 +34,7 @@ export default function Contact() {
     <main>
       <Navbar />
 
-      <div className="container section" style={{ maxWidth: "800px" }}>
+      <section className="container section" aria-label="Contact" style={{ maxWidth: "800px" }}>
         <p className="section-eyebrow">Contact</p>
         <h1 className="section-title">Get in touch.</h1>
         <p className="lead" style={{ marginTop: "1rem", maxWidth: "640px" }}>
@@ -82,7 +82,7 @@ export default function Contact() {
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
       <Footer />
     </main>

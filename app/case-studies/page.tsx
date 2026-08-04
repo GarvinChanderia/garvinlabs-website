@@ -34,7 +34,7 @@ export default function CaseStudiesIndex() {
   return (
     <main>
       <Navbar />
-      <div className="container section" style={{ maxWidth: 900 }}>
+      <section className="container section" aria-label="Case studies" style={{ maxWidth: 900 }}>
         <p className="section-eyebrow">Case studies</p>
         <h1 className="section-title">Case studies from projects I've worked on</h1>
         <p className="lead" style={{ marginTop: "1rem", maxWidth: 620 }}>
@@ -53,7 +53,7 @@ export default function CaseStudiesIndex() {
             </Link>
           ))}
         </div>
-      </div>
+      </section>
       <Footer />
     </main>
   );

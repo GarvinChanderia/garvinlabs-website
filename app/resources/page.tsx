@@ -75,7 +75,7 @@ export default function Resources() {
   return (
     <main>
       <Navbar />
-      <div className="container section" style={{ maxWidth: 1100 }}>
+      <section className="container section" aria-label="Resources" style={{ maxWidth: 1100 }}>
         <p className="section-eyebrow">Resources</p>
         <h1 className="section-title">Free tools and breakdowns for D2C operators.</h1>
         <p className="writing-intro">
@@ -92,7 +92,7 @@ export default function Resources() {
             </Link>
           ))}
         </div>
-      </div>
+      </section>
       <Footer />
     </main>
   );

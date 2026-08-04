@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Tweet } from "react-tweet";
 import "react-tweet/theme.css";
 import Navbar from "@/components/Navbar";
@@ -100,6 +101,9 @@ export default function WhenAIFails() {
         <header className="post-header">
           <p className="post-tag">AI guardrails · D2C automation</p>
           <h1 className="post-title">When AI fails</h1>
+          <p className="post-byline">
+            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+          </p>
           <p className="post-lead">
             Three real incidents, three different reasons they happened, and the questions that
             would have caught each one before launch.
