@@ -28,7 +28,7 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
     <main>
       <Navbar />
 
-      <div className="container section" style={{ maxWidth: 1020 }}>
+      <section className="container section" aria-label={eyebrow} style={{ maxWidth: 1020 }}>
         <div className="resource-doc-layout">
           <div>
             <p className="section-eyebrow">{eyebrow}</p>
@@ -87,7 +87,7 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
       <Footer />
     </main>

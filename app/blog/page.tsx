@@ -179,7 +179,7 @@ export default function Blog() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
       <Navbar />
-      <div className="container section" style={{ maxWidth: 1100 }}>
+      <section className="container section" aria-label="Blog" style={{ maxWidth: 1100 }}>
         <p className="section-eyebrow">Blog</p>
         <h1 className="section-title">Automation playbooks for D2C operators.</h1>
         <p className="writing-intro">
@@ -188,7 +188,7 @@ export default function Blog() {
           Category by category, starting with the one almost every brand already half has.
         </p>
         <BlogGrid posts={POSTS} />
-      </div>
+      </section>
       <Footer />
     </main>
   );

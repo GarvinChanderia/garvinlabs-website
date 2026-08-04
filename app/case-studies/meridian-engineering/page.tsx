@@ -96,7 +96,7 @@ export default function CaseStudy() {
           <p className="post-tag">AI Modernization · Process Diagnostic · Case Study</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link>
+            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
           </p>
           <p className="post-lead">
             A structural steel manufacturer&#39;s order cycle ran 55 to 70 days against
