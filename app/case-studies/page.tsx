@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const TITLE = "Case Studies: Garvin Chanderia";
 const DESCRIPTION =
-  "How AI modernization actually starts: mapping how work happens before recommending a single tool. Real engagements, anonymized, with the numbers behind what the diagnostic found.";
+  "Case studies in AI modernization: where it fits, where it doesn't, and what changes when it's done right inside real businesses. Anonymized, with the numbers behind what I found.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -36,11 +36,11 @@ export default function CaseStudiesIndex() {
       <Navbar />
       <div className="container section" style={{ maxWidth: 900 }}>
         <p className="section-eyebrow">Case studies</p>
-        <h1 className="section-title">Modernization starts with a map, not a tool</h1>
+        <h1 className="section-title">Case studies from projects I've worked on</h1>
         <p className="lead" style={{ marginTop: "1rem", maxWidth: 620 }}>
-          Every automation I build sits on top of a diagnostic: what actually happens,
-          step by step, before anyone touches AI or automation. These are anonymized
-          write-ups of that diagnostic work, with the real numbers behind what I found.
+          How AI modernization actually plays out inside real businesses: where it
+          fits, where it doesn't, and what changes when it's done right. Anonymized
+          write-ups, with the real numbers behind what I found.
         </p>
 
         <div className="post-list">
