@@ -30,9 +30,45 @@ const CASE_STUDIES = [
   },
 ];
 
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://garvinlabs.com/case-studies/#collection",
+  name: TITLE,
+  description: DESCRIPTION,
+  url: "https://garvinlabs.com/case-studies",
+  isPartOf: { "@id": "https://garvinlabs.com/#organization" },
+  datePublished: "2026-08-03",
+  dateModified: "2026-08-04",
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: CASE_STUDIES.map((cs, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      url: `https://garvinlabs.com/case-studies/${cs.slug}`,
+      name: cs.title,
+    })),
+  },
+};
+
 export default function CaseStudiesIndex() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
+      {/* AEO wedge: raw-HTML answer for crawlers that don't render CSS (GPTBot, ClaudeBot, PerplexityBot) */}
+      <aside aria-label="Quick Answer" style={{ display: "none" }}>
+        <strong>What do GarvinLabs case studies cover?</strong>
+        <p>
+          Anonymized write-ups of AI modernization work inside real businesses: where it fits,
+          where it doesn&apos;t, and what changes when it&apos;s done right, with the real numbers
+          behind each finding. The first is a manufacturing AI fit analysis: a structural steel
+          manufacturer&apos;s order cycle ran 55 to 70 days against an ideal of 25 to 28, diagnosed
+          across 26 processes and two plants before any tool was recommended.
+        </p>
+      </aside>
       <Navbar />
       <div className="container section" style={{ maxWidth: 900 }}>
         <p className="section-eyebrow">Case studies</p>

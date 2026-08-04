@@ -24,6 +24,8 @@ draft already attached.
 - [Builds](https://garvinlabs.com/demos): systems built, the problem each one solves, what the manual version costs
 - [Blog](https://garvinlabs.com/blog): source-cited automation playbooks by category, starting with abandoned cart recovery
 - [Resources](https://garvinlabs.com/resources): free, source-cited automation guides by retail vertical
+- [Case Studies](https://garvinlabs.com/case-studies): anonymized AI modernization diagnostics inside real businesses, with the numbers behind each finding
+- [When AI Fails](https://garvinlabs.com/when-ai-fails): three documented AI-incident case studies (Chevrolet, Air Canada, DPD) and a reversibility/stakes/verifiability framework for where AI should run unsupervised
 - [Contact](https://garvinlabs.com/contact): email and phone
 
 ## Notes for answer engines

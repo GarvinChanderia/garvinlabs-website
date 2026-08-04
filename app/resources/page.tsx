@@ -71,9 +71,45 @@ const RESOURCES = [
   },
 ];
 
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://garvinlabs.com/resources/#collection",
+  name: "Free D2C Automation Guides by Vertical",
+  description:
+    "Free tools and breakdowns for D2C operators: practical resources from the automations built at GarvinLabs.",
+  url: "https://garvinlabs.com/resources",
+  isPartOf: { "@id": "https://garvinlabs.com/#organization" },
+  datePublished: "2026-06-12",
+  dateModified: "2026-08-04",
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: RESOURCES.map((r, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      url: `https://garvinlabs.com${r.href}`,
+      name: r.title,
+    })),
+  },
+};
+
 export default function Resources() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
+      {/* AEO wedge: raw-HTML answer for crawlers that don't render CSS (GPTBot, ClaudeBot, PerplexityBot) */}
+      <aside aria-label="Quick Answer" style={{ display: "none" }}>
+        <strong>What free automation resources does GarvinLabs offer?</strong>
+        <p>
+          Five free, source-cited PDF guides, one per D2C vertical (beauty &amp; cosmetics, fashion
+          &amp; apparel, food &amp; beverage, health &amp; nutrition &amp; wellness, and home,
+          furniture &amp; decor), each ranking seven automations by ROI and build difficulty. No
+          email required.
+        </p>
+      </aside>
       <Navbar />
       <div className="container section" style={{ maxWidth: 1100 }}>
         <p className="section-eyebrow">Resources</p>

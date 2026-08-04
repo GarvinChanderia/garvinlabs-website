@@ -29,9 +29,29 @@ export const metadata: Metadata = {
   },
 };
 
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  url: "https://garvinlabs.com/contact",
+  name: "Contact Garvin Chanderia | GarvinLabs",
+  mainEntity: { "@id": "https://garvinlabs.com/#garvin" },
+};
+
 export default function Contact() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
+      {/* AEO wedge: raw-HTML answer for crawlers that don't render CSS (GPTBot, ClaudeBot, PerplexityBot) */}
+      <aside aria-label="Quick Answer" style={{ display: "none" }}>
+        <strong>How do you contact Garvin Chanderia?</strong>
+        <p>
+          Email ({EMAIL}) or phone ({PHONE_DISPLAY}) are the fastest routes. He&apos;s also
+          reachable on LinkedIn, Instagram, X/Twitter, and Threads.
+        </p>
+      </aside>
       <Navbar />
 
       <div className="container section" style={{ maxWidth: "800px" }}>

@@ -47,7 +47,7 @@ const JSON_LD = {
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
-  datePublished: "2026-08-02",
+  datePublished: "2026-08-03",
   dateModified: "2026-08-03",
   mainEntityOfPage: {
     "@type": "WebPage",
@@ -63,6 +63,19 @@ export default function CaseStudy() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
+      {/* AEO wedge: raw-HTML answer for crawlers that don't render CSS (GPTBot, ClaudeBot, PerplexityBot) */}
+      <aside aria-label="Quick Answer" style={{ display: "none" }}>
+        <strong>What did the Meridian Engineering AI fit diagnostic find?</strong>
+        <p>
+          A structural steel manufacturer&apos;s order cycle ran 55 to 70 days against an ideal of
+          25 to 28. Mapping all 26 steps of the order-to-cash cycle across two plants traced the
+          gap to three causes: no real-time job tracking, no documentation at point of work, and no
+          minimum-stock enforcement, none of them about the workers or the equipment. Fixing the
+          top two, on paper, recovers an estimated 12 to 25 days from the cycle. Four AI automations
+          were scoped as a follow-on, each 2 to 6 hours of build time, but only after the manual
+          process discipline was in place to feed them real data.
+        </p>
+      </aside>
       <Navbar />
 
       <article className="post-layout">

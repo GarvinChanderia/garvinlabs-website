@@ -49,7 +49,7 @@ const JSON_LD = {
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
   datePublished: "2026-07-26",
-  dateModified: "2026-07-26",
+  dateModified: "2026-07-27",
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://garvinlabs.com/when-ai-fails",
