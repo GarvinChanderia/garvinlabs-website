@@ -28,6 +28,14 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
       {
+        userAgent: "Perplexity-User",
+        allow: "/",
+      },
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+      },
+      {
         userAgent: "Google-Extended",
         allow: "/",
       },
@@ -61,6 +69,10 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: "Bytespider",
+        allow: "/",
+      },
+      {
+        userAgent: "CCBot",
         allow: "/",
       },
     ],
