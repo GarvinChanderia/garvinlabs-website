@@ -35,6 +35,13 @@ const CASE_STUDIES = [
       "A manufacturer's order cycle ran 55 to 70 days against an ideal of 25 to 28. Before recommending a single tool, I mapped where those days actually went across 26 processes, two plants, and a full org chart.",
     tag: "AI Modernization · Process Diagnostic",
   },
+  {
+    slug: "ai-ugc-image-generation",
+    title: "Fashion brand AI photography process",
+    description:
+      "A founder-led apparel brand needed campaign-ready photography without a studio shoot. I built a 7-step process, ICP through iteration, that gets AI-generated images to read as a real shoot instead of obviously synthetic.",
+    tag: "AI Content Production · Case Study",
+  },
 ];
 
 const JSON_LD = {
@@ -46,7 +53,7 @@ const JSON_LD = {
   url: "https://garvinlabs.com/case-studies",
   isPartOf: { "@id": "https://garvinlabs.com/#organization" },
   datePublished: "2026-08-03",
-  dateModified: "2026-08-04",
+  dateModified: "2026-08-05",
   mainEntity: {
     "@type": "ItemList",
     itemListElement: CASE_STUDIES.map((cs, idx) => ({

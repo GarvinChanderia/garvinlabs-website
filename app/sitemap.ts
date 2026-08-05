@@ -72,13 +72,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/case-studies`,
-      lastModified: new Date("2026-08-03"),
+      lastModified: new Date("2026-08-05"),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/case-studies/meridian-engineering`,
       lastModified: new Date("2026-08-03"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/case-studies/ai-ugc-image-generation`,
+      lastModified: new Date("2026-08-05"),
       changeFrequency: "monthly",
       priority: 0.6,
     },
