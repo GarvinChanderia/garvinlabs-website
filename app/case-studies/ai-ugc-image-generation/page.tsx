@@ -221,16 +221,6 @@ export default function CaseStudy() {
             would have delivered, without booking a studio, a model, or a location.
           </p>
 
-          <div style={{ textAlign: "center", marginTop: "3rem" }}>
-            <a
-              href="/case-studies/ai-ugc-image-generation/cover.png"
-              className="btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View the full-resolution cover shot ↗
-            </a>
-          </div>
         </div>
 
         <footer className="post-footer" style={{ textAlign: "center" }}>
