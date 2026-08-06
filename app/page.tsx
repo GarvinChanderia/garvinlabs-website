@@ -7,6 +7,21 @@ import Navbar from "@/components/Navbar";
 import RevealInit from "@/components/RevealInit";
 import { Footer } from "@/components/Footer";
 
+const CASE_STUDIES_TEASER = [
+  {
+    slug: "meridian-engineering",
+    tag: "AI Modernization · Process Diagnostic",
+    title: "Manufacturing AI fit analysis",
+    description: "A manufacturer's order cycle ran 55 to 70 days against an ideal of 25 to 28. Before recommending a single tool, I mapped where those days actually went across 26 processes, two plants, and a full org chart.",
+  },
+  {
+    slug: "ai-ugc-image-generation",
+    tag: "AI Content Production · Case Study",
+    title: "Fashion brand AI photography process",
+    description: "A founder-led apparel brand needed campaign-ready photography without a studio shoot. I built a 7-step process, ICP through iteration, that gets AI-generated images to read as a real shoot instead of obviously synthetic.",
+  },
+];
+
 const BLOG_TEASER = [
   {
     slug: "abandoned-cart-recovery",
@@ -34,40 +49,36 @@ const RESOURCES_TEASER = [
   { slug: "food-beverage", kind: "Automation guide", tag: "Food & Beverage", cta: "View guide →", href: "/resources/food-beverage", image: "/website-images/pdf-food-beverage-cover.png" },
 ];
 
+// Focused on the three builds that have a full YouTube walkthrough. Thumbnails
+// use YouTube's own hqdefault image, kept at a 16:9 aspect ratio (the same
+// ratio as the embed itself) so the card reads as a video, not a screenshot.
 const BUILDS_INDEX = [
   {
     tag: "Support Triage",
     name: "ThreadWave: Support Triage",
     problem: "200+ tickets a day, all needing manual sorting before anyone can act on them.",
-    href: "/demos#threadwave",
+    href: "https://youtu.be/owzL30vbPco",
+    youtubeId: "owzL30vbPco",
     highlight: true,
     stat: "61%",
     statLabel: "auto-resolved within 30 days",
   },
   {
-    tag: "Storefront Chatbot",
-    name: "Storefront Support Chatbot",
-    problem: "Sizing, returns, and shipping questions go unanswered outside business hours.",
-    href: "/demos#storefront-chatbot",
+    tag: "Reputation Monitoring",
+    name: "Reputation Monitor",
+    problem: "A legal or safety complaint buried in a review, DM, or support email can sit unread for hours before anyone catches it.",
+    href: "https://youtu.be/gYs7189XEJw",
+    youtubeId: "gYs7189XEJw",
     highlight: false,
-    stat: "24/7",
-    statLabel: "on-brand coverage",
-  },
-  {
-    tag: "Instagram DMs",
-    name: "Instagram DM Concierge",
-    problem: "DMs and story replies pile up faster than anyone can reply to them.",
-    href: "/demos#instagram-dm",
-    highlight: false,
-    stat: "∞",
-    statLabel: "scale without headcount",
+    stat: "<2 min",
+    statLabel: "from review to alert",
   },
   {
     tag: "On YouTube",
     name: "How to Build an AI That Writes Like You",
     problem: "Derived a voice guide from a real person's posts and transcripts, then wrote new content for a completely different brand in that exact voice.",
     href: "https://www.youtube.com/watch?v=HUp2ZIK-uZg",
-    external: true,
+    youtubeId: "HUp2ZIK-uZg",
     highlight: false,
     stat: "150K+",
     statLabel: "words analyzed",
@@ -319,6 +330,392 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
+          CASE STUDIES — Summary teaser
+      ══════════════════════════════════════════════════ */}
+      <section
+        id="case-studies-teaser"
+        aria-label="Case studies"
+        style={{
+          background: "#0d0d0d",
+          padding: "6rem 0",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div className="container" style={{ position: "relative", zIndex: 2 }}>
+          <div className="reveal" style={{ marginBottom: "3.5rem" }}>
+            <p
+              className="eyebrow-label"
+              style={{
+                fontSize: "0.6875rem",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "#10B981",
+                fontWeight: 700,
+                marginBottom: "0.875rem",
+              }}
+            >
+              Case Studies
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                fontWeight: 700,
+                color: "#f5f5f7",
+                letterSpacing: "-0.025em",
+                lineHeight: 1.15,
+                marginBottom: "1rem",
+              }}
+            >
+              Where AI modernization fits, and where it doesn&apos;t.
+            </h2>
+            <p style={{ fontSize: "1.0625rem", color: "#6b7280", maxWidth: "540px", lineHeight: 1.65 }}>
+              Anonymized write-ups from inside real businesses, with the actual
+              numbers behind each finding.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "1.5rem",
+            }}
+          >
+            {CASE_STUDIES_TEASER.map((cs, idx) => (
+              <Link
+                key={cs.slug}
+                href={`/case-studies/${cs.slug}`}
+                className={`reveal delay-${idx + 1}`}
+                style={{
+                  display: "block",
+                  borderRadius: "20px",
+                  background: "rgba(255,255,255,0.025)",
+                  backdropFilter: "saturate(1.8) blur(24px)",
+                  WebkitBackdropFilter: "saturate(1.8) blur(24px)",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  textDecoration: "none",
+                  overflow: "hidden",
+                }}
+              >
+                <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9" }}>
+                  <Image
+                    src={`/case-studies/${cs.slug}/cover.png`}
+                    alt={cs.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div style={{ padding: "1.75rem" }}>
+                  <span
+                    style={{
+                      display: "inline-block",
+                      fontSize: "0.625rem",
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "#10B981",
+                      fontWeight: 700,
+                      marginBottom: "0.875rem",
+                    }}
+                  >
+                    {cs.tag}
+                  </span>
+                  <h3
+                    style={{
+                      fontSize: "1.1875rem",
+                      fontWeight: 700,
+                      color: "#f5f5f7",
+                      letterSpacing: "-0.01em",
+                      marginBottom: "0.625rem",
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {cs.title}
+                  </h3>
+                  <p style={{ fontSize: "0.9375rem", color: "#6b7280", lineHeight: 1.65, marginBottom: "1rem" }}>
+                    {cs.description}
+                  </p>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.375rem", color: "#10B981", fontSize: "0.8125rem", fontWeight: 700 }}>
+                    Read case study
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="reveal" style={{ textAlign: "center", marginTop: "3rem" }}>
+            <Link href="/case-studies" style={{ color: "#10B981", fontWeight: 600, fontSize: "0.9375rem" }}>
+              See all case studies →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          BUILDS — Bento Grid, the three YouTube walkthroughs
+      ══════════════════════════════════════════════════ */}
+      <section
+        id="projects"
+        aria-label="Projects"
+        style={{
+          background: "#0d0d0d",
+          padding: "7rem 0",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+
+
+        <div className="container" style={{ position: "relative", zIndex: 2 }}>
+          {/* Section header */}
+          <div className="reveal" style={{ marginBottom: "3.5rem" }}>
+            <p
+              className="eyebrow-label"
+              style={{
+                fontSize: "0.6875rem",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                color: "#10B981",
+                fontWeight: 700,
+                marginBottom: "0.875rem",
+              }}
+            >
+              The Builds
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                fontWeight: 700,
+                color: "#f5f5f7",
+                letterSpacing: "-0.025em",
+                lineHeight: 1.15,
+                marginBottom: "1rem",
+              }}
+            >
+              Watch how each one actually works.
+            </h2>
+            <p style={{ fontSize: "1.0625rem", color: "#6b7280", maxWidth: "540px", lineHeight: 1.65 }}>
+              Full walkthroughs on YouTube, not screenshots. Each one started
+              as a documented problem before any tooling got touched.
+            </p>
+          </div>
+
+          {/* Bento Grid */}
+          <div className="bento-grid">
+            {BUILDS_INDEX.map((build, idx) => {
+              // Only the first two cards get the scroll-driven .reveal fade: their
+              // animation-timeline range reliably resolves to opacity 1. Cards from
+              // idx 2 onward (delay-3+) sit far enough down the page that Chrome's
+              // view() timeline gets stuck mid-fade (confirmed via computed-opacity
+              // checks on mobile AND desktop, ~0.68-0.93) -- same root cause as the
+              // hero fade bug, fixed there by omitting reveal/delay-N entirely.
+              const revealClass = idx < 2 ? ` reveal delay-${idx + 1}` : "";
+              return (
+              <a
+                key={build.name}
+                href={build.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                id={`build-card-${idx}`}
+                className={`bento-card${revealClass}${build.highlight ? " bento-card-highlight" : ""}`}
+                style={{
+                  display: "block",
+                  borderRadius: "20px",
+                  background: "rgba(255,255,255,0.025)",
+                  backdropFilter: "saturate(1.8) blur(24px)",
+                  WebkitBackdropFilter: "saturate(1.8) blur(24px)",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  textDecoration: "none",
+                  position: "relative",
+                  overflow: "hidden",
+                  cursor: "pointer",
+                }}
+              >
+                {/* Cursor glow layer */}
+                <div className="glass-cursor-glow" aria-hidden="true" />
+
+                {/* YouTube thumbnail — same 16:9 aspect ratio as the embed itself */}
+                <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 9" }}>
+                  <Image
+                    src={`https://i.ytimg.com/vi/${build.youtubeId}/hqdefault.jpg`}
+                    alt={build.name}
+                    fill
+                    sizes="(max-width: 834px) 100vw, 50vw"
+                    style={{ objectFit: "cover" }}
+                  />
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent 45%)",
+                    }}
+                  />
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      width: "52px",
+                      height: "52px",
+                      borderRadius: "50%",
+                      background: "rgba(0,0,0,0.55)",
+                      border: "1px solid rgba(255,255,255,0.25)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 16 16" fill="#ffffff">
+                      <path d="M4 2.5v11l9-5.5-9-5.5z" />
+                    </svg>
+                  </div>
+                </div>
+
+                <div style={{ position: "relative", zIndex: 1, padding: build.highlight ? "2rem 2.5rem 2.5rem" : "1.5rem 2rem 2rem" }}>
+                  {/* Tag + stat row */}
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", marginBottom: "1.25rem" }}>
+                    <span
+                      style={{
+                        display: "inline-block",
+                        fontSize: "0.625rem",
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        color: "#10B981",
+                        fontWeight: 700,
+                        background: "rgba(16,185,129,0.08)",
+                        padding: "0.3rem 0.75rem",
+                        borderRadius: "980px",
+                        border: "1px solid rgba(16,185,129,0.2)",
+                      }}
+                    >
+                      {build.tag}
+                    </span>
+
+                    <div style={{ textAlign: "right", flexShrink: 0 }}>
+                      <p style={{ fontSize: "2rem", fontWeight: 700, color: "#f5f5f7", letterSpacing: "-0.04em", lineHeight: 1 }}>
+                        {build.stat}
+                      </p>
+                      <p style={{ fontSize: "0.6875rem", color: "#6b7280", marginTop: "0.3rem", maxWidth: "90px", textAlign: "right", lineHeight: 1.45 }}>
+                        {build.statLabel}
+                      </p>
+                    </div>
+                  </div>
+
+                  <h3
+                    style={{
+                      fontSize: build.highlight ? "1.5rem" : "1.1875rem",
+                      fontWeight: 700,
+                      color: "#f5f5f7",
+                      letterSpacing: "-0.015em",
+                      marginBottom: "0.75rem",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {build.name}
+                  </h3>
+                  <p style={{ fontSize: "0.9375rem", color: "#6b7280", lineHeight: 1.65 }}>
+                    {build.problem}
+                  </p>
+
+                  {/* Footer arrow */}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.375rem",
+                      color: "#10B981",
+                      fontSize: "0.8125rem",
+                      fontWeight: 700,
+                      marginTop: "1.5rem",
+                      letterSpacing: "0.02em",
+                    }}
+                  >
+                    Watch on YouTube
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          WHEN AI FAILS — Standalone featured spotlight
+      ══════════════════════════════════════════════════ */}
+      <section
+        id="when-ai-fails-spotlight"
+        aria-label="Featured: When AI fails"
+        style={{ background: "#0d0d0d", padding: "5rem 0" }}
+      >
+        <div className="container">
+          <div className="reveal spotlight-grid">
+            <Link href="/when-ai-fails" className="spotlight-media">
+              <Image
+                src="/when-ai-fails/cover.png"
+                alt="A boardroom lit in green with an elephant standing at the head of the table, while four people in a meeting look anywhere but at it."
+                fill
+                sizes="(max-width: 860px) 100vw, 460px"
+                style={{ objectFit: "cover" }}
+              />
+            </Link>
+            <div>
+              <p
+                className="eyebrow-label"
+                style={{
+                  fontSize: "0.6875rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "#10B981",
+                  fontWeight: 700,
+                  marginBottom: "0.875rem",
+                }}
+              >
+                Featured · AI guardrails
+              </p>
+              <h2
+                style={{
+                  fontSize: "clamp(1.75rem, 3.2vw, 2.5rem)",
+                  fontWeight: 700,
+                  color: "#f5f5f7",
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.15,
+                  marginBottom: "1rem",
+                }}
+              >
+                When AI fails, it&apos;s rarely the model&apos;s fault.
+              </h2>
+              <p style={{ fontSize: "1.0625rem", color: "#6b7280", lineHeight: 1.65, marginBottom: "1.75rem" }}>
+                Chevrolet, Air Canada, and DPD all had AI go publicly wrong, for three
+                different reasons, none of them a bad model. A three-question framework,
+                reversibility, stakes, verifiability, for deciding where AI should run
+                unsupervised in a business, and where it shouldn&apos;t.
+              </p>
+              <Link
+                href="/when-ai-fails"
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.375rem", color: "#10B981", fontWeight: 700, fontSize: "0.9375rem", textDecoration: "none" }}
+              >
+                Read the full breakdown
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
           BLOG — Featured posts
       ══════════════════════════════════════════════════ */}
       <section
@@ -454,71 +851,6 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          WHEN AI FAILS — Standalone featured spotlight
-      ══════════════════════════════════════════════════ */}
-      <section
-        id="when-ai-fails-spotlight"
-        aria-label="Featured: When AI fails"
-        style={{ background: "#0d0d0d", padding: "5rem 0" }}
-      >
-        <div className="container">
-          <div className="reveal spotlight-grid">
-            <Link href="/when-ai-fails" className="spotlight-media">
-              <Image
-                src="/when-ai-fails/cover.png"
-                alt="A boardroom lit in green with an elephant standing at the head of the table, while four people in a meeting look anywhere but at it."
-                fill
-                sizes="(max-width: 860px) 100vw, 460px"
-                style={{ objectFit: "cover" }}
-              />
-            </Link>
-            <div>
-              <p
-                className="eyebrow-label"
-                style={{
-                  fontSize: "0.6875rem",
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  color: "#10B981",
-                  fontWeight: 700,
-                  marginBottom: "0.875rem",
-                }}
-              >
-                Featured · AI guardrails
-              </p>
-              <h2
-                style={{
-                  fontSize: "clamp(1.75rem, 3.2vw, 2.5rem)",
-                  fontWeight: 700,
-                  color: "#f5f5f7",
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1.15,
-                  marginBottom: "1rem",
-                }}
-              >
-                When AI fails, it&apos;s rarely the model&apos;s fault.
-              </h2>
-              <p style={{ fontSize: "1.0625rem", color: "#6b7280", lineHeight: 1.65, marginBottom: "1.75rem" }}>
-                Chevrolet, Air Canada, and DPD all had AI go publicly wrong, for three
-                different reasons, none of them a bad model. A three-question framework,
-                reversibility, stakes, verifiability, for deciding where AI should run
-                unsupervised in a business, and where it shouldn&apos;t.
-              </p>
-              <Link
-                href="/when-ai-fails"
-                style={{ display: "inline-flex", alignItems: "center", gap: "0.375rem", color: "#10B981", fontWeight: 700, fontSize: "0.9375rem", textDecoration: "none" }}
-              >
-                Read the full breakdown
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
           RESOURCES — Free guides by industry
       ══════════════════════════════════════════════════ */}
       <section
@@ -627,180 +959,6 @@ export default function Home() {
             <Link href="/resources" style={{ color: "#10B981", fontWeight: 600, fontSize: "0.9375rem" }}>
               See all guides →
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          BUILDS — Bento Grid
-      ══════════════════════════════════════════════════ */}
-      <section
-        id="projects"
-        aria-label="Projects"
-        style={{
-          background: "#0d0d0d",
-          padding: "7rem 0",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-
-
-        <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          {/* Section header */}
-          <div className="reveal" style={{ marginBottom: "3.5rem" }}>
-            <p
-              className="eyebrow-label"
-              style={{
-                fontSize: "0.6875rem",
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: "#10B981",
-                fontWeight: 700,
-                marginBottom: "0.875rem",
-              }}
-            >
-              The Builds
-            </p>
-            <h2
-              style={{
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                fontWeight: 700,
-                color: "#f5f5f7",
-                letterSpacing: "-0.025em",
-                lineHeight: 1.15,
-                marginBottom: "1rem",
-              }}
-            >
-              What the guides look like once they&apos;re built.
-            </h2>
-            <p style={{ fontSize: "1.0625rem", color: "#6b7280", maxWidth: "540px", lineHeight: 1.65 }}>
-              Each one started as a documented problem before any tooling got
-              touched. The method is the same regardless of which one it&apos;s
-              pointed at next.
-            </p>
-          </div>
-
-          {/* Bento Grid */}
-          <div className="bento-grid">
-            {BUILDS_INDEX.map((build, idx) => {
-              const CardTag = build.external ? "a" : Link;
-              const linkProps = build.external
-                ? { href: build.href, target: "_blank", rel: "noopener noreferrer" }
-                : { href: build.href };
-              // Only the first two cards get the scroll-driven .reveal fade: their
-              // animation-timeline range reliably resolves to opacity 1. Cards from
-              // idx 2 onward (delay-3+) sit far enough down the page that Chrome's
-              // view() timeline gets stuck mid-fade (confirmed via computed-opacity
-              // checks on mobile AND desktop, ~0.68-0.93) -- same root cause as the
-              // hero fade bug, fixed there by omitting reveal/delay-N entirely.
-              const revealClass = idx < 2 ? ` reveal delay-${idx + 1}` : "";
-              return (
-              <CardTag
-                key={build.name}
-                {...linkProps}
-                id={`build-card-${idx}`}
-                className={`bento-card${revealClass}${build.highlight ? " bento-card-highlight" : ""}`}
-                style={{
-                  display: "block",
-                  padding: build.highlight ? "2.5rem" : "2rem",
-                  borderRadius: "20px",
-                  background: "rgba(255,255,255,0.025)",
-                  backdropFilter: "saturate(1.8) blur(24px)",
-                  WebkitBackdropFilter: "saturate(1.8) blur(24px)",
-                  border: "1px solid rgba(255,255,255,0.07)",
-                  textDecoration: "none",
-                  position: "relative",
-                  overflow: "hidden",
-                  cursor: "pointer",
-                }}
-              >
-                {/* Cursor glow layer */}
-                <div className="glass-cursor-glow" aria-hidden="true" />
-
-                {/* Top accent line on highlight card */}
-                {build.highlight && (
-                  <div
-                    aria-hidden="true"
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: "8%",
-                      right: "8%",
-                      height: "1px",
-                      background: "linear-gradient(90deg, transparent, #10B981, transparent)",
-                    }}
-                  />
-                )}
-
-                <div style={{ position: "relative", zIndex: 1 }}>
-                  {/* Tag + stat row */}
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", marginBottom: "1.25rem" }}>
-                    <span
-                      style={{
-                        display: "inline-block",
-                        fontSize: "0.625rem",
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "#10B981",
-                        fontWeight: 700,
-                        background: "rgba(16,185,129,0.08)",
-                        padding: "0.3rem 0.75rem",
-                        borderRadius: "980px",
-                        border: "1px solid rgba(16,185,129,0.2)",
-                      }}
-                    >
-                      {build.tag}
-                    </span>
-
-                    <div style={{ textAlign: "right", flexShrink: 0 }}>
-                      <p style={{ fontSize: "2rem", fontWeight: 700, color: "#f5f5f7", letterSpacing: "-0.04em", lineHeight: 1 }}>
-                        {build.stat}
-                      </p>
-                      <p style={{ fontSize: "0.6875rem", color: "#6b7280", marginTop: "0.3rem", maxWidth: "90px", textAlign: "right", lineHeight: 1.45 }}>
-                        {build.statLabel}
-                      </p>
-                    </div>
-                  </div>
-
-                  <h3
-                    style={{
-                      fontSize: build.highlight ? "1.5rem" : "1.1875rem",
-                      fontWeight: 700,
-                      color: "#f5f5f7",
-                      letterSpacing: "-0.015em",
-                      marginBottom: "0.75rem",
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {build.name}
-                  </h3>
-                  <p style={{ fontSize: "0.9375rem", color: "#6b7280", lineHeight: 1.65 }}>
-                    {build.problem}
-                  </p>
-
-                  {/* Footer arrow */}
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.375rem",
-                      color: "#10B981",
-                      fontSize: "0.8125rem",
-                      fontWeight: 700,
-                      marginTop: "1.5rem",
-                      letterSpacing: "0.02em",
-                    }}
-                  >
-                    {build.external ? "Watch on YouTube" : "View build"}
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
-                      <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-              </CardTag>
-              );
-            })}
           </div>
         </div>
       </section>
