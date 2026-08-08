@@ -21,6 +21,12 @@ draft already attached.
 
 - [Home](https://garvinlabs.com/): overview, the builds, direct-answer FAQ
 - [About](https://garvinlabs.com/about): background, experience, skills
+- [AI Modernization Company India](https://garvinlabs.com/ai-modernization-company-india): what AI modernization means for India-based founder-led D2C brands
+- [AI Modernization for D2C and Retail Brands](https://garvinlabs.com/ai-modernization-for-retail): the pattern across support, fulfilment, reporting, influencer ops, and inventory
+- [AI Modernization for Manufacturing](https://garvinlabs.com/ai-modernization-for-manufacturing): one diagnostic engagement on a structural steel manufacturer's order cycle
+- [AI Readiness Audit](https://garvinlabs.com/ai-readiness-audit): what a process diagnostic actually finds, before any tooling recommendation
+- [AI Modernization vs AI Automation](https://garvinlabs.com/ai-modernization-vs-ai-automation): the difference between making a process faster and questioning whether it's the right process
+- [GarvinLabs vs Traditional AI Agencies](https://garvinlabs.com/garvinlabs-vs-ai-agencies): how a diagnose-first method differs from a tool-first, fixed-service-menu approach
 - [Builds](https://garvinlabs.com/demos): systems built, the problem each one solves, what the manual version costs
 - [Blog](https://garvinlabs.com/blog): source-cited automation playbooks by category, starting with abandoned cart recovery
 - [Resources](https://garvinlabs.com/resources): free, source-cited automation guides by retail vertical

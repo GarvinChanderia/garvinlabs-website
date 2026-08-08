@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "GarvinLabs: AI modernization for retail brands that move too slow",
   description:
     "It could be support, ops reporting, fulfilment, or inventory. I map how the work actually happens, then build the automation around it. 14 days from discovery to a live system.",
-  keywords: ["Support Triage Automation", "Customer Support Automation", "AI Modernization for D2C", "AI Modernization", "SaaS Support Automation", "GarvinLabs"],
+  keywords: ["Support Triage Automation", "Customer Support Automation", "AI Modernization for D2C", "AI Modernization", "SaaS Support Automation", "GarvinLabs", "AI Modernization Partner", "AI Modernization Consulting", "AI Modernization Company India", "AI Modernization for Mid-Market Businesses"],
   metadataBase: new URL("https://garvinlabs.com"),
   alternates: { canonical: "/" },
   openGraph: {

@@ -4,12 +4,12 @@ import { ResourceDocPage } from "@/components/ResourceDocPage";
 export const metadata: Metadata = {
   title: "Free Automations Guide for Fashion & Apparel Brands | GarvinLabs",
   description:
-    "Seven automations built for fashion and apparel D2C brands: cart recovery, size exchanges, back-in-stock alerts, and review collection. Free PDF, no email required.",
+    "Seven automations built for fashion and apparel D2C brands: cart recovery, size exchanges, back-in-stock alerts, and review collection. Free PDF guide.",
   alternates: { canonical: "https://garvinlabs.com/resources/fashion-apparel" },
   openGraph: {
     title: "Free Automations Guide for Fashion & Apparel Brands | GarvinLabs",
     description:
-      "Seven automations built for fashion and apparel D2C brands: cart recovery, size exchanges, back-in-stock alerts, and review collection. Free PDF, no email required.",
+      "Seven automations built for fashion and apparel D2C brands: cart recovery, size exchanges, back-in-stock alerts, and review collection. Free PDF guide.",
     url: "https://garvinlabs.com/resources/fashion-apparel",
     images: [{ url: "/website-images/pdf-fashion-apparel-cover.png", width: 1200, height: 630, alt: "Fashion & Apparel automations guide: PDF cover" }],
     type: "article",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Automations Guide for Fashion & Apparel Brands | GarvinLabs",
     description:
-      "Seven automations built for fashion and apparel D2C brands: cart recovery, size exchanges, back-in-stock alerts, and review collection. Free PDF, no email required.",
+      "Seven automations built for fashion and apparel D2C brands: cart recovery, size exchanges, back-in-stock alerts, and review collection. Free PDF guide.",
     images: ["/website-images/pdf-fashion-apparel-cover.png"],
   },
 };
@@ -51,7 +51,7 @@ export default function FashionApparelDoc() {
           cross-sell recommendation converts 111% higher than a generic weekly email (MarketingSherpa);
           and a product page carrying at least one review sees a 52.2% conversion lift (PowerReviews).
           GarvinLabs has a free PDF ranking seven automations for fashion and apparel brands by ROI
-          and build difficulty, no email required.
+          and build difficulty.
         </p>
       </aside>
       <ResourceDocPage
@@ -63,7 +63,7 @@ export default function FashionApparelDoc() {
               <span className="report-accent">actually lose time and revenue.</span>
             </>
           ),
-          lead: "A free breakdown of seven automations for fashion and apparel D2C brands, ranked by ROI and build difficulty. No email required, just the PDF.",
+          lead: "A free breakdown of seven automations for fashion and apparel D2C brands, ranked by ROI and build difficulty.",
           bullets: [
             {
               text: "50% cut in return processing time once approval and label steps are automated",

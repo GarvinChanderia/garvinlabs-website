@@ -4,12 +4,12 @@ import { ResourceDocPage } from "@/components/ResourceDocPage";
 export const metadata: Metadata = {
   title: "Free Automations Guide for Home, Furniture & Decor Brands | GarvinLabs",
   description:
-    "Seven automations built for home, furniture, and decor D2C brands: cart recovery, delivery scheduling, post-purchase care, and returns. Free PDF, no email required.",
+    "Seven automations built for home, furniture, and decor D2C brands: cart recovery, delivery scheduling, post-purchase care, and returns. Free PDF guide.",
   alternates: { canonical: "https://garvinlabs.com/resources/home-furniture-decor" },
   openGraph: {
     title: "Free Automations Guide for Home, Furniture & Decor Brands | GarvinLabs",
     description:
-      "Seven automations built for home, furniture, and decor D2C brands: cart recovery, delivery scheduling, post-purchase care, and returns. Free PDF, no email required.",
+      "Seven automations built for home, furniture, and decor D2C brands: cart recovery, delivery scheduling, post-purchase care, and returns. Free PDF guide.",
     url: "https://garvinlabs.com/resources/home-furniture-decor",
     images: [{ url: "/website-images/pdf-home-furniture-decor-cover.png", width: 1200, height: 630, alt: "Home, Furniture & Decor automations guide: PDF cover" }],
     type: "article",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Automations Guide for Home, Furniture & Decor Brands | GarvinLabs",
     description:
-      "Seven automations built for home, furniture, and decor D2C brands: cart recovery, delivery scheduling, post-purchase care, and returns. Free PDF, no email required.",
+      "Seven automations built for home, furniture, and decor D2C brands: cart recovery, delivery scheduling, post-purchase care, and returns. Free PDF guide.",
     images: ["/website-images/pdf-home-furniture-decor-cover.png"],
   },
 };
@@ -51,7 +51,7 @@ export default function HomeFurnitureDecorDoc() {
           50% (Opensend); a product-recommendation quiz that actually follows up lifts conversion by
           36% (Outgrow); and a lead reached within five minutes is 21x more likely to qualify than
           one reached after thirty (Kixie). GarvinLabs has a free PDF ranking seven automations for
-          home, furniture, and decor brands by ROI and build difficulty, no email required.
+          home, furniture, and decor brands by ROI and build difficulty.
         </p>
       </aside>
       <ResourceDocPage
@@ -63,7 +63,7 @@ export default function HomeFurnitureDecorDoc() {
               <span className="report-accent">actually lose time and revenue.</span>
             </>
           ),
-          lead: "A free breakdown of seven automations for home, furniture, and decor D2C brands, ranked by ROI and build difficulty. No email required, just the PDF.",
+          lead: "A free breakdown of seven automations for home, furniture, and decor D2C brands, ranked by ROI and build difficulty.",
           bullets: [
             {
               text: "Up to 20% of packages fail on the first delivery attempt industry-wide",

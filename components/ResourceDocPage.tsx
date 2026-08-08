@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ResourceEmailGate } from "@/components/ResourceEmailGate";
 import { EMAIL, MAILTO, LINKEDIN } from "@/lib/constants";
+import { isResourceSlug } from "@/lib/resourceSlugs";
 
 export type ResourceDocBullet = {
   text: string;
@@ -21,8 +23,8 @@ export type ResourceDocConfig = {
 
 export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
   const { eyebrow, headline, lead, bullets, coverImage, coverAlt, pdfHref } = config;
-  const slug = pdfHref.split('/').pop()?.replace(/\.pdf$/, '');
-  const trackedPdfHref = slug ? `/api/pdf-download/${slug}` : pdfHref;
+  const rawSlug = pdfHref.split('/').pop()?.replace(/\.pdf$/, '') ?? '';
+  const trackedPdfHref = isResourceSlug(rawSlug) ? `/api/pdf-download/${rawSlug}` : pdfHref;
 
   return (
     <main>
@@ -63,20 +65,24 @@ export function ResourceDocPage({ config }: { config: ResourceDocConfig }) {
               style={{ display: "block", width: "100%", height: "auto", borderRadius: "var(--radius)" }}
             />
             <p style={{ fontWeight: 700, fontSize: "1.05rem", color: "var(--ink)" }}>Get the PDF</p>
-            <a
-              href={trackedPdfHref}
-              download
-              className="btn-primary btn-large"
-              style={{ width: "100%", justifyContent: "center" }}
-            >
-              Download PDF
-            </a>
+            {isResourceSlug(rawSlug) ? (
+              <ResourceEmailGate slug={rawSlug} downloadHref={trackedPdfHref} />
+            ) : (
+              <a
+                href={trackedPdfHref}
+                download
+                className="btn-primary btn-large"
+                style={{ width: "100%", justifyContent: "center" }}
+              >
+                Download PDF
+              </a>
+            )}
           </div>
         </div>
 
         <div style={{ marginTop: "3.5rem", paddingTop: "2.5rem", borderTop: "var(--border)" }}>
           <p style={{ color: "var(--muted)", fontSize: "0.975rem", marginBottom: "1rem" }}>
-            Sound familiar? Here's where to find me.
+            Sound familiar? Here&apos;s where to find me.
           </p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             <a href={MAILTO} className="social-chip">

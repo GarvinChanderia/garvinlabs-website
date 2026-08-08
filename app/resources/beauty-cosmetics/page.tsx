@@ -4,12 +4,12 @@ import { ResourceDocPage } from "@/components/ResourceDocPage";
 export const metadata: Metadata = {
   title: "Free Automations Guide for Beauty & Cosmetics Brands | GarvinLabs",
   description:
-    "Seven automations built for beauty and skincare D2C brands: cart recovery, back-in-stock alerts, review collection, and support. Free PDF, no email required.",
+    "Seven automations built for beauty and skincare D2C brands: cart recovery, back-in-stock alerts, review collection, and support. Free PDF guide.",
   alternates: { canonical: "https://garvinlabs.com/resources/beauty-cosmetics" },
   openGraph: {
     title: "Free Automations Guide for Beauty & Cosmetics Brands | GarvinLabs",
     description:
-      "Seven automations built for beauty and skincare D2C brands: cart recovery, back-in-stock alerts, review collection, and support. Free PDF, no email required.",
+      "Seven automations built for beauty and skincare D2C brands: cart recovery, back-in-stock alerts, review collection, and support. Free PDF guide.",
     url: "https://garvinlabs.com/resources/beauty-cosmetics",
     images: [{ url: "/website-images/pdf-beauty-cosmetics-cover.png", width: 1200, height: 630, alt: "Beauty & Cosmetics automations guide: PDF cover" }],
     type: "article",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Automations Guide for Beauty & Cosmetics Brands | GarvinLabs",
     description:
-      "Seven automations built for beauty and skincare D2C brands: cart recovery, back-in-stock alerts, review collection, and support. Free PDF, no email required.",
+      "Seven automations built for beauty and skincare D2C brands: cart recovery, back-in-stock alerts, review collection, and support. Free PDF guide.",
     images: ["/website-images/pdf-beauty-cosmetics-cover.png"],
   },
 };
@@ -51,7 +51,7 @@ export default function BeautyCosmeticsDoc() {
           (PowerReviews); back-in-stock alert emails convert at 22.45% on average (MarketingSherpa);
           and 53% of routine support queries can be resolved without a human touching them
           (Freshworks, 2025). GarvinLabs has a free PDF ranking seven automations for beauty and
-          skincare brands by ROI and build difficulty, no email required.
+          skincare brands by ROI and build difficulty.
         </p>
       </aside>
       <ResourceDocPage
@@ -63,7 +63,7 @@ export default function BeautyCosmeticsDoc() {
               <span className="report-accent">actually lose time and revenue.</span>
             </>
           ),
-          lead: "A free breakdown of seven automations for beauty and skincare D2C brands, ranked by ROI and build difficulty. No email required, just the PDF.",
+          lead: "A free breakdown of seven automations for beauty and skincare D2C brands, ranked by ROI and build difficulty.",
           bullets: [
             {
               text: "50% repeat purchase rate among loyalty-point redeemers, versus 10.7% for those who don't",

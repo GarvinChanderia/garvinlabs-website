@@ -3,21 +3,14 @@ import { readFile } from 'fs/promises';
 import path from 'path';
 import { put } from '@vercel/blob';
 import { randomUUID } from 'crypto';
-
-const SLUGS = [
-  'beauty-cosmetics',
-  'fashion-apparel',
-  'food-beverage',
-  'health-nutrition-wellness',
-  'home-furniture-decor',
-] as const;
+import { isResourceSlug } from '@/lib/resourceSlugs';
 
 export const runtime = 'nodejs';
 
 export async function GET(req: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
-  if (!SLUGS.includes(slug as (typeof SLUGS)[number])) {
+  if (!isResourceSlug(slug)) {
     return NextResponse.json({ error: 'Not found' }, { status: 404 });
   }
 

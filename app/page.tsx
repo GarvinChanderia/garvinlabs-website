@@ -1039,7 +1039,9 @@ export default function Home() {
             </p>
             <p style={{ fontSize: "1.0625rem", lineHeight: 1.8, color: "#a1a1a6" }}>
               Every build above is a working system, not a mockup, built on a real operational pain
-              and tested against real-world inputs.
+              and tested against real-world inputs. That&apos;s the role here: an AI modernization
+              partner for the mapping-and-building work, not a vendor selling a fixed AI
+              modernization consulting package off a shelf.
             </p>
           </div>
 

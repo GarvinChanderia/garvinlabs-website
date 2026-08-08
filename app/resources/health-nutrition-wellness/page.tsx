@@ -4,12 +4,12 @@ import { ResourceDocPage } from "@/components/ResourceDocPage";
 export const metadata: Metadata = {
   title: "Free Automations Guide for Health, Nutrition & Wellness Brands | GarvinLabs",
   description:
-    "Seven automations built for health, nutrition, and wellness D2C brands: cart recovery, subscription renewals, review collection, and support. Free PDF, no email required.",
+    "Seven automations built for health, nutrition, and wellness D2C brands: cart recovery, subscription renewals, review collection, and support. Free PDF guide.",
   alternates: { canonical: "https://garvinlabs.com/resources/health-nutrition-wellness" },
   openGraph: {
     title: "Free Automations Guide for Health, Nutrition & Wellness Brands | GarvinLabs",
     description:
-      "Seven automations built for health, nutrition, and wellness D2C brands: cart recovery, subscription renewals, review collection, and support. Free PDF, no email required.",
+      "Seven automations built for health, nutrition, and wellness D2C brands: cart recovery, subscription renewals, review collection, and support. Free PDF guide.",
     url: "https://garvinlabs.com/resources/health-nutrition-wellness",
     images: [{ url: "/website-images/pdf-health-nutrition-wellness-cover.png", width: 1200, height: 630, alt: "Health, Nutrition & Wellness automations guide: PDF cover" }],
     type: "article",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Automations Guide for Health, Nutrition & Wellness Brands | GarvinLabs",
     description:
-      "Seven automations built for health, nutrition, and wellness D2C brands: cart recovery, subscription renewals, review collection, and support. Free PDF, no email required.",
+      "Seven automations built for health, nutrition, and wellness D2C brands: cart recovery, subscription renewals, review collection, and support. Free PDF guide.",
     images: ["/website-images/pdf-health-nutrition-wellness-cover.png"],
   },
 };
@@ -52,7 +52,7 @@ export default function HealthNutritionWellnessDoc() {
           that actually follows up lifts conversion by 36% (Outgrow); and up to 55% of shoppers
           permanently switch to a competitor after repeated stockouts (Aislestock). GarvinLabs has a
           free PDF ranking seven automations for health, nutrition, and wellness brands by ROI and
-          build difficulty, no email required.
+          build difficulty.
         </p>
       </aside>
       <ResourceDocPage
@@ -64,7 +64,7 @@ export default function HealthNutritionWellnessDoc() {
               <span className="report-accent">actually lose time and revenue.</span>
             </>
           ),
-          lead: "A free breakdown of seven automations for health, nutrition, and wellness D2C brands, ranked by ROI and build difficulty. No email required, just the PDF.",
+          lead: "A free breakdown of seven automations for health, nutrition, and wellness D2C brands, ranked by ROI and build difficulty.",
           bullets: [
             {
               text: "41% higher click-through and a 29% lift in open rate for relevant, on-topic email content versus generic broadcasts",

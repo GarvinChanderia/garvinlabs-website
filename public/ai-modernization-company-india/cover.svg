@@ -1,0 +1,43 @@
+<svg width="1730" height="909" viewBox="0 0 1730 909" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow-india" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1730" height="909" fill="#0d0d0d"/>
+  <rect width="1730" height="909" fill="url(#glow-india)"/>
+
+  <!-- faint node network representing "map the operations first" -->
+  <g stroke="#2a2a2a" stroke-width="1.5">
+    <line x1="520" y1="360" x2="720" y2="300"/>
+    <line x1="720" y1="300" x2="960" y2="340"/>
+    <line x1="960" y1="340" x2="1180" y2="280"/>
+    <line x1="720" y1="300" x2="780" y2="480"/>
+    <line x1="960" y1="340" x2="1020" y2="520"/>
+    <line x1="1020" y1="520" x2="1180" y2="280"/>
+  </g>
+  <g fill="#3a3a3a">
+    <circle cx="520" cy="360" r="6"/>
+    <circle cx="720" cy="300" r="6"/>
+    <circle cx="960" cy="340" r="6"/>
+    <circle cx="1180" cy="280" r="6"/>
+    <circle cx="780" cy="480" r="6"/>
+    <circle cx="1020" cy="520" r="6"/>
+  </g>
+
+  <!-- location pin, centered -->
+  <g transform="translate(865,400)">
+    <path d="M0,-120 C66,-120 120,-66 120,0 C120,72 60,140 0,220 C-60,140 -120,72 -120,0 C-120,-66 -66,-120 0,-120 Z"
+          fill="none" stroke="#10B981" stroke-width="6"/>
+    <circle cx="0" cy="-4" r="44" fill="none" stroke="#10B981" stroke-width="6"/>
+    <circle cx="0" cy="-4" r="14" fill="#10B981"/>
+  </g>
+
+  <text x="865" y="700" text-anchor="middle" fill="#f5f5f7" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="0.5">
+    AI modernization, mapped from the ground up
+  </text>
+  <text x="865" y="742" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="20" letter-spacing="2">
+    GARVINLABS · INDIA
+  </text>
+</svg>

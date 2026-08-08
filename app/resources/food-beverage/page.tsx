@@ -4,12 +4,12 @@ import { ResourceDocPage } from "@/components/ResourceDocPage";
 export const metadata: Metadata = {
   title: "Free Automations Guide for Food & Beverage Brands | GarvinLabs",
   description:
-    "Seven automations built for food and beverage D2C brands: cart recovery, subscription renewals, shipping updates, and review collection. Free PDF, no email required.",
+    "Seven automations built for food and beverage D2C brands: cart recovery, subscription renewals, shipping updates, and review collection. Free PDF guide.",
   alternates: { canonical: "https://garvinlabs.com/resources/food-beverage" },
   openGraph: {
     title: "Free Automations Guide for Food & Beverage Brands | GarvinLabs",
     description:
-      "Seven automations built for food and beverage D2C brands: cart recovery, subscription renewals, shipping updates, and review collection. Free PDF, no email required.",
+      "Seven automations built for food and beverage D2C brands: cart recovery, subscription renewals, shipping updates, and review collection. Free PDF guide.",
     url: "https://garvinlabs.com/resources/food-beverage",
     images: [{ url: "/website-images/pdf-food-beverage-cover.png", width: 1200, height: 630, alt: "Food & Beverage automations guide: PDF cover" }],
     type: "article",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Automations Guide for Food & Beverage Brands | GarvinLabs",
     description:
-      "Seven automations built for food and beverage D2C brands: cart recovery, subscription renewals, shipping updates, and review collection. Free PDF, no email required.",
+      "Seven automations built for food and beverage D2C brands: cart recovery, subscription renewals, shipping updates, and review collection. Free PDF guide.",
     images: ["/website-images/pdf-food-beverage-cover.png"],
   },
 };
@@ -52,7 +52,7 @@ export default function FoodBeverageDoc() {
           matched cross-sell offers take at a 30% higher rate than generic promotions (Opensend);
           and 1 in 3 subscribers adjusted an order instead of canceling outright in 2023 (Swell,
           2026). GarvinLabs has a free PDF ranking seven automations for food and beverage brands by
-          ROI and build difficulty, no email required.
+          ROI and build difficulty.
         </p>
       </aside>
       <ResourceDocPage
@@ -64,7 +64,7 @@ export default function FoodBeverageDoc() {
               <span className="report-accent">actually lose time and revenue.</span>
             </>
           ),
-          lead: "A free breakdown of seven automations for food and beverage D2C brands, ranked by ROI and build difficulty. No email required, just the PDF.",
+          lead: "A free breakdown of seven automations for food and beverage D2C brands, ranked by ROI and build difficulty.",
           bullets: [
             {
               text: "9% of monthly recurring revenue lost industry-wide to failed payments, most of it recoverable with a proper retry sequence",

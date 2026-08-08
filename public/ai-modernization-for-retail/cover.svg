@@ -1,0 +1,41 @@
+<svg width="1730" height="909" viewBox="0 0 1730 909" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow-retail" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1730" height="909" fill="#0d0d0d"/>
+  <rect width="1730" height="909" fill="url(#glow-retail)"/>
+
+  <!-- storefront / bag outline, centered -->
+  <g transform="translate(865,430)" fill="none" stroke="#10B981" stroke-width="6" stroke-linejoin="round">
+    <path d="M-140,-40 L-160,-140 L160,-140 L140,-40 Z"/>
+    <path d="M-140,-40 L-150,180 L150,180 L140,-40 Z"/>
+    <path d="M-70,-40 C-70,-90 -35,-120 0,-120 C35,-120 70,-90 70,-40" stroke-linecap="round"/>
+  </g>
+
+  <!-- surrounding function nodes: support, fulfilment, inventory, influencer -->
+  <g stroke="#2a2a2a" stroke-width="1.5">
+    <line x1="865" y1="290" x2="560" y2="220"/>
+    <line x1="865" y1="290" x2="1170" y2="220"/>
+    <line x1="865" y1="610" x2="560" y2="680"/>
+    <line x1="865" y1="610" x2="1170" y2="680"/>
+  </g>
+  <g fill="#3a3a3a">
+    <circle cx="560" cy="220" r="6"/>
+    <circle cx="1170" cy="220" r="6"/>
+    <circle cx="560" cy="680" r="6"/>
+    <circle cx="1170" cy="680" r="6"/>
+  </g>
+  <g fill="#6b7280" font-family="Arial, sans-serif" font-size="17" letter-spacing="1">
+    <text x="560" y="200" text-anchor="middle">SUPPORT</text>
+    <text x="1170" y="200" text-anchor="middle">FULFILMENT</text>
+    <text x="560" y="710" text-anchor="middle">INVENTORY</text>
+    <text x="1170" y="710" text-anchor="middle">INFLUENCER</text>
+  </g>
+
+  <text x="865" y="800" text-anchor="middle" fill="#f5f5f7" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="0.5">
+    One pattern, five operational functions
+  </text>
+</svg>

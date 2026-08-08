@@ -65,6 +65,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/ai-modernization-company-india`,
+      lastModified: new Date("2026-08-08"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/ai-modernization-for-retail`,
+      lastModified: new Date("2026-08-08"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/ai-modernization-for-manufacturing`,
+      lastModified: new Date("2026-08-08"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/ai-readiness-audit`,
+      lastModified: new Date("2026-08-08"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/ai-modernization-vs-ai-automation`,
+      lastModified: new Date("2026-08-08"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/garvinlabs-vs-ai-agencies`,
+      lastModified: new Date("2026-08-08"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/case-studies`,
       lastModified: new Date("2026-08-05"),
       changeFrequency: "monthly",

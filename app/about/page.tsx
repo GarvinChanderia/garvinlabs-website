@@ -184,7 +184,8 @@ export default function About() {
                 My background is in enterprise architecture and analytics: designing how systems
                 connect, how data flows, and how decisions get made inside large organisations.
                 That background shapes every build here. I map the operations first, then build
-                the automation around what actually exists, not what the documentation says.
+                the automation around what actually exists, not what the documentation says. It&apos;s
+                AI modernization consulting built on that method, not a fixed service menu.
               </p>
               <p
                 style={{
