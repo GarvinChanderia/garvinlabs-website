@@ -10,7 +10,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/demo",
-        destination: "/demos/threadwave",
+        destination: "/demos",
+        permanent: true,
+      },
+      {
+        source: "/demos/threadwave",
+        destination: "/demos",
         permanent: true,
       },
     ];

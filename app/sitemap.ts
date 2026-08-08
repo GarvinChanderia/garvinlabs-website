@@ -17,12 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/demos/threadwave`,
-      lastModified: new Date("2026-05-31"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/resources`,
       lastModified: new Date("2026-07-14"),
       changeFrequency: "monthly",

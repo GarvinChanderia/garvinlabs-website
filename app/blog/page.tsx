@@ -178,6 +178,20 @@ export default function Blog() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
+      {/* AEO wedge: raw-HTML answer for crawlers that don't render CSS (GPTBot, ClaudeBot, PerplexityBot) */}
+      <aside aria-label="Quick Answer" style={{ display: "none" }}>
+        <strong>What does the GarvinLabs blog cover?</strong>
+        <p>
+          Source-cited automation playbooks for D2C operators, organized into four categories:
+          retention and recovery (abandoned cart, back-in-stock, subscription renewal),
+          support and service (instant customer support, returns and exchange automation),
+          ops and inventory (low-inventory and expiry alerts, delivery scheduling, bulk order
+          and B2B lead alerts), and growth and engagement (post-purchase cross-sell, review and
+          UGC collection, quiz-based recommendations). Each post states what the manual version
+          of the process costs, what the automated build looks like end to end, and cites the
+          source behind every number used.
+        </p>
+      </aside>
       <Navbar />
       <section className="container section" aria-label="Blog" style={{ maxWidth: 1100 }}>
         <p className="section-eyebrow">Blog</p>
