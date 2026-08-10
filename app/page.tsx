@@ -235,6 +235,11 @@ export default function Home() {
             <br />
             <span
               style={{
+                display: "inline-block",
+                marginTop: "0.5rem",
+                fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
+                fontWeight: 500,
+                letterSpacing: "-0.01em",
                 background: "linear-gradient(135deg, #10B981 0%, #34d399 50%, #059669 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
