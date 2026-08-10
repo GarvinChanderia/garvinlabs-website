@@ -166,7 +166,7 @@ export default function Home() {
       </aside>
 
       {/* ═══════════════════════════════════════════════════
-          HERO — Full-viewport, text-only, orb background
+          HERO — Full-viewport, warehouse photo background
       ══════════════════════════════════════════════════ */}
       <section
         aria-label="Hero"
@@ -183,7 +183,30 @@ export default function Home() {
         }}
       >
 
-        {/* Radial vignette overlay */}
+        {/* Background photo */}
+        <Image
+          src="/hero-warehouse.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: "cover", objectPosition: "center 55%", zIndex: 0 }}
+        />
+
+        {/* Center scrim — darkens the text column for legibility over the photo */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(ellipse 55% 85% at 50% 50%, rgba(13,13,13,0.7) 0%, rgba(13,13,13,0.35) 55%, transparent 100%)",
+            zIndex: 1,
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Radial vignette overlay — blends photo edges into page background */}
         <div
           aria-hidden="true"
           style={{
