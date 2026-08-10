@@ -231,7 +231,7 @@ export default function Home() {
               marginBottom: "1.5rem",
             }}
           >
-            Most automation fails because nobody mapped the process first.
+            Modern businesses are built with AI.
             <br />
             <span
               style={{
@@ -241,7 +241,7 @@ export default function Home() {
                 backgroundClip: "text",
               }}
             >
-              I map it, then build the system around what&apos;s actually there.
+              Insights, frameworks, and real-world applications for modern businesses.
             </span>
           </h1>
 
@@ -255,10 +255,9 @@ export default function Home() {
               margin: "0 auto 2.5rem",
             }}
           >
-            Support, ops reporting, fulfilment, inventory: wherever the
-            repetitive work is piling up. I map how it actually runs before
-            touching any tooling, then scope the build around that instead
-            of a templated workflow.
+            Drawn from real builds in support, ops reporting, fulfilment, and
+            inventory: what&apos;s actually working, what isn&apos;t, and the
+            reasoning behind each one.
           </p>
 
           {/* CTAs */}
@@ -291,7 +290,7 @@ export default function Home() {
               See the builds →
             </Link>
             <Link
-              href="/resources"
+              href="/case-studies"
               id="hero-cta-secondary"
               style={{
                 display: "inline-flex",
@@ -309,7 +308,7 @@ export default function Home() {
                 WebkitBackdropFilter: "blur(12px)",
               }}
             >
-              Free automation guide
+              Case studies
             </Link>
           </div>
         </div>
