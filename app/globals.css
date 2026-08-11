@@ -4262,20 +4262,13 @@ a.mono-tag:hover {
 /* ── Bento Grid ─────────────────────────────────────────────── */
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-}
-
-.bento-card-highlight {
-  grid-column: 1 / -1;
 }
 
 @media (max-width: 834px) {
   .bento-grid {
     grid-template-columns: 1fr;
-  }
-  .bento-card-highlight {
-    grid-column: 1;
   }
 }
 

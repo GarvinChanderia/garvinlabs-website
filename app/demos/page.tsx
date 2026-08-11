@@ -56,7 +56,7 @@ const BUILDS = [
     cost:
       "Support teams spend 60-70% of their day reading and sorting tickets before a single one gets resolved. Industry estimates put the cost of that manual sorting layer at $40K+/year for a mid-size D2C team.",
     stats: [
-      { num: "61%", label: "auto-resolution" },
+      { num: "61%", label: "auto-resolution within 30 days" },
       { num: "94%+", label: "classification accuracy" },
     ],
     stack: ["Gemini API", "Notion", "Telegram"],
@@ -67,6 +67,7 @@ const BUILDS = [
     tag: "On YouTube",
     title: "How to Build an AI That Writes Like You",
     youtubeId: "HUp2ZIK-uZg",
+    alt: "How to build an AI that writes in a specific person's voice, video walkthrough",
     problem:
       "Writing convincingly in a specific voice, someone else's or your own, and holding it across new topics and new brands, breaks down fast once it's not the original person typing.",
     howSolved:
@@ -102,6 +103,7 @@ const BUILDS = [
     id: "instagram-dm",
     tag: "Instagram DMs",
     title: "Instagram DM Concierge",
+    alt: "Instagram DM Concierge demo: auto-triaging DMs and story replies into the support queue",
     problem:
       "Instagram DMs and story replies pile up faster than anyone can answer them, and a slow reply often means a lost sale.",
     howSolved:

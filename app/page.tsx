@@ -59,7 +59,6 @@ const BUILDS_INDEX = [
     problem: "200+ tickets a day, all needing manual sorting before anyone can act on them.",
     href: "https://youtu.be/owzL30vbPco",
     youtubeId: "owzL30vbPco",
-    highlight: true,
     stat: "61%",
     statLabel: "auto-resolved within 30 days",
   },
@@ -69,7 +68,6 @@ const BUILDS_INDEX = [
     problem: "A legal or safety complaint buried in a review, DM, or support email can sit unread for hours before anyone catches it.",
     href: "https://youtu.be/gYs7189XEJw",
     youtubeId: "gYs7189XEJw",
-    highlight: false,
     stat: "<2 min",
     statLabel: "from review to alert",
   },
@@ -79,9 +77,8 @@ const BUILDS_INDEX = [
     problem: "Derived a voice guide from a real person's posts and transcripts, then wrote new content for a completely different brand in that exact voice.",
     href: "https://www.youtube.com/watch?v=HUp2ZIK-uZg",
     youtubeId: "HUp2ZIK-uZg",
-    highlight: false,
     stat: "150K+",
-    statLabel: "words analyzed",
+    statLabel: "words of source material analyzed",
   },
 ];
 
@@ -548,7 +545,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 id={`build-card-${idx}`}
-                className={`bento-card${revealClass}${build.highlight ? " bento-card-highlight" : ""}`}
+                className={`bento-card${revealClass}`}
                 style={{
                   display: "block",
                   borderRadius: "20px",
@@ -605,7 +602,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div style={{ position: "relative", zIndex: 1, padding: build.highlight ? "2rem 2.5rem 2.5rem" : "1.5rem 2rem 2rem" }}>
+                <div style={{ position: "relative", zIndex: 1, padding: "1.5rem 2rem 2rem" }}>
                   {/* Tag + stat row */}
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", marginBottom: "1.25rem" }}>
                     <span
@@ -637,7 +634,7 @@ export default function Home() {
 
                   <h3
                     style={{
-                      fontSize: build.highlight ? "1.5rem" : "1.1875rem",
+                      fontSize: "1.1875rem",
                       fontWeight: 700,
                       color: "#f5f5f7",
                       letterSpacing: "-0.015em",
