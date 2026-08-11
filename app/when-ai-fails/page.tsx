@@ -86,17 +86,19 @@ export default function WhenAIFails() {
       </aside>
 
       <article className="post-layout">
-        <figure className="post-figure">
-          <Image
-            src="/when-ai-fails/cover.png"
-            alt="An elephant standing at the head of a boardroom table while four people sit around it with laptops open, undisturbed by the animal in the room."
-            width={1254}
-            height={1254}
-            sizes="(max-width: 960px) 100vw, 960px"
-            style={{ width: "100%", height: "auto" }}
-            priority
-          />
-        </figure>
+        <div style={{ textAlign: "center" }}>
+          <figure className="post-figure" style={{ display: "inline-block" }}>
+            <Image
+              src="/when-ai-fails/cover.png"
+              alt="An elephant standing at the head of a boardroom table while four people sit around it with laptops open, undisturbed by the animal in the room."
+              width={1254}
+              height={1254}
+              sizes="(max-width: 600px) 100vw, 500px"
+              style={{ width: "auto", height: "auto", maxHeight: "50vh", maxWidth: "100%", display: "block" }}
+              priority
+            />
+          </figure>
+        </div>
 
         <header className="post-header">
           <p className="post-tag">AI guardrails · D2C automation</p>
