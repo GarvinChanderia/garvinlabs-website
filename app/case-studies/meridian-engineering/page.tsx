@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/case-studies/meridian-engineering/cover.png",
-        width: 1730,
-        height: 909,
+        width: 1536,
+        height: 1024,
         alt: TITLE,
       },
     ],
@@ -83,8 +83,8 @@ export default function CaseStudy() {
           <Image
             src="/case-studies/meridian-engineering/cover.png"
             alt={TITLE}
-            width={1730}
-            height={909}
+            width={1536}
+            height={1024}
             sizes="(max-width: 1024px) 100vw, 880px"
             style={{ width: "100%", height: "auto" }}
             priority

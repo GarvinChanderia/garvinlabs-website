@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/when-ai-fails/cover.png",
-        width: 1536,
-        height: 1024,
-        alt: "A boardroom lit in green with an elephant standing at the head of the table, while four people in a meeting look anywhere but at it.",
+        width: 1254,
+        height: 1254,
+        alt: "An elephant standing at the head of a boardroom table while four people sit around it with laptops open, undisturbed by the animal in the room.",
       },
     ],
   },
@@ -89,9 +89,9 @@ export default function WhenAIFails() {
         <figure className="post-figure">
           <Image
             src="/when-ai-fails/cover.png"
-            alt="A boardroom lit in green with an elephant standing at the head of the table, while four people in a meeting look anywhere but at it."
-            width={1536}
-            height={1024}
+            alt="An elephant standing at the head of a boardroom table while four people sit around it with laptops open, undisturbed by the animal in the room."
+            width={1254}
+            height={1254}
             sizes="(max-width: 960px) 100vw, 960px"
             style={{ width: "100%", height: "auto" }}
             priority

@@ -193,6 +193,18 @@ export default function Home() {
           style={{ objectFit: "cover", objectPosition: "center 55%", zIndex: 0 }}
         />
 
+        {/* Flat black overlay — 20% opacity, keeps text legible across the whole photo */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "rgba(0,0,0,0.2)",
+            zIndex: 1,
+            pointerEvents: "none",
+          }}
+        />
+
         {/* Center scrim — darkens the text column for legibility over the photo */}
         <div
           aria-hidden="true"
@@ -201,18 +213,6 @@ export default function Home() {
             inset: 0,
             background:
               "radial-gradient(ellipse 55% 85% at 50% 50%, rgba(13,13,13,0.7) 0%, rgba(13,13,13,0.35) 55%, transparent 100%)",
-            zIndex: 1,
-            pointerEvents: "none",
-          }}
-        />
-
-        {/* Radial vignette overlay — blends photo edges into page background */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "radial-gradient(ellipse 80% 60% at 50% 50%, transparent 30%, #0d0d0d 100%)",
             zIndex: 2,
             pointerEvents: "none",
           }}
@@ -690,7 +690,7 @@ export default function Home() {
             <Link href="/when-ai-fails" className="spotlight-media">
               <Image
                 src="/when-ai-fails/cover.png"
-                alt="A boardroom lit in green with an elephant standing at the head of the table, while four people in a meeting look anywhere but at it."
+                alt="An elephant standing at the head of a boardroom table while four people sit around it with laptops open, undisturbed by the animal in the room."
                 fill
                 sizes="(max-width: 860px) 100vw, 460px"
                 style={{ objectFit: "cover" }}
