@@ -26,7 +26,7 @@ export default function SchemaOrg() {
     "url": "https://garvinlabs.com",
     "founder": { "@id": "https://garvinlabs.com/#garvin" },
     "sameAs": ["https://linkedin.com/in/garvinchanderia"],
-    "description": "GarvinLabs is Garvin Chanderia's public learning practice in AI modernization: support triage, ops reporting, fulfilment, and inventory systems for retail brands, built and documented in the open."
+    "description": "GarvinLabs connects businesses at the exact moment a new need appears (a new obligation, a new space, or a broken process) with the specialists built to solve it, before the window closes, and builds AI modernization systems (support triage, ops reporting, fulfilment, and inventory) for retail brands, documented in the open."
   };
 
   return (

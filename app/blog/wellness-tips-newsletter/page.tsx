@@ -9,7 +9,7 @@ const DESCRIPTION =
   "An inconsistent newsletter trains subscribers to stop opening it entirely. What a content-source-library-plus-review pipeline for wellness brands looks like, and the safety stakes that make the human review step non-negotiable there.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/wellness-tips-newsletter" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -93,7 +93,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
         </header>
 
@@ -107,9 +107,9 @@ export default function Post() {
             </p>
           </blockquote>
           <p>
-            I went looking for a specific, named founder saying this out loud about a health
-            or wellness brand. I didn&#39;t find one I could verify word for word, so
-            I&#39;m not going to pretend I did. What I found instead, across founder
+            We went looking for a specific, named founder saying this out loud about a health
+            or wellness brand. We didn&#39;t find one we could verify word for word, so
+            we&#39;re not going to pretend we did. What we found instead, across founder
             interviews, forum threads, and newsletter-creator burnout posts, is a pattern
             that shows up again and again even without a single clean quote to pin it to: a
             founder launches a weekly or biweekly tips newsletter with real intent, keeps it
@@ -119,7 +119,7 @@ export default function Post() {
             it&#39;s been ten weeks and nobody sent anything.
           </p>
           <p>
-            That&#39;s the composite version of a story I couldn&#39;t attribute to one real
+            That&#39;s the composite version of a story we couldn&#39;t attribute to one real
             person with confidence. But the underlying mechanic is the same one behind the
             softened claim already in this post, not speculation: a newsletter that goes
             quiet does more than miss a week of content. It teaches the subscriber to stop
@@ -201,20 +201,20 @@ export default function Post() {
           </p>
           <p>
             <strong>Build a custom automated drafting-plus-review system.</strong> This is
-            the option I&#39;d actually build, and it&#39;s the only one of the four that
+            the option we&#39;d actually build, and it&#39;s the only one of the four that
             addresses both the time problem and the brand-grounding problem at once,
             without removing human judgment from what goes out. The tradeoff is setup cost:
             it requires an actual content library to draft from, which most brands don&#39;t
             have organized anywhere.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
-          <p>Here&#39;s how I&#39;d build this.</p>
+          <h2>The solution we&#39;d build</h2>
+          <p>Here&#39;s how we&#39;d build this.</p>
           <p>
             The core idea is separating two jobs that currently get bundled into one
             exhausting task: assembling the raw material for a tip, and deciding whether
             that tip is good enough to send. Right now, a founder or a marketing person does
-            both at once, from a blank page, under time pressure. I&#39;d split them.
+            both at once, from a blank page, under time pressure. We&#39;d split them.
           </p>
           <p>
             The first piece is a content-source library: a structured collection of the
@@ -259,7 +259,7 @@ export default function Post() {
             adjusting rather than originating.
           </p>
           <p>
-            But there are real costs and real limits, and I&#39;d rather list them than
+            But there are real costs and real limits, and we&#39;d rather list them than
             pretend this is a clean win.
           </p>
           <p>
@@ -333,7 +333,7 @@ export default function Post() {
 
           <h2>What the pain actually costs, and what fixing it is worth</h2>
           <p>
-            The clearest number I have here is the one already documented for this
+            The clearest number we have here is the one already documented for this
             category: a 41% higher click-through rate and a 29% higher open rate for
             relevant, on-topic email content compared to generic broadcasts, a widely cited
             figure compiled in Mailmend&#39;s 2026 email personalization roundup.
@@ -351,13 +351,13 @@ export default function Post() {
 
           <p>
             Worth repeating the hedge honestly: that&#39;s a compiled figure from a
-            roundup, not original research Mailmend ran itself, and I&#39;m treating it
+            roundup, not original research Mailmend ran itself, and we&#39;re treating it
             accordingly rather than dressing it up as a primary study.
           </p>
           <p>
-            I didn&#39;t find additional verifiable stats specific to newsletter
+            We didn&#39;t find additional verifiable stats specific to newsletter
             send-consistency and open-rate decay in health and wellness during this pass, so
-            I&#39;m not adding anything beyond what was already fact-checked here. The
+            we&#39;re not adding anything beyond what was already fact-checked here. The
             honest cost of the pain, in the absence of a clean dollar figure, is the
             mechanism already laid out above: inconsistent sending doesn&#39;t just cost
             the missed issue, it trains subscribers to stop opening, and that&#39;s a harder
@@ -367,7 +367,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

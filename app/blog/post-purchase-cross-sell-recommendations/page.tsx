@@ -9,7 +9,7 @@ const DESCRIPTION =
   "A curated pairing table matched to the order that just shipped beats generic 'you might also like' email, because it's tied to what the customer bought, not to nothing. What the automation looks like, the failure modes, and the two sourced conversion numbers behind it.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/post-purchase-cross-sell-recommendations" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -96,7 +96,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             Someone buys a dress and never finds out the brand also sells the exact heels
@@ -112,10 +112,10 @@ export default function Post() {
         <div className="post-body">
           <h2>A pattern that shows up across founder interviews</h2>
           <p>
-            I went looking for a founder on record saying, in so many words,
+            We went looking for a founder on record saying, in so many words,
             &quot;I realized our customers had no idea we sold the thing that goes with what
-            they just bought.&quot; I couldn&#39;t verify one specific person saying exactly
-            that, attributably, with a source I could point to and stand behind. So rather
+            they just bought.&quot; We couldn&#39;t verify one specific person saying exactly
+            that, attributably, with a source we could point to and stand behind. So rather
             than paraphrase something into someone&#39;s mouth, here&#39;s the honest
             version: a pattern that shows up repeatedly across founder interviews and
             operator threads about post-purchase marketing, not attributed to any one
@@ -201,9 +201,9 @@ export default function Post() {
             that requires actual build work rather than a plugin install.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
+          <h2>The solution we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d approach this if I were building it for a D2C brand with a
+            Here&#39;s how we&#39;d approach this if we were building it for a D2C brand with a
             catalog that has real product relationships worth surfacing (not every catalog
             does, more on that below).
           </p>
@@ -213,11 +213,11 @@ export default function Post() {
             specific order. That&#39;s the anchor for everything downstream.
           </p>
           <p>
-            The matching layer is where most of the actual thinking goes. I&#39;d resist the
+            The matching layer is where most of the actual thinking goes. We&#39;d resist the
             instinct to build this on raw &quot;customers who bought X also bought Y&quot;
             co-occurrence data pulled automatically from order history, because that kind of
             algorithmic pairing tends to surface noise (two products that sold well in the
-            same week, not two products that actually belong together). Instead, I&#39;d
+            same week, not two products that actually belong together). Instead, we&#39;d
             start with a curated pairing table: someone who knows the catalog maps each
             product, or each product category, to the two or three items that genuinely
             complement it, the way a stylist would build a lookbook or a chef would build a
@@ -228,7 +228,7 @@ export default function Post() {
           <p>
             Once the pairing table exists, the automation does the mechanical part: look up
             what was purchased, pull the matched products, check that they&#39;re in stock,
-            and queue a message. Timing matters as much as the matching. I&#39;d send this a
+            and queue a message. Timing matters as much as the matching. We&#39;d send this a
             few days after delivery, not at checkout and not weeks later, aimed at the
             window when the customer still has the original product in mind but isn&#39;t in
             the middle of an active purchase decision anymore. For fashion or apparel, that
@@ -356,7 +356,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

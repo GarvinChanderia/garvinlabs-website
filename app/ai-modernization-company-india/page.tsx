@@ -10,7 +10,7 @@ const DESCRIPTION =
   "GarvinLabs maps the manual operational work costing India-based D2C founders time, then builds the system around what's actually there. Support triage, fulfilment, reporting, influencer ops, inventory.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/ai-modernization-company-india" },
   openGraph: {
@@ -85,7 +85,7 @@ export default function AiModernizationIndia() {
           <p className="post-tag">AI Modernization · India</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>, AI automation for D2C operations
           </p>
           <p className="post-lead">
             GarvinLabs maps the manual work costing India-based D2C founders time, then

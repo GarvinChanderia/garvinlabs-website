@@ -7,10 +7,10 @@ import { LINKEDIN } from "@/lib/constants";
 
 const TITLE = "Manufacturing AI fit analysis";
 const DESCRIPTION =
-  "A manufacturer's order cycle ran 55 to 70 days against an ideal of 25 to 28. I mapped 26 processes across two plants, diagnosed three root causes, and proposed a sequenced fix, business recommendations separated from where AI actually fits.";
+  "A manufacturer's order cycle ran 55 to 70 days against an ideal of 25 to 28. We mapped 26 processes across two plants, diagnosed three root causes, and proposed a sequenced fix, business recommendations separated from where AI actually fits.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/case-studies/meridian-engineering" },
   openGraph: {
@@ -41,9 +41,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -96,11 +96,11 @@ export default function CaseStudy() {
           <p className="post-tag">AI Modernization · Process Diagnostic · Case Study</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>, an enterprise architecture consultancy, builder of automations
           </p>
           <p className="post-lead">
             A structural steel manufacturer&#39;s order cycle ran 55 to 70 days against
-            an ideal of 25 to 28. I mapped the business, found where the time was
+            an ideal of 25 to 28. We mapped the business, found where the time was
             actually going, and proposed a sequenced fix.
           </p>
         </header>
@@ -117,7 +117,7 @@ export default function CaseStudy() {
             The industry in this case study is manufacturing. The method isn&#39;t
             industry-specific: map the real process, name an owner for every step,
             measure ideal against actual, sequence the fixes by impact before touching a
-            tool. That&#39;s what I run on every engagement, D2C or otherwise, and this
+            tool. That&#39;s what we run on every engagement, D2C or otherwise, and this
             is what it looked like on one of them.
           </p>
 
@@ -145,10 +145,10 @@ export default function CaseStudy() {
 
           <blockquote>
             <p>What they asked for: help figuring out why orders were slow.</p>
-            <p>What I delivered: a diagnosis of the business, a root cause for the delay, a sequenced roadmap, and a separate set of AI opportunities scoped and ready to build.</p>
+            <p>What we delivered: a diagnosis of the business, a root cause for the delay, a sequenced roadmap, and a separate set of AI opportunities scoped and ready to build.</p>
           </blockquote>
 
-          <h2>How I approached it</h2>
+          <h2>How we approached it</h2>
           <ul>
             <li>Walked and documented all 26 steps of the order-to-cash cycle, from first RFP to final payment, based on what actually happens on the floor</li>
             <li>Built the org chart and a responsibility matrix so every step had a named owner</li>
@@ -156,13 +156,13 @@ export default function CaseStudy() {
             <li>Measured ideal vs. actual duration per process, from real job records</li>
           </ul>
           <p>
-            That&#39;s diagnosis, not documentation. It&#39;s what let me trace 30 to 40
+            That&#39;s diagnosis, not documentation. It&#39;s what let us trace 30 to 40
             lost days to three specific, fixable causes instead of guessing, and it&#39;s
-            the same sequence I run whether the business underneath runs an ERP, a
+            the same sequence we run whether the business underneath runs an ERP, a
             spreadsheet, or a whiteboard: understand first, prescribe second.
           </p>
 
-          <h2>What I found</h2>
+          <h2>What we found</h2>
           <p>The gap between ideal and actual cycle time traced back to three failures, none of them about the workers or the equipment:</p>
           <ul>
             <li><strong>No real-time job tracking</strong>: a job falling behind stayed invisible until it was already late</li>
@@ -226,7 +226,7 @@ export default function CaseStudy() {
             ones do is the point of running the diagnostic at all.
           </p>
 
-          <h2>What I recommended</h2>
+          <h2>What we recommended</h2>
           <ol>
             <li>Daily job tracking matrix and an outsource follow-up log first, visibility with no new tools required</li>
             <li>Documentation gates, plus standard email templates for customer communication</li>
@@ -247,7 +247,7 @@ export default function CaseStudy() {
           <p>
             This covers the diagnostic and the roadmap it produced, not what happened
             after. A process map and a prioritized plan are a real deliverable on their
-            own, and I&#39;d rather say exactly that than stretch it into a bigger claim.
+            own, and we&#39;d rather say exactly that than stretch it into a bigger claim.
           </p>
 
           <div style={{ textAlign: "center", marginTop: "3rem" }}>

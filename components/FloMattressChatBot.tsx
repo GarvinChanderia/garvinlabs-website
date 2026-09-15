@@ -81,16 +81,16 @@ export default function FloMattressChatBot() {
         id: `log-${Date.now()}`,
         ts: new Date().toLocaleTimeString(),
         message: msg,
-        category: data.category || '—',
-        priority: data.priority || '—',
+        category: data.category || '-',
+        priority: data.priority || '-',
         confidence: typeof data.confidence === 'number' ? data.confidence : 0,
         needsEscalation: !!data.needsEscalation,
-        recommendedAction: data.recommendedAction || '—',
-        status: data.status || '—',
+        recommendedAction: data.recommendedAction || '-',
+        status: data.status || '-',
         emailEscalated,
       }, ...prev]);
     } catch {
-      setMessages(prev => [...prev, { id: `err-${Date.now()}`, role: 'bot', text: 'Network error — please try again.' }]);
+      setMessages(prev => [...prev, { id: `err-${Date.now()}`, role: 'bot', text: 'Network error. Please try again.' }]);
     } finally {
       setLoading(false);
       setTimeout(() => inputRef.current?.focus(), 100);

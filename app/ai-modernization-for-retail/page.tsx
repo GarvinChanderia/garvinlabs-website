@@ -10,7 +10,7 @@ const DESCRIPTION =
   "The manual work that piles up inside a growing D2C or retail brand follows a pattern across support, fulfilment, reporting, influencer ops, and inventory. Map it first, then build the system around what's actually there.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/ai-modernization-for-retail" },
   openGraph: {
@@ -85,7 +85,7 @@ export default function AiModernizationRetail() {
           <p className="post-tag">AI Modernization · D2C &amp; Retail</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>, AI automation for D2C operations
           </p>
           <p className="post-lead">
             The manual work piling up inside a growing D2C or retail brand follows one

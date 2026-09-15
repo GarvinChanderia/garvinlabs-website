@@ -43,9 +43,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -104,7 +104,7 @@ export default function WhenAIFails() {
           <p className="post-tag">AI guardrails · D2C automation</p>
           <h1 className="post-title">When AI fails</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>, AI automation for D2C operations
           </p>
           <p className="post-lead">
             Three real incidents, three different reasons they happened, and the questions that
@@ -286,7 +286,7 @@ export default function WhenAIFails() {
             person&#39;s should start before it went live.
           </p>
           <p>
-            That mapping is the actual work behind anything I build. Guardrails get placed before
+            That mapping is the actual work behind anything we build. Guardrails get placed before
             automation does, so green, yellow, and red get decided on purpose instead of found
             out from a screenshot.
           </p>

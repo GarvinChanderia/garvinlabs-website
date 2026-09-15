@@ -9,7 +9,7 @@ const DESCRIPTION =
   "Most brands have no system for knowing who their best customers are, just a hunch and a stale spreadsheet. What a threshold-triggered spend-and-order-count recognition automation looks like, and Rivo's data on repeat purchase rates.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/vip-customer-recognition" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -94,7 +94,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
         </header>
 
@@ -110,15 +110,15 @@ export default function Post() {
 
           <h2>A pattern that shows up across founder interviews</h2>
           <p>
-            I went looking for a founder on record saying this exact thing out loud:
+            We went looking for a founder on record saying this exact thing out loud:
             &quot;I couldn&#39;t tell who my best customers were until it was too
-            late.&quot; I read through Shopify Masters transcripts, Starter Story
-            interviews, Indie Hackers threads, a stack of Shopify and Yotpo case studies. I
+            late.&quot; We read through Shopify Masters transcripts, Starter Story
+            interviews, Indie Hackers threads, a stack of Shopify and Yotpo case studies. We
             didn&#39;t find one clean, verbatim quote that nails this specific pain, so
-            I&#39;m not going to dress one up and put a name on it.
+            we&#39;re not going to dress one up and put a name on it.
           </p>
           <p>
-            What I found instead is a pattern that repeats across a lot of founder writing
+            What we found instead is a pattern that repeats across a lot of founder writing
             on customer retention, even when nobody phrases it this bluntly: a brand hits a
             few hundred repeat customers, and the person running it realizes they have no
             actual system for knowing who those people are. Not a hunch, a system. Revenue
@@ -209,9 +209,9 @@ export default function Post() {
             line is worth.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
+          <h2>The solution we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d build this, in the way I actually think about it, not the
+            Here&#39;s how we&#39;d build this, in the way we actually think about it, not the
             marketing version.
           </p>
           <p>
@@ -301,7 +301,7 @@ export default function Post() {
             This kind of system does nothing for a customer whose fifth order arrived late
             or damaged. Recognition doesn&#39;t repair a bad experience, and treating it as a
             retention fix on its own, independent of actual product and fulfillment
-            quality, is a mistake I&#39;d flag to anyone building this.
+            quality, is a mistake we&#39;d flag to anyone building this.
           </p>
           <p>
             It depends entirely on accurate lifetime-spend data, which sounds trivial until
@@ -335,7 +335,7 @@ export default function Post() {
 
           <h2>The cost of the pain, and what&#39;s actually been measured</h2>
           <p>
-            The clearest data point I have on this comes from Rivo&#39;s 2026 research on
+            The clearest data point we have on this comes from Rivo&#39;s 2026 research on
             VIP customer repeat rates: customers who redeem loyalty points have a 50%
             repeat purchase rate, versus 10.7% among those who don&#39;t.
           </p>
@@ -355,17 +355,17 @@ export default function Post() {
             point redemption specifically, not spend-threshold or tier-crossing
             recognition, which is the mechanism this piece is actually about. It&#39;s
             directionally relevant, not a direct measurement of the automation described
-            above, and I&#39;d rather say that plainly than let the two blur together.
+            above, and we&#39;d rather say that plainly than let the two blur together.
           </p>
           <p>
-            I looked for additional verifiable numbers specifically about spend-threshold or
+            We looked for additional verifiable numbers specifically about spend-threshold or
             order-count-triggered recognition and came up short. Several loyalty platforms
             publish figures like &quot;tiered programs see 80% higher ROI than flat
             programs&quot; or &quot;VIP customers generate 73% higher average order
-            value,&quot; and I checked those against their own sourcing before deciding not
+            value,&quot; and we checked those against their own sourcing before deciding not
             to use them here: they trace back to the same blog network citing itself, with
             no underlying study or dataset linked. That doesn&#39;t mean the numbers are
-            wrong. It means I can&#39;t verify them, and I&#39;d rather leave a gap in this
+            wrong. It means we can&#39;t verify them, and we&#39;d rather leave a gap in this
             section than fill it with something that only looks like evidence.
           </p>
           <p>
@@ -381,7 +381,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

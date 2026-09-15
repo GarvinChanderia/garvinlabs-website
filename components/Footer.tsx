@@ -27,14 +27,16 @@ export function Footer() {
             />
           </div>
           <p className="footer-tagline">
-            AI modernization for D2C brands.
+            We connect businesses at the exact moment a new need appears with
+            the specialists built to solve it, and we build AI modernization
+            systems for D2C brands.
           </p>
         </div>
 
         <div className="footer-col">
           <h3 className="footer-heading">Explore</h3>
           <ul className="footer-links-list">
-            <li><Link href="/">Home</Link></li>
+            <li><Link href="/">Connector</Link></li>
             <li><Link href="/demos">Builds</Link></li>
             <li><Link href="/case-studies">Case Studies</Link></li>
             <li><Link href="/resources">Resources</Link></li>
@@ -84,7 +86,7 @@ export function Footer() {
       </div>
 
       <div className="container footer-bottom">
-        <p>© {new Date().getFullYear()} Garvin Chanderia. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} GarvinLabs. All rights reserved.</p>
       </div>
     </footer>
   );

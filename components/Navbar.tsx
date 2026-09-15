@@ -6,7 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const TOP_LINKS = [
-  { label: "Home",          href: "/"              },
+  { label: "Connector", href: "/" },
+];
+
+const AI_SOLUTIONS_LINKS = [
   { label: "Builds",        href: "/demos"         },
   { label: "Case Studies",  href: "/case-studies"  },
   { label: "When AI Fails", href: "/when-ai-fails" },
@@ -16,12 +19,12 @@ const MORE_LINKS = [
   { label: "Resources", href: "/resources" },
   { label: "Blog",       href: "/blog"      },
   { label: "About",      href: "/about"     },
-  { label: "Contact",    href: "/contact"   },
 ];
 
 export default function Navbar() {
   const [scrolled,  setScrolled]  = useState(false);
   const [menuOpen,  setMenuOpen]  = useState(false);
+  const [aiOpen,    setAiOpen]    = useState(false);
   const [moreOpen,  setMoreOpen]  = useState(false);
   const pathname = usePathname();
 
@@ -42,6 +45,17 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", close);
   }, [menuOpen]);
 
+  // close "AI Solutions" dropdown on outside click
+  useEffect(() => {
+    if (!aiOpen) return;
+    const close = (e: MouseEvent) => {
+      const dropdown = document.getElementById("nav-ai-dropdown");
+      if (dropdown && !dropdown.contains(e.target as Node)) setAiOpen(false);
+    };
+    document.addEventListener("mousedown", close);
+    return () => document.removeEventListener("mousedown", close);
+  }, [aiOpen]);
+
   // close "More" dropdown on outside click
   useEffect(() => {
     if (!moreOpen) return;
@@ -55,6 +69,7 @@ export default function Navbar() {
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const aiActive = AI_SOLUTIONS_LINKS.some((link) => isActive(link.href));
   const moreActive = MORE_LINKS.some((link) => isActive(link.href));
 
   return (
@@ -82,6 +97,40 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+
+          <div
+            id="nav-ai-dropdown"
+            className={`nav-dropdown${aiOpen ? " open" : ""}`}
+          >
+            <button
+              type="button"
+              className={`nav-link nav-dropdown-trigger${aiActive ? " active" : ""}`}
+              onClick={() => setAiOpen((o) => !o)}
+              aria-haspopup="menu"
+              aria-expanded={aiOpen}
+            >
+              AI Solutions
+              <svg className="nav-dropdown-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <div className="nav-dropdown-panel" role="menu">
+              {AI_SOLUTIONS_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`nav-link${isActive(link.href) ? " active" : ""}`}
+                  role="menuitem"
+                  onClick={() => {
+                    setAiOpen(false);
+                    setMenuOpen(false);
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
 
           <div
             id="nav-more-dropdown"
@@ -117,15 +166,13 @@ export default function Navbar() {
             </div>
           </div>
 
-          <a
-            href="https://linkedin.com/in/garvinchanderia"
+          <Link
+            href="/contact"
             className="btn-primary nav-cta"
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
           >
-            LinkedIn ↗
-          </a>
+            Contact
+          </Link>
         </div>
 
         {/* Mobile hamburger */}

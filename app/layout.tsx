@@ -23,24 +23,24 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GarvinLabs: AI modernization for retail brands that move too slow",
+  title: "GarvinLabs: connecting businesses to the specialists who solve their exact moment of need",
   description:
-    "It could be support, ops reporting, fulfilment, or inventory. I map how the work actually happens, then build the automation around it. 14 days from discovery to a live system.",
-  keywords: ["Support Triage Automation", "Customer Support Automation", "AI Modernization for D2C", "AI Modernization", "SaaS Support Automation", "GarvinLabs", "AI Modernization Partner", "AI Modernization Consulting", "AI Modernization Company India", "AI Modernization for Mid-Market Businesses"],
+    "We connect businesses at the exact moment a new need appears (a new obligation, a new space, or a broken process) with the specialists built to solve it, before the window closes. GarvinLabs also builds AI modernization systems for D2C retail brands: support, ops reporting, fulfilment, and inventory.",
+  keywords: ["Business Connector", "Tenant Improvement", "Build-Out Contractor Matching", "Compliance Consultant Matching", "Commercial Fit-Out", "GarvinLabs", "AI Modernization for D2C", "Support Triage Automation", "AI Modernization Partner"],
   metadataBase: new URL("https://garvinlabs.com"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "GarvinLabs: AI modernization for retail brands that move too slow",
+    title: "GarvinLabs: connecting businesses to the specialists who solve their exact moment of need",
     description:
-      "It could be support, ops reporting, fulfilment, or inventory. I map how the work actually happens, then build the automation around it. 14 days from discovery to a live system.",
+      "We connect businesses at the exact moment a new need appears (a new obligation, a new space, or a broken process) with the specialists built to solve it, before the window closes. GarvinLabs also builds AI modernization systems for D2C retail brands.",
     url: "https://garvinlabs.com",
     siteName: "GarvinLabs",
     images: [
       {
-        url: "/hero-diagram.png",
+        url: "/hero-connector.png",
         width: 1200,
         height: 630,
-        alt: "GarvinLabs: AI modernization for retail brands that move too slow",
+        alt: "GarvinLabs: connecting businesses to the specialists who solve their exact moment of need",
       },
     ],
     locale: "en_US",
@@ -48,10 +48,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GarvinLabs: AI modernization for retail brands that move too slow",
+    title: "GarvinLabs: connecting businesses to the specialists who solve their exact moment of need",
     description:
-      "It could be support, ops reporting, fulfilment, or inventory. I map how the work actually happens, then build the automation around it. 14 days from discovery to a live system.",
-    images: ["/hero-diagram.png"],
+      "We connect businesses at the exact moment a new need appears (a new obligation, a new space, or a broken process) with the specialists built to solve it, before the window closes. GarvinLabs also builds AI modernization systems for D2C retail brands.",
+    images: ["/hero-connector.png"],
   },
   robots: {
     index: true,

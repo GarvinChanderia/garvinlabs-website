@@ -10,7 +10,7 @@ const DESCRIPTION =
   "An AI readiness audit is a process diagnostic, not a tool recommendation. Map every step, name an owner, measure ideal against actual, then sequence the fixes before touching any automation.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/ai-readiness-audit" },
   openGraph: {
@@ -87,7 +87,7 @@ export default function AiReadinessAudit() {
           <p className="post-tag">AI Modernization · Readiness Audit</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>, AI automation for D2C operations
           </p>
           <p className="post-lead">
             A process diagnostic, not a tool recommendation. Map every step, name an

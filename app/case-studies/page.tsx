@@ -3,9 +3,9 @@ import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
 
-const TITLE = "Case Studies: Garvin Chanderia";
+const TITLE = "Case Studies: GarvinLabs";
 const DESCRIPTION =
-  "Case studies in AI modernization: where it fits, where it doesn't, and what changes when it's done right inside real businesses. Anonymized, with the numbers behind what I found.";
+  "Case studies in AI modernization: where it fits, where it doesn't, and what changes when it's done right inside real businesses. Anonymized, with the numbers behind what we found.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -32,14 +32,14 @@ const CASE_STUDIES = [
     slug: "meridian-engineering",
     title: "Manufacturing AI fit analysis",
     description:
-      "A manufacturer's order cycle ran 55 to 70 days against an ideal of 25 to 28. Before recommending a single tool, I mapped where those days actually went across 26 processes, two plants, and a full org chart.",
+      "A manufacturer's order cycle ran 55 to 70 days against an ideal of 25 to 28. Before recommending a single tool, we mapped where those days actually went across 26 processes, two plants, and a full org chart.",
     tag: "AI Modernization · Process Diagnostic",
   },
   {
     slug: "ai-ugc-image-generation",
     title: "Fashion brand AI photography process",
     description:
-      "A founder-led apparel brand needed campaign-ready photography without a studio shoot. I built a 7-step process, ICP through iteration, that gets AI-generated images to read as a real shoot instead of obviously synthetic.",
+      "A founder-led apparel brand needed campaign-ready photography without a studio shoot. We built a 7-step process, ICP through iteration, that gets AI-generated images to read as a real shoot instead of obviously synthetic.",
     tag: "AI Content Production · Case Study",
   },
 ];
@@ -86,11 +86,11 @@ export default function CaseStudiesIndex() {
       <Navbar />
       <section className="container section" aria-label="Case studies" style={{ maxWidth: 900 }}>
         <p className="section-eyebrow">Case studies</p>
-        <h1 className="section-title">Case studies from projects I've worked on</h1>
+        <h1 className="section-title">Case studies from projects we've worked on</h1>
         <p className="lead" style={{ marginTop: "1rem", maxWidth: 620 }}>
           How AI modernization actually plays out inside real businesses: where it
           fits, where it doesn't, and what changes when it's done right. Anonymized
-          write-ups, with the real numbers behind what I found.
+          write-ups, with the real numbers behind what we found.
         </p>
 
         <div className="post-list">

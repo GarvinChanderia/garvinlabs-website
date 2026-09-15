@@ -9,7 +9,7 @@ const DESCRIPTION =
   "Periodic inventory checks catch a stockout after it's already cost you a customer. What continuous, per-SKU threshold monitoring with a parallel expiry clock looks like, the failure modes, and the $1.2 trillion global stockout cost behind it.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/low-inventory-and-expiry-alerts" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -96,7 +96,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             Someone goes to reorder their usual serum, or their usual multivitamin, and
@@ -236,12 +236,12 @@ export default function Post() {
             a person to look. It&#39;s also the option that takes the most work to set
             up correctly, since it has to be built around the actual data source and
             the actual thresholds that matter for a specific catalog. That&#39;s the
-            version I&#39;d build.
+            version we&#39;d build.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
+          <h2>The solution we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d build this: every SKU gets its own threshold,
+            Here&#39;s how we&#39;d build this: every SKU gets its own threshold,
             checked continuously rather than on a schedule someone has to remember to
             run.
           </p>
@@ -292,7 +292,7 @@ export default function Post() {
 
           <h2>Pros and cons</h2>
           <p>
-            I&#39;d rather lay out the real tradeoffs than pretend this is a clean win.
+            We&#39;d rather lay out the real tradeoffs than pretend this is a clean win.
           </p>
           <p>
             What it actually solves: the lag between &quot;running low&quot; and
@@ -413,7 +413,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

@@ -4,12 +4,12 @@ import { Footer } from "@/components/Footer";
 import { BlogGrid } from "@/components/BlogGrid";
 
 export const metadata: Metadata = {
-  title: "Blog: Garvin Chanderia",
+  title: "Blog: GarvinLabs",
   description:
     "Automation playbooks for D2C operators: what breaks in manual operations, what a build actually looks like, and the sourced numbers behind the case for automating it.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog: Garvin Chanderia",
+    title: "Blog: GarvinLabs",
     description:
       "Automation playbooks for D2C operators: what breaks in manual operations, what a build actually looks like, and the sourced numbers behind the case for automating it.",
     url: "https://garvinlabs.com/blog",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog: Garvin Chanderia",
+    title: "Blog: GarvinLabs",
     description:
       "Automation playbooks for D2C operators: what breaks in manual operations, what a build actually looks like, and the sourced numbers behind the case for automating it.",
     images: ["/hero-diagram.png"],
