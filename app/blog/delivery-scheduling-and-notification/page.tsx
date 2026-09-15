@@ -9,7 +9,7 @@ const DESCRIPTION =
   "Bulky items need someone home to receive them, which makes delivery scheduling a phone-tag problem most brands still solve with people. What a self-service scheduling flow looks like, the tradeoffs, and the research on first-attempt failure rates.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/delivery-scheduling-and-notification" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -92,7 +92,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             Someone orders a sofa, then waits for a phone call to arrange delivery. It
@@ -104,16 +104,16 @@ export default function Post() {
 
         <div className="post-body">
           <p>
-            I went looking for a founder who&#39;d said this out loud, on record, about
-            a specific brand. I checked podcast transcripts, Starter Story interviews,
+            We went looking for a founder who&#39;d said this out loud, on record, about
+            a specific brand. We checked podcast transcripts, Starter Story interviews,
             Indie Hackers threads, and forum posts from people running furniture and
             appliance DTC brands, looking for a verbatim, sourced quote about phone-tag
-            delivery scheduling. I didn&#39;t find one I could verify by fetching the
-            source myself, so I&#39;m not going to invent one and put a real
+            delivery scheduling. We didn&#39;t find one we could verify by fetching the
+            source ourselves, so we&#39;re not going to invent one and put a real
             person&#39;s name next to it.
           </p>
           <p>
-            What I can describe instead is a pattern that shows up repeatedly in how
+            What we can describe instead is a pattern that shows up repeatedly in how
             operators talk about this problem, even without a single quotable line to
             point to: a founder scaling from a few dozen orders a week to a few hundred,
             watching second-attempt delivery costs climb, and realizing the actual
@@ -123,7 +123,7 @@ export default function Post() {
             a place for the order to slip: a missed call, a misheard date, a customer
             who confirms a time and then forgets it by the time the truck shows up. None
             of that is a lie, it&#39;s a composite built from how this problem gets
-            described over and over in ecommerce operator circles. I&#39;m labeling it
+            described over and over in ecommerce operator circles. We&#39;re labeling it
             as such rather than dressing it up as a quote.
           </p>
 
@@ -188,13 +188,13 @@ export default function Post() {
             Then there&#39;s a fully custom, self-service scheduling flow built directly
             into the brand&#39;s own order pipeline: the customer gets a link, picks
             their own window, and the system handles confirmation and follow-up without
-            anyone on the ops team touching it. This is the option I&#39;d build, and
+            anyone on the ops team touching it. This is the option we&#39;d build, and
             it&#39;s worth being specific about why.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
+          <h2>The solution we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d think about building this, at the level of what
+            Here&#39;s how we&#39;d think about building this, at the level of what
             actually happens and in what order.
           </p>
           <p>
@@ -252,7 +252,7 @@ export default function Post() {
             instead of a note in someone&#39;s inbox.
           </p>
           <p>
-            The cons are just as real, and I&#39;d rather state them plainly than gloss
+            The cons are just as real, and we&#39;d rather state them plainly than gloss
             over them. This entire approach depends on the delivery carrier or 3PL
             actually exposing real-time slot availability through an API. A lot of them
             don&#39;t, especially smaller regional carriers that bulky-item brands often
@@ -299,7 +299,7 @@ export default function Post() {
             The number worth grounding this in comes from Harvard Business Review&#39;s
             2023 research: up to 20% of packages fail to reach recipients on the first
             delivery attempt. That figure is drawn from delivery data in Latin America
-            and Singapore, not a global industry census, so I&#39;m not calling it an
+            and Singapore, not a global industry census, so we&#39;re not calling it an
             industry-wide number, it&#39;s a documented failure rate in those specific
             markets.
           </p>
@@ -316,9 +316,9 @@ export default function Post() {
 
           <p>
             The research itself points to smarter route planning as the fix, not
-            customer-facing scheduling tools. I haven&#39;t found data that proves a
-            self-service scheduling link reduces that specific failure rate, so I
-            won&#39;t claim it does. What I&#39;ll say instead is that the two
+            customer-facing scheduling tools. We haven&#39;t found data that proves a
+            self-service scheduling link reduces that specific failure rate, so we
+            won&#39;t claim it does. What we&#39;ll say instead is that the two
             approaches attack the same failure from different ends: better routing gets
             the truck to the right place at the right time, and a recipient who picked
             their own window is more likely to actually be home when it arrives.
@@ -335,7 +335,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

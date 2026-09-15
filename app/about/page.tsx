@@ -6,23 +6,23 @@ import { Footer } from "@/components/Footer";
 import { LINKEDIN } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "About Garvin Chanderia | GarvinLabs",
+  title: "About GarvinLabs",
   description:
-    "Garvin Chanderia: enterprise architecture background, automation builds for D2C operators.",
+    "GarvinLabs: enterprise architecture background, automation builds for D2C operators.",
   alternates: { canonical: "https://garvinlabs.com/about" },
   openGraph: {
-    title: "About Garvin Chanderia | GarvinLabs",
+    title: "About GarvinLabs",
     description:
-      "Garvin Chanderia: enterprise architecture background, automation builds for D2C operators.",
+      "GarvinLabs: enterprise architecture background, automation builds for D2C operators.",
     url: "https://garvinlabs.com/about",
-    images: [{ url: "/website-images/founder-portrait.png", width: 1200, height: 630, alt: "Garvin Chanderia" }],
+    images: [{ url: "/website-images/founder-portrait.png", width: 1200, height: 630, alt: "GarvinLabs founder Garvin Chanderia" }],
     type: "profile",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Garvin Chanderia | GarvinLabs",
+    title: "About GarvinLabs",
     description:
-      "Garvin Chanderia: enterprise architecture background, automation builds for D2C operators.",
+      "GarvinLabs: enterprise architecture background, automation builds for D2C operators.",
     images: ["/website-images/founder-portrait.png"],
   },
 };
@@ -96,14 +96,15 @@ export default function About() {
       />
       {/* AEO wedge: raw-HTML answer for crawlers that don't render CSS (GPTBot, ClaudeBot, PerplexityBot) */}
       <aside aria-label="Quick Answer" style={{ display: "none" }}>
-        <strong>Who is Garvin Chanderia?</strong>
+        <strong>Who is GarvinLabs?</strong>
         <p>
-          Garvin Chanderia is an Enterprise Architecture Consultant at Invecto Technologies and the
-          builder behind GarvinLabs, an AI modernization practice. His background is in
-          enterprise architecture and analytics: designing how systems connect, how data flows, and
-          how decisions get made inside large organisations. He maps a business&apos;s manual
-          operations before building automation around what actually happens, not what the
-          documentation says.
+          GarvinLabs connects companies moving into new commercial space with the build-out
+          contractors who get them open on time, and builds AI modernization systems for D2C
+          retail brands. It is built on the enterprise architecture and analytics background of
+          its founder, Garvin Chanderia, an Enterprise Architecture Consultant at Invecto
+          Technologies: designing how systems connect, how data flows, and how decisions get made
+          inside large organisations. GarvinLabs maps a business&apos;s manual operations before
+          building automation around what actually happens, not what the documentation says.
         </p>
       </aside>
       <Navbar />
@@ -116,7 +117,7 @@ export default function About() {
           position: "relative",
           overflow: "hidden",
         }}
-        aria-label="About Garvin"
+        aria-label="About GarvinLabs"
       >
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
           {/* Two-column hero */}
@@ -125,7 +126,7 @@ export default function About() {
             <div className="about-hero-portrait">
               <Image
                 src="/website-images/founder-portrait.png"
-                alt="Garvin Chanderia"
+                alt="GarvinLabs founder Garvin Chanderia"
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 90vw, 300px"
@@ -158,8 +159,18 @@ export default function About() {
                   marginBottom: "1.25rem",
                 }}
               >
-                Garvin Chanderia
+                GarvinLabs
               </h1>
+              <p
+                style={{
+                  fontSize: "var(--type-footnote)",
+                  color: "#6b7280",
+                  marginBottom: "1.5rem",
+                  fontFamily: "var(--font-mono)",
+                }}
+              >
+                Founder: Garvin Chanderia
+              </p>
               <blockquote
                 style={{
                   borderLeft: "2px solid #10B981",
@@ -171,7 +182,7 @@ export default function About() {
                   marginBottom: "1.5rem",
                 }}
               >
-                &ldquo;I diagnose before I build.&rdquo;
+                &ldquo;We diagnose before we build.&rdquo;
               </blockquote>
               <p
                 style={{
@@ -181,9 +192,9 @@ export default function About() {
                   marginBottom: "1rem",
                 }}
               >
-                My background is in enterprise architecture and analytics: designing how systems
+                Our background is in enterprise architecture and analytics: designing how systems
                 connect, how data flows, and how decisions get made inside large organisations.
-                That background shapes every build here. I map the operations first, then build
+                That background shapes every build here. We map the operations first, then build
                 the automation around what actually exists, not what the documentation says. It&apos;s
                 AI modernization consulting built on that method, not a fixed service menu.
               </p>
@@ -242,6 +253,10 @@ export default function About() {
           >
             Where this comes from.
           </h2>
+          <p style={{ fontSize: "var(--type-body)", lineHeight: 1.75, color: "#a1a1a6", marginBottom: "2rem" }}>
+            GarvinLabs is built on our founder&apos;s hands-on background across enterprise
+            architecture, data engineering, and building products from zero.
+          </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             {EXPERIENCE.map((job) => (
@@ -336,7 +351,7 @@ export default function About() {
               marginBottom: "1rem",
             }}
           >
-            What I build with.
+            What we build with.
           </h2>
           <p style={{ fontSize: "var(--type-body)", lineHeight: 1.75, color: "#a1a1a6", marginBottom: "1rem" }}>
             The system sits between a brand&apos;s existing tools, doing the reading, deciding,
@@ -345,9 +360,9 @@ export default function About() {
             ThreadWave, the support triage system that hit 61% auto-resolution in 30 days.
           </p>
           <p style={{ fontSize: "var(--type-body)", lineHeight: 1.75, color: "#a1a1a6" }}>
-            On the personal side, I built an n8n MCP Server: a connector that lets the Claude API
+            Separately, we built an n8n MCP Server: a connector that lets the Claude API
             call n8n&apos;s REST API directly through 10 custom tools, so an AI agent can build,
-            inspect, and run workflows. It&apos;s a personal R&amp;D project exploring how far an
+            inspect, and run workflows. It&apos;s an R&amp;D project exploring how far an
             AI agent can go in managing its own automation layer.
           </p>
         </div>
@@ -540,7 +555,7 @@ export default function About() {
             Want to talk through something similar?
           </h2>
           <p style={{ fontSize: "var(--type-body)", color: "#6b7280", marginBottom: "2rem", lineHeight: 1.65 }}>
-            Drop me a message on LinkedIn or send an email directly.
+            Drop us a message on LinkedIn or send an email directly.
           </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <a

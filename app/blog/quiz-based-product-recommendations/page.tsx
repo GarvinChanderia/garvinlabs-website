@@ -9,7 +9,7 @@ const DESCRIPTION =
   "A quiz results page promises a personal plan, then the follow-up email is the same generic send everyone gets. What a completion-triggered, answer-matched recommendation system looks like, the failure modes, and the one sourced stat behind it.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/quiz-based-product-recommendations" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -95,7 +95,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             A quiz promises a personal plan: your skin type, your room style, your match.
@@ -105,17 +105,17 @@ export default function Post() {
         </header>
 
         <div className="post-body">
-          <h2>The story I couldn&#39;t verify, and the pattern that replaces it</h2>
+          <h2>The story we couldn&#39;t verify, and the pattern that replaces it</h2>
           <p>
-            I went looking for a founder on record saying, more or less, &quot;our quiz leads
-            went cold because nobody followed through on the answers.&quot; I searched
+            We went looking for a founder on record saying, more or less, &quot;our quiz leads
+            went cold because nobody followed through on the answers.&quot; We searched
             podcast transcripts (Shopify Masters, Mixergy), Indie Hackers threads, Starter
-            Story interviews, and the Shopify and ecommerce forums on Reddit. I didn&#39;t
-            find a clean, verbatim quote that names this exact failure. I&#39;m not going to
+            Story interviews, and the Shopify and ecommerce forums on Reddit. We didn&#39;t
+            find a clean, verbatim quote that names this exact failure. We&#39;re not going to
             invent one and put a real name on it.
           </p>
           <p>
-            What I found instead was a gap. Founders who talk publicly about their quizzes,
+            What we found instead was a gap. Founders who talk publicly about their quizzes,
             Primally Pure&#39;s Bethany McDaniel among them, describe the mechanics in real
             detail: how many questions, the persona built for each result, the email sequence
             tied to that persona. What almost nobody describes on record is the other version
@@ -181,7 +181,7 @@ export default function Post() {
             What they don&#39;t do out of the box is decide what happens next. The results
             page is often the end of the built-in logic. Anything past it, an automated email
             built around that specific result, a real product match instead of a persona
-            label, has to be wired up separately, and in my experience that separate step is
+            label, has to be wired up separately, and in our experience that separate step is
             the one that gets skipped when the quiz ships under a deadline.
           </p>
           <p>
@@ -212,9 +212,9 @@ export default function Post() {
             product or plan data behind it.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
+          <h2>The solution we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d build this, if I were doing it for a brand running a
+            Here&#39;s how we&#39;d build this, if we were doing it for a brand running a
             wellness quiz or a room-style quiz today.
           </p>
           <p>
@@ -233,7 +233,7 @@ export default function Post() {
             skin concerns plus skin type plus budget plus fragrance preference, for example,
             benefits from a proper matching layer: score each product against the
             customer&#39;s answers on the dimensions that matter, and recommend the top
-            matches rather than a single fixed bucket. I&#39;d build this as a distinct step
+            matches rather than a single fixed bucket. We&#39;d build this as a distinct step
             from the send, not baked into an email template, because the matching logic is
             the thing that needs testing and iteration as the product catalog changes, and it
             shouldn&#39;t be buried inside marketing copy.
@@ -327,7 +327,7 @@ export default function Post() {
 
           <h2>What the pain costs, and what the one data point says</h2>
           <p>
-            I don&#39;t have a broad dataset on how much revenue sits uncollected in quiz
+            We don&#39;t have a broad dataset on how much revenue sits uncollected in quiz
             answers that never got a real follow-up. What exists publicly is a single,
             specific number: a 36% increase in conversion rate that one bicycle brand saw
             after adding a product recommendation quiz with automated follow-up, cited in
@@ -355,7 +355,7 @@ export default function Post() {
             expect a 36% lift of their own.
           </p>
           <p>
-            What I can say with more confidence, because it doesn&#39;t depend on any one
+            What we can say with more confidence, because it doesn&#39;t depend on any one
             brand&#39;s numbers, is the structural point this whole post rests on: a quiz
             that collects specific answers and then sends something generic is doing the hard
             part (getting the customer to hand over information) and skipping the part that
@@ -365,7 +365,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

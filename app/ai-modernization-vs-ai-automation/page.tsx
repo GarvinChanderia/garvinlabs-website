@@ -10,7 +10,7 @@ const DESCRIPTION =
   "Automation does the same process faster. Modernization asks whether it's the right process at all. Conflating them is why some AI projects speed up a broken workflow instead of fixing it.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/ai-modernization-vs-ai-automation" },
   openGraph: {
@@ -41,9 +41,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -94,7 +94,7 @@ export default function AiModernizationVsAutomation() {
           <p className="post-tag">AI Modernization · Comparison</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>, AI automation for D2C operations
           </p>
           <p className="post-lead">
             Automation does the same process faster. Modernization asks whether

@@ -9,7 +9,7 @@ const DESCRIPTION =
   "\"Our returns process was all manual,\" says a footwear brand's ops director, describing phone-and-spreadsheet chaos. What a policy-check-plus-label automation looks like, the fraud and judgment tradeoffs, and the 50% processing-time cut AfterShip's research cites.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/returns-and-exchange-automation" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -94,7 +94,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             &quot;Our returns process was all manual.&quot; That&#39;s Nikolas Callas,
@@ -140,12 +140,12 @@ export default function Post() {
             .)
           </p>
           <p>
-            I&#39;m quoting an operations lead, not a founder, because that&#39;s the
-            verified quote I could find, and it&#39;s a better data point than a
+            We&#39;re quoting an operations lead, not a founder, because that&#39;s the
+            verified quote we could find, and it&#39;s a better data point than a
             founder&#39;s paraphrase of the same problem: whoever owns the process day to day
             usually describes it more precisely than whoever owns the P&amp;L. What Callas
-            describes matches a pattern I&#39;ve seen repeated, unattributed, across founder
-            interviews and forum threads on returns handling, but I haven&#39;t verified a
+            describes matches a pattern we&#39;ve seen repeated, unattributed, across founder
+            interviews and forum threads on returns handling, but we haven&#39;t verified a
             second sourced account naming numbers the way Callas did, so treat it as a
             directional pattern rather than an independently confirmed one: a return process
             built on people checking things by hand, across too many channels, with no
@@ -216,16 +216,16 @@ export default function Post() {
             are genuinely simple, and honest about which cases aren&#39;t.
           </p>
 
-          <h2>The system I&#39;d build</h2>
+          <h2>The system we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d actually build this, for a brand whose order and
+            Here&#39;s how we&#39;d actually build this, for a brand whose order and
             inventory data lives somewhere queryable (Shopify, a WMS, whatever the source of
             truth is).
           </p>
           <p>
             The request comes in through a form or a support channel and the first thing the
             system does is pull the order: purchase date, price paid, promotion flags, SKU,
-            and the customer&#39;s return history. This is the same principle I use in
+            and the customer&#39;s return history. This is the same principle we use in
             support automation generally: ground every decision in the actual data before
             anything acts on it, not on what the policy usually says.
           </p>
@@ -273,7 +273,7 @@ export default function Post() {
 
           <h2>What this doesn&#39;t fix</h2>
           <p>
-            This is where I&#39;d push back on my own pitch, because the failure modes are
+            This is where we&#39;d push back on our own pitch, because the failure modes are
             real.
           </p>
           <p>
@@ -325,7 +325,7 @@ export default function Post() {
 
           <h2>The cost of the pain, and the cited improvement</h2>
           <p>
-            The clearest number I can point to on this: automating the approval-and-label
+            The clearest number we can point to on this: automating the approval-and-label
             steps of returns processing cuts processing time by 50%, per AfterShip&#39;s
             research, compiled in Opensend&#39;s return-processing statistics roundup.
             AfterShip did the underlying research; Opensend compiled it into their
@@ -344,7 +344,7 @@ export default function Post() {
           </figure>
 
           <p>
-            The pattern shows up in both directions I described above: fashion and apparel
+            The pattern shows up in both directions we described above: fashion and apparel
             brands dealing with size exchanges, and home goods brands handling damage
             claims on furniture. The trigger is different (wrong size versus damaged in
             transit), but the fix is the same shape: automate the policy check and the
@@ -355,7 +355,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

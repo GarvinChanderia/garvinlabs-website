@@ -9,7 +9,7 @@ const DESCRIPTION =
   "A batch restock email misses the customers who mattered most: the ones who wanted one specific variant. What a delivery-triggered, variant-level back-in-stock alert looks like, the failure modes, and the one sourced number behind it.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/back-in-stock-alerts" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -91,7 +91,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             A bestseller shade or size sells out. Weeks pass. It comes back, and the
@@ -103,16 +103,16 @@ export default function Post() {
         <div className="post-body">
           <h2>A founder&#39;s story</h2>
           <p>
-            I went looking for a specific kind of quote: a founder, on the record,
+            We went looking for a specific kind of quote: a founder, on the record,
             describing the moment they realized a customer had walked to a competitor
-            because a waitlist never converted into an actual notification. I searched
+            because a waitlist never converted into an actual notification. We searched
             podcast transcripts (Shopify Masters, DTC Pod), Starter Story and Indie
-            Hackers interviews, founder blog post-mortems, and ecommerce forum threads. I
+            Hackers interviews, founder blog post-mortems, and ecommerce forum threads. We
             did not find one clean, verbatim quote that matches this exact story
-            attributed to a named person I could verify.
+            attributed to a named person we could verify.
           </p>
           <p>
-            What I did find, from a real and checkable source, is a founder talking about
+            What we did find, from a real and checkable source, is a founder talking about
             a closely related version of the same problem: the gap between &quot;we told
             the customer something&quot; and &quot;we told the customer something in the
             way that matched how badly they wanted it.&quot; Christian Nørbjerg Enger,
@@ -124,12 +124,12 @@ export default function Post() {
             aligns better with the customer&#39;s desire.&quot; That&#39;s a real, sourced
             quote about restock communication, not a fabricated one, though it&#39;s
             about channel and urgency rather than the specific &quot;you never told
-            me&quot; failure I was originally looking for.
+            me&quot; failure we were originally looking for.
           </p>
           <p>
             So here&#39;s the honest version: a pattern that shows up repeatedly across
             founder interviews and DTC operator threads, not attributed to any single
-            named person, because I won&#39;t put words in someone&#39;s mouth that I
+            named person, because we won&#39;t put words in someone&#39;s mouth that we
             can&#39;t verify they said. A bestseller shade or size sells out. A waitlist
             form catches the interested customers, dozens or hundreds of them. Weeks
             pass. The item comes back, and what actually happens next is either nothing
@@ -141,7 +141,7 @@ export default function Post() {
             out only when a customer support ticket or a comment says some version of
             &quot;I signed up for this months ago and never heard anything.&quot;
             That&#39;s the story. It&#39;s common enough that it didn&#39;t need one
-            dramatic quote to be true, but I&#39;d rather say that plainly than invent
+            dramatic quote to be true, but we&#39;d rather say that plainly than invent
             one to make the opening punchier.
           </p>
 
@@ -226,9 +226,9 @@ export default function Post() {
             shade, a fragrance, a size that either fits or doesn&#39;t).
           </p>
 
-          <h2>The solution I&#39;d build</h2>
+          <h2>The solution we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d actually build this, if I were solving it as a system
+            Here&#39;s how we&#39;d actually build this, if we were solving it as a system
             rather than picking an app off a marketplace.
           </p>
           <p>
@@ -390,12 +390,12 @@ export default function Post() {
           </figure>
 
           <p>
-            I looked for additional, independently verifiable statistics to add
+            We looked for additional, independently verifiable statistics to add
             alongside it. Several vendor sites (back-in-stock app providers, in
             particular) publish conversion and click-through figures for their own
             back-in-stock alerts, but without disclosed methodology, meaning it&#39;s
             not clear whether those numbers come from a single customer, an average
-            across their book, or a marketing claim without underlying data. I&#39;m not
+            across their book, or a marketing claim without underlying data. We&#39;re not
             including those here, because a number without a traceable source is
             exactly the kind of stat this article is arguing against citing.
           </p>
@@ -413,7 +413,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

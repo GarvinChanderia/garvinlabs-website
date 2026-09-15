@@ -9,7 +9,7 @@ const DESCRIPTION =
   "Subscription-box churn from a mismatched month never generates a ticket, so it never generates a signal either. What a charge-date-anchored teaser-and-skip cadence looks like, and Swell's research on subscribers who adjust instead of cancel.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/subscription-box-preview-announcements" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -93,7 +93,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             The surprise is the whole appeal of a subscription box, right up until it
@@ -106,10 +106,10 @@ export default function Post() {
         <div className="post-body">
           <h2>A founder&#39;s story</h2>
           <p>
-            I went looking for a real, verbatim, sourced quote from a named subscription box
+            We went looking for a real, verbatim, sourced quote from a named subscription box
             founder describing this specific moment: watching a customer cancel not because
             of a bad experience they complained about, but because the box quietly missed
-            their taste and they never said a word. I checked Shopify Masters and My First
+            their taste and they never said a word. We checked Shopify Masters and My First
             Million episode transcripts, Starter Story interviews, Indie Hackers threads on
             subscription commerce, r/subscriptionboxes from the operator side rather than
             the subscriber side, and founder threads on X tied to known boxes in food,
@@ -118,7 +118,7 @@ export default function Post() {
           <p>
             What turned up was a lot of founders talking about curation <em>strategy</em>,
             how they pick products, how they source for a theme, after they&#39;d already
-            built a process around it. What I couldn&#39;t verify was a specific,
+            built a process around it. What we couldn&#39;t verify was a specific,
             attributable, sourced quote about the churn moment itself, the silent cancel
             after a box that missed.
           </p>
@@ -218,9 +218,9 @@ export default function Post() {
             message.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
+          <h2>The solution we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d build this if I were setting it up around a brand&#39;s
+            Here&#39;s how we&#39;d build this if we were setting it up around a brand&#39;s
             actual shipping and billing schedule rather than sending on a fixed calendar
             date that may or may not line up with when the charge actually happens.
           </p>
@@ -293,7 +293,7 @@ export default function Post() {
             Too many pre-shipment emails can become a churn trigger in their own right. A
             three-message sequence before every single box, month after month, adds up, and
             email fatigue is a well-established reason subscribers disengage in email
-            marketing generally, though I don&#39;t have a source that isolates the effect
+            marketing generally, though we don&#39;t have a source that isolates the effect
             specifically for pre-shipment preview sequences. Sometimes the disengagement
             hits the list rather than the subscription itself, which then quietly breaks the
             whole mechanism the next time it matters.
@@ -364,8 +364,8 @@ export default function Post() {
             it&#39;s easy to overstate. It&#39;s an adjustment-tool usage number, broadly
             scoped across subscription commerce, not a measurement of preview emails
             specifically, and it&#39;s documented in food and beverage rather than across
-            every category. I haven&#39;t found a verified stat that isolates preview-email
-            impact on its own, so I&#39;m not going to state one.
+            every category. We haven&#39;t found a verified stat that isolates preview-email
+            impact on its own, so we&#39;re not going to state one.
           </p>
           <p>
             What the stat does support is the underlying logic, not a specific outcome
@@ -373,7 +373,7 @@ export default function Post() {
             rather than jumping straight to cancellation. A preview-and-skip cadence is one
             way to make that option visible and timely instead of buried in an account
             settings page nobody checks. Whether it moves a given brand&#39;s numbers by any
-            particular amount isn&#39;t something I can cite, only argue from the shape of
+            particular amount isn&#39;t something we can cite, only argue from the shape of
             the existing data.
           </p>
 
@@ -390,7 +390,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

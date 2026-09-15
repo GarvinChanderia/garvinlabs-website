@@ -9,7 +9,7 @@ const DESCRIPTION =
   "70.22% of online carts get abandoned (Baymard). Most brands already have a default recovery flow running, untouched, tuned for nobody in particular. What a well-tuned build looks like, the failure modes, and the sourced numbers behind the gap.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/abandoned-cart-recovery" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -94,7 +94,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             Someone adds three items to a cart, gets a phone call, and closes the tab.
@@ -108,15 +108,15 @@ export default function Post() {
             This is one of the more category-agnostic automations in ecommerce. Beauty,
             fashion, food and beverage, health, home goods: the checkout page doesn&#39;t
             care what&#39;s in the cart, and neither does the customer&#39;s attention
-            span. I&#39;ve seen the same pattern repeat across every vertical I&#39;ve
+            span. We&#39;ve seen the same pattern repeat across every vertical we&#39;ve
             looked into.
           </p>
 
           <h2>A founder&#39;s story</h2>
           <p>
-            I went looking for a real, verbatim quote from a named founder describing
+            We went looking for a real, verbatim quote from a named founder describing
             this specific pain: the moment they realized carts were dying quietly and
-            nobody was catching them. I checked podcast transcripts (Shopify Masters, My
+            nobody was catching them. We checked podcast transcripts (Shopify Masters, My
             First Million), Starter Story interviews, Indie Hackers threads, and founder
             interviews tied to cart-recovery tools like Carthook and Cartloop. What
             turned up was plenty of founders talking about cart recovery tactics
@@ -226,9 +226,9 @@ export default function Post() {
             reads inventory and order state before deciding to send anything.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
+          <h2>The solution we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d build this if I were setting it up from the
+            Here&#39;s how we&#39;d build this if we were setting it up from the
             platform&#39;s raw data rather than relying on a vendor&#39;s black box.
           </p>
           <p>
@@ -258,14 +258,14 @@ export default function Post() {
             someone&#39;s inbox for an order they already completed twenty minutes ago.
           </p>
           <p>
-            I&#39;d also branch by AOV. A $40 cart and a $400 cart shouldn&#39;t get the
+            We&#39;d also branch by AOV. A $40 cart and a $400 cart shouldn&#39;t get the
             same message. High-value carts might route to a channel with a human option
             (a text a person can actually reply to) rather than a fully automated
             email-only sequence, since the conversion math on a high-ticket cart can
             justify a bit of manual attention that a $40 cart can&#39;t.
           </p>
           <p>
-            One more thing I&#39;d build in from day one: a suppression list. Anyone
+            One more thing we&#39;d build in from day one: a suppression list. Anyone
             who&#39;s abandoned three carts in the last two weeks without converting is
             telling you something, maybe price sensitivity, maybe they&#39;re just a
             browser. A fourth aggressive nudge reads as noise, not recovery, and
@@ -335,7 +335,7 @@ export default function Post() {
             (Shopify&#39;s <code>checkouts/create</code> and{" "}
             <code>checkouts/update</code>, or the equivalent on whatever platform is in
             use), feeding into an orchestration layer that manages timing, branching,
-            and the stopping-condition checks. I&#39;d run that orchestration in
+            and the stopping-condition checks. We&#39;d run that orchestration in
             something like n8n rather than hand-rolling the timing logic in
             platform-native tools, mainly because it makes the wait states, conditional
             branches, and re-verification checks visible and editable rather than
@@ -425,7 +425,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

@@ -9,7 +9,7 @@ const DESCRIPTION =
   "WISMO tickets come from silence, not slow shipping: a webhook-triggered system that captures the tracking number at label creation, polls carrier milestones, and flags stalls before the customer notices. The build, tradeoffs, and one sourced stat.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/shipping-and-tracking-updates" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -96,7 +96,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             The tracking number already lives in the store&#39;s database the moment a
@@ -214,13 +214,13 @@ export default function Post() {
           </p>
           <p>
             None of these fixes a slow carrier. That&#39;s true of every option on this
-            list, including the one I&#39;d build, and it&#39;s worth saying plainly before
+            list, including the one we&#39;d build, and it&#39;s worth saying plainly before
             going further.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
+          <h2>The solution we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d think about building this for a D2C brand doing enough
+            Here&#39;s how we&#39;d think about building this for a D2C brand doing enough
             volume that manual handling has started to hurt.
           </p>
           <p>
@@ -236,13 +236,13 @@ export default function Post() {
             order record, and triggers the first customer notification: order shipped,
             courier, tracking link, expected window if the carrier API provides one. This
             part isn&#39;t complicated. It&#39;s the same lookup-and-populate logic as the
-            AI support triage pipeline I&#39;ve written about elsewhere, minus the AI: grab
+            AI support triage pipeline we&#39;ve written about elsewhere, minus the AI: grab
             the field, don&#39;t make a human type it.
           </p>
           <p>
             The part that actually moves the WISMO number is what happens after that first
             email. A tracking number sitting in an order record doesn&#39;t help anyone
-            unless something is watching it. This is where I&#39;d have the system poll the
+            unless something is watching it. This is where we&#39;d have the system poll the
             carrier&#39;s tracking API (or subscribe to their webhook, where one exists) at
             a sane interval, and fire a notification at specific milestones rather than
             every status change: picked up, in transit through a major hub, out for
@@ -339,7 +339,7 @@ export default function Post() {
 
           <h2>The cost of the pain, and the cited improvement</h2>
           <p>
-            The clearest number I&#39;ve found on this comes from ShippyPro&#39;s 2026
+            The clearest number we&#39;ve found on this comes from ShippyPro&#39;s 2026
             analysis of reducing WISMO tickets in ecommerce: up to 65% fewer &quot;where is
             my order&quot; support tickets once proactive tracking notifications are in
             place.
@@ -364,17 +364,17 @@ export default function Post() {
             specifically.
           </p>
           <p>
-            I&#39;d argue the underlying mechanism generalizes past that one vertical,
+            We&#39;d argue the underlying mechanism generalizes past that one vertical,
             because the logic doesn&#39;t depend on what&#39;s in the box: a customer who
             already has a tracking link and a status update doesn&#39;t have a reason to
             ask where their order is, regardless of whether it&#39;s a skincare set or a
             snack subscription. But that&#39;s reasoning from mechanism, not a second
-            documented case, and I want to keep that distinction clear rather than imply
+            documented case, and we want to keep that distinction clear rather than imply
             it&#39;s been tested across categories when the source material doesn&#39;t say
             that.
           </p>
           <p>
-            What I can say without hedging is the mechanism itself: the ticket gets
+            What we can say without hedging is the mechanism itself: the ticket gets
             prevented by removing the reason it gets asked, not by answering it faster once
             it lands. That&#39;s the same principle threaded through the whole build above,
             from the first webhook trigger to the stall detector at the end. Silence
@@ -385,7 +385,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

@@ -10,7 +10,7 @@ const DESCRIPTION =
   "Most AI agencies lead with the tool and sell a service menu. This is a diagnose-first method: map the real process, name the root cause, then decide what (if anything) should be automated.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/garvinlabs-vs-ai-agencies" },
   openGraph: {
@@ -41,9 +41,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -94,7 +94,7 @@ export default function GarvinLabsVsAgencies() {
           <p className="post-tag">AI Modernization · Comparison</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>, AI automation for D2C operations
           </p>
           <p className="post-lead">
             Most AI agencies lead with the tool and sell a service menu. This is a

@@ -6,9 +6,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${baseUrl}/`,
-      lastModified: new Date("2026-07-19"),
+      lastModified: new Date("2026-09-15"),
       changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/connector/real-clock-on-every-buildout`,
+      lastModified: new Date("2026-09-15"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/connector/citation-isnt-the-trigger`,
+      lastModified: new Date("2026-09-15"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/connector/warehouses-automate-after-the-peak`,
+      lastModified: new Date("2026-09-15"),
+      changeFrequency: "monthly",
+      priority: 0.6,
     },
     {
       url: `${baseUrl}/demos`,
@@ -54,13 +72,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date("2026-07-19"),
+      lastModified: new Date("2026-09-15"),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date("2026-06-12"),
+      lastModified: new Date("2026-09-15"),
       changeFrequency: "monthly",
       priority: 0.7,
     },

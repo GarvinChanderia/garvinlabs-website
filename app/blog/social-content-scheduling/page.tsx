@@ -9,7 +9,7 @@ const DESCRIPTION =
   "Content gets made in bursts because it's rarely anyone's actual job, and the queue empties the moment something else demands attention. What a drafting-plus-review pipeline looks like, and Buffer's 5x engagement number behind consistent posting.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/social-content-scheduling" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -93,7 +93,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             Nobody decides to go quiet. A launch or a fulfilment problem eats the week, and
@@ -104,10 +104,10 @@ export default function Post() {
         <div className="post-body">
           <h2>A pattern that shows up whenever founders talk about content</h2>
           <p>
-            I went looking for a founder quote to open this with: something specific about
+            We went looking for a founder quote to open this with: something specific about
             the exact failure mode, content written in bursts, no queue, the drop-off the
-            moment something else demands attention. I couldn&#39;t verify one word for word
-            from a D2C founder. What I found instead came from someone who lives this
+            moment something else demands attention. We couldn&#39;t verify one word for word
+            from a D2C founder. What we found instead came from someone who lives this
             problem professionally rather than as a brand owner, and it&#39;s close enough
             to be worth quoting properly.
           </p>
@@ -121,7 +121,7 @@ export default function Post() {
           </p>
           <p>
             That&#39;s a content professional talking about her own practice, not a founder
-            talking about a brand. But the shape of it is the one I keep seeing,
+            talking about a brand. But the shape of it is the one we keep seeing,
             unattributed, across founder interviews and forum threads whenever the subject
             of social media comes up: a pattern where content gets made when there&#39;s
             slack in the schedule and stops the moment there isn&#39;t. Nobody decides to go
@@ -186,7 +186,7 @@ export default function Post() {
             problem.
           </p>
           <p>
-            A fully custom drafting-plus-scheduling automation is the option I&#39;d build,
+            A fully custom drafting-plus-scheduling automation is the option we&#39;d build,
             and it&#39;s worth saying upfront what it isn&#39;t: it isn&#39;t a replacement
             for having a real brand voice, and it isn&#39;t zero-effort. It&#39;s a way to
             make sure a queue exists before someone needs it, drafted in advance, reviewed
@@ -194,9 +194,9 @@ export default function Post() {
             Tuesday being free.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
+          <h2>The solution we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d build this. The core idea is simple: separate drafting
+            Here&#39;s how we&#39;d build this. The core idea is simple: separate drafting
             from publishing, and make sure drafting happens on its own cadence, not in
             response to a deadline.
           </p>
@@ -210,7 +210,7 @@ export default function Post() {
             before-and-afters for beauty, outfit posts for apparel).
           </p>
           <p>
-            On a fixed cadence, weekly is the one I&#39;d default to, the system drafts a
+            On a fixed cadence, weekly is the one we&#39;d default to, the system drafts a
             batch of posts for the coming stretch: captions, a content angle or prompt for
             the visual, and a suggested posting slot. It pulls from the product catalog for
             what to feature and from the voice reference for how to say it, the same
@@ -293,7 +293,7 @@ export default function Post() {
 
           <h2>KPIs: the cost of the pain, and the cited improvement</h2>
           <p>
-            The clearest number I have here is Buffer&#39;s 2026 analysis of over 100,000
+            The clearest number we have here is Buffer&#39;s 2026 analysis of over 100,000
             accounts: brands that post consistently see roughly 5x more engagement per
             post, likes, comments, shares, than brands that post on and off.
           </p>
@@ -318,9 +318,9 @@ export default function Post() {
             metric either.
           </p>
           <p>
-            I looked for additional cited data to add here, hours lost per week to content
+            We looked for additional cited data to add here, hours lost per week to content
             creation, direct revenue impact of posting cadence, and didn&#39;t find
-            anything I could verify against a primary source rather than a marketing blog
+            anything we could verify against a primary source rather than a marketing blog
             reciting an unlinked &quot;study.&quot; So that&#39;s the one number in this
             post, and it stays hedged the way it should be.
           </p>
@@ -337,7 +337,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

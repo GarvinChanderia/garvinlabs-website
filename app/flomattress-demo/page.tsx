@@ -3,7 +3,7 @@ import FloMattressChatBot from '@/components/FloMattressChatBot';
 import s from './flomattress-demo.module.css';
 
 export const metadata: Metadata = {
-  title: 'DEMO — Flo Mattress AI Support Concept | GarvinLabs',
+  title: 'DEMO: Flo Mattress AI Support Concept | GarvinLabs',
   description:
     'Unofficial demo only. A sales-engineering proof of concept showing an AI support triage + chatbot layer, styled after Flo Mattress for illustration. Not affiliated with or operated by Flo Mattress.',
   robots: { index: false, follow: false },
@@ -27,10 +27,10 @@ const pipeline = [
 export default function FloMattressDemoPage() {
   return (
     <div className={s.page}>
-      {/* Demo disclaimer — always visible, sticky top */}
+      {/* Demo disclaimer (always visible, sticky top) */}
       <div className={s.demoBanner}>
         <div className={s.demoBannerInner}>
-          ⚠ <strong>DEMO ONLY</strong> — this is an unofficial proof-of-concept built by GarvinLabs.
+          ⚠ <strong>DEMO ONLY</strong>: this is an unofficial proof-of-concept built by GarvinLabs.
           It is <strong>not</strong> the real Flo Mattress website and is <strong>not affiliated with, endorsed by, or operated by Flo Mattress</strong> in any way.
           Product names, prices, and policy text are copied from the public flomattress.com site for illustration only. No real orders, payments, or support requests are processed here.
         </div>
@@ -53,7 +53,7 @@ export default function FloMattressDemoPage() {
         </div>
       </header>
 
-      {/* Hero — real Flo Mattress copy, used for illustration */}
+      {/* Hero (real Flo Mattress copy, used for illustration) */}
       <section className={s.hero}>
         <div className={s.heroInner}>
           <div>
@@ -78,7 +78,7 @@ export default function FloMattressDemoPage() {
         <div className={s.noticeInner}>
           <span>⚡</span>
           <span>
-            <strong>Live AI demo</strong> — the chat widget (bottom-right) runs a real local LLM + n8n
+            <strong>Live AI demo</strong>: the chat widget (bottom-right) runs a real local LLM + n8n
             triage pipeline grounded in Flo Mattress's actual public shipping, returns, and sizing policy.
             Try the preset chips or ask your own question.
           </span>
@@ -143,7 +143,7 @@ export default function FloMattressDemoPage() {
       {/* Footer */}
       <footer className={s.storeFooter}>
         <div className={s.storeFooterInner}>
-          <span>Demo recreation — not the real Flo Mattress, not a real shop.</span>
+          <span>Demo recreation, not the real Flo Mattress, not a real shop.</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <span>Built by <a href="https://garvinlabs.com" className={s.storeFooterLink}>GarvinLabs</a></span>
           </div>

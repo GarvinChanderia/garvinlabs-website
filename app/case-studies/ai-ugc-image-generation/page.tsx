@@ -7,10 +7,10 @@ import { LINKEDIN } from "@/lib/constants";
 
 const TITLE = "Fashion brand AI photography process";
 const DESCRIPTION =
-  "A founder-led apparel brand needed campaign-ready photography without a studio shoot. I built a 7-step process, ICP through iteration, that gets AI-generated images to read as a real shoot instead of obviously synthetic.";
+  "A founder-led apparel brand needed campaign-ready photography without a studio shoot. We built a 7-step process, ICP through iteration, that gets AI-generated images to read as a real shoot instead of obviously synthetic.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/case-studies/ai-ugc-image-generation" },
   openGraph: {
@@ -41,9 +41,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -67,7 +67,7 @@ export default function CaseStudy() {
       <aside aria-label="Quick Answer" style={{ display: "none" }}>
         <strong>How do you generate AI product photography that doesn&apos;t look AI-generated?</strong>
         <p>
-          For a founder-led apparel brand, I built a 7-step process: lock the ICP before
+          For a founder-led apparel brand, we built a 7-step process: lock the ICP before
           generating anything, build a model document so identity holds across every shot, brief
           the product like a real photographer would (dimensions, fits, cuts), pull editorial
           references and align with the founder on the shot vision, lock poses and lighting and
@@ -97,11 +97,11 @@ export default function CaseStudy() {
           <p className="post-tag">AI Content Production · Case Study</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>, an enterprise architecture consultancy, builder of automations
           </p>
           <p className="post-lead">
             A founder-led apparel brand needed campaign-ready photography without booking a
-            studio, a model, or a location. I built the process that got the output there.
+            studio, a model, or a location. We built the process that got the output there.
           </p>
         </header>
 
@@ -142,10 +142,10 @@ export default function CaseStudy() {
 
           <blockquote>
             <p>What they needed: campaign-ready photography without a shoot.</p>
-            <p>What I delivered: a 7-step generation process and a set of images that read as a real shoot on first look.</p>
+            <p>What we delivered: a 7-step generation process and a set of images that read as a real shoot on first look.</p>
           </blockquote>
 
-          <h2>How I approached it</h2>
+          <h2>How we approached it</h2>
           <ol>
             <li><strong>Understood the ICP.</strong> Age, demographic, gender, ethnicity, colour palette, matched to the brand&#39;s actual customer, not a generic stock-model default.</li>
             <li><strong>Built a model document.</strong> A single reference file locking the model&#39;s identity (face shape, body type, skin tone, styling) so every image pointed back to the same source.</li>

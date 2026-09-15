@@ -142,12 +142,52 @@ const JSON_LD = {
   },
 };
 
+const AEO_FAQS = [
+  {
+    q: "How does GarvinLabs decide what to automate first?",
+    a: "By mapping the manual process before touching any tooling: what triggers the work, who does it, and where the judgment calls actually happen. The build gets scoped around that, not a templated workflow. Support tickets are where this showed up first for ThreadWave, but the same method applies to ops reporting, fulfilment, or influencer tracking.",
+  },
+  {
+    q: "How long does a build like this typically take?",
+    a: "ThreadWave went from mapping the ticket taxonomy to a live system in 14 days. Most of that time is discovery, understanding the process as it actually runs, not the build itself. Once the process is mapped, wiring it into the existing tools is the fast part.",
+  },
+  {
+    q: "How does a system like this avoid sending a wrong reply?",
+    a: "ThreadWave only auto-replies to low-risk, well-defined query types, like order status or return policy questions, where confidence is high. Anything ambiguous or high-stakes gets escalated to a person with a draft already attached. The rule isn't automate everything, it's automate what's safe to automate and escalate the rest.",
+  },
+  {
+    q: "Why not just use basic rule-based automation like Zapier?",
+    a: "Rule-based automation breaks the moment something is phrased unexpectedly: a typo, an odd word order, a two-part request. The systems here read intent instead of matching keywords, so they hold up against that kind of variation, whether it's a support ticket, a fulfilment exception, or an inventory alert.",
+  },
+  {
+    q: "Does this only apply to customer support?",
+    a: "No, support is just where the first build landed, because that pain surfaced first in founder conversations. The method, map the manual process, then build the system around what actually happens, applies to any repetitive operational work: daily ops reporting, fulfilment checks, influencer or affiliate tracking, inventory alerts.",
+  },
+];
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: AEO_FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 export default function DemosPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }}
       />
       {/* AEO wedge: raw-HTML answer for crawlers that don't render CSS (GPTBot, ClaudeBot, PerplexityBot) */}
       <aside aria-label="Quick Answer" style={{ display: "none" }}>
@@ -186,6 +226,44 @@ export default function DemosPage() {
         <section style={{ paddingTop: 0, paddingBottom: 120 }}>
           <div className="container">
             <BuildsGrid builds={BUILDS} />
+          </div>
+        </section>
+
+        <section style={{ paddingTop: 0, paddingBottom: 120 }}>
+          <div className="container" style={{ maxWidth: 740 }}>
+            <div className="reveal" style={{ marginBottom: 40 }}>
+              <span className="eyebrow">
+                <span className="eyebrow-dot"></span>FAQ
+              </span>
+              <h2 className="h2" style={{ marginTop: 18 }}>
+                Direct answers.
+              </h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              {AEO_FAQS.map((faq, idx) => (
+                <details
+                  key={idx}
+                  className="reveal"
+                  style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "0 0.25rem" }}
+                >
+                  <summary
+                    style={{
+                      fontSize: "1rem",
+                      fontWeight: 600,
+                      outline: "none",
+                      listStyle: "none",
+                      padding: "1.5rem 0",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {faq.q}
+                  </summary>
+                  <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "#6b7280", paddingBottom: "1.5rem" }}>
+                    {faq.a}
+                  </p>
+                </details>
+              ))}
+            </div>
           </div>
         </section>
       </main>

@@ -9,7 +9,7 @@ const DESCRIPTION =
   "A fifty-chair order lands through the normal consumer checkout and sits in the queue, indistinguishable from every single-item purchase. What real-time order-size detection and routing looks like, the tuning tradeoffs, and the speed-to-lead research behind it.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/bulk-order-and-b2b-lead-alert" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -93,7 +93,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             A buyer orders fifty chairs through the normal checkout. The order lands in
@@ -104,12 +104,12 @@ export default function Post() {
 
         <div className="post-body">
           <p>
-            I went looking for a founder on record describing this exact moment: a bulk
+            We went looking for a founder on record describing this exact moment: a bulk
             or wholesale-sized order lands through the normal consumer storefront, sits
             in the queue looking like every other order, and by the time anyone realizes
             what it actually was, the buyer has already gotten a quote from someone
-            else. I did not find a verbatim quote specific enough to attribute to a
-            named person without putting words in their mouth, so I am not going to
+            else. We did not find a verbatim quote specific enough to attribute to a
+            named person without putting words in their mouth, so we are not going to
             invent one. What follows instead is a composite, a pattern that shows up
             repeatedly across founder interviews and forum threads about wholesale and
             B2B-adjacent D2C selling, described plainly rather than dressed up as a
@@ -213,8 +213,8 @@ export default function Post() {
             something rather than just designating a process or a page.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
-          <p>Here&#39;s how I&#39;d build this, in plain terms.</p>
+          <h2>The solution we&#39;d build</h2>
+          <p>Here&#39;s how we&#39;d build this, in plain terms.</p>
           <p>
             The trigger is order creation. Every new order fires an event, and that
             event carries the data you need: line item quantities, total order value,
@@ -224,7 +224,7 @@ export default function Post() {
             every so often.
           </p>
           <p>
-            Threshold logic runs against that event immediately. I&#39;d set two
+            Threshold logic runs against that event immediately. We&#39;d set two
             possible triggers, not one: total order value above a set number, or total
             quantity above a set number, because either one alone misses cases the other
             catches. A single order for two hundred units of a cheap accessory might not
@@ -344,7 +344,7 @@ export default function Post() {
             the buyer has already committed money, which arguably makes them a warmer
             prospect, not a colder one. So the 21x figure is illustrative here, a
             reasonable proxy for how much speed matters in buyer intent generally, not a
-            direct measurement of this specific scenario. I haven&#39;t found a study
+            direct measurement of this specific scenario. We haven&#39;t found a study
             that measures response-time impact specifically on already-placed bulk
             orders in a consumer storefront, and until one exists, that&#39;s a real gap
             rather than something to paper over with a made-up number.
@@ -372,7 +372,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

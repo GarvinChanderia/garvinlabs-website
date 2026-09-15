@@ -9,7 +9,7 @@ const DESCRIPTION =
   "A product page converts 52.2% better once it has even one real review. What a delivery-triggered, category-aware review and UGC request sequence looks like, the FTC line on incentives, and the failure modes worth knowing before you build it.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/post-purchase-review-and-ugc-collection" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -93,7 +93,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
           <p className="post-lead">
             Someone&#39;s deciding between two nearly identical products. One has forty
@@ -106,8 +106,8 @@ export default function Post() {
         <div className="post-body">
           <h2>A pattern that shows up across founder interviews</h2>
           <p>
-            I couldn&#39;t find one verifiable, on-the-record quote from a single named
-            founder telling this exact story start to finish, so I won&#39;t manufacture
+            We couldn&#39;t find one verifiable, on-the-record quote from a single named
+            founder telling this exact story start to finish, so we won&#39;t manufacture
             one and put words in someone&#39;s mouth. But the shape of the story repeats
             often enough across founder interviews, forum threads, and podcast transcripts
             that it&#39;s worth describing honestly as a composite, not a single sourced
@@ -201,9 +201,9 @@ export default function Post() {
             remember to do this&quot; step entirely.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
+          <h2>The solution we&#39;d build</h2>
           <p>
-            Here&#39;s how I&#39;d build this, and it&#39;s a narrower system than it
+            Here&#39;s how we&#39;d build this, and it&#39;s a narrower system than it
             sounds.
           </p>
           <p>
@@ -324,7 +324,7 @@ export default function Post() {
           </figure>
 
           <p>
-            That&#39;s the single most consistent stat across every vertical I&#39;ve
+            That&#39;s the single most consistent stat across every vertical we&#39;ve
             researched in depth: beauty (photo requests), fashion (UGC campaigns), food and
             beverage (taste surveys), health and wellness (before-and-after stories), and
             home goods (assembly-guide-plus-review). The ask format changes to fit what
@@ -333,7 +333,7 @@ export default function Post() {
             all.
           </p>
           <p>
-            The cost of the pain isn&#39;t a number I can cite cleanly (it&#39;s the reviews
+            The cost of the pain isn&#39;t a number we can cite cleanly (it&#39;s the reviews
             that never got asked for, which by definition don&#39;t show up in anyone&#39;s
             dataset). What&#39;s measurable is the other side: a product page with real
             proof on it converts meaningfully better than one without, and that gap opens
@@ -343,7 +343,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

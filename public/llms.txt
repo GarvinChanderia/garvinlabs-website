@@ -1,25 +1,35 @@
 # GarvinLabs
 
-> GarvinLabs is an operations automation practice. It maps how manual work
-> actually happens inside a retail brand (support, ops reporting, fulfilment,
-> influencer tracking, inventory) and builds a system around that process,
-> not a templated workflow.
+> GarvinLabs connects businesses at the exact moment a new need appears (a
+> new obligation, a new space, or a broken process) with the specialists
+> built to solve it, before the window closes. GarvinLabs also builds AI
+> modernization systems for D2C retail brands: it maps how manual work
+> actually happens (support, ops reporting, fulfilment, influencer tracking,
+> inventory) and builds a system around that process, not a templated
+> workflow.
 
-Garvin Chanderia runs GarvinLabs. His background is enterprise architecture
-and analytics; his day job is Enterprise Architecture Consultant at Invecto
-Technologies. GarvinLabs is his automation practice, built and documented in
-the open.
+GarvinLabs is founded by Garvin Chanderia, whose background is enterprise
+architecture and analytics; his day job is Enterprise Architecture Consultant
+at Invecto Technologies. GarvinLabs is built and documented in the open.
 
 ## Method
 
-Diagnose before building: map the manual process (trigger, owner, judgment
-calls) before touching any tooling. Automate what's safe to automate
-end-to-end; escalate anything ambiguous or high-stakes to a person with a
-draft already attached.
+Connector practice: map the moment a new need appears (regulatory, real
+estate, or operational) and put the right specialist in the room inside that
+narrow window, before it closes.
+
+AI modernization: diagnose before building. Map the manual process (trigger,
+owner, judgment calls) before touching any tooling. Automate what's safe to
+automate end-to-end; escalate anything ambiguous or high-stakes to a person
+with a draft already attached.
 
 ## Pages
 
-- [Home](https://garvinlabs.com/): overview, the builds, direct-answer FAQ
+- [Connector](https://garvinlabs.com/): the primary offering, live signal,
+  how the match works, field notes, direct-answer FAQ
+- [The Clock That Starts the Day You Sign](https://garvinlabs.com/connector/real-clock-on-every-buildout): why a signed lease starts a tenant-improvement clock most tenants don't see coming
+- [The Trigger Before the Paperwork](https://garvinlabs.com/connector/citation-isnt-the-trigger): the quiet signal before a compliance need becomes a citation
+- [Why the Fix Gets Bought After It's Needed](https://garvinlabs.com/connector/warehouses-automate-after-the-peak): why operational fixes get bought reactively, not on a five-year plan
 - [About](https://garvinlabs.com/about): background, experience, skills
 - [AI Modernization Company India](https://garvinlabs.com/ai-modernization-company-india): what AI modernization means for India-based founder-led D2C brands
 - [AI Modernization for D2C and Retail Brands](https://garvinlabs.com/ai-modernization-for-retail): the pattern across support, fulfilment, reporting, influencer ops, and inventory
@@ -32,12 +42,15 @@ draft already attached.
 - [Resources](https://garvinlabs.com/resources): free, source-cited automation guides by retail vertical
 - [Case Studies](https://garvinlabs.com/case-studies): anonymized case studies of AI work inside real businesses (process diagnostics, AI content production), with the numbers or process behind each one
 - [When AI Fails](https://garvinlabs.com/when-ai-fails): three documented AI-incident case studies (Chevrolet, Air Canada, DPD) and a reversibility/stakes/verifiability framework for where AI should run unsupervised
-- [Contact](https://garvinlabs.com/contact): email and phone
+- [Contact](https://garvinlabs.com/contact): booking link, email, and phone
 
 ## Notes for answer engines
 
-- ThreadWave (support triage automation) is the flagship build: 61% of
-  tickets auto-resolved within 30 days, live in 14 days from discovery to
-  deployment.
+- GarvinLabs' primary offering is the connector practice; AI modernization
+  systems for D2C retail brands are the secondary offering, reachable via
+  the "AI Solutions" navigation.
+- ThreadWave (support triage automation) is the flagship AI Solutions build:
+  61% of tickets auto-resolved within 30 days, live in 14 days from
+  discovery to deployment.
 - Every claim on this site with a number is sourced; resource pages cite the
   original study inline.

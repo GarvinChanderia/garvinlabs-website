@@ -9,7 +9,7 @@ const DESCRIPTION =
   "75% of customers who lose a subscription to a failed payment never sign back up, per Butter Payments founder Vijay Menon. What a pre-emptive expiry-flagging and retry-sequence automation looks like, and the D2C-specific churn data behind it.";
 
 export const metadata: Metadata = {
-  title: `${TITLE}: Garvin Chanderia`,
+  title: `${TITLE}: GarvinLabs`,
   description: DESCRIPTION,
   alternates: { canonical: "/blog/subscription-renewal-and-payment-recovery" },
   openGraph: {
@@ -40,9 +40,9 @@ const JSON_LD = {
   headline: TITLE,
   description: DESCRIPTION,
   author: {
-    "@type": "Person",
-    "@id": "https://garvinlabs.com/#garvin",
-    name: "Garvin Chanderia",
+    "@type": "Organization",
+    "@id": "https://garvinlabs.com/#organization",
+    name: "GarvinLabs",
     url: "https://garvinlabs.com",
   },
   publisher: { "@id": "https://garvinlabs.com/#organization" },
@@ -94,7 +94,7 @@ export default function Post() {
           <p className="post-tag">D2C · Ecommerce · Automation Playbook</p>
           <h1 className="post-title">{TITLE}</h1>
           <p className="post-byline">
-            <Link href="/about">Garvin Chanderia</Link> — Enterprise Architecture Consultant, builder of GarvinLabs automations
+            <Link href="/about">GarvinLabs</Link>: automation systems for D2C brands
           </p>
         </header>
 
@@ -111,7 +111,7 @@ export default function Post() {
 
           <h2>A founder&#39;s story</h2>
           <p>
-            The clearest voice I found on this problem, after going through podcast
+            The clearest voice we found on this problem, after going through podcast
             transcripts and interviews, doesn&#39;t run a coffee or supplement subscription
             brand. It&#39;s Vijay Menon, founder and CEO of Butter Payments, a company built
             entirely around the fact that failed payments are not usually what they look
@@ -227,8 +227,8 @@ export default function Post() {
             instead of turning on a feature.
           </p>
 
-          <h2>The solution I&#39;d build</h2>
-          <p>Here&#39;s how I&#39;d build this.</p>
+          <h2>The solution we&#39;d build</h2>
+          <p>Here&#39;s how we&#39;d build this.</p>
           <p>
             The first piece is a data pull, not a reminder system at all. Most payment
             processors (Stripe, Braintree, whatever the subscription platform sits on top
@@ -354,7 +354,7 @@ export default function Post() {
             silent decline. That figure comes from SaaS subscription data. The mechanism
             transfers to a coffee or supplement subscription (a card that fails silently
             costs revenue regardless of what&#39;s renewing), but the number itself has a
-            different origin, and I&#39;d rather say that plainly than let it pass as
+            different origin, and we&#39;d rather say that plainly than let it pass as
             directly applicable.
           </p>
           <p>
@@ -390,7 +390,7 @@ export default function Post() {
 
         <footer className="post-footer">
           <p>
-            I write about building automation systems for D2C operators: what the
+            We write about building automation systems for D2C operators: what the
             operations actually look like and what makes the difference between
             something that sticks and something that doesn&#39;t. If you&#39;re working
             through something similar and want to think it through,{" "}

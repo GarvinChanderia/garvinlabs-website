@@ -13,19 +13,19 @@ import {
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact Garvin Chanderia | GarvinLabs",
-  description: "Get in touch with Garvin Chanderia by email or phone.",
+  title: "Contact GarvinLabs",
+  description: "Get in touch with GarvinLabs by email or phone.",
   alternates: { canonical: "https://garvinlabs.com/contact" },
   openGraph: {
-    title: "Contact Garvin Chanderia | GarvinLabs",
-    description: "Get in touch with Garvin Chanderia by email or phone.",
+    title: "Contact GarvinLabs",
+    description: "Get in touch with GarvinLabs by email or phone.",
     url: "https://garvinlabs.com/contact",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Contact Garvin Chanderia | GarvinLabs",
-    description: "Get in touch with Garvin Chanderia by email or phone.",
+    title: "Contact GarvinLabs",
+    description: "Get in touch with GarvinLabs by email or phone.",
   },
 };
 
@@ -33,8 +33,8 @@ const JSON_LD = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   url: "https://garvinlabs.com/contact",
-  name: "Contact Garvin Chanderia | GarvinLabs",
-  mainEntity: { "@id": "https://garvinlabs.com/#garvin" },
+  name: "Contact GarvinLabs",
+  mainEntity: { "@id": "https://garvinlabs.com/#organization" },
 };
 
 export default function Contact() {
@@ -46,10 +46,11 @@ export default function Contact() {
       />
       {/* AEO wedge: raw-HTML answer for crawlers that don't render CSS (GPTBot, ClaudeBot, PerplexityBot) */}
       <aside aria-label="Quick Answer" style={{ display: "none" }}>
-        <strong>How do you contact Garvin Chanderia?</strong>
+        <strong>How do you contact GarvinLabs?</strong>
         <p>
-          Email ({EMAIL}) or phone ({PHONE_DISPLAY}) are the fastest routes. He&apos;s also
-          reachable on LinkedIn, Instagram, X/Twitter, and Threads.
+          Book a 30-minute call directly, or reach us by email ({EMAIL}) or phone
+          ({PHONE_DISPLAY}). We&apos;re also reachable on LinkedIn, Instagram, X/Twitter,
+          and Threads.
         </p>
       </aside>
       <Navbar />
@@ -58,7 +59,7 @@ export default function Contact() {
         <p className="section-eyebrow">Contact</p>
         <h1 className="section-title">Get in touch.</h1>
         <p className="lead" style={{ marginTop: "1rem", maxWidth: "640px" }}>
-          The fastest way to reach me is email or phone.
+          The fastest way to reach us is email or phone.
         </p>
 
         {/* ── PRIMARY CTAS ────────────────────────────────────── */}
@@ -70,6 +71,18 @@ export default function Contact() {
             marginTop: "2.5rem",
           }}
         >
+          <a
+            href="https://cal.com/garvin-chanderia/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card"
+            style={{ textDecoration: "none" }}
+          >
+            <p className="stat-label" style={{ marginBottom: "0.75rem" }}>Book a call</p>
+            <p style={{ fontSize: "1.35rem", fontWeight: 700, color: "var(--ink)" }}>
+              30-minute call
+            </p>
+          </a>
           <a href={MAILTO} className="card" style={{ textDecoration: "none" }}>
             <p className="stat-label" style={{ marginBottom: "0.75rem" }}>Email</p>
             <p style={{ fontSize: "1.35rem", fontWeight: 700, color: "var(--ink)" }}>

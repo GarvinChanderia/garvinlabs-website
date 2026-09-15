@@ -5,11 +5,11 @@ const FAQS = [
   },
   {
     q: "Does this work with our existing helpdesk tool?",
-    a: "Yes. This works alongside whatever helpdesk you're already using — Gorgias, Zendesk, Freshdesk, Intercom. Your helpdesk handles the interface. This handles the reading, sorting, and replying before your team opens a single ticket.",
+    a: "Yes. This works alongside whatever helpdesk you're already using (Gorgias, Zendesk, Freshdesk, Intercom). Your helpdesk handles the interface. This handles the reading, sorting, and replying before your team opens a single ticket.",
   },
   {
     q: "Do we need technical knowledge to run this?",
-    a: "No. The documentation is written for non-technical operators. The system runs itself. We build it so your team understands what it's doing and why — no developer required after handoff.",
+    a: "No. The documentation is written for non-technical operators. The system runs itself. We build it so your team understands what it's doing and why, no developer required after handoff.",
   },
   {
     q: "What if our tickets are too complex for AI?",
