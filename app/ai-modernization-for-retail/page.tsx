@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { LINKEDIN } from "@/lib/constants";
+import { EMAIL, MAILTO } from "@/lib/constants";
 
 const TITLE = "AI modernization for D2C and retail brands";
 const DESCRIPTION =
@@ -147,12 +147,10 @@ export default function AiModernizationRetail() {
         <footer className="post-footer" style={{ textAlign: "center" }}>
           <p style={{ marginBottom: "1rem" }}>To know more, contact:</p>
           <a
-            href={LINKEDIN}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={MAILTO}
             className="btn-primary"
           >
-            LinkedIn ↗
+            Email {EMAIL}
           </a>
         </footer>
       </article>

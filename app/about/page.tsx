@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { LINKEDIN } from "@/lib/constants";
+import { EMAIL, MAILTO } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About GarvinLabs",
@@ -211,12 +211,10 @@ export default function About() {
                 was doing by hand every day.
               </p>
               <a
-                href={LINKEDIN}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={MAILTO}
                 className="btn-primary"
               >
-                Connect on LinkedIn ↗
+                Email {EMAIL}
               </a>
             </div>
           </div>
@@ -555,16 +553,14 @@ export default function About() {
             Want to talk through something similar?
           </h2>
           <p style={{ fontSize: "var(--type-body)", color: "#6b7280", marginBottom: "2rem", lineHeight: 1.65 }}>
-            Drop us a message on LinkedIn or send an email directly.
+            Send us an email, or use the contact page.
           </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
             <a
-              href={LINKEDIN}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={MAILTO}
               className="btn-primary"
             >
-              Connect on LinkedIn ↗
+              Email {EMAIL}
             </a>
             <Link href="/contact" className="btn-secondary">
               Get in touch
