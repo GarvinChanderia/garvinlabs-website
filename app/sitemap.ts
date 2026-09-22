@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { CONNECTOR_CASE_STUDIES } from "@/lib/connectorCaseStudies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://garvinlabs.com";
@@ -28,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    ...CONNECTOR_CASE_STUDIES.map((cs) => ({
+      url: `${baseUrl}/case-studies/${cs.slug}`,
+      lastModified: new Date("2026-09-22"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
     {
       url: `${baseUrl}/demos`,
       lastModified: new Date("2026-07-09"),
@@ -120,7 +127,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/case-studies`,
-      lastModified: new Date("2026-08-05"),
+      lastModified: new Date("2026-09-22"),
       changeFrequency: "monthly",
       priority: 0.7,
     },

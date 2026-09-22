@@ -6,12 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const TOP_LINKS = [
-  { label: "Connector", href: "/" },
+  { label: "Connector",    href: "/"             },
+  { label: "Case Studies", href: "/case-studies" },
 ];
 
 const AI_SOLUTIONS_LINKS = [
   { label: "Builds",        href: "/demos"         },
-  { label: "Case Studies",  href: "/case-studies"  },
   { label: "When AI Fails", href: "/when-ai-fails" },
 ];
 
