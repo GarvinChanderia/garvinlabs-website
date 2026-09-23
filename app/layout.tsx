@@ -73,6 +73,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <SchemaOrg />
+        {/* Leadsy / vtag.ai visitor identification pixel */}
+        <script
+          id="vtag-ai-js"
+          async
+          src="https://r2.leadsy.ai/tag.js"
+          data-pid="s6UEcSGKlR3enQ5W"
+          data-version="062024"
+        />
       </head>
       <body className={`${figtree.variable} ${outfit.variable} ${jetbrainsMono.variable}`}>
         {children}
