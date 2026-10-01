@@ -19,14 +19,14 @@ export default function NotFound() {
         <p className="section-eyebrow">404</p>
         <h1 className="section-title">This page doesn&apos;t exist.</h1>
         <p className="lead" style={{ marginTop: "1rem" }}>
-          The link might be outdated, or the page moved. Try the homepage or one of the builds.
+          The link might be outdated, or the page moved. Try the homepage or the case studies.
         </p>
         <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap", marginTop: "2rem" }}>
           <Link href="/" className="btn-primary">
             Back to homepage
           </Link>
-          <Link href="/demos" className="btn-secondary">
-            See the builds
+          <Link href="/case-studies" className="btn-secondary">
+            See case studies
           </Link>
         </div>
       </div>

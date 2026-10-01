@@ -863,6 +863,8 @@ iframe.skiptranslate { display: none !important; }
   flex-shrink: 0;
 }
 
+.nav-cta + .nav-cta { margin-left: 0.5rem; }
+
 /* "More" dropdown — desktop only (see mobile override below, which flattens
    it back into the plain hamburger list instead of a nested dropdown) */
 .nav-dropdown {
@@ -1749,6 +1751,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 
   .nav-cta {
     margin-top: 0.5rem;
+    margin-left: 0 !important;
     text-align: center;
     width: 100%;
     justify-content: center;
@@ -5072,4 +5075,15 @@ a.glass-tag:hover {
 
 @media (max-width: 860px) {
   .spotlight-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+}
+
+/* Homepage three-up card grid (markets, sourcing examples, results) */
+.home-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 820px) {
+  .home-card-grid { grid-template-columns: 1fr; }
 }

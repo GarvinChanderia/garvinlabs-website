@@ -23,16 +23,16 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GarvinLabs: connecting businesses to the specialists who solve their exact moment of need",
+  title: "GarvinLabs: qualified buyers for service providers, introduced while they're actively buying",
   description:
-    "We connect businesses at the exact moment a new need appears (a new obligation, a new space, or a broken process) with the specialists built to solve it, before the window closes. GarvinLabs also builds AI modernization systems for D2C retail brands: support, ops reporting, fulfilment, and inventory.",
-  keywords: ["Business Connector", "Tenant Improvement", "Build-Out Contractor Matching", "Compliance Consultant Matching", "Commercial Fit-Out", "GarvinLabs", "AI Modernization for D2C", "Support Triage Automation", "AI Modernization Partner"],
+    "We connect businesses with qualified service providers when they're actively looking to buy: companies facing OSHA citations, signing new commercial leases or expanding warehouses, introduced directly to safety consultants, fit-out contractors and automation integrators.",
+  keywords: ["Business Connector", "Qualified Introductions", "OSHA Compliance Consultant Leads", "Tenant Improvement", "Commercial Fit-Out Contractor Leads", "Warehouse Automation Integrator Leads", "GarvinLabs"],
   metadataBase: new URL("https://garvinlabs.com"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "GarvinLabs: connecting businesses to the specialists who solve their exact moment of need",
+    title: "GarvinLabs: qualified buyers for service providers, introduced while they're actively buying",
     description:
-      "We connect businesses at the exact moment a new need appears (a new obligation, a new space, or a broken process) with the specialists built to solve it, before the window closes. GarvinLabs also builds AI modernization systems for D2C retail brands.",
+      "We connect businesses with qualified service providers when they're actively looking to buy: companies facing OSHA citations, signing new commercial leases or expanding warehouses, introduced directly to safety consultants, fit-out contractors and automation integrators.",
     url: "https://garvinlabs.com",
     siteName: "GarvinLabs",
     images: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: "/hero-connector.png",
         width: 1200,
         height: 630,
-        alt: "GarvinLabs: connecting businesses to the specialists who solve their exact moment of need",
+        alt: "GarvinLabs: qualified buyers for service providers, introduced while they're actively buying",
       },
     ],
     locale: "en_US",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GarvinLabs: connecting businesses to the specialists who solve their exact moment of need",
+    title: "GarvinLabs: qualified buyers for service providers, introduced while they're actively buying",
     description:
-      "We connect businesses at the exact moment a new need appears (a new obligation, a new space, or a broken process) with the specialists built to solve it, before the window closes. GarvinLabs also builds AI modernization systems for D2C retail brands.",
+      "We connect businesses with qualified service providers when they're actively looking to buy: companies facing OSHA citations, signing new commercial leases or expanding warehouses, introduced directly to safety consultants, fit-out contractors and automation integrators.",
     images: ["/hero-connector.png"],
   },
   robots: {

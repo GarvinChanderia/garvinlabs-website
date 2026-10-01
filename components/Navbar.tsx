@@ -4,27 +4,25 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { BOOKING_URL, MAILTO } from "@/lib/constants";
 
 const TOP_LINKS = [
-  { label: "Connector",    href: "/"             },
+  { label: "Home",         href: "/"             },
   { label: "Case Studies", href: "/case-studies" },
+  { label: "About",        href: "/about"        },
 ];
 
-const AI_SOLUTIONS_LINKS = [
-  { label: "Builds",        href: "/demos"         },
-  { label: "When AI Fails", href: "/when-ai-fails" },
-];
-
+// AI services are deliberately kept out of the top-level nav so connector
+// visitors don't read GarvinLabs as an AI product. Everything AI lives
+// behind /ai-services.
 const MORE_LINKS = [
-  { label: "Resources", href: "/resources" },
-  { label: "Blog",       href: "/blog"      },
-  { label: "About",      href: "/about"     },
+  { label: "Contact",                href: "/contact"     },
+  { label: "GarvinLabs AI Services", href: "/ai-services" },
 ];
 
 export default function Navbar() {
   const [scrolled,  setScrolled]  = useState(false);
   const [menuOpen,  setMenuOpen]  = useState(false);
-  const [aiOpen,    setAiOpen]    = useState(false);
   const [moreOpen,  setMoreOpen]  = useState(false);
   const pathname = usePathname();
 
@@ -45,17 +43,6 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", close);
   }, [menuOpen]);
 
-  // close "AI Solutions" dropdown on outside click
-  useEffect(() => {
-    if (!aiOpen) return;
-    const close = (e: MouseEvent) => {
-      const dropdown = document.getElementById("nav-ai-dropdown");
-      if (dropdown && !dropdown.contains(e.target as Node)) setAiOpen(false);
-    };
-    document.addEventListener("mousedown", close);
-    return () => document.removeEventListener("mousedown", close);
-  }, [aiOpen]);
-
   // close "More" dropdown on outside click
   useEffect(() => {
     if (!moreOpen) return;
@@ -69,7 +56,6 @@ export default function Navbar() {
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
-  const aiActive = AI_SOLUTIONS_LINKS.some((link) => isActive(link.href));
   const moreActive = MORE_LINKS.some((link) => isActive(link.href));
 
   return (
@@ -97,40 +83,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-
-          <div
-            id="nav-ai-dropdown"
-            className={`nav-dropdown${aiOpen ? " open" : ""}`}
-          >
-            <button
-              type="button"
-              className={`nav-link nav-dropdown-trigger${aiActive ? " active" : ""}`}
-              onClick={() => setAiOpen((o) => !o)}
-              aria-haspopup="menu"
-              aria-expanded={aiOpen}
-            >
-              AI Solutions
-              <svg className="nav-dropdown-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
-                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <div className="nav-dropdown-panel" role="menu">
-              {AI_SOLUTIONS_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`nav-link${isActive(link.href) ? " active" : ""}`}
-                  role="menuitem"
-                  onClick={() => {
-                    setAiOpen(false);
-                    setMenuOpen(false);
-                  }}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
 
           <div
             id="nav-more-dropdown"
@@ -166,13 +118,22 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link
-            href="/contact"
+          <a
+            href={MAILTO}
+            className="btn-secondary nav-cta"
+            onClick={() => setMenuOpen(false)}
+          >
+            Email
+          </a>
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary nav-cta"
             onClick={() => setMenuOpen(false)}
           >
-            Contact
-          </Link>
+            Book a call
+          </a>
         </div>
 
         {/* Mobile hamburger */}

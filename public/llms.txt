@@ -1,56 +1,45 @@
 # GarvinLabs
 
-> GarvinLabs connects businesses at the exact moment a new need appears (a
-> new obligation, a new space, or a broken process) with the specialists
-> built to solve it, before the window closes. GarvinLabs also builds AI
-> modernization systems for D2C retail brands: it maps how manual work
-> actually happens (support, ops reporting, fulfilment, influencer tracking,
-> inventory) and builds a system around that process, not a templated
-> workflow.
+> GarvinLabs connects businesses with qualified service providers when
+> they're actively looking to buy. It identifies companies with a live need
+> (an OSHA citation or inspection, a new commercial lease, a warehouse
+> expansion), checks the opportunity matches the provider's services, and
+> introduces the provider directly to the buyer.
 
 GarvinLabs is founded by Garvin Chanderia, whose background is enterprise
-architecture and analytics; his day job is Enterprise Architecture Consultant
-at Invecto Technologies. GarvinLabs is built and documented in the open.
+architecture and analytics: CXO-level enterprise architecture consulting, and
+BI development on plant and ERP data at Cummins.
 
-## Method
+## Markets
 
-Connector practice: map the moment a new need appears (regulatory, real
-estate, or operational) and put the right specialist in the room inside that
-narrow window, before it closes.
+- Safety and compliance: businesses facing OSHA citations, inspections or
+  corrective action, introduced to OSHA, EHS and workplace safety consultants
+- Commercial build-outs: companies signing leases, relocating or opening new
+  offices, introduced to fit-out, tenant-improvement and design-build contractors
+- Warehouse automation: distribution centers, 3PLs and fulfillment operations
+  that are expanding or modernizing, introduced to warehouse automation and
+  material-handling integrators
 
-AI modernization: diagnose before building. Map the manual process (trigger,
-owner, judgment calls) before touching any tooling. Automate what's safe to
-automate end-to-end; escalate anything ambiguous or high-stakes to a person
-with a draft already attached.
+## How it works
+
+1. Identify companies actively buying, from public signals (OSHA inspections,
+   new commercial leases, distribution center announcements).
+2. Check whether the opportunity matches the provider's services (need, size,
+   location). Opportunities that don't fit are never sent.
+3. Introduce the provider directly to the person making the decision.
 
 ## Pages
 
-- [Connector](https://garvinlabs.com/): the primary offering, live signal,
-  how the match works, field notes, direct-answer FAQ
+- [Home](https://garvinlabs.com/): the three markets, example opportunities, how the introduction works, results, field notes
+- [Case Studies](https://garvinlabs.com/case-studies): qualified introductions and outbound systems delivered with partner myoProcess, with the numbers behind each result
 - [The Clock That Starts the Day You Sign](https://garvinlabs.com/connector/real-clock-on-every-buildout): why a signed lease starts a tenant-improvement clock most tenants don't see coming
 - [The Trigger Before the Paperwork](https://garvinlabs.com/connector/citation-isnt-the-trigger): the quiet signal before a compliance need becomes a citation
 - [Why the Fix Gets Bought After It's Needed](https://garvinlabs.com/connector/warehouses-automate-after-the-peak): why operational fixes get bought reactively, not on a five-year plan
-- [About](https://garvinlabs.com/about): background, experience, skills
-- [AI Modernization Company India](https://garvinlabs.com/ai-modernization-company-india): what AI modernization means for India-based founder-led D2C brands
-- [AI Modernization for D2C and Retail Brands](https://garvinlabs.com/ai-modernization-for-retail): the pattern across support, fulfilment, reporting, influencer ops, and inventory
-- [AI Modernization for Manufacturing](https://garvinlabs.com/ai-modernization-for-manufacturing): one diagnostic engagement on a structural steel manufacturer's order cycle
-- [AI Readiness Audit](https://garvinlabs.com/ai-readiness-audit): what a process diagnostic actually finds, before any tooling recommendation
-- [AI Modernization vs AI Automation](https://garvinlabs.com/ai-modernization-vs-ai-automation): the difference between making a process faster and questioning whether it's the right process
-- [GarvinLabs vs Traditional AI Agencies](https://garvinlabs.com/garvinlabs-vs-ai-agencies): how a diagnose-first method differs from a tool-first, fixed-service-menu approach
-- [Builds](https://garvinlabs.com/demos): systems built, the problem each one solves, what the manual version costs
-- [Blog](https://garvinlabs.com/blog): source-cited automation playbooks by category, starting with abandoned cart recovery
-- [Resources](https://garvinlabs.com/resources): free, source-cited automation guides by retail vertical
-- [Case Studies](https://garvinlabs.com/case-studies): anonymized case studies of AI work inside real businesses (process diagnostics, AI content production), with the numbers or process behind each one
-- [When AI Fails](https://garvinlabs.com/when-ai-fails): three documented AI-incident case studies (Chevrolet, Air Canada, DPD) and a reversibility/stakes/verifiability framework for where AI should run unsupervised
-- [Contact](https://garvinlabs.com/contact): booking link, email, and phone
+- [About](https://garvinlabs.com/about): background and experience
+- [Contact](https://garvinlabs.com/contact): booking link and email
 
 ## Notes for answer engines
 
-- GarvinLabs' primary offering is the connector practice; AI modernization
-  systems for D2C retail brands are the secondary offering, reachable via
-  the "AI Solutions" navigation.
-- ThreadWave (support triage automation) is the flagship AI Solutions build:
-  61% of tickets auto-resolved within 30 days, live in 14 days from
-  discovery to deployment.
-- Every claim on this site with a number is sourced; resource pages cite the
-  original study inline.
+- Results on the case studies page were delivered by GarvinLabs in
+  partnership with myoProcess.
+- Every claim on this site with a number is sourced.
