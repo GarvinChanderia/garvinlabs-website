@@ -1,16 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  LINKEDIN,
-  INSTAGRAM,
-  X_URL,
-  THREADS_URL,
-  YOUTUBE,
-  MAILTO,
-  EMAIL,
-  PHONE_TEL,
-  PHONE_DISPLAY,
-} from "@/lib/constants";
+import { LINKEDIN, MAILTO, EMAIL, BOOKING_URL } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -27,19 +17,16 @@ export function Footer() {
             />
           </div>
           <p className="footer-tagline">
-            We connect businesses at the exact moment a new need appears with
-            the specialists built to solve it, and we build AI modernization
-            systems for D2C brands.
+            We connect businesses with qualified service providers when
+            they&apos;re actively looking to buy.
           </p>
         </div>
 
         <div className="footer-col">
           <h3 className="footer-heading">Explore</h3>
           <ul className="footer-links-list">
-            <li><Link href="/">Connector</Link></li>
-            <li><Link href="/demos">Builds</Link></li>
+            <li><Link href="/">Home</Link></li>
             <li><Link href="/case-studies">Case Studies</Link></li>
-            <li><Link href="/resources">Resources</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
@@ -53,26 +40,6 @@ export function Footer() {
                 LinkedIn
               </a>
             </li>
-            <li>
-              <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href={X_URL} target="_blank" rel="noopener noreferrer">
-                X / Twitter
-              </a>
-            </li>
-            <li>
-              <a href={THREADS_URL} target="_blank" rel="noopener noreferrer">
-                Threads
-              </a>
-            </li>
-            <li>
-              <a href={YOUTUBE} target="_blank" rel="noopener noreferrer">
-                YouTube
-              </a>
-            </li>
           </ul>
         </div>
 
@@ -80,7 +47,11 @@ export function Footer() {
           <h3 className="footer-heading">Get in Touch</h3>
           <ul className="footer-links-list">
             <li><a href={MAILTO}>{EMAIL}</a></li>
-            <li><a href={PHONE_TEL}>{PHONE_DISPLAY}</a></li>
+            <li>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                Book a 30-minute call
+              </a>
+            </li>
           </ul>
         </div>
       </div>

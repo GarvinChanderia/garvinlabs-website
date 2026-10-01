@@ -7,3 +7,4 @@ export const THREADS_URL = "https://www.threads.com/@labs.garvin";
 export const YOUTUBE = "https://www.youtube.com/@GarvinLabs";
 export const PHONE_DISPLAY = "+91 93562 49535";
 export const PHONE_TEL = "tel:+919356249535";
+export const BOOKING_URL = "https://cal.com/garvin-chanderia/30min";

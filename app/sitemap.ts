@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${baseUrl}/`,
-      lastModified: new Date("2026-09-15"),
+      lastModified: new Date("2026-10-01"),
       changeFrequency: "weekly",
       priority: 1,
     },
@@ -35,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
+    {
+      url: `${baseUrl}/ai-services`,
+      lastModified: new Date("2026-10-01"),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
     {
       url: `${baseUrl}/demos`,
       lastModified: new Date("2026-07-09"),

@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { EMAIL, MAILTO } from "@/lib/constants";
+import { BOOKING_URL, EMAIL, MAILTO } from "@/lib/constants";
+
+const DESCRIPTION =
+  "GarvinLabs connects businesses with qualified service providers when they're actively looking to buy, built on an enterprise architecture and analytics background.";
 
 export const metadata: Metadata = {
   title: "About GarvinLabs",
-  description:
-    "GarvinLabs: enterprise architecture background, automation builds for D2C operators.",
+  description: DESCRIPTION,
   alternates: { canonical: "https://garvinlabs.com/about" },
   openGraph: {
     title: "About GarvinLabs",
-    description:
-      "GarvinLabs: enterprise architecture background, automation builds for D2C operators.",
+    description: DESCRIPTION,
     url: "https://garvinlabs.com/about",
     images: [{ url: "/website-images/founder-portrait.png", width: 1200, height: 630, alt: "GarvinLabs founder Garvin Chanderia" }],
     type: "profile",
@@ -21,63 +21,52 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About GarvinLabs",
-    description:
-      "GarvinLabs: enterprise architecture background, automation builds for D2C operators.",
+    description: DESCRIPTION,
     images: ["/website-images/founder-portrait.png"],
   },
 };
 
+// Facts from Garvin's CV. Dates are deliberately left off.
 const EXPERIENCE = [
   {
     role: "Product Consultant, Enterprise Architecture Platforms",
     org: "Invecto Technologies",
-    period: "Oct 2025 – Present",
     points: [
-      "Own discovery and delivery of enterprise architecture reporting and workflow capabilities",
-      "Translate requirements from CTO-level stakeholders, architects, and EA teams into platform configuration and demos",
+      "Led discovery, roadmap and delivery of enterprise architecture platforms for CXO-level stakeholders",
+      "Translated architect and EA team requirements into structured workflows, data models and dashboards",
+      "Built and presented platform demos that shaped vendor buy or no-buy decisions",
     ],
   },
   {
-    role: "BI Developer / Product Owner",
-    org: "Cummins India",
-    period: "Jun 2024 – Oct 2025",
+    role: "Business Intelligence Developer",
+    org: "Cummins",
     points: [
-      "Built 35+ dashboards translating real-time plant operations into actionable ERP insights",
-      "Automated recurring reporting workflows with Power BI and Power Automate, cutting turnaround time by 40%",
-      "Promoted from Data Analyst Intern after demonstrating impact on the reporting backlog",
+      "Delivered 30+ dashboards translating real-time plant operations into ERP-linked insight for leadership",
+      "Automated recurring workflows with Power BI, Power Automate and Power Apps, cutting reporting turnaround by 40%",
+      "Ran field visits to manufacturing sites to gather requirements and validate dashboards on the floor",
     ],
   },
   {
-    role: "Founder, Product & Insights Lead",
+    role: "Data Analyst",
+    org: "Cummins",
+    points: [
+      "Analyzed operational data trends across manufacturing and ERP workflows and delivered Power BI visualizations for stakeholders",
+    ],
+  },
+  {
+    role: "Founder",
     org: "ThrottleApp",
-    period: "Jan 2024 – May 2025",
     points: [
-      "Took a motorcycle road-trip companion app from 0 to 1, 300+ organic downloads in 4 months",
-      "Ran 200+ user interviews and usability tests to shape the product roadmap",
+      "Built a motorcycle road-trip app end to end: 200+ rider interviews, 10+ MVP features, 300+ organic downloads in 4 months",
     ],
-  },
-];
-
-const SKILLS: { group: string; items: string[] }[] = [
-  {
-    group: "Business Analysis",
-    items: ["Process mapping", "PRDs", "Agile / Scrum", "Stakeholder alignment"],
-  },
-  {
-    group: "Automation & AI",
-    items: ["n8n", "Claude API / MCP", "Gemini", "Prompt engineering"],
-  },
-  {
-    group: "Analytics",
-    items: ["Power BI", "SQL", "Python", "Databricks"],
   },
 ];
 
 const CERTIFICATIONS = [
-  "Anthropic (2026): MCP, Subagents, Agent Skills, Claude Code, AI Fluency",
-  "Microsoft AI Product Manager Professional Certificate",
   "Avolution ABACUS (Enterprise Architecture)",
   "Databricks Lakehouse Architecture",
+  "Google Data Analytics",
+  "Google UX Design",
 ];
 
 const ABOUT_JSON_LD = {
@@ -85,6 +74,35 @@ const ABOUT_JSON_LD = {
   "@type": "ProfilePage",
   url: "https://garvinlabs.com/about",
   mainEntity: { "@id": "https://garvinlabs.com/#garvin" },
+};
+
+const EYEBROW = {
+  fontSize: "var(--type-caption2)",
+  letterSpacing: "0.18em",
+  textTransform: "uppercase" as const,
+  color: "#10B981",
+  fontWeight: 700,
+  marginBottom: "0.875rem",
+  fontFamily: "var(--font-mono)",
+};
+
+const H2 = {
+  fontSize: "var(--type-title1)",
+  fontWeight: 700,
+  color: "#f5f5f7",
+  letterSpacing: "-0.02em",
+  marginBottom: "2.5rem",
+};
+
+const BODY = { fontSize: "var(--type-body)", lineHeight: 1.75, color: "#a1a1a6", marginBottom: "1rem" };
+
+const GLASS_CARD = {
+  padding: "1.75rem 2rem",
+  borderRadius: "var(--radius-card)",
+  background: "var(--glass-medium-bg)",
+  backdropFilter: "var(--glass-medium-blur)",
+  WebkitBackdropFilter: "var(--glass-medium-blur)",
+  border: "var(--glass-medium-border)",
 };
 
 export default function About() {
@@ -98,31 +116,22 @@ export default function About() {
       <aside aria-label="Quick Answer" style={{ display: "none" }}>
         <strong>Who is GarvinLabs?</strong>
         <p>
-          GarvinLabs connects companies moving into new commercial space with the build-out
-          contractors who get them open on time, and builds AI modernization systems for D2C
-          retail brands. It is built on the enterprise architecture and analytics background of
-          its founder, Garvin Chanderia, an Enterprise Architecture Consultant at Invecto
-          Technologies: designing how systems connect, how data flows, and how decisions get made
-          inside large organisations. GarvinLabs maps a business&apos;s manual operations before
-          building automation around what actually happens, not what the documentation says.
+          GarvinLabs connects businesses with qualified service providers when they&apos;re
+          actively looking to buy, in three markets: OSHA safety and compliance, commercial
+          fit-outs, and warehouse automation. It is built on the enterprise architecture and
+          analytics background of its founder, Garvin Chanderia: CXO-level enterprise architecture
+          consulting, and BI development on plant and ERP data at Cummins.
         </p>
       </aside>
       <Navbar />
 
       {/* ── INTRO ──────────────────────────────────────────────── */}
       <section
-        style={{
-          background: "#0d0d0d",
-          padding: "6rem 0 5rem",
-          position: "relative",
-          overflow: "hidden",
-        }}
+        style={{ background: "#0d0d0d", padding: "6rem 0 5rem", position: "relative", overflow: "hidden" }}
         aria-label="About GarvinLabs"
       >
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          {/* Two-column hero */}
           <div className="about-hero-grid">
-            {/* Portrait */}
             <div className="about-hero-portrait">
               <Image
                 src="/website-images/founder-portrait.png"
@@ -134,21 +143,8 @@ export default function About() {
               />
             </div>
 
-            {/* Bio */}
             <div>
-              <p
-                style={{
-                  fontSize: "var(--type-caption2)",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "#10B981",
-                  fontWeight: 700,
-                  marginBottom: "0.875rem",
-                  fontFamily: "var(--font-mono)",
-                }}
-              >
-                About
-              </p>
+              <p style={EYEBROW}>About</p>
               <h1
                 style={{
                   fontSize: "var(--type-large-title)",
@@ -161,61 +157,32 @@ export default function About() {
               >
                 GarvinLabs
               </h1>
-              <p
-                style={{
-                  fontSize: "var(--type-footnote)",
-                  color: "#6b7280",
-                  marginBottom: "1.5rem",
-                  fontFamily: "var(--font-mono)",
-                }}
-              >
+              <p style={{ fontSize: "var(--type-footnote)", color: "#6b7280", marginBottom: "1.5rem", fontFamily: "var(--font-mono)" }}>
                 Founder: Garvin Chanderia
               </p>
-              <blockquote
-                style={{
-                  borderLeft: "2px solid #10B981",
-                  paddingLeft: "1.25rem",
-                  fontStyle: "italic",
-                  fontSize: "var(--type-title3)",
-                  color: "#a1a1a6",
-                  lineHeight: 1.6,
-                  marginBottom: "1.5rem",
-                }}
-              >
-                &ldquo;We diagnose before we build.&rdquo;
-              </blockquote>
-              <p
-                style={{
-                  fontSize: "var(--type-body)",
-                  lineHeight: 1.75,
-                  color: "#a1a1a6",
-                  marginBottom: "1rem",
-                }}
-              >
-                Our background is in enterprise architecture and analytics: designing how systems
-                connect, how data flows, and how decisions get made inside large organisations.
-                That background shapes every build here. We map the operations first, then build
-                the automation around what actually exists, not what the documentation says. It&apos;s
-                AI modernization consulting built on that method, not a fixed service menu.
+              <p style={BODY}>
+                GarvinLabs connects businesses with qualified service providers when they&apos;re
+                actively looking to buy. We work in three markets: OSHA safety and compliance,
+                commercial fit-outs, and warehouse automation.
               </p>
-              <p
-                style={{
-                  fontSize: "var(--type-body)",
-                  lineHeight: 1.75,
-                  color: "#a1a1a6",
-                  marginBottom: "2rem",
-                }}
-              >
-                The <Link href="/demos" style={{ color: "#10B981" }}>builds</Link> are real
-                systems, not demos or mockups. Each one started with a manual process someone
-                was doing by hand every day.
+              <p style={BODY}>
+                The method comes from enterprise architecture and analytics: working out how
+                systems, data and buying decisions actually connect inside an organisation before
+                deciding what should change. We point the same discipline at a market. Read the
+                signal, confirm the fit, then make the introduction.
               </p>
-              <a
-                href={MAILTO}
-                className="btn-primary"
-              >
-                Email {EMAIL}
-              </a>
+              <p style={{ ...BODY, marginBottom: "2rem" }}>
+                Every introduction is checked against what the provider actually delivers. If it
+                doesn&apos;t fit, it doesn&apos;t get sent.
+              </p>
+              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                  Book a 30-minute call
+                </a>
+                <a href={MAILTO} className="btn-secondary">
+                  {EMAIL}
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -227,213 +194,31 @@ export default function About() {
         aria-label="Experience"
       >
         <div className="container" style={{ maxWidth: "800px" }}>
-          <p
-            style={{
-              fontSize: "var(--type-caption2)",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#10B981",
-              fontWeight: 700,
-              marginBottom: "0.875rem",
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            Experience
-          </p>
-          <h2
-            style={{
-              fontSize: "var(--type-title1)",
-              fontWeight: 700,
-              color: "#f5f5f7",
-              letterSpacing: "-0.02em",
-              marginBottom: "2.5rem",
-            }}
-          >
-            Where this comes from.
-          </h2>
-          <p style={{ fontSize: "var(--type-body)", lineHeight: 1.75, color: "#a1a1a6", marginBottom: "2rem" }}>
-            GarvinLabs is built on our founder&apos;s hands-on background across enterprise
-            architecture, data engineering, and building products from zero.
-          </p>
+          <p style={EYEBROW}>Experience</p>
+          <h2 style={H2}>Where this comes from.</h2>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             {EXPERIENCE.map((job) => (
-              <div
-                key={job.role}
-                style={{
-                  padding: "1.75rem 2rem",
-                  borderRadius: "var(--radius-card)",
-                  background: "var(--glass-medium-bg)",
-                  backdropFilter: "var(--glass-medium-blur)",
-                  WebkitBackdropFilter: "var(--glass-medium-blur)",
-                  border: "var(--glass-medium-border)",
-                }}
-              >
-                <div
+              <div key={job.role} style={GLASS_CARD}>
+                <h3
                   style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    gap: "0.5rem",
+                    fontSize: "var(--type-title3)",
+                    fontWeight: 700,
+                    color: "#f5f5f7",
+                    lineHeight: 1.3,
                     marginBottom: "0.75rem",
                   }}
                 >
-                  <h3
-                    style={{
-                      fontSize: "var(--type-title3)",
-                      fontWeight: 700,
-                      color: "#f5f5f7",
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {job.role}
-                    <span style={{ color: "#10B981", fontWeight: 500 }}> · {job.org}</span>
-                  </h3>
-                  <span
-                    style={{
-                      fontSize: "var(--type-caption1)",
-                      fontFamily: "var(--font-mono)",
-                      color: "#6b7280",
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.08)",
-                      padding: "0.2rem 0.625rem",
-                      borderRadius: "var(--radius-pill)",
-                      flexShrink: 0,
-                    }}
-                  >
-                    {job.period}
-                  </span>
-                </div>
+                  {job.role}
+                  <span style={{ color: "#10B981", fontWeight: 500 }}> · {job.org}</span>
+                </h3>
                 <ul style={{ paddingLeft: "1.25rem", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                   {job.points.map((p) => (
-                    <li
-                      key={p}
-                      style={{ fontSize: "var(--type-callout)", lineHeight: 1.65, color: "#a1a1a6" }}
-                    >
+                    <li key={p} style={{ fontSize: "var(--type-callout)", lineHeight: 1.65, color: "#a1a1a6" }}>
                       {p}
                     </li>
                   ))}
                 </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── BUILDS ─────────────────────────────────────────────── */}
-      <section
-        style={{ background: "#050505", padding: "5rem 0", borderTop: "1px solid rgba(255,255,255,0.06)" }}
-        aria-label="Builds"
-      >
-        <div className="container" style={{ maxWidth: "800px" }}>
-          <p
-            style={{
-              fontSize: "var(--type-caption2)",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#10B981",
-              fontWeight: 700,
-              marginBottom: "0.875rem",
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            Builds
-          </p>
-          <h2
-            style={{
-              fontSize: "var(--type-title1)",
-              fontWeight: 700,
-              color: "#f5f5f7",
-              letterSpacing: "-0.02em",
-              marginBottom: "1rem",
-            }}
-          >
-            What we build with.
-          </h2>
-          <p style={{ fontSize: "var(--type-body)", lineHeight: 1.75, color: "#a1a1a6", marginBottom: "1rem" }}>
-            The system sits between a brand&apos;s existing tools, doing the reading, deciding,
-            and acting a person used to do by hand.{" "}
-            <Link href="/demos" style={{ color: "#10B981" }}>See how the builds work</Link>, including
-            ThreadWave, the support triage system that hit 61% auto-resolution in 30 days.
-          </p>
-          <p style={{ fontSize: "var(--type-body)", lineHeight: 1.75, color: "#a1a1a6" }}>
-            Separately, we built an n8n MCP Server: a connector that lets the Claude API
-            call n8n&apos;s REST API directly through 10 custom tools, so an AI agent can build,
-            inspect, and run workflows. It&apos;s an R&amp;D project exploring how far an
-            AI agent can go in managing its own automation layer.
-          </p>
-        </div>
-      </section>
-
-      {/* ── SKILLS ─────────────────────────────────────────────── */}
-      <section
-        style={{ background: "#0d0d0d", padding: "5rem 0", borderTop: "1px solid rgba(255,255,255,0.06)" }}
-        aria-label="Skills"
-      >
-        <div className="container" style={{ maxWidth: "800px" }}>
-          <p
-            style={{
-              fontSize: "var(--type-caption2)",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#10B981",
-              fontWeight: 700,
-              marginBottom: "0.875rem",
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            Skills
-          </p>
-          <h2
-            style={{
-              fontSize: "var(--type-title1)",
-              fontWeight: 700,
-              color: "#f5f5f7",
-              letterSpacing: "-0.02em",
-              marginBottom: "2.5rem",
-            }}
-          >
-            Toolkit.
-          </h2>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-            {SKILLS.map((s) => (
-              <div key={s.group}>
-                <h3
-                  style={{
-                    fontSize: "var(--type-footnote)",
-                    fontWeight: 700,
-                    color: "#f5f5f7",
-                    marginBottom: "0.875rem",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                  }}
-                >
-                  {s.group}
-                </h3>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-                  {s.items.map((item) => (
-                    <span
-                      key={item}
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        padding: "0.375rem 0.875rem",
-                        borderRadius: "var(--radius-pill)",
-                        background: "rgba(255,255,255,0.04)",
-                        border: "1px solid rgba(255,255,255,0.09)",
-                        fontSize: "var(--type-caption1)",
-                        color: "#86868b",
-                        fontWeight: 500,
-                        fontFamily: "var(--font-mono)",
-                        letterSpacing: "0.02em",
-                      }}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
               </div>
             ))}
           </div>
@@ -446,82 +231,25 @@ export default function About() {
         aria-label="Education and Certifications"
       >
         <div className="container" style={{ maxWidth: "800px" }}>
-          <p
-            style={{
-              fontSize: "var(--type-caption2)",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#10B981",
-              fontWeight: 700,
-              marginBottom: "0.875rem",
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            Education &amp; Certifications
-          </p>
-          <h2
-            style={{
-              fontSize: "var(--type-title1)",
-              fontWeight: 700,
-              color: "#f5f5f7",
-              letterSpacing: "-0.02em",
-              marginBottom: "2.5rem",
-            }}
-          >
-            Background.
-          </h2>
+          <p style={EYEBROW}>Education &amp; Certifications</p>
+          <h2 style={H2}>Background.</h2>
 
-          <div
-            style={{
-              padding: "1.75rem 2rem",
-              borderRadius: "var(--radius-card)",
-              background: "var(--glass-medium-bg)",
-              backdropFilter: "var(--glass-medium-blur)",
-              WebkitBackdropFilter: "var(--glass-medium-blur)",
-              border: "var(--glass-medium-border)",
-              marginBottom: "1.25rem",
-            }}
-          >
+          <div style={{ ...GLASS_CARD, marginBottom: "1.25rem" }}>
             <h3 style={{ fontSize: "var(--type-title3)", fontWeight: 700, color: "#f5f5f7", marginBottom: "0.4rem" }}>
-              B.Tech, Computer Engineering (AI/ML Specialisation)
+              B.Tech, Computer Science
             </h3>
-            <p
-              style={{
-                fontSize: "var(--type-caption1)",
-                fontFamily: "var(--font-mono)",
-                color: "#6b7280",
-              }}
-            >
-              MIT ADT University · 2020 – 2024
+            <p style={{ fontSize: "var(--type-caption1)", fontFamily: "var(--font-mono)", color: "#6b7280" }}>
+              MIT ADT University, Pune
             </p>
           </div>
 
-          <div
-            style={{
-              padding: "1.75rem 2rem",
-              borderRadius: "var(--radius-card)",
-              background: "var(--glass-medium-bg)",
-              backdropFilter: "var(--glass-medium-blur)",
-              WebkitBackdropFilter: "var(--glass-medium-blur)",
-              border: "var(--glass-medium-border)",
-            }}
-          >
-            <h3
-              style={{
-                fontSize: "var(--type-title3)",
-                fontWeight: 700,
-                color: "#f5f5f7",
-                marginBottom: "1rem",
-              }}
-            >
+          <div style={GLASS_CARD}>
+            <h3 style={{ fontSize: "var(--type-title3)", fontWeight: 700, color: "#f5f5f7", marginBottom: "1rem" }}>
               Certifications
             </h3>
             <ul style={{ paddingLeft: "1.25rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {CERTIFICATIONS.map((c) => (
-                <li
-                  key={c}
-                  style={{ fontSize: "var(--type-callout)", lineHeight: 1.65, color: "#a1a1a6" }}
-                >
+                <li key={c} style={{ fontSize: "var(--type-callout)", lineHeight: 1.65, color: "#a1a1a6" }}>
                   {c}
                 </li>
               ))}
@@ -532,39 +260,20 @@ export default function About() {
 
       {/* ── CTA ────────────────────────────────────────────────── */}
       <section
-        style={{
-          background: "#0d0d0d",
-          padding: "6rem 0 7rem",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
-          textAlign: "center",
-        }}
+        style={{ background: "#0d0d0d", padding: "6rem 0 7rem", borderTop: "1px solid rgba(255,255,255,0.06)", textAlign: "center" }}
         aria-label="Get in touch"
       >
-        <div className="container" style={{ maxWidth: "600px" }}>
-          <h2
-            style={{
-              fontSize: "var(--type-title1)",
-              fontWeight: 700,
-              color: "#f5f5f7",
-              letterSpacing: "-0.02em",
-              marginBottom: "1rem",
-            }}
-          >
-            Want to talk through something similar?
+        <div className="container" style={{ maxWidth: "640px" }}>
+          <h2 style={{ ...H2, marginBottom: "2rem" }}>
+            Looking for more customers? Tell us what services you provide and which markets you serve.
           </h2>
-          <p style={{ fontSize: "var(--type-body)", color: "#6b7280", marginBottom: "2rem", lineHeight: 1.65 }}>
-            Send us an email, or use the contact page.
-          </p>
           <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <a
-              href={MAILTO}
-              className="btn-primary"
-            >
-              Email {EMAIL}
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
+              Book a 30-minute call
             </a>
-            <Link href="/contact" className="btn-secondary">
-              Get in touch
-            </Link>
+            <a href={MAILTO} className="btn-secondary">
+              {EMAIL}
+            </a>
           </div>
         </div>
       </section>

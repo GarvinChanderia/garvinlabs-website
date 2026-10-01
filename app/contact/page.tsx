@@ -1,31 +1,25 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import {
-  EMAIL,
-  MAILTO,
-  PHONE_DISPLAY,
-  PHONE_TEL,
-  LINKEDIN,
-  INSTAGRAM,
-  X_URL,
-  THREADS_URL,
-} from "@/lib/constants";
+import { EMAIL, MAILTO, LINKEDIN, BOOKING_URL } from "@/lib/constants";
+
+const DESCRIPTION =
+  "Looking for more customers? Tell GarvinLabs what services you provide and which markets you serve. Book a 30-minute call or email us.";
 
 export const metadata: Metadata = {
   title: "Contact GarvinLabs",
-  description: "Get in touch with GarvinLabs by email or phone.",
+  description: DESCRIPTION,
   alternates: { canonical: "https://garvinlabs.com/contact" },
   openGraph: {
     title: "Contact GarvinLabs",
-    description: "Get in touch with GarvinLabs by email or phone.",
+    description: DESCRIPTION,
     url: "https://garvinlabs.com/contact",
     type: "website",
   },
   twitter: {
     card: "summary",
     title: "Contact GarvinLabs",
-    description: "Get in touch with GarvinLabs by email or phone.",
+    description: DESCRIPTION,
   },
 };
 
@@ -48,19 +42,18 @@ export default function Contact() {
       <aside aria-label="Quick Answer" style={{ display: "none" }}>
         <strong>How do you contact GarvinLabs?</strong>
         <p>
-          Book a 30-minute call directly, or reach us by email ({EMAIL}) or phone
-          ({PHONE_DISPLAY}). We&apos;re also reachable on LinkedIn, Instagram, X/Twitter,
-          and Threads.
+          Book a 30-minute call directly, or email {EMAIL}. Tell us what services you provide and
+          which markets you serve.
         </p>
       </aside>
+
       <Navbar />
 
       <section className="container section" aria-label="Contact" style={{ maxWidth: "800px" }}>
         <p className="section-eyebrow">Contact</p>
-        <h1 className="section-title">Get in touch.</h1>
-        <p className="lead" style={{ marginTop: "1rem", maxWidth: "640px" }}>
-          The fastest way to reach us is email or phone.
-        </p>
+        <h1 className="section-title">
+          Looking for more customers? Tell us what services you provide and which markets you serve.
+        </h1>
 
         {/* ── PRIMARY CTAS ────────────────────────────────────── */}
         <div
@@ -72,7 +65,7 @@ export default function Contact() {
           }}
         >
           <a
-            href="https://cal.com/garvin-chanderia/30min"
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="card"
@@ -83,16 +76,11 @@ export default function Contact() {
               30-minute call
             </p>
           </a>
+
           <a href={MAILTO} className="card" style={{ textDecoration: "none" }}>
             <p className="stat-label" style={{ marginBottom: "0.75rem" }}>Email</p>
             <p style={{ fontSize: "1.35rem", fontWeight: 700, color: "var(--ink)" }}>
               {EMAIL}
-            </p>
-          </a>
-          <a href={PHONE_TEL} className="card" style={{ textDecoration: "none" }}>
-            <p className="stat-label" style={{ marginBottom: "0.75rem" }}>Phone</p>
-            <p style={{ fontSize: "1.35rem", fontWeight: 700, color: "var(--ink)" }}>
-              {PHONE_DISPLAY}
             </p>
           </a>
         </div>
@@ -103,15 +91,6 @@ export default function Contact() {
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="social-chip">
               LinkedIn
-            </a>
-            <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="social-chip">
-              Instagram
-            </a>
-            <a href={X_URL} target="_blank" rel="noopener noreferrer" className="social-chip">
-              X / Twitter
-            </a>
-            <a href={THREADS_URL} target="_blank" rel="noopener noreferrer" className="social-chip">
-              Threads
             </a>
           </div>
         </div>

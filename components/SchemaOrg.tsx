@@ -6,15 +6,15 @@ export default function SchemaOrg() {
     "name": "Garvin Chanderia",
     "url": "https://garvinlabs.com",
     "jobTitle": "Enterprise Architecture Consultant",
-    "description": "Enterprise Architecture Consultant and automation practitioner. Maps manual business operations, then builds systems to run them without a person babysitting the process.",
+    "description": "Enterprise architecture and analytics background. Founder of GarvinLabs, which connects businesses with qualified service providers when they're actively looking to buy.",
     "sameAs": ["https://linkedin.com/in/garvinchanderia"],
     "knowsAbout": [
       "Enterprise Architecture",
-      "AI Modernization",
-      "System Integration",
-      "n8n",
-      "Support Triage Systems",
-      "Workflow Automation"
+      "Business Intelligence",
+      "B2B Introductions",
+      "OSHA Compliance Market",
+      "Commercial Tenant Improvement",
+      "Warehouse Automation"
     ]
   };
 
@@ -26,7 +26,7 @@ export default function SchemaOrg() {
     "url": "https://garvinlabs.com",
     "founder": { "@id": "https://garvinlabs.com/#garvin" },
     "sameAs": ["https://linkedin.com/in/garvinchanderia"],
-    "description": "GarvinLabs connects businesses at the exact moment a new need appears (a new obligation, a new space, or a broken process) with the specialists built to solve it, before the window closes, and builds AI modernization systems (support triage, ops reporting, fulfilment, and inventory) for retail brands, documented in the open."
+    "description": "GarvinLabs connects businesses with qualified service providers when they're actively looking to buy. It identifies companies with a live need (an OSHA citation or inspection, a new commercial lease, a warehouse expansion), checks the fit, and introduces safety and compliance consultants, commercial fit-out contractors and warehouse automation integrators directly to the buyer."
   };
 
   return (
