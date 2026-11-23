@@ -64,7 +64,7 @@ export default function CaseStudiesIndex() {
         <p>
           Connector work by GarvinLabs in partnership with myoProcess: qualified introductions
           (6 for Regent Peak Wealth Advisors in 45 days, 6 for Clean-Seas West Virginia in 120
-          days, 4 for Lasting Blueprint Productions in 78 days, 3 for RESPILON in about 43 days)
+          days, 3 for RESPILON in about 43 days)
           and outbound systems (+$105K for Connect Group, +$85K for Vention, 39 placements for
           Crawford Thomas Recruiting in one quarter).
         </p>

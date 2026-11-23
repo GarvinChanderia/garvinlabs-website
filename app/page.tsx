@@ -145,13 +145,6 @@ const RESULTS = [
     industry: "Wealth management",
     desc: "Business owners, executives and families who matched the advisory firm's existing client profile.",
   },
-  {
-    slug: "lasting-blueprint-productions",
-    stat: "4 introductions in 78 days",
-    client: "Lasting Blueprint Productions",
-    industry: "Video production",
-    desc: "Central Florida organizations with conferences, training programs and events that needed professional video.",
-  },
 ];
 
 const CARD = {

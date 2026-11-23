@@ -18,7 +18,6 @@ export const CONNECTOR_CASE_STUDIES: ConnectorCaseStudy[] = [
   { slug: "regent-peak-wealth-advisors", client: "Regent Peak Wealth Advisors", kind: "Routed introductions", industry: "Wealth management" },
   { slug: "respilon", client: "RESPILON", kind: "Routed introductions", industry: "Advanced materials" },
   { slug: "clean-seas-west-virginia", client: "Clean-Seas West Virginia", kind: "Routed introductions", industry: "Industrial recycling" },
-  { slug: "lasting-blueprint-productions", client: "Lasting Blueprint Productions", kind: "Routed introductions", industry: "Video production" },
   { slug: "vention", client: "Vention", kind: "Outbound system", industry: "Manufacturing automation" },
   { slug: "crawford-thomas-recruiting", client: "Crawford Thomas Recruiting", kind: "Outbound system", industry: "Recruitment" },
   { slug: "connect-group", client: "Connect Group", kind: "Outbound system", industry: "Recruitment" },
